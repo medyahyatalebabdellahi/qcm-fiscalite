@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Résumé Fiscalité Mauritanie 2025</title>
+    <title>Résumé Fiscalité Mauritanie 2025 – CGI + Livre des Procédures</title>
     <style>
         * {
             box-sizing: border-box;
@@ -21,7 +21,7 @@
             align-items: center;
         }
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             width: 100%;
             margin: 0 auto;
             background: #ffffff;
@@ -72,9 +72,45 @@
             flex-wrap: wrap;
             gap: 8px 12px;
         }
+        .btn-qcm {
+            background: #1e7b4c;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+            min-height: 44px;
+            margin: 10px 0;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-qcm:hover {
+            background: #16653d;
+        }
+        .btn-back {
+            background: #0b4f6c;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+            min-height: 44px;
+            margin: 10px 0;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-back:hover {
+            background: #083c52;
+        }
         .summary-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
             gap: 10px;
             margin: 16px 0;
         }
@@ -86,11 +122,11 @@
             border: 1px solid #e2e8f0;
         }
         .summary-stats .stat-item .number {
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 700;
         }
         .summary-stats .stat-item .label {
-            font-size: 12px;
+            font-size: 11px;
             color: #64748b;
         }
         .summary-stats .stat-item.green .number {
@@ -112,7 +148,7 @@
         }
         .summary-rules h3 {
             color: #0b4f6c;
-            margin: 16px 0 10px;
+            margin: 18px 0 10px;
             font-size: 19px;
             border-bottom: 2px solid #e9edf2;
             padding-bottom: 6px;
@@ -159,29 +195,14 @@
             padding: 6px 12px;
             border-radius: 8px;
         }
-        .btn-back {
-            background: #0b4f6c;
-            color: white;
-            border: none;
-            padding: 10px 24px;
-            border-radius: 60px;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: 0.2s;
-            min-height: 44px;
-            margin: 10px 0;
-        }
-        .btn-back:hover {
-            background: #083c52;
-        }
-        .footer-note {
-            margin-top: 16px;
-            color: #64748b;
-            font-size: clamp(11px, 1.4vw, 13px);
-            border-top: 1px solid #e9edf2;
-            padding-top: 12px;
-            text-align: center;
+        .rule-block .rule-ref {
+            font-size: 12px;
+            color: #0b4f6c;
+            margin-top: 4px;
+            background: #e8f4fd;
+            padding: 4px 10px;
+            border-radius: 6px;
+            display: inline-block;
         }
         .table-taux {
             width: 100%;
@@ -202,21 +223,13 @@
         .table-taux tr:nth-child(even) {
             background: #f8fafc;
         }
-        .btn-qcm {
-            background: #1e7b4c;
-            color: white;
-            border: none;
-            padding: 10px 24px;
-            border-radius: 60px;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: 0.2s;
-            min-height: 44px;
-            margin: 10px 0;
-        }
-        .btn-qcm:hover {
-            background: #16653d;
+        .footer-note {
+            margin-top: 16px;
+            color: #64748b;
+            font-size: clamp(11px, 1.4vw, 13px);
+            border-top: 1px solid #e9edf2;
+            padding-top: 12px;
+            text-align: center;
         }
         @media (max-width: 768px) {
             body {
@@ -253,10 +266,9 @@
 </head>
 <body>
     <div class="container">
-        <!-- HEADER -->
         <h1>
             <span>📘 Résumé Fiscalité Mauritanie 2025</span>
-            <span class="badge">Code Général des Impôts</span>
+            <span class="badge">CGI + Procédures</span>
         </h1>
 
         <div class="flex-row">
@@ -266,20 +278,24 @@
                 — 🍀 Bonne préparation !
             </div>
             <div>
-                <button class="btn-qcm" onclick="window.location.href='https://medyahyatalebabdellahi.github.io/qcm-fiscalite/'">📝 Accéder au QCM</button>
+                <a href="https://medyahyatalebabdellahi.github.io/qcm-fiscalite/" class="btn-qcm">📝 Accéder au QCM</a>
             </div>
         </div>
 
         <!-- STATS RÉSUMÉ -->
         <div class="summary-stats">
-            <div class="stat-item green"><div class="number">25%</div><div class="label">IS – Taux normal</div></div>
+            <div class="stat-item green"><div class="number">25%</div><div class="label">IS – Art. 51</div></div>
             <div class="stat-item blue"><div class="number">100 000</div><div class="label">IS – Minimum MRU</div></div>
-            <div class="stat-item orange"><div class="number">30%</div><div class="label">IBAPP – Réel normal</div></div>
+            <div class="stat-item orange"><div class="number">30%</div><div class="label">IBAPP – Art. 87</div></div>
             <div class="stat-item blue"><div class="number">125 000</div><div class="label">IBAPP – Minimum MRU</div></div>
-            <div class="stat-item green"><div class="number">16%</div><div class="label">TVA – Taux normal</div></div>
-            <div class="stat-item red"><div class="number">40%</div><div class="label">PIT – Taux max</div></div>
+            <div class="stat-item green"><div class="number">16%</div><div class="label">TVA – Art. 230</div></div>
+            <div class="stat-item red"><div class="number">40%</div><div class="label">PIT – Art. 114</div></div>
             <div class="stat-item blue"><div class="number">15%</div><div class="label">RPD – IS réduit</div></div>
             <div class="stat-item blue"><div class="number">0,6%</div><div class="label">Taxe apprentissage</div></div>
+            <div class="stat-item orange"><div class="number">4%</div><div class="label">STR – IS/PIT</div></div>
+            <div class="stat-item blue"><div class="number">1,75%</div><div class="label">GTA – Min réel</div></div>
+            <div class="stat-item blue"><div class="number">36 mois</div><div class="label">Mining – Exonération IS</div></div>
+            <div class="stat-item blue"><div class="number">15 ans</div><div class="label">Zone franche – Agrément</div></div>
         </div>
 
         <!-- ============================================================
@@ -288,7 +304,7 @@
         <div class="summary-rules">
 
             <!-- ===== SECTION IS ===== -->
-            <h3>🏢 IS – Impôt sur les Sociétés (Art. 51)</h3>
+            <h3>🏢 IS – Impôt sur les Sociétés (Art. 51 CGI)</h3>
 
             <div class="rule-block">
                 <div class="rule-title">📌 Règle générale</div>
@@ -296,6 +312,7 @@
                     <strong>IS = MAX(25% × Bénéfice imposable ; 2% × Produits imposables)</strong><br>
                     Minimum de perception : <strong>100 000 MRU</strong> pour le régime réel normal.
                 </div>
+                <div class="rule-ref">📖 Référence : Art. 51 CGI (Loi 2019-018)</div>
                 <div class="rule-piege">
                     ⚠️ <strong>Piège :</strong> Ne pas confondre le minimum de perception (100 000 MRU) avec le taux normal. En cas de perte, l'impôt minimum reste dû.
                 </div>
@@ -310,13 +327,11 @@
                     2% × 3 000 000 = <strong>60 000</strong><br>
                     → IS = <strong>250 000 MRU</strong>
                 </div>
-                <div class="rule-corrige">
-                    ✅ <strong>Corrigé :</strong> On prend le plus élevé entre 25% du bénéfice et 2% des produits.
-                </div>
+                <div class="rule-corrige">✅ <strong>Corrigé :</strong> On prend le plus élevé entre 25% du bénéfice et 2% des produits.</div>
             </div>
 
             <div class="rule-block">
-                <div class="rule-title">📝 Exemple 2 – Piège</div>
+                <div class="rule-title">📝 Exemple 2 – Piège (CA élevé)</div>
                 <div class="rule-example">
                     Bénéfice = 500 000 MRU<br>
                     Produits imposables = 40 000 000 MRU<br><br>
@@ -324,9 +339,7 @@
                     2% × 40 000 000 = <strong>800 000</strong><br>
                     → IS = <strong>800 000 MRU</strong>
                 </div>
-                <div class="rule-piege">
-                    ⚠️ <strong>Piège :</strong> Ne pas choisir automatiquement 25% du bénéfice. Toujours comparer avec 2% des produits.
-                </div>
+                <div class="rule-piege">⚠️ <strong>Piège :</strong> Ne pas choisir automatiquement 25% du bénéfice. Toujours comparer avec 2% des produits.</div>
             </div>
 
             <div class="rule-block">
@@ -339,9 +352,7 @@
                     Minimum = 100 000<br>
                     → IS = <strong>100 000 MRU</strong>
                 </div>
-                <div class="rule-corrige">
-                    ✅ <strong>Corrigé :</strong> Le minimum de perception est de 100 000 MRU, même si le calcul est inférieur.
-                </div>
+                <div class="rule-corrige">✅ <strong>Corrigé :</strong> Le minimum de perception est de 100 000 MRU, même si le calcul est inférieur.</div>
             </div>
 
             <div class="rule-block">
@@ -353,35 +364,20 @@
                     2% × 10 000 000 = <strong>200 000</strong><br>
                     → IS = <strong>200 000 MRU</strong>
                 </div>
-                <div class="rule-piege">
-                    ⚠️ <strong>Piège :</strong> Une perte ne signifie pas IS = 0. La base de 2% des produits s'applique toujours.
-                </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">📝 Exemple 5 – Limite</div>
-                <div class="rule-example">
-                    Bénéfice = 2 000 000 MRU<br>
-                    Produits imposables = 20 000 000 MRU<br><br>
-                    25% × 2 000 000 = <strong>500 000</strong><br>
-                    2% × 20 000 000 = <strong>400 000</strong><br>
-                    → IS = <strong>500 000 MRU</strong>
-                </div>
-                <div class="rule-corrige">
-                    ✅ <strong>Corrigé :</strong> 500 000 > 400 000, donc on prend 25% du bénéfice.
-                </div>
+                <div class="rule-piege">⚠️ <strong>Piège :</strong> Une perte ne signifie pas IS = 0. La base de 2% des produits s'applique toujours.</div>
             </div>
 
             <!-- ===== SECTION IBAPP ===== -->
-            <h3>👤 IBAPP – Impôt sur les Bénéfices d'Affaires des Personnes Physiques (Art. 87)</h3>
+            <h3>👤 IBAPP – Impôt sur les Bénéfices d'Affaires des Personnes Physiques (Art. 87 CGI)</h3>
 
             <div class="rule-block">
                 <div class="rule-title">📌 Les 3 régimes selon le CA</div>
                 <div class="rule-example">
-                    • <strong>CA &lt; 3 M MRU</strong> → Régime du forfait : 3% du CA<br>
-                    • <strong>CA de 3 M à 5 M MRU</strong> → Régime réel intermédiaire : 30% du bénéfice ou 2,5% du CA<br>
-                    • <strong>CA &gt; 5 M MRU</strong> → Régime réel normal : 30% du bénéfice ou 2,5% du CA
+                    • <strong>CA &lt; 3 M MRU</strong> → Régime du forfait : 3% du CA (Art. 88)<br>
+                    • <strong>CA de 3 M à 5 M MRU</strong> → Régime réel intermédiaire : 30% du bénéfice ou 2,5% du CA (Art. 87)<br>
+                    • <strong>CA &gt; 5 M MRU</strong> → Régime réel normal : 30% du bénéfice ou 2,5% du CA (Art. 87)
                 </div>
+                <div class="rule-ref">📖 Référence : Art. 87 à 88 CGI</div>
                 <div class="rule-piege">
                     ⚠️ <strong>Piège :</strong> Les seuils sont stricts. CA = 3 000 000 MRU exactement = régime intermédiaire (pas forfait). CA = 5 000 001 MRU = régime normal.
                 </div>
@@ -398,9 +394,7 @@
                     2,5% × 6 000 000 = <strong>150 000</strong><br>
                     → IBAPP = <strong>300 000 MRU</strong>
                 </div>
-                <div class="rule-corrige">
-                    ✅ <strong>Corrigé :</strong> On prend le plus élevé.
-                </div>
+                <div class="rule-corrige">✅ <strong>Corrigé :</strong> On prend le plus élevé.</div>
             </div>
 
             <div class="rule-block">
@@ -412,30 +406,13 @@
                     2,5% × 10 000 000 = <strong>250 000</strong><br>
                     → IBAPP = <strong>250 000 MRU</strong>
                 </div>
-                <div class="rule-piege">
-                    ⚠️ <strong>Piège :</strong> Même avec un petit bénéfice, l'impôt peut être élevé à cause de la base de 2,5% du CA.
-                </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">📝 Exemple 3 – Minimum</div>
-                <div class="rule-example">
-                    CA = 6 000 000 MRU<br>
-                    Bénéfice = 200 000 MRU<br><br>
-                    30% × 200 000 = <strong>60 000</strong><br>
-                    2,5% × 6 000 000 = <strong>150 000</strong><br>
-                    Minimum = 125 000<br>
-                    → IBAPP = <strong>150 000 MRU</strong>
-                </div>
-                <div class="rule-corrige">
-                    ✅ <strong>Corrigé :</strong> 150 000 > 125 000, donc on prend 2,5% du CA.
-                </div>
+                <div class="rule-piege">⚠️ <strong>Piège :</strong> Même avec un petit bénéfice, l'impôt peut être élevé à cause de la base de 2,5% du CA.</div>
             </div>
 
             <h4>🔹 Régime réel intermédiaire (CA de 3 M à 5 M MRU)</h4>
 
             <div class="rule-block">
-                <div class="rule-title">📝 Exemple 1 – Intermédiaire</div>
+                <div class="rule-title">📝 Exemple – Intermédiaire</div>
                 <div class="rule-example">
                     CA = 4 000 000 MRU<br>
                     Bénéfice = 500 000 MRU<br><br>
@@ -444,13 +421,11 @@
                     Minimum = 75 000<br>
                     → IBAPP = <strong>150 000 MRU</strong>
                 </div>
-                <div class="rule-corrige">
-                    ✅ <strong>Corrigé :</strong> 150 000 > 100 000 > 75 000.
-                </div>
+                <div class="rule-corrige">✅ <strong>Corrigé :</strong> 150 000 > 100 000 > 75 000.</div>
             </div>
 
             <div class="rule-block">
-                <div class="rule-title">📝 Exemple 2 – Piège (CA = 3 000 000 exact)</div>
+                <div class="rule-title">📝 Exemple – Piège (CA = 3 000 000 exact)</div>
                 <div class="rule-example">
                     CA = 3 000 000 MRU<br>
                     Bénéfice = 100 000 MRU<br><br>
@@ -462,59 +437,32 @@
                     Minimum = 75 000<br>
                     → IBAPP = <strong>75 000 MRU</strong>
                 </div>
-                <div class="rule-piege">
-                    ⚠️ <strong>Piège :</strong> Le forfait s'applique uniquement pour CA <strong>strictement inférieur</strong> à 3 M MRU.
-                </div>
+                <div class="rule-piege">⚠️ <strong>Piège :</strong> Le forfait s'applique uniquement pour CA <strong>strictement inférieur</strong> à 3 M MRU.</div>
             </div>
 
             <h4>🔹 Régime du forfait (CA < 3 M MRU)</h4>
 
             <div class="rule-block">
-                <div class="rule-title">📝 Exemple 1 – Forfait</div>
+                <div class="rule-title">📝 Exemple – Forfait</div>
                 <div class="rule-example">
                     CA = 1 000 000 MRU<br>
                     3% × 1 000 000 = <strong>30 000 MRU</strong>
                 </div>
-                <div class="rule-corrige">
-                    ✅ <strong>Corrigé :</strong> IBAPP = 3% du CA déclaré.
-                </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">📝 Exemple 2 – Limite</div>
-                <div class="rule-example">
-                    CA = 2 900 000 MRU<br>
-                    3% × 2 900 000 = <strong>87 000 MRU</strong>
-                </div>
-                <div class="rule-corrige">
-                    ✅ <strong>Corrigé :</strong> 2 900 000 < 3 000 000 → forfait.
-                </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">📝 Exemple 3 – Piège (CA = 3 000 000)</div>
-                <div class="rule-example">
-                    CA = 3 000 000 MRU<br>
-                    ❌ <strong>Piège :</strong> Ce n'est PAS le forfait.<br>
-                    → Régime réel intermédiaire.<br>
-                    2,5% × 3 000 000 = 75 000 MRU<br>
-                    → IBAPP = <strong>75 000 MRU</strong>
-                </div>
-                <div class="rule-piege">
-                    ⚠️ <strong>Piège :</strong> La limite est stricte : <strong>CA < 3M</strong> pour le forfait.
-                </div>
+                <div class="rule-ref">📖 Référence : Art. 88 CGI</div>
+                <div class="rule-corrige">✅ <strong>Corrigé :</strong> IBAPP = 3% du CA déclaré.</div>
             </div>
 
             <!-- ===== SECTION PIT ===== -->
-            <h3>💰 PIT / ITS – Impôt sur les Traitements et Salaires (Art. 114)</h3>
+            <h3>💰 PIT / ITS – Impôt sur les Traitements et Salaires (Art. 114 CGI)</h3>
 
             <div class="rule-block">
-                <div class="rule-title">📌 Barème progressif</div>
+                <div class="rule-title">📌 Barème progressif (Art. 114 CGI)</div>
                 <div class="rule-example">
                     • ≤ 9 000 MRU → <strong>15%</strong><br>
                     • 9 001 à 21 000 MRU → <strong>25%</strong><br>
                     • > 21 000 MRU → <strong>40%</strong>
                 </div>
+                <div class="rule-ref">📖 Référence : Art. 114 CGI (LFI 2022)</div>
                 <div class="rule-piege">
                     ⚠️ <strong>Piège :</strong> Le barème est <strong>progressif</strong>. On ne prend pas le taux max sur la totalité du salaire.
                 </div>
@@ -546,9 +494,7 @@
                     Tranche 2 : 12 000 × 25% = 3 000<br>
                     → PIT = <strong>4 350 MRU</strong>
                 </div>
-                <div class="rule-piege">
-                    ⚠️ <strong>Piège :</strong> Le taux 40% ne s'applique que pour <strong>plus de 21 000 MRU</strong>. À 21 000 exact, on reste à 25%.
-                </div>
+                <div class="rule-piege">⚠️ <strong>Piège :</strong> Le taux 40% ne s'applique que pour <strong>plus de 21 000 MRU</strong>. À 21 000 exact, on reste à 25%.</div>
             </div>
 
             <div class="rule-block">
@@ -563,17 +509,18 @@
             </div>
 
             <!-- ===== SECTION TVA ===== -->
-            <h3>📦 TVA – Taxe sur la Valeur Ajoutée (Art. 230)</h3>
+            <h3>📦 TVA – Taxe sur la Valeur Ajoutée (Art. 230 CGI)</h3>
 
             <div class="rule-block">
-                <div class="rule-title">📌 Taux</div>
+                <div class="rule-title">📌 Taux (Art. 230 CGI)</div>
                 <div class="rule-example">
                     • Taux normal : <strong>16%</strong><br>
                     • Télécommunications : <strong>18%</strong><br>
                     • Exportations : <strong>0%</strong>
                 </div>
+                <div class="rule-ref">📖 Référence : Art. 230 CGI (LFI 2022)</div>
                 <div class="rule-piege">
-                    ⚠️ <strong>Piège :</strong> Les exportations sont à 0% et <strong>non exonérées</strong>. La TVA est remboursable aux exportateurs.
+                    ⚠️ <strong>Piège :</strong> Les exportations sont à 0% et <strong>non exonérées</strong>. La TVA est remboursable aux exportateurs (Art. 245).
                 </div>
             </div>
 
@@ -593,9 +540,7 @@
                     TVA = 100 000 × 18% = <strong>18 000 MRU</strong><br>
                     TTC = <strong>118 000 MRU</strong>
                 </div>
-                <div class="rule-piege">
-                    ⚠️ <strong>Piège :</strong> Ne pas utiliser 16% pour les télécommunications.
-                </div>
+                <div class="rule-piege">⚠️ <strong>Piège :</strong> Ne pas utiliser 16% pour les télécommunications.</div>
             </div>
 
             <div class="rule-block">
@@ -604,20 +549,19 @@
                     Exportation = 1 000 000 MRU<br>
                     TVA = 1 000 000 × 0% = <strong>0 MRU</strong>
                 </div>
-                <div class="rule-corrige">
-                    ✅ <strong>Corrigé :</strong> Les exportations sont à 0%.
-                </div>
+                <div class="rule-corrige">✅ <strong>Corrigé :</strong> Les exportations sont à 0%.</div>
             </div>
 
             <!-- ===== SECTION PÉNALITÉS TVA ===== -->
-            <h3>⚠️ Pénalités de TVA</h3>
+            <h3>⚠️ Pénalités de TVA (Livre des Procédures Fiscales)</h3>
 
             <div class="rule-block">
-                <div class="rule-title">📌 Retard de déclaration</div>
+                <div class="rule-title">📌 Retard de déclaration (Art. L.131)</div>
                 <div class="rule-example">
                     • Retard < 2 mois → <strong>10%</strong> des droits normalement dus<br>
                     • Retard > 2 mois → <strong>25%</strong> des droits normalement dus
                 </div>
+                <div class="rule-ref">📖 Référence : Art. L.131 Livre des Procédures Fiscales</div>
             </div>
 
             <div class="rule-block">
@@ -638,13 +582,11 @@
                     Pénalité = 1 000 000 × 25% = <strong>250 000 MRU</strong><br>
                     Total = <strong>1 250 000 MRU</strong>
                 </div>
-                <div class="rule-piege">
-                    ⚠️ <strong>Piège :</strong> Ne pas confondre les seuils. 2 mois exact : on applique 10% ou 25% ? La règle dit : < 2 mois = 10%, > 2 mois = 25%.
-                </div>
+                <div class="rule-piege">⚠️ <strong>Piège :</strong> Ne pas confondre les seuils. 2 mois exact : on applique 10% ou 25% ? La règle dit : < 2 mois = 10%, > 2 mois = 25%.</div>
             </div>
 
             <div class="rule-block">
-                <div class="rule-title">📌 Déclaration néant ou crédit</div>
+                <div class="rule-title">📌 Déclaration néant ou crédit (Art. L.131)</div>
                 <div class="rule-example">
                     • Déclaration néant ou crédit déposée en retard : <strong>2 000 MRU par mois</strong><br>
                     • Si CA année précédente > 30 M MRU : <strong>10 000 MRU par mois</strong>
@@ -652,37 +594,11 @@
             </div>
 
             <div class="rule-block">
-                <div class="rule-title">📝 Exemple – Déclaration néant</div>
-                <div class="rule-example">
-                    TVA = 0 (néant)<br>
-                    Retard = 5 mois<br>
-                    Pénalité = 2 000 × 5 = <strong>10 000 MRU</strong>
-                </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">📝 Exemple – Grande entreprise</div>
-                <div class="rule-example">
-                    CA année précédente = 40 000 000 MRU<br>
-                    Déclaration néant<br>
-                    Retard = 4 mois<br>
-                    Pénalité = 10 000 × 4 = <strong>40 000 MRU</strong>
-                </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">📌 Omission ou inexactitude</div>
+                <div class="rule-title">📌 Omission ou inexactitude (Art. L.133)</div>
                 <div class="rule-example">
                     <strong>40%</strong> des droits en risque.
                 </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">📝 Exemple – Omission</div>
-                <div class="rule-example">
-                    Droits en risque = 500 000 MRU<br>
-                    Pénalité = 500 000 × 40% = <strong>200 000 MRU</strong>
-                </div>
+                <div class="rule-ref">📖 Référence : Art. L.133 Livre des Procédures Fiscales</div>
             </div>
 
             <!-- ===== SECTION RETENUES ===== -->
@@ -691,174 +607,46 @@
             <div class="rule-block">
                 <div class="rule-title">📌 Taux</div>
                 <div class="rule-example">
-                    • Services non-résidents : <strong>15%</strong><br>
-                    • Professions libérales résidentes (IBAPP) : <strong>2,5%</strong><br>
-                    • Loyers (IRF + foncière) : <strong>18%</strong><br>
-                    • IRCM (dividendes, intérêts) : <strong>10%</strong>
+                    • Services non-résidents : <strong>15%</strong> (Art. 133)<br>
+                    • Professions libérales résidentes (IBAPP) : <strong>2,5%</strong> (Art. 131)<br>
+                    • Loyers (IRF + foncière) : <strong>18%</strong> (Art. 137)<br>
+                    • IRCM (dividendes, intérêts) : <strong>10%</strong> (Art. 126)<br>
+                    • Retenue État (ordonnateurs) : <strong>2%</strong> (Art. 134)
                 </div>
+                <div class="rule-ref">📖 Référence : Arts. 131, 133, 137, 126, 134 CGI</div>
             </div>
 
             <div class="rule-block">
-                <div class="rule-title">📝 Exemple 1 – Non-résident</div>
-                <div class="rule-example">
-                    Société étrangère : prestation = 1 000 000 MRU<br>
-                    Retenue = 1 000 000 × 15% = <strong>150 000 MRU</strong>
-                </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">📝 Exemple 2 – Profession libérale</div>
-                <div class="rule-example">
-                    Avocat résident : honoraires = 1 000 000 MRU<br>
-                    Retenue = 1 000 000 × 2,5% = <strong>25 000 MRU</strong>
-                </div>
-                <div class="rule-piege">
-                    ⚠️ <strong>Piège :</strong> Ne pas appliquer 15% à un résident.
-                </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">📝 Exemple 3 – Loyers</div>
+                <div class="rule-title">📝 Exemple – Loyers</div>
                 <div class="rule-example">
                     Loyer annuel = 1 000 000 MRU<br>
                     Retenue = 1 000 000 × 18% = <strong>180 000 MRU</strong>
                 </div>
-                <div class="rule-piege">
-                    ⚠️ <strong>Piège :</strong> La retenue sur loyers est à la charge du locataire (qui la déduit du loyer versé au propriétaire).
-                </div>
+                <div class="rule-piege">⚠️ <strong>Piège :</strong> La retenue sur loyers est à la charge du locataire (qui la déduit du loyer versé au propriétaire).</div>
             </div>
 
-            <div class="rule-block">
-                <div class="rule-title">📝 Exemple 4 – IRCM</div>
-                <div class="rule-example">
-                    Dividendes distribués = 500 000 MRU<br>
-                    IRCM = 500 000 × 10% = <strong>50 000 MRU</strong>
-                </div>
-            </div>
-
-            <!-- ===== SECTION IRCM / FONCIER ===== -->
+            <!-- ===== SECTION IRCM ===== -->
             <h3>🏠 IRCM & Revenus fonciers</h3>
 
             <div class="rule-block">
                 <div class="rule-title">📌 Taux</div>
                 <div class="rule-example">
-                    • IRCM (dividendes, intérêts) : <strong>10%</strong><br>
-                    • Revenus fonciers (loyers) : <strong>10%</strong>
+                    • IRCM (dividendes, intérêts) : <strong>10%</strong> (Art. 126)<br>
+                    • Revenus fonciers (loyers) : <strong>10%</strong> (Art. 105)
                 </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">📝 Exemple – Revenu foncier</div>
-                <div class="rule-example">
-                    Revenu locatif = 200 000 MRU<br>
-                    Impôt = 200 000 × 10% = <strong>20 000 MRU</strong>
-                </div>
+                <div class="rule-ref">📖 Référence : Arts. 126 et 105 CGI</div>
             </div>
 
             <!-- ===== SECTION TAXE APPRENTISSAGE ===== -->
-            <h3>📚 Taxe d'apprentissage</h3>
+            <h3>📚 Taxe d'apprentissage (Art. 153 CGI)</h3>
 
             <div class="rule-block">
                 <div class="rule-title">📌 Taux</div>
                 <div class="rule-example">
                     <strong>0,60%</strong> des rémunérations totales versées au personnel.
                 </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">📝 Exemple</div>
-                <div class="rule-example">
-                    Masse salariale annuelle = 10 000 000 MRU<br>
-                    Taxe = 10 000 000 × 0,60% = <strong>60 000 MRU</strong>
-                </div>
-                <div class="rule-piege">
-                    ⚠️ <strong>Piège :</strong> La base est la masse salariale, <strong>pas</strong> le bénéfice.
-                </div>
-            </div>
-
-            <!-- ===== SECTION RIB ===== -->
-            <h3>📊 RIB – Régime de Base Incitatif (Loi 2025-06)</h3>
-
-            <div class="rule-block">
-                <div class="rule-title">📌 PME (2M – 30M MRU)</div>
-                <div class="rule-example">
-                    • Investissement : 2M à 30M MRU<br>
-                    • Emplois : ≥ 5 directs<br>
-                    • Douane : <strong>3%</strong> sur équipements et intrants
-                </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">📌 Intermédiaire (30M – 200M MRU)</div>
-                <div class="rule-example">
-                    • Investissement : 30M à 200M MRU<br>
-                    • Emplois : ≥ 15 directs<br>
-                    • Douane : <strong>5%</strong><br>
-                    • TVA réduite : <strong>10%</strong>
-                </div>
-            </div>
-
-            <!-- ===== SECTION RPD ===== -->
-            <h3>📍 RPD – Régime des Pôles de Développement</h3>
-
-            <div class="rule-block">
-                <div class="rule-title">📌 Caractéristiques</div>
-                <div class="rule-example">
-                    • Investissement : ≥ 2M MRU<br>
-                    • Emplois : ≥ 5 (ou ≥ 15 si investissement > 30M)<br>
-                    • IS réduit : <strong>15%</strong>
-                </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">📝 Exemple – IS réduit</div>
-                <div class="rule-example">
-                    Bénéfice = 1 000 000 MRU<br>
-                    IS RPD = 1 000 000 × 15% = <strong>150 000 MRU</strong>
-                </div>
-                <div class="rule-piege">
-                    ⚠️ <strong>Piège :</strong> Ne pas appliquer 25% pour une entreprise en RPD.
-                </div>
-            </div>
-
-            <!-- ===== SECTION RIS ===== -->
-            <h3>🏗️ RIS – Régime des Investissements Structurants</h3>
-
-            <div class="rule-block">
-                <div class="rule-title">📌 Caractéristiques</div>
-                <div class="rule-example">
-                    • Investissement : <strong>> 200M MRU</strong><br>
-                    • Emplois : ≥ 50 directs<br>
-                    • Douane : <strong>1,5%</strong><br>
-                    • TVA sur équipements : <strong>10%</strong><br>
-                    • Crédit formation : 70% jusqu'à <strong>800 000 MRU</strong>
-                </div>
-                <div class="rule-piege">
-                    ⚠️ <strong>Piège :</strong> L'investissement doit être <strong>supérieur à 200M</strong>, pas égal.
-                </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">📝 Exemple – Crédit formation</div>
-                <div class="rule-example">
-                    Coût formation = 1 000 000 MRU<br>
-                    70% × 1 000 000 = 700 000 MRU<br>
-                    Plafond = 800 000 MRU<br>
-                    → Crédit = <strong>700 000 MRU</strong>
-                </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">📝 Exemple – Plafond formation</div>
-                <div class="rule-example">
-                    Coût formation = 2 000 000 MRU<br>
-                    70% × 2 000 000 = 1 400 000 MRU<br>
-                    Plafond = 800 000 MRU<br>
-                    → Crédit = <strong>800 000 MRU</strong>
-                </div>
-                <div class="rule-piege">
-                    ⚠️ <strong>Piège :</strong> Le crédit est plafonné à 800 000 MRU, même si 70% du coût est plus élevé.
-                </div>
+                <div class="rule-ref">📖 Référence : Art. 153 CGI</div>
+                <div class="rule-piege">⚠️ <strong>Piège :</strong> La base est la masse salariale, <strong>pas</strong> le bénéfice.</div>
             </div>
 
             <!-- ===== SECTION OIL STR ===== -->
@@ -880,6 +668,7 @@
                     • IS = 16% du CA × 25% = <strong>4% du CA</strong><br>
                     • PIT = 10% du CA × 40% = <strong>4% du CA</strong>
                 </div>
+                <div class="rule-ref">📖 Référence : Code pétrolier – Art. 10</div>
             </div>
 
             <div class="rule-block">
@@ -889,9 +678,7 @@
                     IS = 1 000 000 × 4% = <strong>40 000 MRU</strong><br>
                     PIT = 1 000 000 × 4% = <strong>40 000 MRU</strong>
                 </div>
-                <div class="rule-piege">
-                    ⚠️ <strong>Piège :</strong> Ne pas appliquer 25% directement sur le CA. La formule est CA × 16% × 25%.
-                </div>
+                <div class="rule-piege">⚠️ <strong>Piège :</strong> Ne pas appliquer 25% directement sur le CA. La formule est CA × 16% × 25%.</div>
             </div>
 
             <!-- ===== SECTION GTA ===== -->
@@ -905,17 +692,7 @@
                     • IS = 25% du bénéfice<br>
                     • Minimum = 1,75% du CA GTA
                 </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">📝 Exemple – Réel</div>
-                <div class="rule-example">
-                    CA GTA = 10 000 000 USD<br>
-                    Bénéfice = 1 000 000 USD<br>
-                    25% × 1 000 000 = 250 000 USD<br>
-                    1,75% × 10 000 000 = 175 000 USD<br>
-                    → IS = <strong>250 000 USD</strong>
-                </div>
+                <div class="rule-ref">📖 Référence : Acte additionnel GTA – Art. 23</div>
             </div>
 
             <div class="rule-block">
@@ -927,9 +704,7 @@
                     1,75% × 10 000 000 = 175 000 USD<br>
                     → IS = <strong>175 000 USD</strong>
                 </div>
-                <div class="rule-piege">
-                    ⚠️ <strong>Piège :</strong> Le minimum de 1,75% du CA s'applique même si 25% du bénéfice est inférieur.
-                </div>
+                <div class="rule-piege">⚠️ <strong>Piège :</strong> Le minimum de 1,75% du CA s'applique même si 25% du bénéfice est inférieur.</div>
             </div>
 
             <div class="rule-block">
@@ -940,14 +715,26 @@
                     • IS = 16% du CA × 25% = <strong>4% du CA</strong><br>
                     • PIT = 7,5% du CA × 40% = <strong>3% du CA</strong>
                 </div>
+                <div class="rule-ref">📖 Référence : Acte additionnel GTA – Art. 38</div>
+            </div>
+
+            <!-- ===== SECTION MINING ===== -->
+            <h3>⛏️ Mining – Code minier</h3>
+
+            <div class="rule-block">
+                <div class="rule-title">📌 Exonération IS</div>
+                <div class="rule-example">
+                    • Sociétés minières agréées : <strong>36 mois</strong> d'exonération d'IS (Art. 105)<br>
+                    • Redevance minière : calculée sur le prix de vente ou FOB
+                </div>
+                <div class="rule-ref">📖 Référence : Code minier – Art. 105</div>
             </div>
 
             <div class="rule-block">
-                <div class="rule-title">📝 Exemple – Forfait</div>
+                <div class="rule-title">📌 Avantages douaniers</div>
                 <div class="rule-example">
-                    CA = 2 000 000 USD<br>
-                    IS = 2 000 000 × 4% = <strong>80 000 USD</strong><br>
-                    PIT = 2 000 000 × 3% = <strong>60 000 USD</strong>
+                    • Phase recherche : admission temporaire exceptionnelle (suspension totale)<br>
+                    • Phase installation/production : suspension totale pour équipements, 5% pour véhicules particuliers
                 </div>
             </div>
 
@@ -965,14 +752,7 @@
                     • Redevance annuelle : <strong>0,5% du CA</strong><br>
                     • Délai d'installation : <strong>6 mois</strong>
                 </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">📝 Exemple – Redevance</div>
-                <div class="rule-example">
-                    CA = 100 000 000 MRU<br>
-                    Redevance = 100 000 000 × 0,5% = <strong>500 000 MRU</strong>
-                </div>
+                <div class="rule-ref">📖 Référence : Loi 2024-030 du 8 juillet 2024</div>
             </div>
 
             <!-- ===== TABLEAU RÉCAPITULATIF ===== -->
@@ -980,33 +760,29 @@
 
             <table class="table-taux">
                 <thead>
-                    <tr>
-                        <th>Impôt / Taxe</th>
-                        <th>Taux / Montant</th>
-                        <th>Référence</th>
-                    </tr>
+                    <tr><th>Impôt / Taxe</th><th>Taux / Montant</th><th>Référence</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>IS – Taux normal</td><td>25% du bénéfice</td><td>Art. 51</td></tr>
-                    <tr><td>IS – Base alternative</td><td>2% des produits</td><td>Art. 51</td></tr>
-                    <tr><td>IS – Minimum</td><td>100 000 MRU</td><td>Art. 51</td></tr>
-                    <tr><td>IBAPP – Réel normal</td><td>30% du bénéfice / 2,5% du CA</td><td>Art. 87</td></tr>
-                    <tr><td>IBAPP – Minimum normal</td><td>125 000 MRU</td><td>Art. 87</td></tr>
-                    <tr><td>IBAPP – Réel intermédiaire</td><td>30% du bénéfice / 2,5% du CA</td><td>Art. 87</td></tr>
-                    <tr><td>IBAPP – Minimum intermédiaire</td><td>75 000 MRU</td><td>Art. 87</td></tr>
-                    <tr><td>IBAPP – Forfait</td><td>3% du CA</td><td>Art. 88</td></tr>
-                    <tr><td>PIT – ≤ 9 000 MRU</td><td>15%</td><td>Art. 114</td></tr>
-                    <tr><td>PIT – 9 000 à 21 000</td><td>25%</td><td>Art. 114</td></tr>
-                    <tr><td>PIT – > 21 000</td><td>40%</td><td>Art. 114</td></tr>
-                    <tr><td>TVA – Normal</td><td>16%</td><td>Art. 230</td></tr>
-                    <tr><td>TVA – Télécom</td><td>18%</td><td>Art. 230</td></tr>
-                    <tr><td>TVA – Export</td><td>0%</td><td>Art. 230</td></tr>
-                    <tr><td>IRCM</td><td>10%</td><td>Art. 126</td></tr>
-                    <tr><td>Revenus fonciers</td><td>10%</td><td>Art. 105</td></tr>
-                    <tr><td>Taxe d'apprentissage</td><td>0,60%</td><td>Art. 153</td></tr>
-                    <tr><td>Retenue non-résidents</td><td>15%</td><td>Art. 133</td></tr>
-                    <tr><td>Retenue professions libérales</td><td>2,5%</td><td>Art. 131</td></tr>
-                    <tr><td>Retenue loyers</td><td>18%</td><td>Art. 137</td></tr>
+                    <tr><td>IS – Taux normal</td><td>25% du bénéfice</td><td>Art. 51 CGI</td></tr>
+                    <tr><td>IS – Base alternative</td><td>2% des produits</td><td>Art. 51 CGI</td></tr>
+                    <tr><td>IS – Minimum</td><td>100 000 MRU</td><td>Art. 51 CGI</td></tr>
+                    <tr><td>IBAPP – Réel normal</td><td>30% bénéfice / 2,5% CA</td><td>Art. 87 CGI</td></tr>
+                    <tr><td>IBAPP – Minimum normal</td><td>125 000 MRU</td><td>Art. 87 CGI</td></tr>
+                    <tr><td>IBAPP – Réel intermédiaire</td><td>30% bénéfice / 2,5% CA</td><td>Art. 87 CGI</td></tr>
+                    <tr><td>IBAPP – Minimum intermédiaire</td><td>75 000 MRU</td><td>Art. 87 CGI</td></tr>
+                    <tr><td>IBAPP – Forfait</td><td>3% du CA</td><td>Art. 88 CGI</td></tr>
+                    <tr><td>PIT – ≤ 9 000 MRU</td><td>15%</td><td>Art. 114 CGI</td></tr>
+                    <tr><td>PIT – 9 000 à 21 000</td><td>25%</td><td>Art. 114 CGI</td></tr>
+                    <tr><td>PIT – > 21 000</td><td>40%</td><td>Art. 114 CGI</td></tr>
+                    <tr><td>TVA – Normal</td><td>16%</td><td>Art. 230 CGI</td></tr>
+                    <tr><td>TVA – Télécom</td><td>18%</td><td>Art. 230 CGI</td></tr>
+                    <tr><td>TVA – Export</td><td>0%</td><td>Art. 230 CGI</td></tr>
+                    <tr><td>IRCM</td><td>10%</td><td>Art. 126 CGI</td></tr>
+                    <tr><td>Revenus fonciers</td><td>10%</td><td>Art. 105 CGI</td></tr>
+                    <tr><td>Taxe d'apprentissage</td><td>0,60%</td><td>Art. 153 CGI</td></tr>
+                    <tr><td>Retenue non-résidents</td><td>15%</td><td>Art. 133 CGI</td></tr>
+                    <tr><td>Retenue professions libérales</td><td>2,5%</td><td>Art. 131 CGI</td></tr>
+                    <tr><td>Retenue loyers</td><td>18%</td><td>Art. 137 CGI</td></tr>
                     <tr><td>TVA – Retard < 2 mois</td><td>10%</td><td>Art. L.131</td></tr>
                     <tr><td>TVA – Retard > 2 mois</td><td>25%</td><td>Art. L.131</td></tr>
                     <tr><td>TVA – Déclaration néant/crédit</td><td>2 000 MRU/mois</td><td>Art. L.131</td></tr>
@@ -1018,88 +794,52 @@
                     <tr><td>GTA – Minimum réel</td><td>1,75% du CA</td><td>Acte additionnel</td></tr>
                     <tr><td>GTA – Forfait IS</td><td>4% du CA</td><td>Acte additionnel</td></tr>
                     <tr><td>Oil STR – IS</td><td>4% du CA</td><td>Code pétrolier</td></tr>
+                    <tr><td>Mining – Exonération IS</td><td>36 mois</td><td>Code minier</td></tr>
                 </tbody>
             </table>
+
+            <!-- ===== PROCÉDURES FISCALES ===== -->
+            <h3>📋 Procédures fiscales – Délais clés (Livre des Procédures)</h3>
+
+            <div class="rule-block">
+                <div class="rule-title">⏱ Délais à mémoriser</div>
+                <div class="rule-example">
+                    • Déclaration IS/IBAPP : <strong>31 mars</strong> (Art. 59)<br>
+                    • Réponse à redressement : <strong>15 jours</strong> (Art. L.48)<br>
+                    • Confirmation admin : <strong>60 jours</strong> (Art. L.50)<br>
+                    • Réclamation contentieuse : <strong>3 mois</strong> (Art. L.157)<br>
+                    • Saisine commission paritaire : <strong>3 jours</strong> (Art. L.163)<br>
+                    • Recours judiciaire : <strong>2 mois</strong> (Art. L.168)<br>
+                    • Délai de reprise : <strong>3 ans</strong> (Art. L.58)<br>
+                    • Prescription recouvrement : <strong>4 ans</strong> (Art. L.123)<br>
+                    • Avis à tiers détenteur : exécution <strong>72h</strong> (Art. L.105)
+                </div>
+                <div class="rule-ref">📖 Référence : Livre des Procédures Fiscales</div>
+                <div class="rule-piege">
+                    ⚠️ <strong>Piège :</strong> L'absence de réponse à une notification de redressement vaut acceptation tacite (Art. L.48).
+                </div>
+            </div>
 
             <!-- ===== PIÈGES GÉNÉRAUX ===== -->
             <h3>🎯 10 pièges à éviter absolument</h3>
 
-            <div class="rule-block">
-                <div class="rule-title">⚠️ Piège n°1 – IS = 25% toujours ?</div>
-                <div class="rule-example">
-                    <strong>❌ FAUX :</strong> Toujours comparer avec 2% des produits.
-                </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">⚠️ Piège n°2 – CA = 3M = forfait ?</div>
-                <div class="rule-example">
-                    <strong>❌ FAUX :</strong> Le forfait est pour CA <strong>inférieur</strong> à 3M.
-                </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">⚠️ Piège n°3 – CA = 5M = normal ?</div>
-                <div class="rule-example">
-                    <strong>❌ FAUX :</strong> 3M à 5M = régime intermédiaire.
-                </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">⚠️ Piège n°4 – TVA = 16% toujours ?</div>
-                <div class="rule-example">
-                    <strong>❌ FAUX :</strong> Télécom = 18%, Export = 0%.
-                </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">⚠️ Piège n°5 – Retard 2 mois = 25% ?</div>
-                <div class="rule-example">
-                    <strong>❌ FAUX :</strong> < 2 mois = 10%, > 2 mois = 25%. 2 mois exact dépend de la règle.
-                </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">⚠️ Piège n°6 – TVA néant = 10% ?</div>
-                <div class="rule-example">
-                    <strong>❌ FAUX :</strong> 2 000 MRU/mois (ou 10 000 pour CA > 30M).
-                </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">⚠️ Piège n°7 – RIB / RPD / RIS sont identiques ?</div>
-                <div class="rule-example">
-                    <strong>❌ FAUX :</strong> RIB (PME/intermédiaire), RPD (IS 15%), RIS (investissements > 200M).
-                </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">⚠️ Piège n°8 – Mines et pétrole dans loi investissement ?</div>
-                <div class="rule-example">
-                    <strong>❌ FAUX :</strong> Exclus de la loi 2025-06, régimes spécifiques.
-                </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">⚠️ Piège n°9 – GTA ≤ 3M USD = régime réel ?</div>
-                <div class="rule-example">
-                    <strong>❌ FAUX :</strong> ≤ 3M = forfait, > 3M = réel.
-                </div>
-            </div>
-
-            <div class="rule-block">
-                <div class="rule-title">⚠️ Piège n°10 – Taxe apprentissage sur le bénéfice ?</div>
-                <div class="rule-example">
-                    <strong>❌ FAUX :</strong> Base = rémunérations versées au personnel.
-                </div>
-            </div>
+            <div class="rule-block"><div class="rule-title">⚠️ Piège n°1 – IS = 25% toujours ?</div><div class="rule-example"><strong>❌ FAUX :</strong> Toujours comparer avec 2% des produits.</div></div>
+            <div class="rule-block"><div class="rule-title">⚠️ Piège n°2 – CA = 3M = forfait ?</div><div class="rule-example"><strong>❌ FAUX :</strong> Le forfait est pour CA <strong>inférieur</strong> à 3M.</div></div>
+            <div class="rule-block"><div class="rule-title">⚠️ Piège n°3 – CA = 5M = normal ?</div><div class="rule-example"><strong>❌ FAUX :</strong> 3M à 5M = régime intermédiaire.</div></div>
+            <div class="rule-block"><div class="rule-title">⚠️ Piège n°4 – TVA = 16% toujours ?</div><div class="rule-example"><strong>❌ FAUX :</strong> Télécom = 18%, Export = 0%.</div></div>
+            <div class="rule-block"><div class="rule-title">⚠️ Piège n°5 – Retard 2 mois = 25% ?</div><div class="rule-example"><strong>❌ FAUX :</strong> < 2 mois = 10%, > 2 mois = 25%.</div></div>
+            <div class="rule-block"><div class="rule-title">⚠️ Piège n°6 – TVA néant = 10% ?</div><div class="rule-example"><strong>❌ FAUX :</strong> 2 000 MRU/mois (ou 10 000 pour CA > 30M).</div></div>
+            <div class="rule-block"><div class="rule-title">⚠️ Piège n°7 – RIB / RPD / RIS sont identiques ?</div><div class="rule-example"><strong>❌ FAUX :</strong> RIB (PME/intermédiaire), RPD (IS 15%), RIS (investissements > 200M).</div></div>
+            <div class="rule-block"><div class="rule-title">⚠️ Piège n°8 – Mines et pétrole dans loi investissement ?</div><div class="rule-example"><strong>❌ FAUX :</strong> Exclus de la loi 2025-06, régimes spécifiques.</div></div>
+            <div class="rule-block"><div class="rule-title">⚠️ Piège n°9 – GTA ≤ 3M USD = régime réel ?</div><div class="rule-example"><strong>❌ FAUX :</strong> ≤ 3M = forfait, > 3M = réel.</div></div>
+            <div class="rule-block"><div class="rule-title">⚠️ Piège n°10 – Taxe apprentissage sur le bénéfice ?</div><div class="rule-example"><strong>❌ FAUX :</strong> Base = rémunérations versées au personnel.</div></div>
 
         </div><!-- fin summary-rules -->
 
         <!-- BOUTONS -->
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:20px; justify-content:center;">
-            <button class="btn-qcm" onclick="window.location.href='https://medyahyatalebabdellahi.github.io/qcm-fiscalite/'">📝 Accéder au QCM</button>
-            <button class="btn-back" onclick="window.location.href='https://medyahyatalebabdellahi.github.io/qcm-fiscalite/'">🔙 Retour au QCM</button>
+            <a href="https://medyahyatalebabdellahi.github.io/qcm-fiscalite/" class="btn-qcm">📝 Accéder au QCM</a>
+            <a href="https://medyahyatalebabdellahi.github.io/qcm-fiscalite/" class="btn-back">🔙 Retour au QCM</a>
         </div>
 
         <div class="footer-note">
