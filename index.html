@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QCM Fiscalité Mauritanie 2025 – 500 questions</title>
+    <title>QCM Fiscalité Mauritanie 2025</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -182,11 +182,6 @@
             border-bottom: 1px dashed #dce2ec;
         }
         .result-line:last-child { border: none; }
-        .score-high {
-            font-size: 24px;
-            font-weight: 700;
-            color: #0b4f6c;
-        }
         .progress {
             background: #e9edf2;
             height: 8px;
@@ -245,6 +240,31 @@
             padding: 6px 14px;
             font-size: 12px;
         }
+        .answer-feedback {
+            margin-top: 12px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-weight: 500;
+            display: none;
+            direction: rtl;
+            text-align: right;
+        }
+        .answer-feedback.correct {
+            display: block;
+            background: #d9f2e0;
+            border: 2px solid #1e7b4c;
+            color: #0d4a2a;
+        }
+        .answer-feedback.wrong {
+            display: block;
+            background: #fee9e9;
+            border: 2px solid #b91c1c;
+            color: #7a1a1a;
+        }
+        .answer-feedback .correct-answer {
+            font-weight: 700;
+            color: #0b4f6c;
+        }
         @media (max-width: 600px) {
             .container { padding: 12px 14px; }
             .q-text { font-size: 15px; }
@@ -301,6 +321,7 @@
         <div class="q-text" id="qTextAr">جاري تحميل الأسئلة...</div>
         <div class="q-text-fr" id="qTextFr">Chargement des questions...</div>
         <div class="options" id="optionsContainer"></div>
+        <div class="answer-feedback" id="answerFeedback"></div>
     </div>
 
     <div class="action-bar">
@@ -470,6 +491,7 @@
         var qTextAr = document.getElementById('qTextAr');
         var qTextFr = document.getElementById('qTextFr');
         var optionsContainer = document.getElementById('optionsContainer');
+        var feedbackDiv = document.getElementById('answerFeedback');
         var prevBtn = document.getElementById('prevBtn');
         var nextBtn = document.getElementById('nextBtn');
         var submitBtn = document.getElementById('submitBtn');
@@ -535,14 +557,36 @@
                     }
                     div.classList.add('selected');
                     selectedOption = idx;
+                    // Cacher le feedback quand on change de sélection
+                    feedbackDiv.className = 'answer-feedback';
+                    feedbackDiv.style.display = 'none';
                 });
 
                 optionsContainer.appendChild(div);
             });
 
+            // Afficher le feedback si la question a déjà une réponse
+            if (answers[currentIndex] !== null) {
+                showFeedback(answers[currentIndex], q);
+            } else {
+                feedbackDiv.className = 'answer-feedback';
+                feedbackDiv.style.display = 'none';
+            }
+
             prevBtn.disabled = (currentIndex === 0);
             submitBtn.disabled = (answers[currentIndex] !== null);
             updateStats();
+        }
+
+        function showFeedback(ans, q) {
+            var isCorrect = (ans === 1);
+            feedbackDiv.className = 'answer-feedback ' + (isCorrect ? 'correct' : 'wrong');
+            feedbackDiv.style.display = 'block';
+            if (isCorrect) {
+                feedbackDiv.innerHTML = '✅ <strong>إجابة صحيحة!</strong> +0.75 نقطة<br><span style="font-size:13px;color:#0b4f6c;">✔ Bonne réponse ! +0.75 point</span>';
+            } else {
+                feedbackDiv.innerHTML = '❌ <strong>إجابة خاطئة!</strong> -0.25 نقطة<br>الإجابة الصحيحة هي: <span class="correct-answer">' + q.options[q.correct] + '</span><br><span style="font-size:13px;color:#7a1a1a;">✘ Mauvaise réponse ! -0.25 point<br>Bonne réponse : ' + q.options[q.correct] + '</span>';
+            }
         }
 
         function updateStats() {
@@ -585,8 +629,21 @@
             var isCorrect = (selectedOption === q.correct);
             var value = isCorrect ? 1 : -1;
             answers[currentIndex] = value;
+            // Sauvegarder l'option sélectionnée pour l'affichage
+            var selectedIdx = selectedOption;
             selectedOption = null;
             renderQuestion();
+            // Réafficher le feedback avec la bonne option
+            showFeedback(value, q);
+            // Marquer l'option sélectionnée comme wrong si incorrecte
+            if (!isCorrect) {
+                var opts = document.querySelectorAll('.opt');
+                for (var i = 0; i < opts.length; i++) {
+                    if (parseInt(opts[i].getAttribute('data-idx')) === selectedIdx) {
+                        opts[i].classList.add('wrong');
+                    }
+                }
+            }
             lastAction.textContent = isCorrect ? '✔ Bonne réponse (+0.75)' : '✘ Mauvaise (-0.25)';
             updateStats();
         });
@@ -596,49 +653,4 @@
                 currentIndex--;
                 selectedOption = null;
                 renderQuestion();
-                lastAction.textContent = '← Précédent';
-            }
-        });
-
-        nextBtn.addEventListener('click', function() {
-            if (currentIndex < questions.length - 1) {
-                currentIndex++;
-                selectedOption = null;
-                renderQuestion();
-                lastAction.textContent = '→ Suivant';
-            }
-        });
-
-        resetBtn.addEventListener('click', function() {
-            if (confirm('Réinitialiser toutes les réponses ?')) {
-                answers = new Array(questions.length).fill(null);
-                selectedOption = null;
-                currentIndex = 0;
-                lastMilestone = 0;
-                milestoneDiv.style.display = 'none';
-                renderQuestion();
-                updateStats();
-                lastAction.textContent = '⟳ Réinitialisé';
-            }
-        });
-
-        langArBtn.addEventListener('click', function() {
-            lang = 'ar';
-            langArBtn.classList.add('active');
-            langFrBtn.classList.remove('active');
-            renderQuestion();
-        });
-        langFrBtn.addEventListener('click', function() {
-            lang = 'fr';
-            langFrBtn.classList.add('active');
-            langArBtn.classList.remove('active');
-            renderQuestion();
-        });
-
-        renderQuestion();
-        updateStats();
-        lastAction.textContent = 'Bienvenue ! Répondez aux questions.';
-    })();
-</script>
-</body>
-</html>
+                last
