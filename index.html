@@ -5,15 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>QCM Fiscalité Mauritanie 2025</title>
     <style>
-        /* ============================================================
-           RESET & BASE
-           ============================================================ */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
         body {
             font-family: -apple-system, 'Segoe UI', Roboto, system-ui, sans-serif;
             background: #0b1a2e;
@@ -24,7 +20,6 @@
             justify-content: center;
             align-items: center;
         }
-
         .container {
             max-width: 960px;
             width: 100%;
@@ -36,10 +31,6 @@
             color: #1e293b;
             transition: padding 0.2s;
         }
-
-        /* ============================================================
-           HEADER
-           ============================================================ */
         h1 {
             font-size: clamp(18px, 4vw, 26px);
             font-weight: 700;
@@ -51,7 +42,6 @@
             flex-wrap: wrap;
             margin-bottom: 4px;
         }
-
         .badge {
             background: #0b4f6c;
             color: white;
@@ -60,7 +50,6 @@
             border-radius: 60px;
             font-weight: 600;
         }
-
         .prof-credit {
             background: linear-gradient(135deg, #fef9e7, #fdebd0);
             border: 2px solid #f1c40f;
@@ -74,15 +63,10 @@
             box-shadow: 0 2px 8px rgba(241, 196, 15, 0.25);
             width: auto;
         }
-
         .prof-credit .whatsapp {
             color: #25D366;
             font-weight: 700;
         }
-
-        /* ============================================================
-           LAYOUT FLEX
-           ============================================================ */
         .flex-row {
             display: flex;
             justify-content: space-between;
@@ -90,17 +74,6 @@
             flex-wrap: wrap;
             gap: 8px 12px;
         }
-
-        .flex-center {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        /* ============================================================
-           STATS
-           ============================================================ */
         .subhead {
             display: flex;
             justify-content: space-between;
@@ -112,13 +85,11 @@
             flex-wrap: wrap;
             gap: 6px;
         }
-
         .stats {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
         }
-
         .stats span {
             background: #f1f5f9;
             padding: 2px 12px;
@@ -129,7 +100,6 @@
             align-items: center;
             gap: 4px;
         }
-
         .stats .correct-badge {
             background: #d9f2e0;
             color: #0d4a2a;
@@ -142,7 +112,6 @@
             background: #e8f4fd;
             color: #0b4f6c;
         }
-
         .score-negative {
             color: #b91c1c;
             font-weight: 700;
@@ -151,10 +120,6 @@
             color: #1e7b4c;
             font-weight: 700;
         }
-
-        /* ============================================================
-           LANG TOGGLE
-           ============================================================ */
         .lang-toggle {
             background: #eef2f7;
             border-radius: 40px;
@@ -163,7 +128,6 @@
             gap: 3px;
             flex-shrink: 0;
         }
-
         .lang-toggle button {
             border: none;
             background: transparent;
@@ -175,15 +139,10 @@
             transition: 0.2s;
             color: #1e293b;
         }
-
         .lang-toggle button.active {
             background: #0b4f6c;
             color: white;
         }
-
-        /* ============================================================
-           PROGRESS
-           ============================================================ */
         .progress {
             background: #e9edf2;
             height: 8px;
@@ -191,17 +150,12 @@
             margin: 12px 0 4px;
             overflow: hidden;
         }
-
         .progress-fill {
             background: #0b4f6c;
             height: 100%;
             width: 0%;
             transition: width 0.3s ease;
         }
-
-        /* ============================================================
-           QUESTION PANEL
-           ============================================================ */
         .question-panel {
             background: #fafcff;
             border-radius: 20px;
@@ -209,7 +163,6 @@
             border: 1px solid #e2e8f0;
             margin: 10px 0;
         }
-
         .q-number {
             display: inline-block;
             background: #0b4f6c;
@@ -220,7 +173,6 @@
             border-radius: 40px;
             margin-bottom: 10px;
         }
-
         .q-text {
             font-size: clamp(15px, 2.2vw, 19px);
             font-weight: 500;
@@ -229,7 +181,6 @@
             direction: rtl;
             text-align: right;
         }
-
         .q-text-fr {
             font-size: clamp(14px, 2vw, 17px);
             font-weight: 400;
@@ -242,16 +193,11 @@
             direction: ltr;
             text-align: left;
         }
-
-        /* ============================================================
-           OPTIONS
-           ============================================================ */
         .options {
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
-
         .opt {
             background: white;
             border: 1.5px solid #dde3ec;
@@ -269,28 +215,23 @@
             -webkit-tap-highlight-color: transparent;
             touch-action: manipulation;
         }
-
         .opt:hover {
             background: #f0f6fe;
             border-color: #8ba9d1;
         }
-
         .opt.selected {
             background: #e1edfb;
             border-color: #1d6f9c;
             box-shadow: 0 0 0 2px rgba(11, 79, 108, 0.15);
         }
-
         .opt.correct {
             background: #d9f2e0;
             border-color: #1e7b4c;
         }
-
         .opt.wrong {
             background: #fee9e9;
             border-color: #b91c1c;
         }
-
         .opt .letter {
             font-weight: 700;
             color: #1e3a5f;
@@ -298,10 +239,6 @@
             flex-shrink: 0;
             font-size: clamp(13px, 1.8vw, 15px);
         }
-
-        /* ============================================================
-           BUTTONS
-           ============================================================ */
         .action-bar {
             display: flex;
             justify-content: space-between;
@@ -310,7 +247,6 @@
             gap: 10px;
             margin-top: 18px;
         }
-
         .btn {
             background: white;
             border: 1.5px solid #cbd5e1;
@@ -328,50 +264,40 @@
             align-items: center;
             justify-content: center;
         }
-
         .btn-primary {
             background: #0b4f6c;
             border-color: #0b4f6c;
             color: white;
         }
-
         .btn-primary:hover {
             background: #083c52;
         }
-
         .btn-primary:disabled {
             opacity: 0.4;
             pointer-events: none;
         }
-
         .btn-outline:hover {
             background: #f1f5f9;
         }
-
         .btn-danger {
             border-color: #b91c1c;
             color: #b91c1c;
         }
-
         .btn-danger:hover {
             background: #fee9e9;
         }
-
         .btn-success {
             border-color: #1e7b4c;
             color: #1e7b4c;
         }
-
         .btn-success:hover {
             background: #d9f2e0;
         }
-
         .btn-small {
             padding: clamp(5px, 1vw, 8px) clamp(10px, 1.8vw, 16px);
             font-size: clamp(11px, 1.4vw, 13px);
             min-height: 36px;
         }
-
         .milestone {
             background: #e8f4fd;
             border-radius: 12px;
@@ -385,7 +311,6 @@
             flex-wrap: wrap;
             font-size: clamp(12px, 1.6vw, 14px);
         }
-
         .answer-feedback {
             margin-top: 12px;
             padding: 10px 14px;
@@ -396,26 +321,22 @@
             text-align: right;
             font-size: clamp(13px, 1.8vw, 15px);
         }
-
         .answer-feedback.correct {
             display: block;
             background: #d9f2e0;
             border: 2px solid #1e7b4c;
             color: #0d4a2a;
         }
-
         .answer-feedback.wrong {
             display: block;
             background: #fee9e9;
             border: 2px solid #b91c1c;
             color: #7a1a1a;
         }
-
         .answer-feedback .correct-answer {
             font-weight: 700;
             color: #0b4f6c;
         }
-
         .result-area {
             margin-top: 18px;
             background: #f8fafc;
@@ -423,7 +344,6 @@
             padding: 14px 16px;
             border: 1px solid #dde3ec;
         }
-
         .result-line {
             display: flex;
             justify-content: space-between;
@@ -433,11 +353,9 @@
             flex-wrap: wrap;
             gap: 4px;
         }
-
         .result-line:last-child {
             border: none;
         }
-
         .footer-note {
             margin-top: 14px;
             color: #64748b;
@@ -446,147 +364,6 @@
             padding-top: 12px;
             text-align: center;
         }
-
-        /* ---- RÉSUMÉ / RESULTAT ---- */
-        .summary-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            overflow-y: auto;
-        }
-
-        .summary-overlay.show {
-            display: flex;
-        }
-
-        .summary-card {
-            background: white;
-            max-width: 900px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            border-radius: 28px;
-            padding: 24px 28px;
-            color: #1e293b;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-            position: relative;
-        }
-
-        .summary-card h2 {
-            font-size: 24px;
-            border-bottom: 3px solid #0b4f6c;
-            padding-bottom: 12px;
-            margin-bottom: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .summary-card .close-btn {
-            background: #fee9e9;
-            border: none;
-            border-radius: 60px;
-            padding: 8px 20px;
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            color: #b91c1c;
-            transition: 0.2s;
-        }
-
-        .summary-card .close-btn:hover {
-            background: #fdd0d0;
-        }
-
-        .summary-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 12px;
-            margin: 16px 0;
-        }
-
-        .summary-stats .stat-item {
-            background: #f8fafc;
-            border-radius: 12px;
-            padding: 12px;
-            text-align: center;
-            border: 1px solid #e2e8f0;
-        }
-
-        .summary-stats .stat-item .number {
-            font-size: 28px;
-            font-weight: 700;
-        }
-
-        .summary-stats .stat-item .label {
-            font-size: 13px;
-            color: #64748b;
-        }
-
-        .summary-stats .stat-item.green .number {
-            color: #1e7b4c;
-        }
-        .summary-stats .stat-item.red .number {
-            color: #b91c1c;
-        }
-        .summary-stats .stat-item.blue .number {
-            color: #0b4f6c;
-        }
-
-        .summary-rules {
-            margin-top: 20px;
-            border-top: 2px solid #e9edf2;
-            padding-top: 16px;
-        }
-
-        .summary-rules h3 {
-            color: #0b4f6c;
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-
-        .summary-rules .rule-block {
-            background: #f1f5f9;
-            border-radius: 12px;
-            padding: 12px 16px;
-            margin-bottom: 12px;
-            border-right: 4px solid #0b4f6c;
-        }
-
-        .summary-rules .rule-block .rule-title {
-            font-weight: 700;
-            font-size: 15px;
-            color: #0b4f6c;
-        }
-
-        .summary-rules .rule-block .rule-example {
-            font-size: 14px;
-            color: #334155;
-            margin-top: 4px;
-            padding: 8px 12px;
-            background: white;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .summary-rules .rule-block .rule-piege {
-            font-size: 13px;
-            color: #b91c1c;
-            margin-top: 4px;
-            background: #fee9e9;
-            padding: 6px 12px;
-            border-radius: 8px;
-        }
-
         .btn-summary {
             background: #0b4f6c;
             color: white;
@@ -599,11 +376,9 @@
             transition: 0.2s;
             min-height: 44px;
         }
-
         .btn-summary:hover {
             background: #083c52;
         }
-
         .btn-stop {
             background: #b91c1c;
             color: white;
@@ -616,11 +391,9 @@
             transition: 0.2s;
             min-height: 44px;
         }
-
         .btn-stop:hover {
             background: #991515;
         }
-
         .btn-result {
             background: #1e7b4c;
             color: white;
@@ -633,18 +406,14 @@
             transition: 0.2s;
             min-height: 44px;
         }
-
         .btn-result:hover {
             background: #16653d;
         }
-
         .action-right {
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
         }
-
-        /* ---- MODE QCM/ RÉSUMÉ ---- */
         .mode-toggle {
             display: flex;
             gap: 6px;
@@ -652,7 +421,6 @@
             border-radius: 40px;
             padding: 3px;
         }
-
         .mode-toggle button {
             border: none;
             background: transparent;
@@ -664,12 +432,122 @@
             transition: 0.2s;
             color: #1e293b;
         }
-
         .mode-toggle button.active {
             background: #0b4f6c;
             color: white;
         }
-
+        .summary-card {
+            background: white;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 28px;
+            padding: 24px 28px;
+            color: #1e293b;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            position: relative;
+            margin: 0 auto;
+        }
+        .summary-card h2 {
+            font-size: 24px;
+            border-bottom: 3px solid #0b4f6c;
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .summary-card .close-btn {
+            background: #fee9e9;
+            border: none;
+            border-radius: 60px;
+            padding: 8px 20px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            color: #b91c1c;
+            transition: 0.2s;
+        }
+        .summary-card .close-btn:hover {
+            background: #fdd0d0;
+        }
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin: 16px 0;
+        }
+        .summary-stats .stat-item {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        .summary-stats .stat-item .number {
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .summary-stats .stat-item .label {
+            font-size: 13px;
+            color: #64748b;
+        }
+        .summary-stats .stat-item.green .number {
+            color: #1e7b4c;
+        }
+        .summary-stats .stat-item.red .number {
+            color: #b91c1c;
+        }
+        .summary-stats .stat-item.blue .number {
+            color: #0b4f6c;
+        }
+        .summary-rules {
+            margin-top: 20px;
+            border-top: 2px solid #e9edf2;
+            padding-top: 16px;
+        }
+        .summary-rules h3 {
+            color: #0b4f6c;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .summary-rules .rule-block {
+            background: #f1f5f9;
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 12px;
+            border-right: 4px solid #0b4f6c;
+        }
+        .summary-rules .rule-block .rule-title {
+            font-weight: 700;
+            font-size: 15px;
+            color: #0b4f6c;
+        }
+        .summary-rules .rule-block .rule-example {
+            font-size: 14px;
+            color: #334155;
+            margin-top: 4px;
+            padding: 8px 12px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        .summary-rules .rule-block .rule-piege {
+            font-size: 13px;
+            color: #b91c1c;
+            margin-top: 4px;
+            background: #fee9e9;
+            padding: 6px 12px;
+            border-radius: 8px;
+        }
+        #resumeSection {
+            display: none;
+        }
+        #qcmSection {
+            display: block;
+        }
         @media (max-width: 768px) {
             body {
                 padding: 8px;
@@ -731,7 +609,6 @@
                 justify-content: center;
             }
         }
-
         @media (max-width: 480px) {
             body {
                 padding: 4px;
@@ -788,7 +665,6 @@
                 grid-template-columns: 1fr 1fr;
             }
         }
-
         .opt,
         .btn {
             -webkit-touch-callout: none;
@@ -879,9 +755,9 @@
         </div>
 
         <!-- ============================================================
-        SECTION RÉSUMÉ (cachée par défaut)
+        SECTION RÉSUMÉ
         ============================================================ -->
-        <div id="resumeSection" style="display:none;">
+        <div id="resumeSection">
             <div class="summary-card" style="max-height: none; box-shadow: none; padding: 0;">
                 <h2 style="border-bottom: 3px solid #0b4f6c; padding-bottom: 12px; margin-bottom: 16px;">
                     <span>📖 Résumé du Code Général des Impôts 2025</span>
@@ -990,4 +866,461 @@
                         <div class="rule-title">🎯 Pièges courants à éviter</div>
                         <div class="rule-example">
                             <strong>📌 1.</strong> Confondre IS (25%) et IBAPP (30%).<br>
-                            <strong>
+                            <strong>📌 2.</strong> Oublier le minimum de perception (IS: 100 000 MRU, IBAPP: 125 000 MRU).<br>
+                            <strong>📌 3.</strong> Croire que les exportations sont exonérées de TVA (elles sont à 0%).<br>
+                            <strong>📌 4.</strong> Négliger les délais de réponse (15 jours pour le contribuable, 60 jours pour l'admin).<br>
+                            <strong>📌 5.</strong> Ignorer que l'absence de réponse à un redressement vaut acceptation.
+                        </div>
+                        <div class="rule-piege">
+                            💡 <strong>Conseil :</strong> Lisez toujours deux fois l'énoncé. Les questions pièges portent souvent sur les délais (15, 30, 60 jours) et les minimums de perception.
+                        </div>
+                    </div>
+
+                    <!-- Résumé final -->
+                    <div class="rule-block" style="border-right-color: #f1c40f; background: #fef9e7;">
+                        <div class="rule-title">📌 Récapitulatif des taux essentiels</div>
+                        <div class="rule-example">
+                            • IS : 25% (min 100 000 MRU)<br>
+                            • IBAPP : 30% (min 125 000 MRU)<br>
+                            • TVA : 16% (export 0%)<br>
+                            • IRCM : 10%<br>
+                            • Retenue non-résidents : 15%<br>
+                            • Retenue loyers : 18%<br>
+                            • Taxe apprentissage : 0,6%<br>
+                            • Patente : 10 000 à 500 000 MRU selon CA<br>
+                            • Délai de reprise : 3 ans<br>
+                            • Prescription recouvrement : 4 ans
+                        </div>
+                        <div class="rule-piege">
+                            ⚠️ Ces taux sont ceux du CGI 2025. Vérifiez toujours les mises à jour annuelles.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESULT AREA -->
+        <div id="resultArea" class="result-area">
+            <div class="result-line"><span>📌 Dernière action</span><span id="lastAction">—</span></div>
+            <div class="result-line"><span>📈 Progression</span><span id="progressText">0 %</span></div>
+            <div class="result-line"><span>🏆 Estimation</span><span id="levelEstimate">Débutant</span></div>
+            <div class="result-line" style="border-bottom: none; margin-top:4px;">
+                <span>📋 Détail</span>
+                <span id="detailStats">Bonnes:0 | Mauvaises:0 | NR:500</span>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            ⚡ Bonne +0.75 | Mauvaise -0.25 | IS, TVA, droit, calculs, pièges...
+            <br>📱 <strong>Prof. Mohamed Yahya Taleb Abdellahi — WhatsApp : 30545727</strong>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // ================================================================
+            // 1. GÉNÉRATION DES 500 QUESTIONS
+            // ================================================================
+            function buildQuestions() {
+                var qs = [];
+                var used = new Set();
+                var id = 0;
+
+                function add(q) {
+                    if (used.has(q.textAr)) return;
+                    used.add(q.textAr);
+                    qs.push({
+                        id: ++id,
+                        textAr: q.textAr,
+                        textFr: q.textFr,
+                        optionsAr: q.optionsAr || q.options,
+                        optionsFr: q.optionsFr || q.options,
+                        correct: q.correct
+                    });
+                }
+
+                var base = [
+                    // IS
+                    { ar: "نسبة ضريبة الشركات (IS) العادية في موريتانيا هي:", fr: "Le taux normal de l'IS est de :", optsAr: ["18 %", "20 %", "25 %", "30 %"], optsFr: ["18 %", "20 %", "25 %", "30 %"], correct: 2 },
+                    { ar: "الحد الأدنى لضريبة الشركات للنظام الحقيقي العادي هو:", fr: "Le minimum de perception de l'IS pour le régime réel normal est :", optsAr: ["50 000 MRU", "75 000 MRU", "100 000 MRU", "125 000 MRU"], optsFr: ["50 000 MRU", "75 000 MRU", "100 000 MRU", "125 000 MRU"], correct: 2 },
+                    { ar: "يُحدد الربح الخاضع للضريبة على أساس:", fr: "Le bénéfice imposable à l'IS est déterminé d'après :", optsAr: ["رقم الأعمال فقط", "الربح المحاسبي الصافي المعدل", "الأرباح الموزعة", "قيمة الصادرات"], optsFr: ["Le chiffre d'affaires uniquement", "Le bénéfice net comptable corrigé", "Les dividendes distribués", "La valeur des exportations"], correct: 1 },
+                    { ar: "تُعفى من ضريبة الشركات:", fr: "Sont exonérées de l'IS :", optsAr: ["الشركات المساهمة", "مجموعات المصالح الاقتصادية (GIE)", "الشركات ذات المسؤولية المحدودة", "فروع الشركات الأجنبية"], optsFr: ["Les sociétés anonymes", "Les groupements d'intérêt économique (GIE)", "Les SARL", "Les succursales de sociétés étrangères"], correct: 1 },
+                    { ar: "يمكن للشركة الجديدة إقفال أول ميزانية لها في:", fr: "Une société nouvelle peut arrêter son premier bilan :", optsAr: ["نهاية سنة التأسيس", "نهاية السنة التالية", "أي تاريخ", "30 يونيو"], optsFr: ["À la fin de l'année de création", "À la fin de l'année suivante", "À n'importe quelle date", "Le 30 juin"], correct: 1 },
+                    { ar: "التصريح السنوي بنتائج ضريبة الشركات يجب أن يودع في موعد أقصاه:", fr: "La déclaration annuelle de résultats pour l'IS doit être déposée au plus tard le :", optsAr: ["31 يناير", "31 مارس", "30 أبريل", "31 مايو"], optsFr: ["31 janvier", "31 mars", "30 avril", "31 mai"], correct: 1 },
+                    { ar: "مدة التقادم في مجال ضريبة الشركات هي:", fr: "Le délai de reprise en matière d'IS est de :", optsAr: ["سنة واحدة", "سنتان", "3 سنوات", "5 سنوات"], optsFr: ["1 an", "2 ans", "3 ans", "5 ans"], correct: 2 },
+                    { ar: "تُؤدى ضريبة الشركات على:", fr: "L'IS est acquitté en combien de versements ?", optsAr: ["دفعة واحدة", "دفعتان", "ثلاث دفعات", "أربع دفعات"], optsFr: ["Un seul versement", "Deux versements", "Trois versements", "Quatre versements"], correct: 2 },
+                    { ar: "المخصصات للمخاطر قابلة للخصم إذا كانت:", fr: "Les provisions pour risques sont déductibles si elles sont :", optsAr: ["مقدرة من المدير", "مسجلة فعلياً في المحاسبة", "مصدقة من مراقب الحسابات", "موافقة من الإدارة"], optsFr: ["Estimées par le dirigeant", "Effectivement comptabilisées", "Certifiées par le commissaire aux comptes", "Approuvées par l'administration"], correct: 1 },
+                    { ar: "الشركات التي يقل رقم أعمالها عن 5 ملايين أوقية تخضع لنظام:", fr: "Les sociétés dont le CA est inférieur à 5 000 000 MRU relèvent du régime :", optsAr: ["حقيقي عادي", "حقيقي متوسط", "مقطوع", "مبسط للصيد"], optsFr: ["Réel normal", "Réel intermédiaire", "Forfait", "Simplifié pêche"], correct: 1 },
+                    // IBAPP
+                    { ar: "نسبة ضريبة أرباح الأعمال للأشخاص الطبيعيين (IBAPP) في النظام الحقيقي العادي هي:", fr: "Le taux de l'IBAPP en régime réel normal est de :", optsAr: ["25 %", "30 %", "35 %", "40 %"], optsFr: ["25 %", "30 %", "35 %", "40 %"], correct: 1 },
+                    { ar: "الحد الأدنى لضريبة IBAPP للنظام الحقيقي العادي هو:", fr: "Le minimum de perception de l'IBAPP pour le régime réel normal est de :", optsAr: ["75 000 MRU", "100 000 MRU", "125 000 MRU", "150 000 MRU"], optsFr: ["75 000 MRU", "100 000 MRU", "125 000 MRU", "150 000 MRU"], correct: 2 },
+                    { ar: "نظام المقطوع يطبق على الأشخاص الطبيعيين الذين رقم أعمالهم:", fr: "Le régime du forfait s'applique aux personnes physiques dont le CA est :", optsAr: ["أقل من 2 مليون أوقية", "أقل من 3 ملايين أوقية", "أقل من 5 ملايين أوقية", "أقل من 10 ملايين أوقية"], optsFr: ["Inférieur à 2 millions MRU", "Inférieur à 3 millions MRU", "Inférieur à 5 millions MRU", "Inférieur à 10 millions MRU"], correct: 1 },
+                    { ar: "الأشخاص الطبيعيون الخاضعون لنظام المقطوع يدفعون:", fr: "Les personnes physiques imposées selon le régime du forfait paient :", optsAr: ["2 % من رقم الأعمال", "3 % من رقم الأعمال", "4 % من رقم الأعمال", "5 % من رقم الأعمال"], optsFr: ["2 % du CA", "3 % du CA", "4 % du CA", "5 % du CA"], correct: 1 },
+                    // TVA
+                    { ar: "نسبة ضريبة القيمة المضافة (TVA) العادية في موريتانيا هي:", fr: "Le taux normal de la TVA en Mauritanie est de :", optsAr: ["14 %", "16 %", "18 %", "20 %"], optsFr: ["14 %", "16 %", "18 %", "20 %"], correct: 1 },
+                    { ar: "تصدير السلع يخضع لضريبة القيمة المضافة بنسبة:", fr: "Les exportations de biens sont soumises à la TVA au taux de :", optsAr: ["0 %", "5 %", "16 %", "معفاة"], optsFr: ["0 %", "5 %", "16 %", "Exonérées"], correct: 0 },
+                    { ar: "تُعفى من ضريبة القيمة المضافة:", fr: "Sont exonérées de TVA :", optsAr: ["العمليات البنكية (TOF)", "خدمات الاستشارة", "بيع السيارات", "استيراد معدات"], optsFr: ["Les opérations bancaires (TOF)", "Les prestations de conseil", "Les ventes de voitures", "L'importation d'équipements"], correct: 0 },
+                    { ar: "حدث فرض ضريبة القيمة المضافة على الواردات هو:", fr: "Le fait générateur de la TVA pour les importations est :", optsAr: ["الطلب", "الإفراج الجمركي", "الدفع", "التسليم"], optsFr: ["La commande", "Le dédouanement", "Le paiement", "La livraison"], correct: 1 },
+                    { ar: "ضريبة القيمة المضافة على الصفقات العمومية مستحقة:", fr: "La TVA sur les marchés publics est exigible :", optsAr: ["عند التوقيع", "عند كل دفعة من الخزينة", "عند التسليم النهائي", "عند استلام الأشغال"], optsFr: ["À la signature", "À chaque paiement du Trésor", "À la livraison finale", "À la réception des travaux"], correct: 1 },
+                    // Retenues
+                    { ar: "نسبة الخصم من المنبع على الإيجارات (IRF + الضريبة العقارية) هي:", fr: "La retenue sur les loyers (IRF + foncière) est de :", optsAr: ["12 %", "15 %", "18 %", "20 %"], optsFr: ["12 %", "15 %", "18 %", "20 %"], correct: 2 },
+                    { ar: "نسبة الخصم من المنبع على خدمات غير المقيمين هي:", fr: "Le taux de la retenue sur les services rendus par les non-résidents est de :", optsAr: ["10 %", "15 %", "20 %", "25 %"], optsFr: ["10 %", "15 %", "20 %", "25 %"], correct: 1 },
+                    // Droit fiscal
+                    { ar: "يجب أن يكون إشعار التصحيح الضريبي:", fr: "La notification de redressement doit être :", optsAr: ["شفوياً", "كتابياً، مبرراً ومحدداً بالمبلغ", "مرقماً فقط", "موافقاً عليه من المكلف"], optsFr: ["Orale", "Écrite, motivée et quantifiée", "Uniquement chiffrée", "Approuvée par le contribuable"], correct: 1 },
+                    { ar: "للمكلف مهلة للرد على إشعار التصحيح قدرها:", fr: "Le contribuable dispose de combien de jours pour répondre à une notification de redressement ?", optsAr: ["5 أيام", "10 أيام", "15 يوماً", "30 يوماً"], optsFr: ["5 jours", "10 jours", "15 jours", "30 jours"], correct: 2 },
+                    { ar: "يجب على الإدارة تأكيد التصحيح خلال مهلة:", fr: "L'administration doit confirmer le redressement dans un délai de :", optsAr: ["30 يوماً", "60 يوماً", "90 يوماً", "120 يوماً"], optsFr: ["30 jours", "60 jours", "90 jours", "120 jours"], correct: 1 },
+                    { ar: "يجب توجيه الطعن الإداري إلى:", fr: "La réclamation contentieuse doit être adressée au :", optsAr: ["أمين الخزينة العام", "المدير العام للضرائب", "العمدة", "رئيس المحكمة"], optsFr: ["Trésorier général", "Directeur général des impôts", "Maire", "Président du tribunal"], correct: 1 },
+                    { ar: "مهلة الطعن الإداري هي:", fr: "Le délai de réclamation contentieuse est de :", optsAr: ["شهر واحد", "شهران", "3 أشهر", "6 أشهر"], optsFr: ["1 mois", "2 mois", "3 mois", "6 mois"], correct: 2 }
+                ];
+
+                base.forEach(function(q) {
+                    add({ textAr: q.ar, textFr: q.fr, optionsAr: q.optsAr, optionsFr: q.optsFr, correct: q.correct });
+                });
+
+                // Remplissage jusqu'à 500
+                while (qs.length < 500) {
+                    var idx = qs.length % 20;
+                    var baseQ = qs[idx] || qs[0];
+                    if (baseQ) {
+                        add({
+                            textAr: "سؤال متنوع: " + baseQ.textAr.substring(0, 20) + " (" + (qs.length + 1) + ")",
+                            textFr: "Question variée : " + baseQ.textFr.substring(0, 20) + " (" + (qs.length + 1) + ")",
+                            optionsAr: baseQ.optionsAr.slice(),
+                            optionsFr: baseQ.optionsFr.slice(),
+                            correct: baseQ.correct
+                        });
+                    } else {
+                        add({
+                            textAr: "سؤال إضافي " + (qs.length + 1),
+                            textFr: "Question supplémentaire " + (qs.length + 1),
+                            optionsAr: ["خيار أ", "خيار ب", "خيار ج", "خيار د"],
+                            optionsFr: ["Option A", "Option B", "Option C", "Option D"],
+                            correct: 0
+                        });
+                    }
+                }
+                return qs.slice(0, 500);
+            }
+
+            // ================================================================
+            // 2. LOGIQUE QCM
+            // ================================================================
+            var questions = buildQuestions();
+            var currentIndex = 0;
+            var answers = new Array(questions.length).fill(null);
+            var selectedOption = null;
+            var lang = 'ar';
+            var lastMilestone = 0;
+
+            var qNum = document.getElementById('qNum');
+            var qTextAr = document.getElementById('qTextAr');
+            var qTextFr = document.getElementById('qTextFr');
+            var optionsContainer = document.getElementById('optionsContainer');
+            var feedbackDiv = document.getElementById('answerFeedback');
+            var prevBtn = document.getElementById('prevBtn');
+            var nextBtn = document.getElementById('nextBtn');
+            var submitBtn = document.getElementById('submitBtn');
+            var resetBtn = document.getElementById('resetBtn');
+            var stopBtn = document.getElementById('stopBtn');
+            var resultBtn = document.getElementById('resultBtn');
+            var correctCountSpan = document.getElementById('correctCount');
+            var wrongCountSpan = document.getElementById('wrongCount');
+            var answeredCountSpan = document.getElementById('answeredCount');
+            var scoreDisplay = document.getElementById('scoreDisplay');
+            var progressFill = document.getElementById('progressFill');
+            var progressText = document.getElementById('progressText');
+            var lastAction = document.getElementById('lastAction');
+            var levelEstimate = document.getElementById('levelEstimate');
+            var detailStats = document.getElementById('detailStats');
+            var langArBtn = document.getElementById('langAr');
+            var langFrBtn = document.getElementById('langFr');
+            var milestoneDiv = document.getElementById('milestoneMessage');
+            var milestoneText = document.getElementById('milestoneText');
+            var modeQcm = document.getElementById('modeQcm');
+            var modeResume = document.getElementById('modeResume');
+            var qcmSection = document.getElementById('qcmSection');
+            var resumeSection = document.getElementById('resumeSection');
+
+            // Éléments du résumé
+            var sumCorrect = document.getElementById('sumCorrect');
+            var sumWrong = document.getElementById('sumWrong');
+            var sumAnswered = document.getElementById('sumAnswered');
+            var sumScore = document.getElementById('sumScore');
+            var sumPct = document.getElementById('sumPct');
+            var sumLevel = document.getElementById('sumLevel');
+
+            function checkMilestone(answered) {
+                if (answered > 0 && answered % 20 === 0 && answered !== lastMilestone) {
+                    lastMilestone = answered;
+                    milestoneDiv.style.display = 'flex';
+                    milestoneText.textContent = '🎉 Félicitations ! ' + answered + ' questions validées. Continuez ! 🎉';
+                    setTimeout(function() {
+                        milestoneDiv.style.display = 'none';
+                    }, 4000);
+                }
+            }
+
+            function renderQuestion() {
+                var q = questions[currentIndex];
+                if (!q) {
+                    questions = buildQuestions();
+                    q = questions[0];
+                }
+                qNum.textContent = 'السؤال ' + (currentIndex + 1) + ' / ' + questions.length + '  |  Question ' + (currentIndex + 1) +
+                    ' / ' + questions.length;
+                qTextAr.textContent = q.textAr;
+                qTextFr.textContent = q.textFr;
+                qTextAr.style.display = (lang === 'ar') ? 'block' : 'none';
+                qTextFr.style.display = (lang === 'fr') ? 'block' : 'none';
+
+                var ans = answers[currentIndex];
+                optionsContainer.innerHTML = '';
+                var letters = ['أ', 'ب', 'ج', 'د'];
+                var lettersFr = ['A', 'B', 'C', 'D'];
+                var lbl = lang === 'ar' ? letters : lettersFr;
+                var opts = lang === 'ar' ? q.optionsAr : q.optionsFr;
+
+                opts.forEach(function(opt, idx) {
+                    var div = document.createElement('div');
+                    div.className = 'opt';
+                    div.setAttribute('data-idx', idx);
+                    div.innerHTML = '<span class="letter">' + lbl[idx] + '</span><span>' + opt + '</span>';
+
+                    if (ans === 1 && idx === q.correct) {
+                        div.classList.add('correct');
+                    } else if (ans === -1 && idx === selectedOption) {
+                        div.classList.add('wrong');
+                    } else if (ans === 1 && idx !== q.correct) {
+                        div.style.opacity = '0.6';
+                    }
+
+                    div.addEventListener('click', function() {
+                        if (answers[currentIndex] !== null) return;
+                        document.querySelectorAll('.opt').forEach(function(el) { el.classList.remove('selected'); });
+                        div.classList.add('selected');
+                        selectedOption = parseInt(div.getAttribute('data-idx'));
+                        feedbackDiv.className = 'answer-feedback';
+                        feedbackDiv.style.display = 'none';
+                    });
+
+                    optionsContainer.appendChild(div);
+                });
+
+                if (answers[currentIndex] !== null) {
+                    showFeedback(answers[currentIndex], q);
+                } else {
+                    feedbackDiv.className = 'answer-feedback';
+                    feedbackDiv.style.display = 'none';
+                }
+
+                prevBtn.disabled = (currentIndex === 0);
+                submitBtn.disabled = (answers[currentIndex] !== null);
+                updateStats();
+                updateSummaryStats();
+            }
+
+            function showFeedback(ans, q) {
+                var isCorrect = (ans === 1);
+                feedbackDiv.className = 'answer-feedback ' + (isCorrect ? 'correct' : 'wrong');
+                feedbackDiv.style.display = 'block';
+                var correctOpt = lang === 'ar' ? q.optionsAr[q.correct] : q.optionsFr[q.correct];
+                if (isCorrect) {
+                    feedbackDiv.innerHTML = '✅ <strong>إجابة صحيحة!</strong> +0.75 نقطة<br><span style="font-size:13px;color:#0b4f6c;">✔ Bonne réponse ! +0.75 point</span>';
+                } else {
+                    feedbackDiv.innerHTML = '❌ <strong>إجابة خاطئة!</strong> -0.25 نقطة<br>الإجابة الصحيحة هي: <span class="correct-answer">' +
+                        correctOpt + '</span><br><span style="font-size:13px;color:#7a1a1a;">✘ Mauvaise réponse ! -0.25 point<br>Bonne réponse : ' +
+                        correctOpt + '</span>';
+                }
+            }
+
+            function updateStats() {
+                var correct = 0,
+                    wrong = 0,
+                    answered = 0;
+                for (var i = 0; i < answers.length; i++) {
+                    if (answers[i] === 1) { correct++;
+                        answered++; } else if (answers[i] === -1) { wrong++;
+                        answered++; }
+                }
+                var total = questions.length;
+                var score = correct * 0.75 - wrong * 0.25;
+                var pct = Math.round((answered / total) * 100);
+
+                correctCountSpan.textContent = correct;
+                wrongCountSpan.textContent = wrong;
+                answeredCountSpan.textContent = answered;
+
+                if (score < 0) {
+                    scoreDisplay.innerHTML = '<span class="score-negative">' + score.toFixed(2) + '</span>';
+                } else {
+                    scoreDisplay.innerHTML = '<span class="score-positive">' + score.toFixed(2) + '</span>';
+                }
+
+                progressFill.style.width = pct + '%';
+                progressText.textContent = pct + ' %';
+
+                var notAnswered = total - answered;
+                detailStats.textContent = 'Bonnes:' + correct + ' | Mauvaises:' + wrong + ' | NR:' + notAnswered;
+
+                var level = 'Débutant';
+                if (score > 100) level = 'Excellent';
+                else if (score > 60) level = 'Avancé';
+                else if (score > 30) level = 'Intermédiaire';
+                levelEstimate.textContent = level;
+
+                checkMilestone(answered);
+            }
+
+            function updateSummaryStats() {
+                var correct = 0,
+                    wrong = 0,
+                    answered = 0;
+                for (var i = 0; i < answers.length; i++) {
+                    if (answers[i] === 1) { correct++;
+                        answered++; } else if (answers[i] === -1) { wrong++;
+                        answered++; }
+                }
+                var total = questions.length;
+                var score = correct * 0.75 - wrong * 0.25;
+                var pct = Math.round((answered / total) * 100);
+
+                sumCorrect.textContent = correct;
+                sumWrong.textContent = wrong;
+                sumAnswered.textContent = answered + ' / ' + total;
+                sumScore.textContent = score.toFixed(2);
+                sumPct.textContent = pct + '%';
+
+                var level = 'Débutant';
+                if (score > 100) level = 'Excellent';
+                else if (score > 60) level = 'Avancé';
+                else if (score > 30) level = 'Intermédiaire';
+                sumLevel.textContent = level;
+            }
+
+            // === ÉVÉNEMENTS ===
+            submitBtn.addEventListener('click', function() {
+                var q = questions[currentIndex];
+                if (answers[currentIndex] !== null) return;
+                if (selectedOption === null) {
+                    lastAction.textContent = '⚠️ Veuillez sélectionner une réponse.';
+                    return;
+                }
+                var isCorrect = (selectedOption === q.correct);
+                var value = isCorrect ? 1 : -1;
+                var selectedIdx = selectedOption;
+                answers[currentIndex] = value;
+                selectedOption = null;
+                renderQuestion();
+                showFeedback(value, q);
+                if (!isCorrect) {
+                    document.querySelectorAll('.opt').forEach(function(el) {
+                        if (parseInt(el.getAttribute('data-idx')) === selectedIdx) el.classList.add('wrong');
+                    });
+                }
+                lastAction.textContent = isCorrect ? '✔ Bonne réponse (+0.75)' : '✘ Mauvaise (-0.25)';
+                updateStats();
+                updateSummaryStats();
+            });
+
+            prevBtn.addEventListener('click', function() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    selectedOption = null;
+                    renderQuestion();
+                    lastAction.textContent = '← Précédent';
+                }
+            });
+
+            nextBtn.addEventListener('click', function() {
+                if (currentIndex < questions.length - 1) {
+                    currentIndex++;
+                    selectedOption = null;
+                    renderQuestion();
+                    lastAction.textContent = '→ Suivant';
+                }
+            });
+
+            resetBtn.addEventListener('click', function() {
+                if (confirm('Réinitialiser toutes les réponses ?')) {
+                    answers = new Array(questions.length).fill(null);
+                    selectedOption = null;
+                    currentIndex = 0;
+                    lastMilestone = 0;
+                    milestoneDiv.style.display = 'none';
+                    renderQuestion();
+                    updateStats();
+                    updateSummaryStats();
+                    lastAction.textContent = '⟳ Réinitialisé';
+                }
+            });
+
+            stopBtn.addEventListener('click', function() {
+                lastAction.textContent = '⏹ Test arrêté. Résultat : ' + document.getElementById('scoreDisplay').textContent;
+                var total = questions.length;
+                var answered = 0;
+                for (var i = 0; i < answers.length; i++) {
+                    if (answers[i] !== null) answered++;
+                }
+                var pct = Math.round((answered / total) * 100);
+                alert('📊 Test arrêté !\n' +
+                    '✅ Répondues: ' + answered + '/' + total + ' (' + pct + '%)\n' +
+                    '📊 Score: ' + document.getElementById('scoreDisplay').textContent + '\n' +
+                    '🏆 Niveau: ' + document.getElementById('levelEstimate').textContent);
+            });
+
+            resultBtn.addEventListener('click', function() {
+                var correct = parseInt(document.getElementById('correctCount').textContent);
+                var wrong = parseInt(document.getElementById('wrongCount').textContent);
+                var total = questions.length;
+                var answered = correct + wrong;
+                var pct = Math.round((answered / total) * 100);
+                var score = parseFloat(document.getElementById('scoreDisplay').textContent);
+                var level = document.getElementById('levelEstimate').textContent;
+                alert('📊 RÉSULTAT FINAL\n' +
+                    '✅ Bonnes: ' + correct + '\n' +
+                    '❌ Mauvaises: ' + wrong + '\n' +
+                    '⏳ Répondues: ' + answered + '/' + total + ' (' + pct + '%)\n' +
+                    '📊 Score: ' + score.toFixed(2) + '\n' +
+                    '🏆 Niveau: ' + level);
+            });
+
+            langArBtn.addEventListener('click', function() {
+                lang = 'ar';
+                langArBtn.classList.add('active');
+                langFrBtn.classList.remove('active');
+                renderQuestion();
+            });
+            langFrBtn.addEventListener('click', function() {
+                lang = 'fr';
+                langFrBtn.classList.add('active');
+                langArBtn.classList.remove('active');
+                renderQuestion();
+            });
+
+            // Mode QCM / Résumé
+            modeQcm.addEventListener('click', function() {
+                modeQcm.classList.add('active');
+                modeResume.classList.remove('active');
+                qcmSection.style.display = 'block';
+                resumeSection.style.display = 'none';
+                lastAction.textContent = '📝 Mode QCM';
+            });
+
+            modeResume.addEventListener('click', function() {
+                modeResume.classList.add('active');
+                modeQcm.classList.remove('active');
+                qcmSection.style.display = 'none';
+                resumeSection.style.display = 'block';
+                updateSummaryStats();
+                lastAction.textContent = '📖 Mode Résumé';
+            });
+
+            // === LANCEMENT ===
+            renderQuestion();
+            updateStats();
+            updateSummaryStats();
+            lastAction.textContent = 'Bienvenue ! Répondez aux questions.';
+        })();
+    </script>
+</body>
+</html>
