@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QCM Fiscalité Mauritanie 2025</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         body {
             font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
             background: #f0f4fa;
@@ -96,7 +100,7 @@
             font-size: 17px;
             font-weight: 500;
             line-height: 1.6;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             direction: rtl;
             text-align: right;
         }
@@ -201,6 +205,7 @@
             font-size: 13px;
             border-top: 1px solid #e9edf2;
             padding-top: 14px;
+            text-align: center;
         }
         .lang-toggle {
             background: #eef2f7;
@@ -557,7 +562,6 @@
                     }
                     div.classList.add('selected');
                     selectedOption = idx;
-                    // Cacher le feedback quand on change de sélection
                     feedbackDiv.className = 'answer-feedback';
                     feedbackDiv.style.display = 'none';
                 });
@@ -565,7 +569,6 @@
                 optionsContainer.appendChild(div);
             });
 
-            // Afficher le feedback si la question a déjà une réponse
             if (answers[currentIndex] !== null) {
                 showFeedback(answers[currentIndex], q);
             } else {
@@ -628,14 +631,11 @@
             }
             var isCorrect = (selectedOption === q.correct);
             var value = isCorrect ? 1 : -1;
-            answers[currentIndex] = value;
-            // Sauvegarder l'option sélectionnée pour l'affichage
             var selectedIdx = selectedOption;
+            answers[currentIndex] = value;
             selectedOption = null;
             renderQuestion();
-            // Réafficher le feedback avec la bonne option
             showFeedback(value, q);
-            // Marquer l'option sélectionnée comme wrong si incorrecte
             if (!isCorrect) {
                 var opts = document.querySelectorAll('.opt');
                 for (var i = 0; i < opts.length; i++) {
@@ -653,4 +653,14 @@
                 currentIndex--;
                 selectedOption = null;
                 renderQuestion();
-                last
+                lastAction.textContent = '← Précédent';
+            }
+        });
+
+        nextBtn.addEventListener('click', function() {
+            if (currentIndex < questions.length - 1) {
+                currentIndex++;
+                selectedOption = null;
+                renderQuestion();
+                lastAction.textContent = '→ Suivant';
+           
