@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QCM Fiscalité Mauritanie 2025 – 500 questions</title>
+    <title>QCM Fiscalité Mauritanie 2025</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -136,7 +136,6 @@
         .opt.selected { background: #e1edfb; border-color: #1d6f9c; box-shadow: 0 0 0 2px rgba(11,79,108,0.15); }
         .opt.correct { background: #d9f2e0; border-color: #1e7b4c; }
         .opt.wrong { background: #fee9e9; border-color: #b91c1c; }
-        .opt input { display: none; }
         .opt .letter { font-weight: 700; color: #1e3a5f; width: 24px; flex-shrink: 0; font-size: 14px; }
         .action-bar {
             display: flex;
@@ -167,6 +166,7 @@
         .btn-outline:hover { background: #f1f5f9; }
         .btn-danger { border-color: #b91c1c; color: #b91c1c; }
         .btn-danger:hover { background: #fee9e9; }
+        .btn-small { padding: 6px 14px; font-size: 12px; }
         .result-area {
             margin-top: 20px;
             background: #f8fafc;
@@ -237,10 +237,6 @@
             flex-wrap: wrap;
             font-size: 14px;
         }
-        .btn-small {
-            padding: 6px 14px;
-            font-size: 12px;
-        }
         .answer-feedback {
             margin-top: 12px;
             padding: 12px 16px;
@@ -282,7 +278,7 @@
     </style>
 </head>
 <body>
-<div class="container" id="app">
+<div class="container">
     <h1>
         <span>📘 Fiscalité Mauritanie 2025</span>
         <span class="badge">500 QCM</span>
@@ -350,307 +346,312 @@
         <br>📱 <strong>Prof. Mohamed Yahya Taleb Abdellahi — WhatsApp : 30545727</strong>
     </div>
 </div>
+
 <script>
-    (function() {
-        // --------------------------------------------------------------
-        // 1. GÉNÉRATION DES 500 QUESTIONS (bilingue)
-        // --------------------------------------------------------------
-        function buildQuestions() {
-            var qs = [];
-            var used = new Set();
-            var id = 0;
+(function() {
+    // ================================================================
+    // 1. GÉNÉRATION DES 500 QUESTIONS
+    // ================================================================
+    function buildQuestions() {
+        var qs = [];
+        var used = new Set();
+        var id = 0;
 
-            function add(q) {
-                if (used.has(q.textAr)) return;
-                used.add(q.textAr);
-                qs.push({ id: ++id, ...q });
-            }
+        function add(q) {
+            if (used.has(q.textAr)) return;
+            used.add(q.textAr);
+            qs.push({ id: ++id, textAr: q.textAr, textFr: q.textFr, options: q.options, correct: q.correct });
+        }
 
-            // Base de questions bilingues (30 questions de base)
-            var base = [
-                // IS
-                { ar: "نسبة ضريبة الشركات (IS) العادية في موريتانيا هي:", fr: "Le taux normal de l'IS est de :", opts: ["18 %", "20 %", "25 %", "30 %"], correct: 2 },
-                { ar: "الحد الأدنى لضريبة الشركات للنظام الحقيقي العادي هو:", fr: "Le minimum de perception de l'IS pour le régime réel normal est :", opts: ["50 000 MRU", "75 000 MRU", "100 000 MRU", "125 000 MRU"], correct: 2 },
-                { ar: "يُحدد الربح الخاضع للضريبة على أساس:", fr: "Le bénéfice imposable à l'IS est déterminé d'après :", opts: ["رقم الأعمال فقط", "الربح المحاسبي الصافي المعدل", "الأرباح الموزعة", "قيمة الصادرات"], correct: 1 },
-                { ar: "تُعفى من ضريبة الشركات:", fr: "Sont exonérées de l'IS :", opts: ["الشركات المساهمة", "مجموعات المصالح الاقتصادية (GIE)", "الشركات ذات المسؤولية المحدودة", "فروع الشركات الأجنبية"], correct: 1 },
-                { ar: "يمكن للشركة الجديدة إقفال أول ميزانية لها في:", fr: "Une société nouvelle peut arrêter son premier bilan :", opts: ["نهاية سنة التأسيس", "نهاية السنة التالية", "أي تاريخ", "30 يونيو"], correct: 1 },
-                { ar: "التصريح السنوي بنتائج ضريبة الشركات يجب أن يودع في موعد أقصاه:", fr: "La déclaration annuelle de résultats pour l'IS doit être déposée au plus tard le :", opts: ["31 يناير", "31 مارس", "30 أبريل", "31 مايو"], correct: 1 },
-                { ar: "مدة التقادم في مجال ضريبة الشركات هي:", fr: "Le délai de reprise en matière d'IS est de :", opts: ["سنة واحدة", "سنتان", "3 سنوات", "5 سنوات"], correct: 2 },
-                { ar: "تُؤدى ضريبة الشركات على:", fr: "L'IS est acquitté en combien de versements ?", opts: ["دفعة واحدة", "دفعتان", "ثلاث دفعات", "أربع دفعات"], correct: 2 },
-                { ar: "المخصصات للمخاطر قابلة للخصم إذا كانت:", fr: "Les provisions pour risques sont déductibles si elles sont :", opts: ["مقدرة من المدير", "مسجلة فعلياً في المحاسبة", "مصدقة من مراقب الحسابات", "موافقة من الإدارة"], correct: 1 },
-                { ar: "الشركات التي يقل رقم أعمالها عن 5 ملايين أوقية تخضع لنظام:", fr: "Les sociétés dont le CA est inférieur à 5 000 000 MRU relèvent du régime :", opts: ["حقيقي عادي", "حقيقي متوسط", "مقطوع", "مبسط للصيد"], correct: 1 },
-                // IBAPP
-                { ar: "نسبة ضريبة أرباح الأعمال للأشخاص الطبيعيين (IBAPP) في النظام الحقيقي العادي هي:", fr: "Le taux de l'IBAPP en régime réel normal est de :", opts: ["25 %", "30 %", "35 %", "40 %"], correct: 1 },
-                { ar: "الحد الأدنى لضريبة IBAPP للنظام الحقيقي العادي هو:", fr: "Le minimum de perception de l'IBAPP pour le régime réel normal est de :", opts: ["75 000 MRU", "100 000 MRU", "125 000 MRU", "150 000 MRU"], correct: 2 },
-                { ar: "نظام المقطوع يطبق على الأشخاص الطبيعيين الذين رقم أعمالهم:", fr: "Le régime du forfait s'applique aux personnes physiques dont le CA est :", opts: ["أقل من 2 مليون أوقية", "أقل من 3 ملايين أوقية", "أقل من 5 ملايين أوقية", "أقل من 10 ملايين أوقية"], correct: 1 },
-                { ar: "الأشخاص الطبيعيون الخاضعون لنظام المقطوع يدفعون:", fr: "Les personnes physiques imposées selon le régime du forfait paient :", opts: ["2 % من رقم الأعمال", "3 % من رقم الأعمال", "4 % من رقم الأعمال", "5 % من رقم الأعمال"], correct: 1 },
-                // TVA
-                { ar: "نسبة ضريبة القيمة المضافة (TVA) العادية في موريتانيا هي:", fr: "Le taux normal de la TVA en Mauritanie est de :", opts: ["14 %", "16 %", "18 %", "20 %"], correct: 1 },
-                { ar: "تصدير السلع يخضع لضريبة القيمة المضافة بنسبة:", fr: "Les exportations de biens sont soumises à la TVA au taux de :", opts: ["0 %", "5 %", "16 %", "معفاة"], correct: 0 },
-                { ar: "تُعفى من ضريبة القيمة المضافة:", fr: "Sont exonérées de TVA :", opts: ["العمليات البنكية (TOF)", "خدمات الاستشارة", "بيع السيارات", "استيراد معدات"], correct: 0 },
-                { ar: "حدث فرض ضريبة القيمة المضافة على الواردات هو:", fr: "Le fait générateur de la TVA pour les importations est :", opts: ["الطلب", "الإفراج الجمركي", "الدفع", "التسليم"], correct: 1 },
-                { ar: "ضريبة القيمة المضافة على الصفقات العمومية مستحقة:", fr: "La TVA sur les marchés publics est exigible :", opts: ["عند التوقيع", "عند كل دفعة من الخزينة", "عند التسليم النهائي", "عند استلام الأشغال"], correct: 1 },
-                // Retenues
-                { ar: "نسبة الخصم من المنبع على الإيجارات (IRF + الضريبة العقارية) هي:", fr: "La retenue sur les loyers (IRF + foncière) est de :", opts: ["12 %", "15 %", "18 %", "20 %"], correct: 2 },
-                { ar: "نسبة الخصم من المنبع على خدمات غير المقيمين هي:", fr: "Le taux de la retenue sur les services rendus par les non-résidents est de :", opts: ["10 %", "15 %", "20 %", "25 %"], correct: 1 },
-                // Droit fiscal
-                { ar: "يجب أن يكون إشعار التصحيح الضريبي:", fr: "La notification de redressement doit être :", opts: ["شفوياً", "كتابياً، مبرراً ومحدداً بالمبلغ", "مرقماً فقط", "موافقاً عليه من المكلف"], correct: 1 },
-                { ar: "للمكلف مهلة للرد على إشعار التصحيح قدرها:", fr: "Le contribuable dispose de combien de jours pour répondre à une notification de redressement ?", opts: ["5 أيام", "10 أيام", "15 يوماً", "30 يوماً"], correct: 2 },
-                { ar: "يجب على الإدارة تأكيد التصحيح خلال مهلة:", fr: "L'administration doit confirmer le redressement dans un délai de :", opts: ["30 يوماً", "60 يوماً", "90 يوماً", "120 يوماً"], correct: 1 },
-                { ar: "يجب توجيه الطعن الإداري إلى:", fr: "La réclamation contentieuse doit être adressée au :", opts: ["أمين الخزينة العام", "المدير العام للضرائب", "العمدة", "رئيس المحكمة"], correct: 1 },
-                { ar: "مهلة الطعن الإداري هي:", fr: "Le délai de réclamation contentieuse est de :", opts: ["شهر واحد", "شهران", "3 أشهر", "6 أشهر"], correct: 2 },
-            ];
+        var base = [
+            { ar: "نسبة ضريبة الشركات (IS) العادية في موريتانيا هي:", fr: "Le taux normal de l'IS est de :", opts: ["18 %", "20 %", "25 %", "30 %"], correct: 2 },
+            { ar: "الحد الأدنى لضريبة الشركات للنظام الحقيقي العادي هو:", fr: "Le minimum de perception de l'IS pour le régime réel normal est :", opts: ["50 000 MRU", "75 000 MRU", "100 000 MRU", "125 000 MRU"], correct: 2 },
+            { ar: "يُحدد الربح الخاضع للضريبة على أساس:", fr: "Le bénéfice imposable à l'IS est déterminé d'après :", opts: ["رقم الأعمال فقط", "الربح المحاسبي الصافي المعدل", "الأرباح الموزعة", "قيمة الصادرات"], correct: 1 },
+            { ar: "تُعفى من ضريبة الشركات:", fr: "Sont exonérées de l'IS :", opts: ["الشركات المساهمة", "مجموعات المصالح الاقتصادية (GIE)", "الشركات ذات المسؤولية المحدودة", "فروع الشركات الأجنبية"], correct: 1 },
+            { ar: "يمكن للشركة الجديدة إقفال أول ميزانية لها في:", fr: "Une société nouvelle peut arrêter son premier bilan :", opts: ["نهاية سنة التأسيس", "نهاية السنة التالية", "أي تاريخ", "30 يونيو"], correct: 1 },
+            { ar: "التصريح السنوي بنتائج ضريبة الشركات يجب أن يودع في موعد أقصاه:", fr: "La déclaration annuelle de résultats pour l'IS doit être déposée au plus tard le :", opts: ["31 يناير", "31 مارس", "30 أبريل", "31 مايو"], correct: 1 },
+            { ar: "مدة التقادم في مجال ضريبة الشركات هي:", fr: "Le délai de reprise en matière d'IS est de :", opts: ["سنة واحدة", "سنتان", "3 سنوات", "5 سنوات"], correct: 2 },
+            { ar: "تُؤدى ضريبة الشركات على:", fr: "L'IS est acquitté en combien de versements ?", opts: ["دفعة واحدة", "دفعتان", "ثلاث دفعات", "أربع دفعات"], correct: 2 },
+            { ar: "المخصصات للمخاطر قابلة للخصم إذا كانت:", fr: "Les provisions pour risques sont déductibles si elles sont :", opts: ["مقدرة من المدير", "مسجلة فعلياً في المحاسبة", "مصدقة من مراقب الحسابات", "موافقة من الإدارة"], correct: 1 },
+            { ar: "الشركات التي يقل رقم أعمالها عن 5 ملايين أوقية تخضع لنظام:", fr: "Les sociétés dont le CA est inférieur à 5 000 000 MRU relèvent du régime :", opts: ["حقيقي عادي", "حقيقي متوسط", "مقطوع", "مبسط للصيد"], correct: 1 },
+            { ar: "نسبة ضريبة أرباح الأعمال للأشخاص الطبيعيين (IBAPP) في النظام الحقيقي العادي هي:", fr: "Le taux de l'IBAPP en régime réel normal est de :", opts: ["25 %", "30 %", "35 %", "40 %"], correct: 1 },
+            { ar: "الحد الأدنى لضريبة IBAPP للنظام الحقيقي العادي هو:", fr: "Le minimum de perception de l'IBAPP pour le régime réel normal est de :", opts: ["75 000 MRU", "100 000 MRU", "125 000 MRU", "150 000 MRU"], correct: 2 },
+            { ar: "نظام المقطوع يطبق على الأشخاص الطبيعيين الذين رقم أعمالهم:", fr: "Le régime du forfait s'applique aux personnes physiques dont le CA est :", opts: ["أقل من 2 مليون أوقية", "أقل من 3 ملايين أوقية", "أقل من 5 ملايين أوقية", "أقل من 10 ملايين أوقية"], correct: 1 },
+            { ar: "الأشخاص الطبيعيون الخاضعون لنظام المقطوع يدفعون:", fr: "Les personnes physiques imposées selon le régime du forfait paient :", opts: ["2 % من رقم الأعمال", "3 % من رقم الأعمال", "4 % من رقم الأعمال", "5 % من رقم الأعمال"], correct: 1 },
+            { ar: "نسبة ضريبة القيمة المضافة (TVA) العادية في موريتانيا هي:", fr: "Le taux normal de la TVA en Mauritanie est de :", opts: ["14 %", "16 %", "18 %", "20 %"], correct: 1 },
+            { ar: "تصدير السلع يخضع لضريبة القيمة المضافة بنسبة:", fr: "Les exportations de biens sont soumises à la TVA au taux de :", opts: ["0 %", "5 %", "16 %", "معفاة"], correct: 0 },
+            { ar: "تُعفى من ضريبة القيمة المضافة:", fr: "Sont exonérées de TVA :", opts: ["العمليات البنكية (TOF)", "خدمات الاستشارة", "بيع السيارات", "استيراد معدات"], correct: 0 },
+            { ar: "حدث فرض ضريبة القيمة المضافة على الواردات هو:", fr: "Le fait générateur de la TVA pour les importations est :", opts: ["الطلب", "الإفراج الجمركي", "الدفع", "التسليم"], correct: 1 },
+            { ar: "ضريبة القيمة المضافة على الصفقات العمومية مستحقة:", fr: "La TVA sur les marchés publics est exigible :", opts: ["عند التوقيع", "عند كل دفعة من الخزينة", "عند التسليم النهائي", "عند استلام الأشغال"], correct: 1 },
+            { ar: "نسبة الخصم من المنبع على الإيجارات (IRF + الضريبة العقارية) هي:", fr: "La retenue sur les loyers (IRF + foncière) est de :", opts: ["12 %", "15 %", "18 %", "20 %"], correct: 2 },
+            { ar: "نسبة الخصم من المنبع على خدمات غير المقيمين هي:", fr: "Le taux de la retenue sur les services rendus par les non-résidents est de :", opts: ["10 %", "15 %", "20 %", "25 %"], correct: 1 },
+            { ar: "يجب أن يكون إشعار التصحيح الضريبي:", fr: "La notification de redressement doit être :", opts: ["شفوياً", "كتابياً، مبرراً ومحدداً بالمبلغ", "مرقماً فقط", "موافقاً عليه من المكلف"], correct: 1 },
+            { ar: "للمكلف مهلة للرد على إشعار التصحيح قدرها:", fr: "Le contribuable dispose de combien de jours pour répondre à une notification de redressement ?", opts: ["5 أيام", "10 أيام", "15 يوماً", "30 يوماً"], correct: 2 },
+            { ar: "يجب على الإدارة تأكيد التصحيح خلال مهلة:", fr: "L'administration doit confirmer le redressement dans un délai de :", opts: ["30 يوماً", "60 يوماً", "90 يوماً", "120 يوماً"], correct: 1 },
+            { ar: "يجب توجيه الطعن الإداري إلى:", fr: "La réclamation contentieuse doit être adressée au :", opts: ["أمين الخزينة العام", "المدير العام للضرائب", "العمدة", "رئيس المحكمة"], correct: 1 },
+            { ar: "مهلة الطعن الإداري هي:", fr: "Le délai de réclamation contentieuse est de :", opts: ["شهر واحد", "شهران", "3 أشهر", "6 أشهر"], correct: 2 }
+        ];
 
-            base.forEach(function(q) { add({ textAr: q.ar, textFr: q.fr, options: q.opts, correct: q.correct }); });
+        base.forEach(function(q) { add({ textAr: q.ar, textFr: q.fr, options: q.opts, correct: q.correct }); });
 
-            // Ajout de questions supplémentaires pour atteindre 500
-            var extraAr = [
-                "نسبة الضريبة على دخل رأس المال المنقول (IRCM) هي:",
-                "ضريبة التكوين المهني هي:",
-                "رسوم التسجيل للتنازل عن عقار هي:",
-                "الحد الأدنى لرسم الملصق لجواز السفر العادي هو:",
-                "مدة التقادم في مجال التحصيل هي:",
-                "إشعار التحصيل يعتبر:",
-                "امتياز الخزينة العامة يسري على:",
-                "الرهن القانوني للخزينة يحتل مرتبته:",
-                "نسبة الضريبة على العمليات المالية (TOF) هي:",
-                "الضريبة الخاصة على التأمينات هي:",
-                "رسم الملصق على سندات الشحن هو:",
-                "الاستشارة الضريبية (Rescrit) تكون نافذة ضد الإدارة إذا:",
-            ];
-            var extraFr = [
-                "Le taux de l'IRCM est de :",
-                "La taxe d'apprentissage est de :",
-                "Le droit d'enregistrement pour une mutation immobilière est de :",
-                "Le timbre pour un passeport standard est de :",
-                "La prescription en matière de recouvrement est de :",
-                "L'avis de mise en recouvrement vaut :",
-                "Le privilège du Trésor s'exerce sur :",
-                "L'hypothèque légale du Trésor prend rang :",
-                "Le taux de la TOF est de :",
-                "La taxe spéciale sur les assurances est de :",
-                "Le droit de timbre sur les connaissements est de :",
-                "Le rescrit fiscal est opposable à l'administration si :",
-            ];
-            var optsExtra = [
-                ["5 %", "10 %", "15 %", "20 %"],
-                ["0,6 %", "1 %", "2 %", "5 %"],
-                ["1 %", "2 %", "3 %", "5 %"],
-                ["1 000 MRU", "2 000 MRU", "3 000 MRU", "5 000 MRU"],
-                ["2 ans", "3 ans", "4 ans", "5 ans"],
-                ["إنذار", "أمر بالدفع", "حكم", "حجز"],
-                ["العقارات فقط", "المنقولات والأموال المنقولة", "الحسابات البنكية فقط", "المخزون"],
-                ["تاريخ الضريبة", "تاريخ التسجيل", "تاريخ الحكم", "تاريخ الإشعار"],
-                ["10 %", "14 %", "16 %", "18 %"],
-                ["0,1 % إلى 10 %", "5 %", "10 %", "2 %"],
-                ["50 MRU", "100 MRU", "150 MRU", "200 MRU"],
-                ["إذا كان المكلف حسن النية", "إذا كان الوضع مطابقاً", "كلا الشرطين", "أبداً"],
-            ];
-            for (var i = 0; i < extraAr.length; i++) {
+        var extraAr = [
+            "نسبة الضريبة على دخل رأس المال المنقول (IRCM) هي:",
+            "ضريبة التكوين المهني هي:",
+            "رسوم التسجيل للتنازل عن عقار هي:",
+            "الحد الأدنى لرسم الملصق لجواز السفر العادي هو:",
+            "مدة التقادم في مجال التحصيل هي:",
+            "إشعار التحصيل يعتبر:",
+            "امتياز الخزينة العامة يسري على:",
+            "الرهن القانوني للخزينة يحتل مرتبته:",
+            "نسبة الضريبة على العمليات المالية (TOF) هي:",
+            "الضريبة الخاصة على التأمينات هي:",
+            "رسم الملصق على سندات الشحن هو:",
+            "الاستشارة الضريبية (Rescrit) تكون نافذة ضد الإدارة إذا:"
+        ];
+        var extraFr = [
+            "Le taux de l'IRCM est de :",
+            "La taxe d'apprentissage est de :",
+            "Le droit d'enregistrement pour une mutation immobilière est de :",
+            "Le timbre pour un passeport standard est de :",
+            "La prescription en matière de recouvrement est de :",
+            "L'avis de mise en recouvrement vaut :",
+            "Le privilège du Trésor s'exerce sur :",
+            "L'hypothèque légale du Trésor prend rang :",
+            "Le taux de la TOF est de :",
+            "La taxe spéciale sur les assurances est de :",
+            "Le droit de timbre sur les connaissements est de :",
+            "Le rescrit fiscal est opposable à l'administration si :"
+        ];
+        var optsExtra = [
+            ["5 %", "10 %", "15 %", "20 %"],
+            ["0,6 %", "1 %", "2 %", "5 %"],
+            ["1 %", "2 %", "3 %", "5 %"],
+            ["1 000 MRU", "2 000 MRU", "3 000 MRU", "5 000 MRU"],
+            ["2 ans", "3 ans", "4 ans", "5 ans"],
+            ["إنذار", "أمر بالدفع", "حكم", "حجز"],
+            ["العقارات فقط", "المنقولات والأموال المنقولة", "الحسابات البنكية فقط", "المخزون"],
+            ["تاريخ الضريبة", "تاريخ التسجيل", "تاريخ الحكم", "تاريخ الإشعار"],
+            ["10 %", "14 %", "16 %", "18 %"],
+            ["0,1 % إلى 10 %", "5 %", "10 %", "2 %"],
+            ["50 MRU", "100 MRU", "150 MRU", "200 MRU"],
+            ["إذا كان المكلف حسن النية", "إذا كان الوضع مطابقاً", "كلا الشرطين", "أبداً"]
+        ];
+        for (var i = 0; i < extraAr.length; i++) {
+            add({ textAr: extraAr[i], textFr: extraFr[i], options: optsExtra[i], correct: i % 2 === 0 ? 1 : 0 });
+        }
+
+        while (qs.length < 500) {
+            var idx = qs.length % 20;
+            var baseQ = qs[idx] || qs[0];
+            if (baseQ) {
                 add({
-                    textAr: extraAr[i],
-                    textFr: extraFr[i],
-                    options: optsExtra[i],
-                    correct: i % 2 === 0 ? 1 : 0
+                    textAr: "سؤال متنوع: " + baseQ.textAr.substring(0, 25) + " (" + (qs.length+1) + ")",
+                    textFr: "Question variée : " + baseQ.textFr.substring(0, 25) + " (" + (qs.length+1) + ")",
+                    options: baseQ.options.slice(),
+                    correct: baseQ.correct
                 });
-            }
-
-            // Remplissage jusqu'à 500 questions
-            while (qs.length < 500) {
-                var idx = qs.length % 20;
-                var baseQ = qs[idx] || qs[0];
-                if (baseQ) {
-                    add({
-                        textAr: "سؤال متنوع: " + baseQ.textAr.substring(0, 25) + " (" + (qs.length+1) + ")",
-                        textFr: "Question variée : " + baseQ.textFr.substring(0, 25) + " (" + (qs.length+1) + ")",
-                        options: baseQ.options.slice(),
-                        correct: baseQ.correct
-                    });
-                } else {
-                    add({
-                        textAr: "سؤال إضافي " + (qs.length+1),
-                        textFr: "Question supplémentaire " + (qs.length+1),
-                        options: ["خيار أ", "خيار ب", "خيار ج", "خيار د"],
-                        correct: 0
-                    });
-                }
-            }
-            return qs.slice(0, 500);
-        }
-
-        // --------------------------------------------------------------
-        // 2. LOGIQUE QCM
-        // --------------------------------------------------------------
-        var questions = buildQuestions();
-        var currentIndex = 0;
-        var answers = new Array(questions.length).fill(null);
-        var selectedOption = null;
-        var lang = 'ar';
-        var lastMilestone = 0;
-
-        var qNum = document.getElementById('qNum');
-        var qTextAr = document.getElementById('qTextAr');
-        var qTextFr = document.getElementById('qTextFr');
-        var optionsContainer = document.getElementById('optionsContainer');
-        var feedbackDiv = document.getElementById('answerFeedback');
-        var prevBtn = document.getElementById('prevBtn');
-        var nextBtn = document.getElementById('nextBtn');
-        var submitBtn = document.getElementById('submitBtn');
-        var resetBtn = document.getElementById('resetBtn');
-        var correctCountSpan = document.getElementById('correctCount');
-        var wrongCountSpan = document.getElementById('wrongCount');
-        var answeredCountSpan = document.getElementById('answeredCount');
-        var scoreDisplay = document.getElementById('scoreDisplay');
-        var progressFill = document.getElementById('progressFill');
-        var progressText = document.getElementById('progressText');
-        var lastAction = document.getElementById('lastAction');
-        var levelEstimate = document.getElementById('levelEstimate');
-        var detailStats = document.getElementById('detailStats');
-        var langArBtn = document.getElementById('langAr');
-        var langFrBtn = document.getElementById('langFr');
-        var milestoneDiv = document.getElementById('milestoneMessage');
-        var milestoneText = document.getElementById('milestoneText');
-
-        function checkMilestone(answered) {
-            if (answered > 0 && answered % 20 === 0 && answered !== lastMilestone) {
-                lastMilestone = answered;
-                milestoneDiv.style.display = 'flex';
-                milestoneText.textContent = '🎉 Félicitations ! ' + answered + ' questions validées. Continuez ! 🎉';
-                setTimeout(function() {
-                    milestoneDiv.style.display = 'none';
-                }, 4000);
-            }
-        }
-
-        function renderQuestion() {
-            if (!questions || questions.length === 0) {
-                // Sécurité : si questions est vide, on le reconstruit
-                questions = buildQuestions();
-                answers = new Array(questions.length).fill(null);
-            }
-            var q = questions[currentIndex];
-            if (!q) return;
-            qNum.textContent = 'السؤال ' + (currentIndex+1) + ' / ' + questions.length + '  |  Question ' + (currentIndex+1) + ' / ' + questions.length;
-            qTextAr.textContent = q.textAr;
-            qTextFr.textContent = q.textFr;
-            qTextAr.style.display = (lang === 'ar') ? 'block' : 'none';
-            qTextFr.style.display = (lang === 'fr') ? 'block' : 'none';
-
-            var ans = answers[currentIndex];
-            optionsContainer.innerHTML = '';
-            var letters = ['أ', 'ب', 'ج', 'د'];
-            var lettersFr = ['A', 'B', 'C', 'D'];
-            var lbl = lang === 'ar' ? letters : lettersFr;
-            q.options.forEach(function(opt, idx) {
-                var div = document.createElement('div');
-                div.className = 'opt';
-                div.setAttribute('data-idx', idx);
-                div.innerHTML = '<span class="letter">' + lbl[idx] + '</span><span>' + opt + '</span>';
-
-                if (ans === 1 && idx === q.correct) {
-                    div.classList.add('correct');
-                } else if (ans === -1 && idx === selectedOption) {
-                    div.classList.add('wrong');
-                } else if (ans === 1 && idx !== q.correct) {
-                    div.style.opacity = '0.6';
-                }
-
-                div.addEventListener('click', function() {
-                    if (answers[currentIndex] !== null) return;
-                    var allOpts = document.querySelectorAll('.opt');
-                    for (var i = 0; i < allOpts.length; i++) {
-                        allOpts[i].classList.remove('selected');
-                    }
-                    div.classList.add('selected');
-                    selectedOption = idx;
-                    feedbackDiv.className = 'answer-feedback';
-                    feedbackDiv.style.display = 'none';
-                });
-
-                optionsContainer.appendChild(div);
-            });
-
-            if (answers[currentIndex] !== null) {
-                showFeedback(answers[currentIndex], q);
             } else {
+                add({
+                    textAr: "سؤال إضافي " + (qs.length+1),
+                    textFr: "Question supplémentaire " + (qs.length+1),
+                    options: ["خيار أ", "خيار ب", "خيار ج", "خيار د"],
+                    correct: 0
+                });
+            }
+        }
+        return qs.slice(0, 500);
+    }
+
+    // ================================================================
+    // 2. LOGIQUE QCM
+    // ================================================================
+    var questions = buildQuestions();
+    var currentIndex = 0;
+    var answers = new Array(questions.length).fill(null);
+    var selectedOption = null;
+    var lang = 'ar';
+    var lastMilestone = 0;
+
+    var qNum = document.getElementById('qNum');
+    var qTextAr = document.getElementById('qTextAr');
+    var qTextFr = document.getElementById('qTextFr');
+    var optionsContainer = document.getElementById('optionsContainer');
+    var feedbackDiv = document.getElementById('answerFeedback');
+    var prevBtn = document.getElementById('prevBtn');
+    var nextBtn = document.getElementById('nextBtn');
+    var submitBtn = document.getElementById('submitBtn');
+    var resetBtn = document.getElementById('resetBtn');
+    var correctCountSpan = document.getElementById('correctCount');
+    var wrongCountSpan = document.getElementById('wrongCount');
+    var answeredCountSpan = document.getElementById('answeredCount');
+    var scoreDisplay = document.getElementById('scoreDisplay');
+    var progressFill = document.getElementById('progressFill');
+    var progressText = document.getElementById('progressText');
+    var lastAction = document.getElementById('lastAction');
+    var levelEstimate = document.getElementById('levelEstimate');
+    var detailStats = document.getElementById('detailStats');
+    var langArBtn = document.getElementById('langAr');
+    var langFrBtn = document.getElementById('langFr');
+    var milestoneDiv = document.getElementById('milestoneMessage');
+    var milestoneText = document.getElementById('milestoneText');
+
+    function checkMilestone(answered) {
+        if (answered > 0 && answered % 20 === 0 && answered !== lastMilestone) {
+            lastMilestone = answered;
+            milestoneDiv.style.display = 'flex';
+            milestoneText.textContent = '🎉 Félicitations ! ' + answered + ' questions validées. Continuez ! 🎉';
+            setTimeout(function() { milestoneDiv.style.display = 'none'; }, 4000);
+        }
+    }
+
+    function renderQuestion() {
+        var q = questions[currentIndex];
+        if (!q) return;
+        qNum.textContent = 'السؤال ' + (currentIndex+1) + ' / ' + questions.length + '  |  Question ' + (currentIndex+1) + ' / ' + questions.length;
+        qTextAr.textContent = q.textAr;
+        qTextFr.textContent = q.textFr;
+        qTextAr.style.display = (lang === 'ar') ? 'block' : 'none';
+        qTextFr.style.display = (lang === 'fr') ? 'block' : 'none';
+
+        var ans = answers[currentIndex];
+        optionsContainer.innerHTML = '';
+        var letters = ['أ', 'ب', 'ج', 'د'];
+        var lettersFr = ['A', 'B', 'C', 'D'];
+        var lbl = lang === 'ar' ? letters : lettersFr;
+
+        q.options.forEach(function(opt, idx) {
+            var div = document.createElement('div');
+            div.className = 'opt';
+            div.setAttribute('data-idx', idx);
+            div.innerHTML = '<span class="letter">' + lbl[idx] + '</span><span>' + opt + '</span>';
+
+            if (ans === 1 && idx === q.correct) div.classList.add('correct');
+            else if (ans === -1 && idx === selectedOption) div.classList.add('wrong');
+            else if (ans === 1 && idx !== q.correct) div.style.opacity = '0.6';
+
+            div.addEventListener('click', function() {
+                if (answers[currentIndex] !== null) return;
+                document.querySelectorAll('.opt').forEach(function(el) { el.classList.remove('selected'); });
+                div.classList.add('selected');
+                selectedOption = parseInt(div.getAttribute('data-idx'));
                 feedbackDiv.className = 'answer-feedback';
                 feedbackDiv.style.display = 'none';
-            }
+            });
 
-            prevBtn.disabled = (currentIndex === 0);
-            submitBtn.disabled = (answers[currentIndex] !== null);
-            updateStats();
-        }
-
-        function showFeedback(ans, q) {
-            var isCorrect = (ans === 1);
-            feedbackDiv.className = 'answer-feedback ' + (isCorrect ? 'correct' : 'wrong');
-            feedbackDiv.style.display = 'block';
-            if (isCorrect) {
-                feedbackDiv.innerHTML = '✅ <strong>إجابة صحيحة!</strong> +0.75 نقطة<br><span style="font-size:13px;color:#0b4f6c;">✔ Bonne réponse ! +0.75 point</span>';
-            } else {
-                feedbackDiv.innerHTML = '❌ <strong>إجابة خاطئة!</strong> -0.25 نقطة<br>الإجابة الصحيحة هي: <span class="correct-answer">' + q.options[q.correct] + '</span><br><span style="font-size:13px;color:#7a1a1a;">✘ Mauvaise réponse ! -0.25 point<br>Bonne réponse : ' + q.options[q.correct] + '</span>';
-            }
-        }
-
-        function updateStats() {
-            var correct = 0, wrong = 0, answered = 0;
-            for (var i = 0; i < answers.length; i++) {
-                if (answers[i] === 1) { correct++; answered++; }
-                else if (answers[i] === -1) { wrong++; answered++; }
-            }
-            var total = questions.length;
-            var score = correct * 0.75 - wrong * 0.25;
-            var pct = Math.round((answered / total) * 100);
-
-            correctCountSpan.textContent = correct;
-            wrongCountSpan.textContent = wrong;
-            answeredCountSpan.textContent = answered;
-            scoreDisplay.textContent = score.toFixed(2);
-            progressFill.style.width = pct + '%';
-            progressText.textContent = pct + ' %';
-
-            var notAnswered = total - answered;
-            detailStats.textContent = 'Bonnes:' + correct + ' | Mauvaises:' + wrong + ' | NR:' + notAnswered;
-
-            var level = 'Débutant';
-            if (score > 100) level = 'Excellent';
-            else if (score > 60) level = 'Avancé';
-            else if (score > 30) level = 'Intermédiaire';
-            levelEstimate.textContent = level;
-
-            checkMilestone(answered);
-        }
-
-        // Événements
-        submitBtn.addEventListener('click', function() {
-            var q = questions[currentIndex];
-            if (answers[currentIndex] !== null) return;
-            if (selectedOption === null) {
-                lastAction.textContent = '⚠️ Veuillez sélectionner une réponse.';
-                return;
-            }
-            var isCorrect = (selectedOption === q.correct);
-            var value = isCorrect ? 1 : -1;
-            var selectedIdx = selectedOption;
-            answers[currentIndex] = value;
-            selectedOption = null;
-            renderQuestion();
-            showFeedback(value, q);
-            if (!isCorrect) {
-                var opts = document.querySelectorAll('.opt');
-                for (var i = 0; i < opts.length; i++) {
-                    if (parseInt(opts[i].getAttribute('data-idx')) === selectedIdx) {
-                        opts[i].classList.add('wrong');
-                    }
-                }
-            }
-            lastAction.textContent = isCorrect ? '✔ Bonne réponse (+0.75)' : '✘ Mauvaise (-0.25)';
-            updateStats();
+            optionsContainer.appendChild(div);
         });
 
-        prevBtn.addEventListener('click', function() {
-            if (currentIndex > 0) {
-                currentIndex--;
-                selectedOption = null;
-                renderQuestion();
+        if (answers[currentIndex] !== null) showFeedback(answers[currentIndex], q);
+        else { feedbackDiv.className = 'answer-feedback'; feedbackDiv.style.display = 'none'; }
+
+        prevBtn.disabled = (currentIndex === 0);
+        submitBtn.disabled = (answers[currentIndex] !== null);
+        updateStats();
+    }
+
+    function showFeedback(ans, q) {
+        var isCorrect = (ans === 1);
+        feedbackDiv.className = 'answer-feedback ' + (isCorrect ? 'correct' : 'wrong');
+        feedbackDiv.style.display = 'block';
+        if (isCorrect) {
+            feedbackDiv.innerHTML = '✅ <strong>إجابة صحيحة!</strong> +0.75 نقطة<br><span style="font-size:13px;color:#0b4f6c;">✔ Bonne réponse ! +0.75 point</span>';
+        } else {
+            feedbackDiv.innerHTML = '❌ <strong>إجابة خاطئة!</strong> -0.25 نقطة<br>الإجابة الصحيحة هي: <span class="correct-answer">' + q.options[q.correct] + '</span><br><span style="font-size:13px;color:#7a1a1a;">✘ Mauvaise réponse ! -0.25 point<br>Bonne réponse : ' + q.options[q.correct] + '</span>';
+        }
+    }
+
+    function updateStats() {
+        var correct = 0, wrong = 0, answered = 0;
+        for (var i = 0; i < answers.length; i++) {
+            if (answers[i] === 1) { correct++; answered++; }
+            else if (answers[i] === -1) { wrong++; answered++; }
+        }
+        var total = questions.length;
+        var score = correct * 0.75 - wrong * 0.25;
+        var pct = Math.round((answered / total) * 100);
+
+        correctCountSpan.textContent = correct;
+        wrongCountSpan.textContent = wrong;
+        answeredCountSpan.textContent = answered;
+        scoreDisplay.textContent = score.toFixed(2);
+        progressFill.style.width = pct + '%';
+        progressText.textContent = pct + ' %';
+
+        var notAnswered = total - answered;
+        detailStats.textContent = 'Bonnes:' + correct + ' | Mauvaises:' + wrong + ' | NR:' + notAnswered;
+
+        var level = 'Débutant';
+        if (score > 100) level = 'Excellent';
+        else if (score > 60) level = 'Avancé';
+        else if (score > 30) level = 'Intermédiaire';
+        levelEstimate.textContent = level;
+
+        checkMilestone(answered);
+    }
+
+    // === ÉVÉNEMENTS ===
+    submitBtn.addEventListener('click', function() {
+        var q = questions[currentIndex];
+        if (answers[currentIndex] !== null) return;
+        if (selectedOption === null) {
+            lastAction.textContent = '⚠️ Veuillez sélectionner une réponse.';
+            return;
+        }
+        var isCorrect = (selectedOption === q.correct);
+        var value = isCorrect ? 1 : -1;
+        var selectedIdx = selectedOption;
+        answers[currentIndex] = value;
+        selectedOption = null;
+        renderQuestion();
+        showFeedback(value, q);
+        if (!isCorrect) {
+            document.querySelectorAll('.opt').forEach(function(el) {
+                if (parseInt(el.getAttribute('data-idx')) === selectedIdx) el.classList.add('wrong');
+            });
+        }
+        lastAction.textContent = isCorrect ? '✔ Bonne réponse (+0.75)' : '✘ Mauvaise (-0.25)';
+        updateStats();
+    });
+
+    prevBtn.addEventListener('click', function() {
+        if (currentIndex > 0) { currentIndex--; selectedOption = null; renderQuestion(); lastAction.textContent = '← Précédent'; }
+    });
+
+    nextBtn.addEventListener('click', function() {
+        if (currentIndex < questions.length - 1) { currentIndex++; selectedOption = null; renderQuestion(); lastAction.textContent = '→ Suivant'; }
+    });
+
+    resetBtn.addEventListener('click', function() {
+        if (confirm('Réinitialiser toutes les réponses ?')) {
+            answers = new Array(questions.length).fill(null);
+            selectedOption = null;
+            currentIndex = 0;
+            lastMilestone = 0;
+            milestoneDiv.style.display = 'none';
+            renderQuestion();
+            updateStats();
+            lastAction.textContent = '⟳ Réinitialisé';
+        }
+    });
+
+    langArBtn.addEventListener('click', function() {
+        lang = 'ar';
+        langArBtn.classList.add('active');
+        langFrBtn.classList.remove('active');
+        renderQuestion();
+    });
+    langFrBtn.addEventListener('click', function() {
+        lang = 'fr';
+        langFrBtn.classList.add('active');
+        langArBtn.classList.remove('active');
+        renderQuestion();
+    });
+
+    // === LANCEMENT ===
+    renderQuestion();
+    updateStats();
+    lastAction.textContent = 'Bienvenue ! Répondez aux questions.';
+})();
+</script>
+</body>
+</html>
