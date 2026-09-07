@@ -3,13 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QCM Fiscalité Mauritanie 2025</title>
+    <title>QCM Fiscalité Mauritanie 2025 – 500 questions</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
             background: #f0f4fa;
@@ -370,7 +366,7 @@
                 qs.push({ id: ++id, ...q });
             }
 
-            // Base de questions bilingues
+            // Base de questions bilingues (30 questions de base)
             var base = [
                 // IS
                 { ar: "نسبة ضريبة الشركات (IS) العادية في موريتانيا هي:", fr: "Le taux normal de l'IS est de :", opts: ["18 %", "20 %", "25 %", "30 %"], correct: 2 },
@@ -407,7 +403,7 @@
 
             base.forEach(function(q) { add({ textAr: q.ar, textFr: q.fr, options: q.opts, correct: q.correct }); });
 
-            // Ajout de questions générées pour atteindre 500
+            // Ajout de questions supplémentaires pour atteindre 500
             var extraAr = [
                 "نسبة الضريبة على دخل رأس المال المنقول (IRCM) هي:",
                 "ضريبة التكوين المهني هي:",
@@ -459,22 +455,22 @@
                 });
             }
 
-            // Remplissage jusqu'à 500
+            // Remplissage jusqu'à 500 questions
             while (qs.length < 500) {
                 var idx = qs.length % 20;
                 var baseQ = qs[idx] || qs[0];
                 if (baseQ) {
                     add({
-                        textAr: "تنويع: " + baseQ.textAr.substring(0, 30) + " (س" + qs.length + ")",
-                        textFr: "Variante : " + baseQ.textFr.substring(0, 30) + " (Q" + qs.length + ")",
+                        textAr: "سؤال متنوع: " + baseQ.textAr.substring(0, 25) + " (" + (qs.length+1) + ")",
+                        textFr: "Question variée : " + baseQ.textFr.substring(0, 25) + " (" + (qs.length+1) + ")",
                         options: baseQ.options.slice(),
                         correct: baseQ.correct
                     });
                 } else {
                     add({
-                        textAr: "سؤال إضافي " + qs.length,
-                        textFr: "Question supplémentaire " + qs.length,
-                        options: ["أ", "ب", "ج", "د"],
+                        textAr: "سؤال إضافي " + (qs.length+1),
+                        textFr: "Question supplémentaire " + (qs.length+1),
+                        options: ["خيار أ", "خيار ب", "خيار ج", "خيار د"],
                         correct: 0
                     });
                 }
@@ -527,6 +523,11 @@
         }
 
         function renderQuestion() {
+            if (!questions || questions.length === 0) {
+                // Sécurité : si questions est vide, on le reconstruit
+                questions = buildQuestions();
+                answers = new Array(questions.length).fill(null);
+            }
             var q = questions[currentIndex];
             if (!q) return;
             qNum.textContent = 'السؤال ' + (currentIndex+1) + ' / ' + questions.length + '  |  Question ' + (currentIndex+1) + ' / ' + questions.length;
@@ -653,14 +654,3 @@
                 currentIndex--;
                 selectedOption = null;
                 renderQuestion();
-                lastAction.textContent = '← Précédent';
-            }
-        });
-
-        nextBtn.addEventListener('click', function() {
-            if (currentIndex < questions.length - 1) {
-                currentIndex++;
-                selectedOption = null;
-                renderQuestion();
-                lastAction.textContent = '→ Suivant';
-           
