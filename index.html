@@ -5,15 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>QCM Fiscalité Mauritanie 2025</title>
     <style>
-        /* ============================================================
-           RESET & BASE
-           ============================================================ */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
         body {
             font-family: -apple-system, 'Segoe UI', Roboto, system-ui, sans-serif;
             background: #0b1a2e;
@@ -24,7 +20,6 @@
             justify-content: center;
             align-items: center;
         }
-
         .container {
             max-width: 960px;
             width: 100%;
@@ -36,10 +31,6 @@
             color: #1e293b;
             transition: padding 0.2s;
         }
-
-        /* ============================================================
-           HEADER
-           ============================================================ */
         h1 {
             font-size: clamp(18px, 4vw, 26px);
             font-weight: 700;
@@ -51,7 +42,6 @@
             flex-wrap: wrap;
             margin-bottom: 4px;
         }
-
         .badge {
             background: #0b4f6c;
             color: white;
@@ -60,7 +50,6 @@
             border-radius: 60px;
             font-weight: 600;
         }
-
         .prof-credit {
             background: linear-gradient(135deg, #fef9e7, #fdebd0);
             border: 2px solid #f1c40f;
@@ -74,15 +63,10 @@
             box-shadow: 0 2px 8px rgba(241, 196, 15, 0.25);
             width: auto;
         }
-
         .prof-credit .whatsapp {
             color: #25D366;
             font-weight: 700;
         }
-
-        /* ============================================================
-           LAYOUT FLEX
-           ============================================================ */
         .flex-row {
             display: flex;
             justify-content: space-between;
@@ -90,17 +74,6 @@
             flex-wrap: wrap;
             gap: 8px 12px;
         }
-
-        .flex-center {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        /* ============================================================
-           STATS
-           ============================================================ */
         .subhead {
             display: flex;
             justify-content: space-between;
@@ -112,13 +85,11 @@
             flex-wrap: wrap;
             gap: 6px;
         }
-
         .stats {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
         }
-
         .stats span {
             background: #f1f5f9;
             padding: 2px 12px;
@@ -129,7 +100,6 @@
             align-items: center;
             gap: 4px;
         }
-
         .stats .correct-badge {
             background: #d9f2e0;
             color: #0d4a2a;
@@ -142,7 +112,6 @@
             background: #e8f4fd;
             color: #0b4f6c;
         }
-
         .score-negative {
             color: #b91c1c;
             font-weight: 700;
@@ -151,10 +120,6 @@
             color: #1e7b4c;
             font-weight: 700;
         }
-
-        /* ============================================================
-           LANG TOGGLE
-           ============================================================ */
         .lang-toggle {
             background: #eef2f7;
             border-radius: 40px;
@@ -163,7 +128,6 @@
             gap: 3px;
             flex-shrink: 0;
         }
-
         .lang-toggle button {
             border: none;
             background: transparent;
@@ -175,15 +139,10 @@
             transition: 0.2s;
             color: #1e293b;
         }
-
         .lang-toggle button.active {
             background: #0b4f6c;
             color: white;
         }
-
-        /* ============================================================
-           PROGRESS
-           ============================================================ */
         .progress {
             background: #e9edf2;
             height: 8px;
@@ -191,17 +150,12 @@
             margin: 12px 0 4px;
             overflow: hidden;
         }
-
         .progress-fill {
             background: #0b4f6c;
             height: 100%;
             width: 0%;
             transition: width 0.3s ease;
         }
-
-        /* ============================================================
-           QUESTION PANEL
-           ============================================================ */
         .question-panel {
             background: #fafcff;
             border-radius: 20px;
@@ -209,7 +163,6 @@
             border: 1px solid #e2e8f0;
             margin: 10px 0;
         }
-
         .q-number {
             display: inline-block;
             background: #0b4f6c;
@@ -220,7 +173,6 @@
             border-radius: 40px;
             margin-bottom: 10px;
         }
-
         .q-text {
             font-size: clamp(15px, 2.2vw, 19px);
             font-weight: 500;
@@ -229,7 +181,6 @@
             direction: rtl;
             text-align: right;
         }
-
         .q-text-fr {
             font-size: clamp(14px, 2vw, 17px);
             font-weight: 400;
@@ -242,16 +193,11 @@
             direction: ltr;
             text-align: left;
         }
-
-        /* ============================================================
-           OPTIONS
-           ============================================================ */
         .options {
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
-
         .opt {
             background: white;
             border: 1.5px solid #dde3ec;
@@ -269,28 +215,23 @@
             -webkit-tap-highlight-color: transparent;
             touch-action: manipulation;
         }
-
         .opt:hover {
             background: #f0f6fe;
             border-color: #8ba9d1;
         }
-
         .opt.selected {
             background: #e1edfb;
             border-color: #1d6f9c;
             box-shadow: 0 0 0 2px rgba(11, 79, 108, 0.15);
         }
-
         .opt.correct {
             background: #d9f2e0;
             border-color: #1e7b4c;
         }
-
         .opt.wrong {
             background: #fee9e9;
             border-color: #b91c1c;
         }
-
         .opt .letter {
             font-weight: 700;
             color: #1e3a5f;
@@ -298,10 +239,6 @@
             flex-shrink: 0;
             font-size: clamp(13px, 1.8vw, 15px);
         }
-
-        /* ============================================================
-           BUTTONS
-           ============================================================ */
         .action-bar {
             display: flex;
             justify-content: space-between;
@@ -310,7 +247,6 @@
             gap: 10px;
             margin-top: 18px;
         }
-
         .btn {
             background: white;
             border: 1.5px solid #cbd5e1;
@@ -328,53 +264,40 @@
             align-items: center;
             justify-content: center;
         }
-
         .btn-primary {
             background: #0b4f6c;
             border-color: #0b4f6c;
             color: white;
         }
-
         .btn-primary:hover {
             background: #083c52;
         }
-
         .btn-primary:disabled {
             opacity: 0.4;
             pointer-events: none;
         }
-
         .btn-outline:hover {
             background: #f1f5f9;
         }
-
         .btn-danger {
             border-color: #b91c1c;
             color: #b91c1c;
         }
-
         .btn-danger:hover {
             background: #fee9e9;
         }
-
         .btn-success {
             border-color: #1e7b4c;
             color: #1e7b4c;
         }
-
         .btn-success:hover {
             background: #d9f2e0;
         }
-
         .btn-small {
             padding: clamp(5px, 1vw, 8px) clamp(10px, 1.8vw, 16px);
             font-size: clamp(11px, 1.4vw, 13px);
             min-height: 36px;
         }
-
-        /* ============================================================
-           FEEDBACK & MILESTONE
-           ============================================================ */
         .milestone {
             background: #e8f4fd;
             border-radius: 12px;
@@ -388,7 +311,6 @@
             flex-wrap: wrap;
             font-size: clamp(12px, 1.6vw, 14px);
         }
-
         .answer-feedback {
             margin-top: 12px;
             padding: 10px 14px;
@@ -399,29 +321,22 @@
             text-align: right;
             font-size: clamp(13px, 1.8vw, 15px);
         }
-
         .answer-feedback.correct {
             display: block;
             background: #d9f2e0;
             border: 2px solid #1e7b4c;
             color: #0d4a2a;
         }
-
         .answer-feedback.wrong {
             display: block;
             background: #fee9e9;
             border: 2px solid #b91c1c;
             color: #7a1a1a;
         }
-
         .answer-feedback .correct-answer {
             font-weight: 700;
             color: #0b4f6c;
         }
-
-        /* ============================================================
-           RESULT AREA
-           ============================================================ */
         .result-area {
             margin-top: 18px;
             background: #f8fafc;
@@ -429,7 +344,6 @@
             padding: 14px 16px;
             border: 1px solid #dde3ec;
         }
-
         .result-line {
             display: flex;
             justify-content: space-between;
@@ -439,11 +353,9 @@
             flex-wrap: wrap;
             gap: 4px;
         }
-
         .result-line:last-child {
             border: none;
         }
-
         .footer-note {
             margin-top: 14px;
             color: #64748b;
@@ -452,41 +364,204 @@
             padding-top: 12px;
             text-align: center;
         }
-
-        /* ============================================================
-           RESPONSIVE : TABLETTE & PETITS ÉCRANS
-           ============================================================ */
+        /* ---- RÉSUMÉ / RESULTAT ---- */
+        .summary-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .summary-overlay.show {
+            display: flex;
+        }
+        .summary-card {
+            background: white;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 28px;
+            padding: 24px 28px;
+            color: #1e293b;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        .summary-card h2 {
+            font-size: 24px;
+            border-bottom: 3px solid #0b4f6c;
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .summary-card .close-btn {
+            background: #fee9e9;
+            border: none;
+            border-radius: 60px;
+            padding: 8px 20px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            color: #b91c1c;
+            transition: 0.2s;
+        }
+        .summary-card .close-btn:hover {
+            background: #fdd0d0;
+        }
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin: 16px 0;
+        }
+        .summary-stats .stat-item {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        .summary-stats .stat-item .number {
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .summary-stats .stat-item .label {
+            font-size: 13px;
+            color: #64748b;
+        }
+        .summary-stats .stat-item.green .number {
+            color: #1e7b4c;
+        }
+        .summary-stats .stat-item.red .number {
+            color: #b91c1c;
+        }
+        .summary-stats .stat-item.blue .number {
+            color: #0b4f6c;
+        }
+        .summary-rules {
+            margin-top: 20px;
+            border-top: 2px solid #e9edf2;
+            padding-top: 16px;
+        }
+        .summary-rules h3 {
+            color: #0b4f6c;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .summary-rules .rule-block {
+            background: #f1f5f9;
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 12px;
+            border-right: 4px solid #0b4f6c;
+        }
+        .summary-rules .rule-block .rule-title {
+            font-weight: 700;
+            font-size: 15px;
+            color: #0b4f6c;
+        }
+        .summary-rules .rule-block .rule-example {
+            font-size: 14px;
+            color: #334155;
+            margin-top: 4px;
+            padding: 8px 12px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        .summary-rules .rule-block .rule-piege {
+            font-size: 13px;
+            color: #b91c1c;
+            margin-top: 4px;
+            background: #fee9e9;
+            padding: 6px 12px;
+            border-radius: 8px;
+        }
+        .btn-summary {
+            background: #0b4f6c;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+            min-height: 44px;
+        }
+        .btn-summary:hover {
+            background: #083c52;
+        }
+        .btn-stop {
+            background: #b91c1c;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+            min-height: 44px;
+        }
+        .btn-stop:hover {
+            background: #991515;
+        }
+        .btn-result {
+            background: #1e7b4c;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+            min-height: 44px;
+        }
+        .btn-result:hover {
+            background: #16653d;
+        }
+        .action-right {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
         @media (max-width: 768px) {
             body {
                 padding: 8px;
             }
-
             .container {
                 padding: 14px 12px 18px;
                 border-radius: 20px;
             }
-
             .flex-row {
                 flex-direction: column;
                 align-items: stretch;
             }
-
             .flex-row .lang-toggle {
                 align-self: flex-start;
             }
-
             .action-bar {
                 flex-direction: column;
                 align-items: stretch;
             }
-
-            .action-bar > div {
+            .action-bar>div {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 6px;
                 justify-content: center;
             }
-
             .btn {
                 flex: 1;
                 min-width: 60px;
@@ -495,423 +570,330 @@
                 font-size: 13px;
                 min-height: 48px;
             }
-
             .btn-small {
                 min-height: 40px;
                 padding: 8px 12px;
                 font-size: 12px;
             }
-
             .subhead {
                 flex-direction: column;
                 align-items: stretch;
                 gap: 6px;
             }
-
             .stats {
                 justify-content: center;
             }
-
             .stats span {
                 font-size: 12px;
                 padding: 2px 10px;
             }
+            .summary-card {
+                padding: 16px;
+                margin: 10px;
+            }
+            .summary-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .action-right {
+                justify-content: center;
+            }
         }
-
         @media (max-width: 480px) {
             body {
                 padding: 4px;
             }
-
             .container {
                 padding: 10px 8px 14px;
                 border-radius: 16px;
             }
-
             h1 {
                 font-size: 17px;
                 padding-left: 10px;
                 border-left-width: 4px;
             }
-
             .prof-credit {
                 font-size: 11px;
                 padding: 3px 12px;
             }
-
             .question-panel {
                 padding: 12px 10px;
             }
-
             .opt {
                 padding: 10px 12px;
                 font-size: 14px;
                 border-radius: 10px;
             }
-
             .btn {
                 font-size: 12px;
                 padding: 8px 10px;
                 min-height: 44px;
             }
-
             .btn-small {
                 font-size: 11px;
                 padding: 6px 10px;
                 min-height: 36px;
             }
-
             .result-area {
                 padding: 10px 12px;
             }
-
             .result-line {
                 font-size: 12px;
             }
-
             .footer-note {
                 font-size: 11px;
             }
-
             .stats span {
                 font-size: 11px;
                 padding: 2px 8px;
             }
-
             .lang-toggle button {
                 font-size: 11px;
                 padding: 3px 10px;
             }
+            .summary-stats {
+                grid-template-columns: 1fr 1fr;
+            }
         }
-
-        /* ============================================================
-           TOUCH OPTIMISATION
-           ============================================================ */
         .opt,
         .btn {
             -webkit-touch-callout: none;
         }
-
         .opt:active {
             transform: scale(0.98);
         }
-
         .btn:active {
             transform: scale(0.97);
         }
-
         * {
             -webkit-tap-highlight-color: transparent;
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <!-- HEADER -->
-    <h1>
-        <span>📘 Fiscalité Mauritanie 2025</span>
-        <span class="badge">500 QCM</span>
-    </h1>
+    <div class="container">
+        <!-- HEADER -->
+        <h1>
+            <span>📘 Fiscalité Mauritanie 2025</span>
+            <span class="badge">500 QCM</span>
+        </h1>
 
-    <div class="flex-row">
-        <div class="prof-credit">
-            🧑‍🏫 <strong>Prof. Mohamed Yahya Taleb Abdellahi</strong>
-            <span class="whatsapp">📱 WhatsApp : 30545727</span>
-            — 🍀 Bonne chance !
+        <div class="flex-row">
+            <div class="prof-credit">
+                🧑‍🏫 <strong>Prof. Mohamed Yahya Taleb Abdellahi</strong>
+                <span class="whatsapp">📱 WhatsApp : 30545727</span>
+                — 🍀 Bonne chance !
+            </div>
+            <div class="lang-toggle">
+                <button id="langAr" class="active">🇸🇦 العربية</button>
+                <button id="langFr">🇫🇷 Français</button>
+            </div>
         </div>
-        <div class="lang-toggle">
-            <button id="langAr" class="active">🇸🇦 العربية</button>
-            <button id="langFr">🇫🇷 Français</button>
+
+        <!-- MILESTONE -->
+        <div id="milestoneMessage" class="milestone" style="display:none;">
+            <span>🎯 <span id="milestoneText">Félicitations !</span></span>
+            <span style="font-size:13px; color:#0b4f6c;">✅ Continuez !</span>
+        </div>
+
+        <!-- STATS & PROGRESS -->
+        <div class="subhead">
+            <div class="stats">
+                <span class="correct-badge">✅ <span id="correctCount">0</span></span>
+                <span class="wrong-badge">❌ <span id="wrongCount">0</span></span>
+                <span class="answered-badge">⏳ <span id="answeredCount">0</span>/500</span>
+            </div>
+            <div>📊 <span id="scoreDisplay">0.00</span></div>
+        </div>
+
+        <div class="progress">
+            <div class="progress-fill" id="progressFill" style="width:0%"></div>
+        </div>
+
+        <!-- QUESTION -->
+        <div id="questionContainer" class="question-panel">
+            <div class="q-number" id="qNum">السؤال 1 / Question 1</div>
+            <div class="q-text" id="qTextAr">جاري تحميل الأسئلة...</div>
+            <div class="q-text-fr" id="qTextFr">Chargement des questions...</div>
+            <div class="options" id="optionsContainer"></div>
+            <div class="answer-feedback" id="answerFeedback"></div>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="action-bar">
+            <div>
+                <button class="btn btn-outline btn-small" id="prevBtn" disabled>◀ Préc.</button>
+                <button class="btn btn-outline btn-small" id="nextBtn">Suiv. ▶</button>
+            </div>
+            <div class="action-right">
+                <button class="btn btn-danger btn-small" id="resetBtn">⟳ Réinit.</button>
+                <button class="btn btn-primary btn-small" id="submitBtn">✅ Valider</button>
+                <button class="btn-stop btn-small" id="stopBtn">⏹ Stop</button>
+                <button class="btn-result btn-small" id="resultBtn">📊 Résultat</button>
+                <button class="btn-summary btn-small" id="summaryBtn">📖 Résumé</button>
+            </div>
+        </div>
+
+        <!-- RESULT AREA -->
+        <div id="resultArea" class="result-area">
+            <div class="result-line"><span>📌 Dernière action</span><span id="lastAction">—</span></div>
+            <div class="result-line"><span>📈 Progression</span><span id="progressText">0 %</span></div>
+            <div class="result-line"><span>🏆 Estimation</span><span id="levelEstimate">Débutant</span></div>
+            <div class="result-line" style="border-bottom: none; margin-top:4px;">
+                <span>📋 Détail</span>
+                <span id="detailStats">Bonnes:0 | Mauvaises:0 | NR:500</span>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            ⚡ Bonne +0.75 | Mauvaise -0.25 | IS, TVA, droit, calculs, pièges...
+            <br>📱 <strong>Prof. Mohamed Yahya Taleb Abdellahi — WhatsApp : 30545727</strong>
         </div>
     </div>
 
-    <!-- MILESTONE -->
-    <div id="milestoneMessage" class="milestone" style="display:none;">
-        <span>🎯 <span id="milestoneText">Félicitations !</span></span>
-        <span style="font-size:13px; color:#0b4f6c;">✅ Continuez !</span>
-    </div>
+    <!-- ========== OVERLAY RÉSUMÉ ========== -->
+    <div class="summary-overlay" id="summaryOverlay">
+        <div class="summary-card">
+            <h2>
+                <span>📖 Résumé du Code Général des Impôts 2025</span>
+                <button class="close-btn" id="closeSummary">✕ Fermer</button>
+            </h2>
 
-    <!-- STATS & PROGRESS -->
-    <div class="subhead">
-        <div class="stats">
-            <span class="correct-badge">✅ <span id="correctCount">0</span></span>
-            <span class="wrong-badge">❌ <span id="wrongCount">0</span></span>
-            <span class="answered-badge">⏳ <span id="answeredCount">0</span>/500</span>
+            <!-- STATS RÉSUMÉ -->
+            <div class="summary-stats" id="summaryStats">
+                <div class="stat-item green"><div class="number" id="sumCorrect">0</div><div class="label">✅ Bonnes réponses</div></div>
+                <div class="stat-item red"><div class="number" id="sumWrong">0</div><div class="label">❌ Mauvaises réponses</div></div>
+                <div class="stat-item blue"><div class="number" id="sumAnswered">0</div><div class="label">⏳ Répondues / 500</div></div>
+                <div class="stat-item blue"><div class="number" id="sumScore">0.00</div><div class="label">📊 Score total</div></div>
+                <div class="stat-item blue"><div class="number" id="sumPct">0%</div><div class="label">📈 Pourcentage</div></div>
+                <div class="stat-item blue"><div class="number" id="sumLevel">Débutant</div><div class="label">🏆 Niveau</div></div>
+            </div>
+
+            <!-- RÈGLES -->
+            <div class="summary-rules">
+                <h3>📜 Règles et principes clés (Code Général des Impôts)</h3>
+
+                <!-- IS -->
+                <div class="rule-block">
+                    <div class="rule-title">🏢 Impôt sur les Sociétés (IS) – Art. 51</div>
+                    <div class="rule-example">
+                        <strong>📌 Règle :</strong> Taux de 25% sur le bénéfice net imposable, ou 2% du chiffre d'affaires si plus élevé. Minimum : 100 000 MRU.<br>
+                        <strong>📝 Exemple :</strong> Bénéfice = 8 000 000 MRU → IS = 8 000 000 × 25% = 2 000 000 MRU.
+                    </div>
+                    <div class="rule-piege">
+                        ⚠️ <strong>Piège :</strong> Ne pas confondre le minimum de perception (100 000 MRU) avec le taux normal. En cas de perte, l'impôt minimum reste dû.
+                    </div>
+                </div>
+
+                <!-- IBAPP -->
+                <div class="rule-block">
+                    <div class="rule-title">👤 IBAPP (Personnes physiques) – Art. 87</div>
+                    <div class="rule-example">
+                        <strong>📌 Règle :</strong> Taux de 30% sur le bénéfice net, ou 2,5% du CA. Minimum : 125 000 MRU (réel normal).<br>
+                        <strong>📝 Exemple :</strong> Bénéfice = 500 000 MRU → 500 000 × 30% = 150 000 MRU (minimum 125 000 MRU).
+                    </div>
+                    <div class="rule-piege">
+                        ⚠️ <strong>Piège :</strong> Le régime du forfait (CA < 3 M MRU) est à 3% du CA, sans minimum.
+                    </div>
+                </div>
+
+                <!-- TVA -->
+                <div class="rule-block">
+                    <div class="rule-title">📦 TVA – Art. 230</div>
+                    <div class="rule-example">
+                        <strong>📌 Règle :</strong> Taux normal 16%. Exportations à 0%.<br>
+                        <strong>📝 Exemple :</strong> Vente HT = 1 250 000 MRU → TVA = 1 250 000 × 16% = 200 000 MRU.
+                    </div>
+                    <div class="rule-piege">
+                        ⚠️ <strong>Piège :</strong> Les exportations sont à 0% (et non exonérées). Le crédit de TVA est remboursable aux exportateurs.
+                    </div>
+                </div>
+
+                <!-- Retenues -->
+                <div class="rule-block">
+                    <div class="rule-title">💰 Retenues à la source</div>
+                    <div class="rule-example">
+                        <strong>📌 Règle :</strong> Loyers : 18% (10% IRF + 8% foncière). Non-résidents : 15%. Libérales : 2,5%.<br>
+                        <strong>📝 Exemple :</strong> Loyer annuel = 1 000 000 MRU → Retenue = 180 000 MRU.
+                    </div>
+                    <div class="rule-piege">
+                        ⚠️ <strong>Piège :</strong> La retenue sur loyers est à la charge du locataire (qui la déduit du loyer versé au propriétaire).
+                    </div>
+                </div>
+
+                <!-- Délais -->
+                <div class="rule-block">
+                    <div class="rule-title">⏱ Délais clés</div>
+                    <div class="rule-example">
+                        <strong>📌 Règle :</strong> Déclaration IS/IBAPP : 31 mars. Réponse à redressement : 15 jours. Confirmation admin : 60 jours. Réclamation : 3 mois.
+                    </div>
+                    <div class="rule-piege">
+                        ⚠️ <strong>Piège :</strong> L'absence de réponse à une notification de redressement vaut acceptation tacite.
+                    </div>
+                </div>
+
+                <!-- Contrôle -->
+                <div class="rule-block">
+                    <div class="rule-title">🔍 Contrôle et sanctions</div>
+                    <div class="rule-example">
+                        <strong>📌 Règle :</strong> Délai de reprise : 3 ans. Pénalités : 10% (retard < 2 mois), 25% (retard > 2 mois), 40% (mauvaise foi), 80% (fraude).
+                    </div>
+                    <div class="rule-piege">
+                        ⚠️ <strong>Piège :</strong> La prescription est de 3 ans, mais peut être interrompue par un avis de vérification.
+                    </div>
+                </div>
+
+                <!-- Pièges généraux -->
+                <div class="rule-block">
+                    <div class="rule-title">🎯 Pièges courants à éviter</div>
+                    <div class="rule-example">
+                        <strong>📌 1.</strong> Confondre IS (25%) et IBAPP (30%).<br>
+                        <strong>📌 2.</strong> Oublier le minimum de perception (IS: 100 000 MRU, IBAPP: 125 000 MRU).<br>
+                        <strong>📌 3.</strong> Croire que les exportations sont exonérées de TVA (elles sont à 0%).<br>
+                        <strong>📌 4.</strong> Négliger les délais de réponse (15 jours pour le contribuable, 60 jours pour l'admin).<br>
+                        <strong>📌 5.</strong> Ignorer que l'absence de réponse à un redressement vaut acceptation.
+                    </div>
+                    <div class="rule-piege">
+                        💡 <strong>Conseil :</strong> Lisez toujours deux fois l'énoncé. Les questions pièges portent souvent sur les délais (15, 30, 60 jours) et les minimums de perception.
+                    </div>
+                </div>
+
+                <!-- Résumé final -->
+                <div class="rule-block" style="border-right-color: #f1c40f; background: #fef9e7;">
+                    <div class="rule-title">📌 Récapitulatif des taux essentiels</div>
+                    <div class="rule-example">
+                        • IS : 25% (min 100 000 MRU)<br>
+                        • IBAPP : 30% (min 125 000 MRU)<br>
+                        • TVA : 16% (export 0%)<br>
+                        • IRCM : 10%<br>
+                        • Retenue non-résidents : 15%<br>
+                        • Retenue loyers : 18%<br>
+                        • Taxe apprentissage : 0,6%<br>
+                        • Patente : 10 000 à 500 000 MRU selon CA<br>
+                        • Délai de reprise : 3 ans<br>
+                        • Prescription recouvrement : 4 ans
+                    </div>
+                    <div class="rule-piege">
+                        ⚠️ Ces taux sont ceux du CGI 2025. Vérifiez toujours les mises à jour annuelles.
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>📊 <span id="scoreDisplay">0.00</span></div>
     </div>
 
-    <div class="progress">
-        <div class="progress-fill" id="progressFill" style="width:0%"></div>
-    </div>
+    <script>
+        (function() {
+            // ================================================================
+            // 1. GÉNÉRATION DES 500 QUESTIONS
+            // ================================================================
+            function buildQuestions() {
+                var qs = [];
+                var used = new Set();
+                var id = 0;
 
-    <!-- QUESTION -->
-    <div id="questionContainer" class="question-panel">
-        <div class="q-number" id="qNum">السؤال 1 / Question 1</div>
-        <div class="q-text" id="qTextAr">جاري تحميل الأسئلة...</div>
-        <div class="q-text-fr" id="qTextFr">Chargement des questions...</div>
-        <div class="options" id="optionsContainer"></div>
-        <div class="answer-feedback" id="answerFeedback"></div>
-    </div>
-
-    <!-- ACTIONS -->
-    <div class="action-bar">
-        <div>
-            <button class="btn btn-outline btn-small" id="prevBtn" disabled>◀ Préc.</button>
-            <button class="btn btn-outline btn-small" id="nextBtn">Suiv. ▶</button>
-        </div>
-        <div>
-            <button class="btn btn-danger btn-small" id="resetBtn">⟳ Réinit.</button>
-            <button class="btn btn-primary btn-small" id="submitBtn">✅ Valider</button>
-        </div>
-    </div>
-
-    <!-- RESULT AREA -->
-    <div id="resultArea" class="result-area">
-        <div class="result-line"><span>📌 Dernière action</span><span id="lastAction">—</span></div>
-        <div class="result-line"><span>📈 Progression</span><span id="progressText">0 %</span></div>
-        <div class="result-line"><span>🏆 Estimation</span><span id="levelEstimate">Débutant</span></div>
-        <div class="result-line" style="border-bottom: none; margin-top:4px;">
-            <span>📋 Détail</span>
-            <span id="detailStats">Bonnes:0 | Mauvaises:0 | NR:500</span>
-        </div>
-    </div>
-
-    <div class="footer-note">
-        ⚡ Bonne +0.75 | Mauvaise -0.25 | IS, TVA, droit, calculs, pièges...
-        <br>📱 <strong>Prof. Mohamed Yahya Taleb Abdellahi — WhatsApp : 30545727</strong>
-    </div>
-</div>
-
-<script>
-    (function() {
-        // ================================================================
-        // 1. GÉNÉRATION DES 500 QUESTIONS (BILINGUE AVEC OPTIONS TRADUITES)
-        // ================================================================
-        function buildQuestions() {
-            var qs = [];
-            var used = new Set();
-            var id = 0;
-
-            function add(q) {
-                if (used.has(q.textAr)) return;
-                used.add(q.textAr);
-                qs.push({
-                    id: ++id,
-                    textAr: q.textAr,
-                    textFr: q.textFr,
-                    optionsAr: q.optionsAr || q.options,
-                    optionsFr: q.optionsFr || q.options,
-                    correct: q.correct
-                });
-            }
-
-            // ============================================================
-            // BASE DE QUESTIONS AVEC OPTIONS EN ARABE ET EN FRANÇAIS
-            // ============================================================
-            var base = [
-                // IS
-                {
-                    ar: "نسبة ضريبة الشركات (IS) العادية في موريتانيا هي:",
-                    fr: "Le taux normal de l'IS est de :",
-                    optsAr: ["18 %", "20 %", "25 %", "30 %"],
-                    optsFr: ["18 %", "20 %", "25 %", "30 %"],
-                    correct: 2
-                },
-                {
-                    ar: "الحد الأدنى لضريبة الشركات للنظام الحقيقي العادي هو:",
-                    fr: "Le minimum de perception de l'IS pour le régime réel normal est :",
-                    optsAr: ["50 000 MRU", "75 000 MRU", "100 000 MRU", "125 000 MRU"],
-                    optsFr: ["50 000 MRU", "75 000 MRU", "100 000 MRU", "125 000 MRU"],
-                    correct: 2
-                },
-                {
-                    ar: "يُحدد الربح الخاضع للضريبة على أساس:",
-                    fr: "Le bénéfice imposable à l'IS est déterminé d'après :",
-                    optsAr: ["رقم الأعمال فقط", "الربح المحاسبي الصافي المعدل", "الأرباح الموزعة", "قيمة الصادرات"],
-                    optsFr: ["Le chiffre d'affaires uniquement", "Le bénéfice net comptable corrigé", "Les dividendes distribués", "La valeur des exportations"],
-                    correct: 1
-                },
-                {
-                    ar: "تُعفى من ضريبة الشركات:",
-                    fr: "Sont exonérées de l'IS :",
-                    optsAr: ["الشركات المساهمة", "مجموعات المصالح الاقتصادية (GIE)", "الشركات ذات المسؤولية المحدودة", "فروع الشركات الأجنبية"],
-                    optsFr: ["Les sociétés anonymes", "Les groupements d'intérêt économique (GIE)", "Les SARL", "Les succursales de sociétés étrangères"],
-                    correct: 1
-                },
-                {
-                    ar: "يمكن للشركة الجديدة إقفال أول ميزانية لها في:",
-                    fr: "Une société nouvelle peut arrêter son premier bilan :",
-                    optsAr: ["نهاية سنة التأسيس", "نهاية السنة التالية", "أي تاريخ", "30 يونيو"],
-                    optsFr: ["À la fin de l'année de création", "À la fin de l'année suivante", "À n'importe quelle date", "Le 30 juin"],
-                    correct: 1
-                },
-                {
-                    ar: "التصريح السنوي بنتائج ضريبة الشركات يجب أن يودع في موعد أقصاه:",
-                    fr: "La déclaration annuelle de résultats pour l'IS doit être déposée au plus tard le :",
-                    optsAr: ["31 يناير", "31 مارس", "30 أبريل", "31 مايو"],
-                    optsFr: ["31 janvier", "31 mars", "30 avril", "31 mai"],
-                    correct: 1
-                },
-                {
-                    ar: "مدة التقادم في مجال ضريبة الشركات هي:",
-                    fr: "Le délai de reprise en matière d'IS est de :",
-                    optsAr: ["سنة واحدة", "سنتان", "3 سنوات", "5 سنوات"],
-                    optsFr: ["1 an", "2 ans", "3 ans", "5 ans"],
-                    correct: 2
-                },
-                {
-                    ar: "تُؤدى ضريبة الشركات على:",
-                    fr: "L'IS est acquitté en combien de versements ?",
-                    optsAr: ["دفعة واحدة", "دفعتان", "ثلاث دفعات", "أربع دفعات"],
-                    optsFr: ["Un seul versement", "Deux versements", "Trois versements", "Quatre versements"],
-                    correct: 2
-                },
-                {
-                    ar: "المخصصات للمخاطر قابلة للخصم إذا كانت:",
-                    fr: "Les provisions pour risques sont déductibles si elles sont :",
-                    optsAr: ["مقدرة من المدير", "مسجلة فعلياً في المحاسبة", "مصدقة من مراقب الحسابات", "موافقة من الإدارة"],
-                    optsFr: ["Estimées par le dirigeant", "Effectivement comptabilisées", "Certifiées par le commissaire aux comptes", "Approuvées par l'administration"],
-                    correct: 1
-                },
-                {
-                    ar: "الشركات التي يقل رقم أعمالها عن 5 ملايين أوقية تخضع لنظام:",
-                    fr: "Les sociétés dont le CA est inférieur à 5 000 000 MRU relèvent du régime :",
-                    optsAr: ["حقيقي عادي", "حقيقي متوسط", "مقطوع", "مبسط للصيد"],
-                    optsFr: ["Réel normal", "Réel intermédiaire", "Forfait", "Simplifié pêche"],
-                    correct: 1
-                },
-                // IBAPP
-                {
-                    ar: "نسبة ضريبة أرباح الأعمال للأشخاص الطبيعيين (IBAPP) في النظام الحقيقي العادي هي:",
-                    fr: "Le taux de l'IBAPP en régime réel normal est de :",
-                    optsAr: ["25 %", "30 %", "35 %", "40 %"],
-                    optsFr: ["25 %", "30 %", "35 %", "40 %"],
-                    correct: 1
-                },
-                {
-                    ar: "الحد الأدنى لضريبة IBAPP للنظام الحقيقي العادي هو:",
-                    fr: "Le minimum de perception de l'IBAPP pour le régime réel normal est de :",
-                    optsAr: ["75 000 MRU", "100 000 MRU", "125 000 MRU", "150 000 MRU"],
-                    optsFr: ["75 000 MRU", "100 000 MRU", "125 000 MRU", "150 000 MRU"],
-                    correct: 2
-                },
-                {
-                    ar: "نظام المقطوع يطبق على الأشخاص الطبيعيين الذين رقم أعمالهم:",
-                    fr: "Le régime du forfait s'applique aux personnes physiques dont le CA est :",
-                    optsAr: ["أقل من 2 مليون أوقية", "أقل من 3 ملايين أوقية", "أقل من 5 ملايين أوقية", "أقل من 10 ملايين أوقية"],
-                    optsFr: ["Inférieur à 2 millions MRU", "Inférieur à 3 millions MRU", "Inférieur à 5 millions MRU", "Inférieur à 10 millions MRU"],
-                    correct: 1
-                },
-                {
-                    ar: "الأشخاص الطبيعيون الخاضعون لنظام المقطوع يدفعون:",
-                    fr: "Les personnes physiques imposées selon le régime du forfait paient :",
-                    optsAr: ["2 % من رقم الأعمال", "3 % من رقم الأعمال", "4 % من رقم الأعمال", "5 % من رقم الأعمال"],
-                    optsFr: ["2 % du CA", "3 % du CA", "4 % du CA", "5 % du CA"],
-                    correct: 1
-                },
-                // TVA
-                {
-                    ar: "نسبة ضريبة القيمة المضافة (TVA) العادية في موريتانيا هي:",
-                    fr: "Le taux normal de la TVA en Mauritanie est de :",
-                    optsAr: ["14 %", "16 %", "18 %", "20 %"],
-                    optsFr: ["14 %", "16 %", "18 %", "20 %"],
-                    correct: 1
-                },
-                {
-                    ar: "تصدير السلع يخضع لضريبة القيمة المضافة بنسبة:",
-                    fr: "Les exportations de biens sont soumises à la TVA au taux de :",
-                    optsAr: ["0 %", "5 %", "16 %", "معفاة"],
-                    optsFr: ["0 %", "5 %", "16 %", "Exonérées"],
-                    correct: 0
-                },
-                {
-                    ar: "تُعفى من ضريبة القيمة المضافة:",
-                    fr: "Sont exonérées de TVA :",
-                    optsAr: ["العمليات البنكية (TOF)", "خدمات الاستشارة", "بيع السيارات", "استيراد معدات"],
-                    optsFr: ["Les opérations bancaires (TOF)", "Les prestations de conseil", "Les ventes de voitures", "L'importation d'équipements"],
-                    correct: 0
-                },
-                {
-                    ar: "حدث فرض ضريبة القيمة المضافة على الواردات هو:",
-                    fr: "Le fait générateur de la TVA pour les importations est :",
-                    optsAr: ["الطلب", "الإفراج الجمركي", "الدفع", "التسليم"],
-                    optsFr: ["La commande", "Le dédouanement", "Le paiement", "La livraison"],
-                    correct: 1
-                },
-                {
-                    ar: "ضريبة القيمة المضافة على الصفقات العمومية مستحقة:",
-                    fr: "La TVA sur les marchés publics est exigible :",
-                    optsAr: ["عند التوقيع", "عند كل دفعة من الخزينة", "عند التسليم النهائي", "عند استلام الأشغال"],
-                    optsFr: ["À la signature", "À chaque paiement du Trésor", "À la livraison finale", "À la réception des travaux"],
-                    correct: 1
-                },
-                // Retenues
-                {
-                    ar: "نسبة الخصم من المنبع على الإيجارات (IRF + الضريبة العقارية) هي:",
-                    fr: "La retenue sur les loyers (IRF + foncière) est de :",
-                    optsAr: ["12 %", "15 %", "18 %", "20 %"],
-                    optsFr: ["12 %", "15 %", "18 %", "20 %"],
-                    correct: 2
-                },
-                {
-                    ar: "نسبة الخصم من المنبع على خدمات غير المقيمين هي:",
-                    fr: "Le taux de la retenue sur les services rendus par les non-résidents est de :",
-                    optsAr: ["10 %", "15 %", "20 %", "25 %"],
-                    optsFr: ["10 %", "15 %", "20 %", "25 %"],
-                    correct: 1
-                },
-                // Droit fiscal
-                {
-                    ar: "يجب أن يكون إشعار التصحيح الضريبي:",
-                    fr: "La notification de redressement doit être :",
-                    optsAr: ["شفوياً", "كتابياً، مبرراً ومحدداً بالمبلغ", "مرقماً فقط", "موافقاً عليه من المكلف"],
-                    optsFr: ["Orale", "Écrite, motivée et quantifiée", "Uniquement chiffrée", "Approuvée par le contribuable"],
-                    correct: 1
-                },
-                {
-                    ar: "للمكلف مهلة للرد على إشعار التصحيح قدرها:",
-                    fr: "Le contribuable dispose de combien de jours pour répondre à une notification de redressement ?",
-                    optsAr: ["5 أيام", "10 أيام", "15 يوماً", "30 يوماً"],
-                    optsFr: ["5 jours", "10 jours", "15 jours", "30 jours"],
-                    correct: 2
-                },
-                {
-                    ar: "يجب على الإدارة تأكيد التصحيح خلال مهلة:",
-                    fr: "L'administration doit confirmer le redressement dans un délai de :",
-                    optsAr: ["30 يوماً", "60 يوماً", "90 يوماً", "120 يوماً"],
-                    optsFr: ["30 jours", "60 jours", "90 jours", "120 jours"],
-                    correct: 1
-                },
-                {
-                    ar: "يجب توجيه الطعن الإداري إلى:",
-                    fr: "La réclamation contentieuse doit être adressée au :",
-                    optsAr: ["أمين الخزينة العام", "المدير العام للضرائب", "العمدة", "رئيس المحكمة"],
-                    optsFr: ["Trésorier général", "Directeur général des impôts", "Maire", "Président du tribunal"],
-                    correct: 1
-                },
-                {
-                    ar: "مهلة الطعن الإداري هي:",
-                    fr: "Le délai de réclamation contentieuse est de :",
-                    optsAr: ["شهر واحد", "شهران", "3 أشهر", "6 أشهر"],
-                    optsFr: ["1 mois", "2 mois", "3 mois", "6 mois"],
-                    correct: 2
-                }
-            ];
-
-            // Ajout des questions de base
-            base.forEach(function(q) {
-                add({
-                    textAr: q.ar,
-                    textFr: q.fr,
-                    optionsAr: q.optsAr,
-                    optionsFr: q.optsFr,
-                    correct: q.correct
-                });
-            });
-
-            // Questions supplémentaires pour atteindre 500
-            var extraData = [
-                { ar: "نسبة الضريبة على دخل رأس المال المنقول (IRCM) هي:", fr: "Le taux de l'IRCM est de :", optsAr: ["5 %", "10 %", "15 %", "20 %"], optsFr: ["5 %", "10 %", "15 %", "20 %"], correct: 1 },
-                { ar: "ضريبة التكوين المهني هي:", fr: "La taxe d'apprentissage est de :", optsAr: ["0,6 %", "1 %", "2 %", "5 %"], optsFr: ["0,6 %", "1 %", "2 %", "5 %"], correct: 0 },
-                { ar: "رسوم التسجيل للتنازل عن عقار هي:", fr: "Le droit d'en
+                function add(q) {
+                    if (used.has(q.textAr)) return;
+                    used.add(q.textAr);
+                    qs.push({
+                        id: ++id,
+                        textAr: q.textAr,
+                        textFr: q.textFr,
