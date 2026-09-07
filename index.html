@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QCM Fiscalité Mauritanie 2025 – 700+ questions</title>
     <style>
+        /* === STYLES COMPLETS === */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -206,11 +207,6 @@
             margin-left: 0;
             margin-right: 1rem;
         }
-        hr {
-            border: none;
-            border-top: 2px dashed #cddcec;
-            margin: 0.4rem 0 0.9rem 0;
-        }
         .footer-note {
             text-align: center;
             margin-top: 3rem;
@@ -225,18 +221,8 @@
             .q-item { padding: 1rem; }
             .lang-switch { justify-content: center; }
         }
-        .section-tag {
-            background: #dce3ed;
-            font-weight: 600;
-            padding: 0.3rem 1.5rem;
-            border-radius: 60px;
-            color: #0f2b44;
-            display: inline-block;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-        }
 
-        /* Resume */
+        /* Resume styles */
         .resume-wrapper {
             background: #e5edf8;
             border-radius: 24px;
@@ -775,7 +761,6 @@
 
             document.getElementById('mainTitle').textContent = t.title;
             document.getElementById('subhead').textContent = t.subhead;
-            // Mettre à jour les stats avec le compteur
             const statsText = t.stats.replace('{count}', qBank.length);
             document.getElementById('statsLabel').innerHTML = '📌 ' + statsText;
             document.getElementById('resumeTitle').textContent = t.resumeTitle;
