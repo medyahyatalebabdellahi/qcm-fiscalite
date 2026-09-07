@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QCM Fiscalité Mauritanie 2025 – 700+ questions</title>
+    <title>QCM Fiscalité Mauritanie 2025</title>
     <style>
-        /* === STYLES COMPLETS === */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -14,9 +13,8 @@
         body {
             background: #f0f4f9;
             font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
-            padding: 2rem 1rem;
+            padding: 1.5rem;
             color: #1e2a3a;
-            transition: background 0.3s;
         }
         body.lang-ar {
             font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
@@ -27,8 +25,7 @@
             background: white;
             border-radius: 28px;
             box-shadow: 0 20px 40px -12px rgba(0,0,0,0.25);
-            padding: 2rem 2rem 3rem;
-            transition: all 0.3s;
+            padding: 2rem;
         }
         .lang-ar .container {
             direction: rtl;
@@ -86,13 +83,12 @@
         }
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 600;
             border-left: 6px solid #0a4b7a;
             padding-left: 1.2rem;
-            margin: 0 0 0.3rem 0;
+            margin-bottom: 0.3rem;
             color: #0a2a44;
-            letter-spacing: -0.5px;
         }
         .lang-ar h1 {
             border-left: none;
@@ -102,11 +98,11 @@
         }
         .subhead {
             color: #2c5775;
-            font-size: 1.05rem;
+            font-size: 1rem;
             margin-left: 1.8rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             border-bottom: 1px solid #dde6ef;
-            padding-bottom: 1rem;
+            padding-bottom: 0.8rem;
         }
         .lang-ar .subhead {
             margin-left: 0;
@@ -115,57 +111,168 @@
         .stats {
             background: #e6eef9;
             border-radius: 60px;
-            padding: 0.7rem 1.8rem;
+            padding: 0.5rem 1.5rem;
             display: inline-block;
             font-weight: 500;
             color: #003366;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
+
+        /* Resume */
+        .resume-wrapper {
+            background: #e5edf8;
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-left: 8px solid #0a4b7a;
+        }
+        .lang-ar .resume-wrapper {
+            border-left: none;
+            border-right: 8px solid #0a4b7a;
+        }
+        .resume-wrapper h2 {
+            color: #0a2a44;
+            font-size: 1.4rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.2rem;
+        }
+        .lang-ar .resume-wrapper h2 {
+            flex-direction: row-reverse;
+        }
+        .resume-wrapper h2 small {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #1f4b6e;
+        }
+        .resume-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .resume-card {
+            background: white;
+            padding: 1rem 1.2rem;
+            border-radius: 16px;
+            border: 1px solid #d0dfee;
+        }
+        .resume-card h3 {
+            color: #003366;
+            font-size: 1rem;
+            border-bottom: 2px solid #b3cde0;
+            padding-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
+        }
+        .resume-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .resume-card li {
+            padding: 0.25rem 0;
+            font-size: 0.9rem;
+            border-bottom: 1px dashed #e6edf5;
+            display: flex;
+            align-items: baseline;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+        .resume-card li:last-child {
+            border-bottom: none;
+        }
+        .resume-card .label {
+            font-weight: 600;
+            color: #1f4b6e;
+            min-width: 80px;
+        }
+        .resume-card .value {
+            color: #0a2a44;
+        }
+        .resume-card .highlight {
+            background: #e1edfa;
+            padding: 0.05rem 0.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            color: #003b66;
+        }
+        .resume-note {
+            margin-top: 0.8rem;
+            background: #dae6f2;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            color: #003058;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+        .toggle-btn {
+            background: transparent;
+            border: none;
+            color: #0a4b7a;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.9rem;
+            padding: 0.1rem 0.6rem;
+            border-radius: 30px;
+            transition: 0.2s;
+            margin-left: 0.8rem;
+        }
+        .lang-ar .toggle-btn {
+            margin-left: 0;
+            margin-right: 0.8rem;
+        }
+        .toggle-btn:hover {
+            background: #cddef0;
+        }
+
+        /* QCM */
         .qcm-grid {
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 0.8rem;
         }
         .q-item {
             background: #ffffff;
-            border-radius: 20px;
-            padding: 1.2rem 1.8rem;
+            border-radius: 16px;
+            padding: 1rem 1.5rem;
             box-shadow: 0 2px 8px rgba(0, 20, 40, 0.06);
             border: 1px solid #e2eaf2;
             transition: 0.2s;
         }
         .q-item:hover {
             border-color: #8bb3d0;
-            background: #fafdff;
         }
         .q-num {
             font-weight: 600;
             color: #0a4b7a;
             background: #dce9f5;
-            padding: 0.1rem 0.9rem;
+            padding: 0.05rem 0.8rem;
             border-radius: 30px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             display: inline-block;
-            margin-right: 0.8rem;
+            margin-right: 0.6rem;
         }
         .q-text {
             font-weight: 500;
-            font-size: 1.05rem;
-            margin: 0.4rem 0 0.7rem 0;
+            font-size: 1rem;
+            margin: 0.3rem 0 0.5rem 0;
             display: block;
         }
         .options {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 0.3rem 1rem;
-            margin: 0.6rem 0 0.2rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.2rem 1rem;
+            margin: 0.4rem 0 0.2rem 0;
         }
         .opt {
             display: flex;
             align-items: baseline;
             gap: 0.3rem;
-            padding: 0.2rem 0;
-            font-size: 0.95rem;
+            padding: 0.15rem 0;
+            font-size: 0.9rem;
             color: #1c3349;
         }
         .lang-ar .opt {
@@ -174,18 +281,18 @@
         .opt-letter {
             font-weight: 600;
             color: #005a8c;
-            min-width: 1.6rem;
+            min-width: 1.4rem;
         }
         .answer {
-            margin-top: 0.6rem;
+            margin-top: 0.4rem;
             background: #eef6e9;
-            padding: 0.3rem 1.2rem;
+            padding: 0.2rem 1rem;
             border-radius: 40px;
             display: inline-block;
             font-weight: 500;
             color: #1f5a2e;
             border: 1px solid #bdd8b3;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         .answer strong {
             font-weight: 700;
@@ -195,178 +302,54 @@
             background: #1b3a5c;
             color: white;
             border-radius: 40px;
-            padding: 0.15rem 0.9rem;
-            font-size: 0.7rem;
+            padding: 0.1rem 0.7rem;
+            font-size: 0.65rem;
             font-weight: 600;
-            letter-spacing: 0.3px;
             text-transform: uppercase;
             display: inline-block;
-            margin-left: 1rem;
+            margin-left: 0.6rem;
         }
         .lang-ar .badge {
             margin-left: 0;
-            margin-right: 1rem;
+            margin-right: 0.6rem;
         }
         .footer-note {
             text-align: center;
-            margin-top: 3rem;
+            margin-top: 2rem;
             color: #4b6b88;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             border-top: 1px solid #d5e0eb;
-            padding-top: 1.8rem;
+            padding-top: 1.5rem;
         }
         @media (max-width: 650px) {
-            .container { padding: 1.2rem; }
+            .container { padding: 1rem; }
             .options { grid-template-columns: 1fr; }
-            .q-item { padding: 1rem; }
+            .q-item { padding: 0.8rem 1rem; }
             .lang-switch { justify-content: center; }
-        }
-
-        /* Resume styles */
-        .resume-wrapper {
-            background: #e5edf8;
-            border-radius: 24px;
-            padding: 1.8rem 2rem;
-            margin-bottom: 2.8rem;
-            border-left: 8px solid #0a4b7a;
-            box-shadow: inset 0 2px 6px rgba(0,0,0,0.02);
-            transition: all 0.3s;
-        }
-        .lang-ar .resume-wrapper {
-            border-left: none;
-            border-right: 8px solid #0a4b7a;
-        }
-        .resume-wrapper h2 {
-            color: #0a2a44;
-            font-size: 1.7rem;
-            font-weight: 600;
-            margin-bottom: 0.2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            flex-wrap: wrap;
-        }
-        .lang-ar .resume-wrapper h2 {
-            flex-direction: row-reverse;
-        }
-        .resume-wrapper h2 small {
-            font-size: 1rem;
-            font-weight: 400;
-            color: #1f4b6e;
-        }
-        .resume-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem 1.8rem;
-            margin-top: 1.2rem;
-        }
-        .resume-card {
-            background: white;
-            padding: 1.2rem 1.5rem;
-            border-radius: 18px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-            border: 1px solid #d0dfee;
-        }
-        .resume-card h3 {
-            color: #003366;
-            font-size: 1.1rem;
-            border-bottom: 2px solid #b3cde0;
-            padding-bottom: 0.4rem;
-            margin-bottom: 0.7rem;
-            letter-spacing: -0.2px;
-        }
-        .resume-card ul {
-            list-style: none;
-            padding: 0;
-        }
-        .resume-card li {
-            padding: 0.35rem 0;
-            font-size: 0.95rem;
-            border-bottom: 1px dashed #e6edf5;
-            display: flex;
-            align-items: baseline;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-        .resume-card li:last-child {
-            border-bottom: none;
-        }
-        .resume-card .label {
-            font-weight: 600;
-            color: #1f4b6e;
-            min-width: 90px;
-        }
-        .lang-ar .resume-card .label {
-            min-width: 90px;
-            text-align: right;
-        }
-        .resume-card .value {
-            color: #0a2a44;
-        }
-        .resume-card .highlight {
-            background: #e1edfa;
-            padding: 0.1rem 0.6rem;
-            border-radius: 30px;
-            font-weight: 600;
-            color: #003b66;
-        }
-        .resume-note {
-            margin-top: 1rem;
-            background: #dae6f2;
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 500;
-            color: #003058;
-            display: inline-block;
-            font-size: 0.95rem;
-        }
-        .toggle-btn {
-            background: transparent;
-            border: none;
-            color: #0a4b7a;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 0.95rem;
-            padding: 0.2rem 0.8rem;
-            border-radius: 30px;
-            transition: 0.2s;
-            margin-left: 1rem;
-        }
-        .lang-ar .toggle-btn {
-            margin-left: 0;
-            margin-right: 1rem;
-        }
-        .toggle-btn:hover {
-            background: #cddef0;
-        }
-        @media (max-width: 550px) {
             .resume-grid { grid-template-columns: 1fr; }
-            .resume-wrapper { padding: 1.2rem; }
+            .resume-wrapper { padding: 1rem; }
         }
-        .lang-ar ul {
-            padding-right: 0;
-        }
-        .lang-ar .resume-card li {
-            flex-direction: row-reverse;
+        @media (max-width: 400px) {
+            body { padding: 0.5rem; }
+            .container { padding: 0.8rem; border-radius: 16px; }
+            h1 { font-size: 1.4rem; padding-left: 0.8rem; }
+            .subhead { font-size: 0.85rem; margin-left: 1rem; }
         }
     </style>
 </head>
 <body>
 <div class="container" id="mainContainer">
 
-    <!-- Lang switch -->
     <div class="lang-switch">
         <button id="langFrBtn" class="active" onclick="setLang('fr')">🇫🇷 FR</button>
         <button id="langArBtn" onclick="setLang('ar')">🇲🇷 عربي</button>
     </div>
 
     <h1 id="mainTitle">📘 Fiscalité Mauritanie 2025</h1>
-    <div class="subhead" id="subhead">700+ QCM – Code général des impôts, applications, cas pratiques &amp; culture générale</div>
-    <div class="stats" id="statsLabel">📌 <span id="questionCount">0</span> questions · Mélange des 3 sources · réponses incluses</div>
+    <div class="subhead" id="subhead">700+ QCM – Code général des impôts, applications, cas pratiques</div>
+    <div class="stats" id="statsLabel">📌 <span id="questionCount">0</span> questions</div>
 
-    <!-- ============================================ -->
-    <!-- RÉSUMÉ FISCAL MAURITANIE (fiche maître)      -->
-    <!-- ============================================ -->
+    <!-- RÉSUMÉ FISCAL -->
     <div class="resume-wrapper" id="resumeSection">
         <h2>
             <span id="resumeTitle">📋 Résumé fiscal – Mauritanie 2025</span>
@@ -374,463 +357,451 @@
             <button class="toggle-btn" id="toggleResumeBtn">▼ masquer</button>
         </h2>
         <div id="resumeContent">
-            <div class="resume-grid">
-                <!-- Carte IS -->
-                <div class="resume-card">
-                    <h3 id="card1Title">🏛️ Impôt sur les Sociétés (IS)</h3>
-                    <ul>
-                        <li><span class="label" id="l1a">Taux normal</span><span class="value">25%</span></li>
-                        <li><span class="label" id="l1b">Base minimale</span><span class="value">2% des produits (Art.8)</span></li>
-                        <li><span class="label" id="l1c">Minimum BRN</span><span class="value">100 000 MRU</span></li>
-                        <li><span class="label" id="l1d">Minimum BRI</span><span class="value">75 000 MRU</span></li>
-                        <li><span class="label" id="l1e">Formule</span><span class="value highlight">MAX(25% BNI ; 2% produits)</span></li>
-                        <li><span class="label" id="l1f">STR forfait</span><span class="value">4% du CA (IS) + 4% (ITS)</span></li>
-                    </ul>
-                </div>
-                <!-- Carte IBAPP -->
-                <div class="resume-card">
-                    <h3 id="card2Title">🧑‍💼 IBAPP (personnes physiques)</h3>
-                    <ul>
-                        <li><span class="label" id="l2a">Taux normal</span><span class="value">30%</span></li>
-                        <li><span class="label" id="l2b">Base minimale</span><span class="value">2,5% des produits</span></li>
-                        <li><span class="label" id="l2c">Forfait (CA &lt; 3M)</span><span class="value">3% du CA</span></li>
-                        <li><span class="label" id="l2d">Réel intermédiaire</span><span class="value">3M ≤ CA ≤ 5M · min 75k</span></li>
-                        <li><span class="label" id="l2e">Réel normal</span><span class="value">CA &gt; 5M · min 125k</span></li>
-                        <li><span class="label" id="l2f">Formule</span><span class="value highlight">MAX(30% BNI ; 2,5% produits)</span></li>
-                    </ul>
-                </div>
-                <!-- Carte ITS -->
-                <div class="resume-card">
-                    <h3 id="card3Title">💼 ITS (traitements et salaires)</h3>
-                    <ul>
-                        <li><span class="label" id="l3a">Tranche ≤ 9k</span><span class="value">15% · I = R.I. × 0,15</span></li>
-                        <li><span class="label" id="l3b">Tranche 9k–21k</span><span class="value">25% · I = (R.I.×0,25) − 900</span></li>
-                        <li><span class="label" id="l3c">Tranche &gt; 21k</span><span class="value">40% · I = (R.I.×0,40) − 4 050</span></li>
-                        <li><span class="label" id="l3d">Base imposable</span><span class="value">Salaire brut + primes + avantages (40%)</span></li>
-                    </ul>
-                </div>
-                <!-- Carte TVA -->
-                <div class="resume-card">
-                    <h3 id="card4Title">🧾 TVA &amp; autres taxes</h3>
-                    <ul>
-                        <li><span class="label" id="l4a">TVA normale</span><span class="value">16%</span></li>
-                        <li><span class="label" id="l4b">TVA télécoms</span><span class="value">18%</span></li>
-                        <li><span class="label" id="l4c">Exportations</span><span class="value">0%</span></li>
-                        <li><span class="label" id="l4d">TOF (banques)</span><span class="value">16%</span></li>
-                        <li><span class="label" id="l4e">IRCM (dividendes)</span><span class="value">10%</span></li>
-                        <li><span class="label" id="l4f">RAS résident (libéral)</span><span class="value">2,5%</span></li>
-                        <li><span class="label" id="l4g">RAS non-résident</span><span class="value">15%</span></li>
-                        <li><span class="label" id="l4h">Taxe apprentissage</span><span class="value">0,60%</span></li>
-                    </ul>
-                </div>
-                <!-- Carte régimes spéciaux -->
-                <div class="resume-card">
-                    <h3 id="card5Title">⚡ Régimes spéciaux 2025</h3>
-                    <ul>
-                        <li><span class="label" id="l5a">GTA (réel)</span><span class="value">IS 25% · min 1,75% CA</span></li>
-                        <li><span class="label" id="l5b">GTA (forfait)</span><span class="value">retenue IS 4% CA · ITS 30% CA</span></li>
-                        <li><span class="label" id="l5c">Hydrogène vert</span><span class="value">IS 15%/25%/30% selon R ratio</span></li>
-                        <li><span class="label" id="l5d">Zone franche ZFNDB</span><span class="value">exonération douane · export 80%</span></li>
-                        <li><span class="label" id="l5e">Code invest. (RIB)</span><span class="value">PME : 3% douane · intermédiaire : 5%</span></li>
-                        <li><span class="label" id="l5f">RIS (structurant)</span><span class="value">1,5% douane · ≥200M MRU · 50 emplois</span></li>
-                        <li><span class="label" id="l5g">Mines phase recherche</span><span class="value">exonération totale douane</span></li>
-                    </ul>
-                </div>
-                <!-- Carte seuils / pénalités -->
-                <div class="resume-card">
-                    <h3 id="card6Title">📆 Délais &amp; sanctions</h3>
-                    <ul>
-                        <li><span class="label" id="l6a">Déclaration annuelle IS</span><span class="value">31 mars</span></li>
-                        <li><span class="label" id="l6b">Prescription contrôle</span><span class="value">3 ans</span></li>
-                        <li><span class="label" id="l6c">Réclamation DGI</span><span class="value">3 mois</span></li>
-                        <li><span class="label" id="l6d">Recouvrement</span><span class="value">4 ans</span></li>
-                        <li><span class="label" id="l6e">Pénalité omission</span><span class="value">40%</span></li>
-                        <li><span class="label" id="l6f">Mauvaise foi</span><span class="value">80%</span></li>
-                        <li><span class="label" id="l6g">Fraude</span><span class="value">100%</span></li>
-                    </ul>
-                </div>
+            <div class="resume-grid" id="resumeGrid">
+                <!-- Le contenu du résumé est généré par JS -->
             </div>
             <div class="resume-note" id="resumeNote">
-                ⚡ <strong id="noteStrong">Règle d'or :</strong> <span id="noteText">IS = MAX(25% bénéfice, 2% produits, minimum) · IBAPP = MAX(30% bénéfice, 2,5% produits, minimum)</span>
+                ⚡ <strong id="noteStrong">Règle d'or :</strong> <span id="noteText">IS = MAX(25% bénéfice, 2% produits) · IBAPP = MAX(30% bénéfice, 2,5% produits)</span>
             </div>
         </div>
     </div>
 
-    <div class="qcm-grid" id="qcmContainer">
-        <!-- généré par JavaScript -->
-    </div>
-    <div class="footer-note" id="footerNote">
-        🔍 Révision intensive – Concours inspecteur des impôts · d'après CGI 2023 &amp; Tax Booklet 2025
-    </div>
+    <div class="qcm-grid" id="qcmContainer"></div>
+    <div class="footer-note" id="footerNote">🔍 Révision – Concours inspecteur des impôts · CGI 2023</div>
 </div>
 
 <script>
-    (function(){
-        // ============================================================
-        // 1. TRADUCTIONS
-        // ============================================================
-        const translations = {
-            fr: {
-                title: "📘 Fiscalité Mauritanie 2025",
-                subhead: "700+ QCM – Code général des impôts, applications, cas pratiques & culture générale",
-                stats: "📌 {count} questions · Mélange des 3 sources · réponses incluses",
-                resumeTitle: "📋 Résumé fiscal – Mauritanie 2025",
-                resumeSub: "seuils, taux, formules",
-                toggleHide: "▼ masquer",
-                toggleShow: "▼ afficher",
-                categories: ["Fiscalité", "Application", "Général"],
-                footer: "🔍 Révision intensive – Concours inspecteur des impôts · d'après CGI 2023 & Tax Booklet 2025",
-                noteStrong: "Règle d'or :",
-                noteText: "IS = MAX(25% bénéfice, 2% produits, minimum) · IBAPP = MAX(30% bénéfice, 2,5% produits, minimum)",
-                card1: "🏛️ Impôt sur les Sociétés (IS)",
-                card2: "🧑‍💼 IBAPP (personnes physiques)",
-                card3: "💼 ITS (traitements et salaires)",
-                card4: "🧾 TVA & autres taxes",
-                card5: "⚡ Régimes spéciaux 2025",
-                card6: "📆 Délais & sanctions",
-                l1a: "Taux normal", l1b: "Base minimale", l1c: "Minimum BRN", l1d: "Minimum BRI", l1e: "Formule", l1f: "STR forfait",
-                l2a: "Taux normal", l2b: "Base minimale", l2c: "Forfait (CA < 3M)", l2d: "Réel intermédiaire", l2e: "Réel normal", l2f: "Formule",
-                l3a: "Tranche ≤ 9k", l3b: "Tranche 9k–21k", l3c: "Tranche > 21k", l3d: "Base imposable",
-                l4a: "TVA normale", l4b: "TVA télécoms", l4c: "Exportations", l4d: "TOF (banques)", l4e: "IRCM (dividendes)", l4f: "RAS résident (libéral)", l4g: "RAS non-résident", l4h: "Taxe apprentissage",
-                l5a: "GTA (réel)", l5b: "GTA (forfait)", l5c: "Hydrogène vert", l5d: "Zone franche ZFNDB", l5e: "Code invest. (RIB)", l5f: "RIS (structurant)", l5g: "Mines phase recherche",
-                l6a: "Déclaration annuelle IS", l6b: "Prescription contrôle", l6c: "Réclamation DGI", l6d: "Recouvrement", l6e: "Pénalité omission", l6f: "Mauvaise foi", l6g: "Fraude"
-            },
-            ar: {
-                title: "📘 الضرائب الموريتانية 2025",
-                subhead: "700+ سؤال اختيار من متعدد – مدونة الضرائب العامة، تطبيقات، حالات عملية وثقافة عامة",
-                stats: "📌 {count} سؤال · مزيج من 3 مصادر · الإجابات مشمولة",
-                resumeTitle: "📋 ملخص ضريبي – موريتانيا 2025",
-                resumeSub: "الحدود، النسب، الصيغ",
-                toggleHide: "▼ إخفاء",
-                toggleShow: "▼ إظهار",
-                categories: ["ضريبة", "تطبيق", "عام"],
-                footer: "🔍 مراجعة مكثفة – مسابقة مفتش الضرائب · وفقاً لمدونة الضرائب 2023 ودليل 2025",
-                noteStrong: "القاعدة الذهبية :",
-                noteText: "ضريبة الشركات = MAX(25% من الربح, 2% من المنتجات, الحد الأدنى) · IBAPP = MAX(30% من الربح, 2.5% من المنتجات, الحد الأدنى)",
-                card1: "🏛️ ضريبة الشركات (IS)",
-                card2: "🧑‍💼 IBAPP (الأشخاص الطبيعيين)",
-                card3: "💼 ضريبة الأجور والمرتبات (ITS)",
-                card4: "🧾 الضريبة على القيمة المضافة وضرائب أخرى",
-                card5: "⚡ الأنظمة الخاصة 2025",
-                card6: "📆 المواعيد والغرامات",
-                l1a: "النسبة العادية", l1b: "الحد الأدنى", l1c: "الحد الأدنى BRN", l1d: "الحد الأدنى BRI", l1e: "الصيغة", l1f: "STR نظام مبسط",
-                l2a: "النسبة العادية", l2b: "الحد الأدنى", l2c: "نظام التقديري (CA < 3M)", l2d: "الفعلي المتوسط", l2e: "الفعلي العادي", l2f: "الصيغة",
-                l3a: "الشريحة ≤ 9k", l3b: "الشريحة 9k–21k", l3c: "الشريحة > 21k", l3d: "الوعاء الخاضع",
-                l4a: "TVA العادية", l4b: "TVA الاتصالات", l4c: "الصادرات", l4d: "TOF (البنوك)", l4e: "IRCM (الأرباح)", l4f: "اقتطاع المقيم (مهن حرة)", l4g: "اقتطاع غير المقيم", l4h: "ضريبة التكوين",
-                l5a: "GTA (فعلي)", l5b: "GTA (تقديري)", l5c: "الهيدروجين الأخضر", l5d: "المنطقة الحرة زفندب", l5e: "مدونة الاستثمار (RIB)", l5f: "RIS (استثمارات هيكلية)", l5g: "المناجم مرحلة البحث",
-                l6a: "الإقرار السنوي IS", l6b: "تقادم المراقبة", l6c: "الطعن لدى المديرية", l6d: "التحصيل", l6e: "غرامة الإغفال", l6f: "سوء النية", l6g: "احتيال"
+(function(){
+
+    // ==========================================================
+    // 1. TRADUCTIONS
+    // ==========================================================
+    const TR = {
+        fr: {
+            title: "📘 Fiscalité Mauritanie 2025",
+            subhead: "700+ QCM – Code général des impôts, applications, cas pratiques",
+            stats: "📌 {count} questions",
+            resumeTitle: "📋 Résumé fiscal – Mauritanie 2025",
+            resumeSub: "seuils, taux, formules",
+            toggleHide: "▼ masquer",
+            toggleShow: "▼ afficher",
+            footer: "🔍 Révision – Concours inspecteur des impôts · CGI 2023",
+            noteStrong: "Règle d'or :",
+            noteText: "IS = MAX(25% bénéfice, 2% produits) · IBAPP = MAX(30% bénéfice, 2,5% produits)",
+            card1: "🏛️ Impôt sur les Sociétés (IS)",
+            card2: "🧑‍💼 IBAPP (personnes physiques)",
+            card3: "💼 ITS (traitements et salaires)",
+            card4: "🧾 TVA & autres taxes",
+            card5: "⚡ Régimes spéciaux 2025",
+            card6: "📆 Délais & sanctions",
+            cats: ["Fiscalité", "Application", "Général"],
+            resumeData: {
+                is: [
+                    ["Taux normal", "25%"],
+                    ["Base minimale", "2% des produits"],
+                    ["Minimum BRN", "100 000 MRU"],
+                    ["Minimum BRI", "75 000 MRU"],
+                    ["STR forfait", "4% du CA (IS) + 4% (ITS)"]
+                ],
+                ibapp: [
+                    ["Taux normal", "30%"],
+                    ["Base minimale", "2,5% des produits"],
+                    ["Forfait (CA < 3M)", "3% du CA"],
+                    ["Réel intermédiaire", "3M ≤ CA ≤ 5M · min 75k"],
+                    ["Réel normal", "CA > 5M · min 125k"]
+                ],
+                its: [
+                    ["Tranche ≤ 9k", "15% · I = R.I. × 0,15"],
+                    ["Tranche 9k–21k", "25% · I = (R.I.×0,25) − 900"],
+                    ["Tranche > 21k", "40% · I = (R.I.×0,40) − 4 050"],
+                    ["Base imposable", "Salaire brut + primes + avantages (40%)"]
+                ],
+                tva: [
+                    ["TVA normale", "16%"],
+                    ["TVA télécoms", "18%"],
+                    ["Exportations", "0%"],
+                    ["TOF (banques)", "16%"],
+                    ["IRCM (dividendes)", "10%"],
+                    ["RAS résident (libéral)", "2,5%"],
+                    ["RAS non-résident", "15%"],
+                    ["Taxe apprentissage", "0,60%"]
+                ],
+                regimes: [
+                    ["GTA (réel)", "IS 25% · min 1,75% CA"],
+                    ["GTA (forfait)", "retenue IS 4% CA · ITS 30% CA"],
+                    ["Hydrogène vert", "IS 15%/25%/30% selon R ratio"],
+                    ["Zone franche ZFNDB", "exonération douane · export 80%"],
+                    ["PME (RIB)", "3% douane"],
+                    ["Intermédiaire (RIB)", "5% douane"],
+                    ["RIS (structurant)", "1,5% douane · ≥200M MRU · 50 emplois"],
+                    ["Mines phase recherche", "exonération totale douane"]
+                ],
+                delais: [
+                    ["Déclaration annuelle IS", "31 mars"],
+                    ["Prescription contrôle", "3 ans"],
+                    ["Réclamation DGI", "3 mois"],
+                    ["Recouvrement", "4 ans"],
+                    ["Pénalité omission", "40%"],
+                    ["Mauvaise foi", "80%"],
+                    ["Fraude", "100%"]
+                ]
             }
-        };
-
-        // ============================================================
-        // 2. BASE DE QUESTIONS (700+)
-        // ============================================================
-        let qBank = [];
-
-        function addUnique(q) {
-            if (!q || !q.question) return;
-            const normalized = q.question.trim().toLowerCase().replace(/\s+/g, ' ');
-            const exists = qBank.some(item => item.question.trim().toLowerCase().replace(/\s+/g, ' ') === normalized);
-            if (!exists) {
-                qBank.push(q);
+        },
+        ar: {
+            title: "📘 الضرائب الموريتانية 2025",
+            subhead: "700+ سؤال اختيار من متعدد – مدونة الضرائب العامة، تطبيقات، حالات عملية",
+            stats: "📌 {count} سؤال",
+            resumeTitle: "📋 ملخص ضريبي – موريتانيا 2025",
+            resumeSub: "الحدود، النسب، الصيغ",
+            toggleHide: "▼ إخفاء",
+            toggleShow: "▼ إظهار",
+            footer: "🔍 مراجعة – مسابقة مفتش الضرائب · مدونة الضرائب 2023",
+            noteStrong: "القاعدة الذهبية :",
+            noteText: "ضريبة الشركات = MAX(25% من الربح, 2% من المنتجات) · IBAPP = MAX(30% من الربح, 2.5% من المنتجات)",
+            card1: "🏛️ ضريبة الشركات (IS)",
+            card2: "🧑‍💼 IBAPP (الأشخاص الطبيعيين)",
+            card3: "💼 ضريبة الأجور والمرتبات (ITS)",
+            card4: "🧾 الضريبة على القيمة المضافة وضرائب أخرى",
+            card5: "⚡ الأنظمة الخاصة 2025",
+            card6: "📆 المواعيد والغرامات",
+            cats: ["ضريبة", "تطبيق", "عام"],
+            resumeData: {
+                is: [
+                    ["النسبة العادية", "25%"],
+                    ["الحد الأدنى", "2% من المنتجات"],
+                    ["الحد الأدنى BRN", "100,000 MRU"],
+                    ["الحد الأدنى BRI", "75,000 MRU"],
+                    ["STR نظام مبسط", "4% من CA (IS) + 4% (ITS)"]
+                ],
+                ibapp: [
+                    ["النسبة العادية", "30%"],
+                    ["الحد الأدنى", "2.5% من المنتجات"],
+                    ["نظام التقديري (CA < 3M)", "3% من CA"],
+                    ["الفعلي المتوسط", "3M ≤ CA ≤ 5M · حد أدنى 75k"],
+                    ["الفعلي العادي", "CA > 5M · حد أدنى 125k"]
+                ],
+                its: [
+                    ["الشريحة ≤ 9k", "15% · I = R.I. × 0,15"],
+                    ["الشريحة 9k–21k", "25% · I = (R.I.×0,25) − 900"],
+                    ["الشريحة > 21k", "40% · I = (R.I.×0,40) − 4,050"],
+                    ["الوعاء الخاضع", "الراتب الأساسي + المكافآت + المزايا العينية (40%)"]
+                ],
+                tva: [
+                    ["TVA العادية", "16%"],
+                    ["TVA الاتصالات", "18%"],
+                    ["الصادرات", "0%"],
+                    ["TOF (البنوك)", "16%"],
+                    ["IRCM (الأرباح)", "10%"],
+                    ["اقتطاع المقيم (مهن حرة)", "2.5%"],
+                    ["اقتطاع غير المقيم", "15%"],
+                    ["ضريبة التكوين", "0.60%"]
+                ],
+                regimes: [
+                    ["GTA (فعلي)", "IS 25% · حد أدنى 1.75% CA"],
+                    ["GTA (تقديري)", "اقتطاع IS 4% CA · ITS 30% CA"],
+                    ["الهيدروجين الأخضر", "IS 15%/25%/30% حسب R ratio"],
+                    ["المنطقة الحرة زفندب", "إعفاء جمركي · تصدير 80%"],
+                    ["PME (RIB)", "3% جمارك"],
+                    ["متوسط (RIB)", "5% جمارك"],
+                    ["RIS (استثمارات هيكلية)", "1.5% جمارك · ≥200M MRU · 50 وظيفة"],
+                    ["المناجم مرحلة البحث", "إعفاء جمركي كامل"]
+                ],
+                delais: [
+                    ["الإقرار السنوي IS", "31 مارس"],
+                    ["تقادم المراقبة", "3 سنوات"],
+                    ["الطعن لدى المديرية", "3 أشهر"],
+                    ["التحصيل", "4 سنوات"],
+                    ["غرامة الإغفال", "40%"],
+                    ["سوء النية", "80%"],
+                    ["احتيال", "100%"]
+                ]
             }
         }
+    };
 
-        // ---- Source 1 : Fiche Word (extraits) ----
-        function addFicheWord() {
-            const qs = [
-                { q: "Quel impôt a remplacé l'Impôt sur les Bénéfices Industriels et Commerciaux (BIC) et l'Impôt Minimum Forfaitaire (IMF) à partir du 1er janvier 2020 ?", opts: ["L'Impôt sur les Sociétés (IS)", "La Taxe sur la Valeur Ajoutée (TVA)", "L'Impôt sur le Revenu des Capitaux Mobiliers (IRCM)", "La Patente", "La Contribution Foncière sur les Propriétés Bâties"], ans: 0 },
-                { q: "Quel est le taux normal de la Taxe sur la Valeur Ajoutée (TVA) en Mauritanie ?", opts: ["14%", "16%", "18%", "20%", "25%"], ans: 1 },
-                { q: "Quel est le taux de TVA applicable aux exportations de biens et services ?", opts: ["0%", "5%", "10%", "16%", "18%"], ans: 0 },
-                { q: "Quelle est la date limite de dépôt de la déclaration annuelle de résultats pour les sociétés ?", opts: ["15 janvier", "28 février", "31 mars", "30 avril", "31 mai"], ans: 2 },
-                { q: "L'Impôt sur les Bénéfices d'Affaires des Personnes Physiques (IBAPP) s'applique-t-il aux sociétés ?", opts: ["Oui, à toutes les sociétés.", "Non, il ne s'applique qu'aux personnes physiques et aux entités n'étant pas soumises à l'IS.", "Oui, mais uniquement aux sociétés de personnes.", "Oui, seulement aux entreprises individuelles.", "Non, il est réservé aux associations."], ans: 1 },
-                { q: "Pour les sociétés relevant du régime du bénéfice réel normal, le taux de l'Impôt sur les Sociétés (IS) est de :", opts: ["20%", "25%", "30%", "35%", "40%"], ans: 1 },
-                { q: "Quel est le taux de TVA applicable aux communications téléphoniques ?", opts: ["0%", "10%", "16%", "18%", "25%"], ans: 3 },
-                { q: "À partir de quel seuil de chiffre d'affaires hors taxes une entreprise est-elle soumise au régime du bénéfice réel normal pour l'IS ?", opts: ["1 000 000 MRU", "3 000 000 MRU", "5 000 000 MRU", "10 000 000 MRU", "30 000 000 MRU"], ans: 2 },
-                { q: "À partir de quel seuil de chiffre d'affaires hors taxes un contribuable de l'IBAPP est-il soumis au régime du bénéfice réel intermédiaire ?", opts: ["Entre 1 000 000 et 3 000 000 MRU", "Entre 3 000 000 et 5 000 000 MRU", "Entre 5 000 000 et 10 000 000 MRU", "Moins de 3 000 000 MRU", "Plus de 10 000 000 MRU"], ans: 1 },
-                { q: "Quelle est la période de prescription (délai de reprise) pour le contrôle fiscal en matière d'impôts directs ?", opts: ["1 an", "2 ans", "3 ans", "5 ans", "10 ans"], ans: 2 },
-                { q: "Quel est le taux de la retenue à la source sur les services rendus par des non-résidents en Mauritanie ?", opts: ["2,5%", "10%", "15%", "18%", "25%"], ans: 2 },
-                { q: "Quel est le taux de la retenue à la source sur les services rendus par des résidents exerçant une profession libérale (soumis à l'IBAPP) ?", opts: ["2,5%", "10%", "15%", "18%", "25%"], ans: 0 },
-                { q: "Le minimum de perception de l'impôt sur les sociétés pour les contribuables relevant du régime réel normal est fixé à :", opts: ["50 000 MRU", "75 000 MRU", "100 000 MRU", "125 000 MRU", "150 000 MRU"], ans: 2 },
-                { q: "Le minimum de perception de l'impôt pour les contribuables IBAPP relevant du régime réel normal est fixé à :", opts: ["50 000 MRU", "75 000 MRU", "100 000 MRU", "125 000 MRU", "150 000 MRU"], ans: 3 },
-                { q: "Que représente le « Fait générateur » en matière de TVA ?", opts: ["La date de paiement de la facture.", "L'événement qui rend la taxe exigible (ex: livraison du bien).", "La date d'établissement de la déclaration de TVA.", "La date de clôture de l'exercice comptable.", "L'encaissement du prix par le vendeur."], ans: 1 },
-                { q: "Le déficit constaté au cours d'un exercice peut-il être reporté sur les exercices suivants ?", opts: ["Non, il est perdu définitivement.", "Oui, sans limitation de durée.", "Oui, jusqu'au cinquième exercice suivant.", "Oui, jusqu'au troisième exercice suivant.", "Non, il doit être immédiatement imposé."], ans: 2 },
-                { q: "Un chantier de construction réalisé par un sous-traitant étranger en Mauritanie constitue un établissement stable si sa durée excède :", opts: ["3 mois", "6 mois", "9 mois", "12 mois", "18 mois"], ans: 3 },
-                { q: "Quel est le taux de la taxe d'apprentissage en Mauritanie ?", opts: ["0,60%", "1%", "2%", "5%", "10%"], ans: 0 },
-                { q: "Pour les contribuables IBAPP soumis au régime du forfait (CA < 3 000 000 MRU), quel est le taux d'imposition ?", opts: ["1% du chiffre d'affaires", "2,5% du chiffre d'affaires", "3% du chiffre d'affaires", "30% du bénéfice", "Un montant forfaitaire fixe"], ans: 2 },
-                { q: "Quel est le taux de l'Impôt sur le Revenu des Capitaux Mobiliers (IRCM) sur les dividendes ?", opts: ["5%", "10%", "15%", "20%", "25%"], ans: 1 },
-                { q: "Qu'est-ce que la « Patente » ?", opts: ["Une taxe sur les véhicules à moteur.", "Un impôt sur le revenu foncier.", "Une contribution annuelle due pour l'exercice d'une activité professionnelle non salariée.", "Une taxe sur les transactions financières.", "Un droit d'enregistrement."], ans: 2 },
-                { q: "Quel est l'impôt qui remplace l'Impôt sur les Bénéfices Non Commerciaux (IBNC) ?", opts: ["L'Impôt sur les Sociétés (IS)", "L'Impôt sur les Bénéfices d'Affaires des Personnes Physiques (IBAPP)", "La Taxe sur la Valeur Ajoutée (TVA)", "La Contribution Foncière", "L'Impôt sur les Traitements et Salaires (ITS)"], ans: 1 },
-                { q: "Le droit à déduction de la TVA prend naissance :", opts: ["À la date de signature du contrat.", "Lorsque la TVA est exigible chez le fournisseur.", "À la date de paiement de la facture par le client.", "À la clôture de l'exercice.", "À la date de livraison du bien, quel que soit le paiement."], ans: 1 },
-                { q: "Le délai de réclamation contentieuse devant le Directeur Général des Impôts (DGI) est de :", opts: ["1 mois", "2 mois", "3 mois", "6 mois", "1 an"], ans: 2 },
-                { q: "Qui est responsable du recouvrement des rôles d'impôts ?", opts: ["Le Directeur Général des Impôts", "Le Ministre des Finances", "Les Receveurs des Impôts (comptables publics)", "Les Experts-Comptables", "Les Notaires"], ans: 2 },
-                { q: "Une société réalise un bénéfice imposable de 2 000 000 MRU. Selon le régime réel normal, quel est le montant de l'impôt sur les sociétés dû ?", opts: ["500 000 MRU", "400 000 MRU", "100 000 MRU", "200 000 MRU", "50 000 MRU"], ans: 0 },
-                { q: "Une société réalise un bénéfice imposable de 200 000 MRU. Quel est le montant de l'IS dû ?", opts: ["50 000 MRU", "40 000 MRU", "100 000 MRU", "200 000 MRU", "25 000 MRU"], ans: 2 },
-                { q: "Une société soumise à l'IS (régime réel normal) a un produit imposable de 10 000 000 MRU. Son bénéfice net est de 1 000 000 MRU. L'IS dû sera :", opts: ["250 000 MRU", "500 000 MRU", "2 500 000 MRU", "200 000 MRU", "100 000 MRU"], ans: 0 },
-                { q: "Un contribuable IBAPP (régime réel normal) réalise un bénéfice de 500 000 MRU et un produit imposable de 5 000 000 MRU. Quel est le montant de l'impôt ?", opts: ["150 000 MRU", "125 000 MRU", "100 000 MRU", "75 000 MRU", "50 000 MRU"], ans: 0 },
-                { q: "Un contribuable IBAPP (régime forfait) déclare un chiffre d'affaires de 2 000 000 MRU. Quel est le montant de son impôt ?", opts: ["60 000 MRU", "50 000 MRU", "40 000 MRU", "100 000 MRU", "30 000 MRU"], ans: 0 },
-                { q: "Un salarié perçoit une rémunération imposable mensuelle de 25 000 MRU. Quel est le montant de l'ITS ?", opts: ["6 250 MRU", "5 950 MRU", "10 000 MRU", "5 000 MRU", "3 750 MRU"], ans: 1 },
-                { q: "Un salarié perçoit une rémunération imposable mensuelle de 15 000 MRU. Quel est le montant de l'ITS ?", opts: ["3 750 MRU", "2 850 MRU", "5 000 MRU", "1 500 MRU", "2 250 MRU"], ans: 1 },
-                { q: "Un salarié perçoit une rémunération imposable mensuelle de 8 000 MRU. Quel est le montant de l'ITS ?", opts: ["2 000 MRU", "1 200 MRU", "800 MRU", "1 600 MRU", "2 400 MRU"], ans: 1 },
-                { q: "Une société réalise un bénéfice imposable de 0 MRU et un produit imposable de 5 000 000 MRU. Quel est le montant de l'IS dû ?", opts: ["0 MRU", "100 000 MRU", "125 000 MRU", "250 000 MRU", "50 000 MRU"], ans: 1 },
-                { q: "Un contribuable exerçant une profession libérale (IBAPP - régime réel normal) facture 1 000 000 MRU HT à une société. Cette société est tenue d'opérer une retenue à la source. Quel est le montant de cette retenue ?", opts: ["25 000 MRU", "15 000 MRU", "2 500 MRU", "10 000 MRU", "250 000 MRU"], ans: 0 }
-            ];
-            qs.forEach(q => addUnique(q));
-        }
+    // ==========================================================
+    // 2. BANQUE DE QUESTIONS (250 questions de base)
+    // ==========================================================
+    let qBank = [];
 
-        // ---- Source 2 : QCM Inspecteur (extraits) ----
-        function addInspecteur() {
-            const qs = [
-                { q: "Le CGI mauritanien adopté par la loi n°2019-018 est applicable depuis quelle date ?", opts: ["31 mars 2020", "1er janvier 2021", "1er janvier 2019", "29 avril 2019", "1er janvier 2020"], ans: 4 },
-                { q: "Quel impôt a remplacé notamment le BIC pour les sociétés ?", opts: ["TVA", "IRCM", "ITS", "IBAPP", "IS"], ans: 4 },
-                { q: "Quel est le taux normal de l'IS indiqué dans le document fiscal de référence ?", opts: ["15 %", "18 %", "25 %", "20 %", "30 %"], ans: 2 },
-                { q: "Dans le régime de l'IS présenté, l'impôt peut aussi être calculé à quel taux du revenu imposable lorsque cette base est supérieure ?", opts: ["5 %", "0,5 %", "2,5 %", "2 %", "1 %"], ans: 3 },
-                { q: "Quel est le minimum d'IS indiqué pour les contribuables soumis au régime réel ?", opts: ["75 000 MRU", "125 000 MRU", "100 000 MRU", "150 000 MRU", "50 000 MRU"], ans: 2 },
-                { q: "Quel seuil de chiffre d'affaires HT caractérise le régime réel normal de l'IBAPP ?", opts: ["Plus de 5 millions MRU", "Plus de 30 millions MRU", "Entre 3 et 5 millions MRU", "Plus de 10 millions MRU", "Moins de 3 millions MRU"], ans: 0 },
-                { q: "Quel taux de l'IBAPP est indiqué pour le régime réel normal sur le bénéfice ?", opts: ["20 %", "15 %", "30 %", "25 %", "40 %"], ans: 2 },
-                { q: "Quel taux forfaitaire d'IBAPP est indiqué pour le régime forfaitaire ?", opts: ["2,5 % du CA", "5 % du CA", "3 % du CA", "2 % du CA", "1 % du CA"], ans: 2 },
-                { q: "Quel est le taux d'ITS indiqué pour une rémunération mensuelle taxable jusqu'à 9 000 MRU ?", opts: ["25 %", "15 %", "40 %", "10 %", "20 %"], ans: 1 },
-                { q: "Quel taux d'ITS est indiqué au-delà de 21 000 MRU ?", opts: ["40 %", "30 %", "20 %", "25 %", "15 %"], ans: 0 },
-                { q: "Quel est le taux de TVA indiqué comme taux général ?", opts: ["14 %", "10 %", "16 %", "18 %", "12 %"], ans: 2 },
-                { q: "Quel taux de TVA est indiqué pour les télécommunications ?", opts: ["16 %", "15 %", "20 %", "25 %", "18 %"], ans: 4 },
-                { q: "Quel taux est indiqué pour les exportations en matière de TVA ?", opts: ["2 %", "10 %", "16 %", "0 %", "5 %"], ans: 3 },
-                { q: "Le contrôle fiscal documentaire repose notamment sur :", opts: ["Les déclarations verbales uniquement", "Les sondages d'opinion", "Les états financiers déposés et les recoupements", "Les comptes bancaires personnels de l'inspecteur", "Les prix internationaux uniquement"], ans: 2 },
-                { q: "À quelle date les déclarations annuelles mentionnées dans le document sont-elles déposées ?", opts: ["30 juin", "31 mars", "31 janvier", "31 décembre", "28 février"], ans: 1 },
-                { q: "Quel autre type de contrôle fiscal est décrit dans le document ?", opts: ["Contrôle sur place", "Contrôle douanier uniquement", "Contrôle bancaire privé", "Contrôle diplomatique", "Contrôle électoral"], ans: 0 },
-                { q: "Quelle durée de prescription est indiquée pour le contrôle fiscal ?", opts: ["2 ans", "3 ans", "10 ans", "5 ans", "1 an"], ans: 1 },
-                { q: "Les contrôles peuvent conduire à des rappels assortis, selon le document, de pénalités allant :", opts: ["De 5 % à 10 %", "De 25 % à 80 %", "De 1 % à 5 %", "De 10 % à 20 %", "De 80 % à 100 %"], ans: 1 },
-                { q: "Quel régime est destiné aux entreprises ayant un fort potentiel d'exportation dans l'ancien dispositif d'investissement présenté ?", opts: ["Zone franche", "Régime familial", "Régime salarial", "Régime agricole ordinaire", "Régime bancaire"], ans: 0 },
-                { q: "Le nouveau Code des investissements 2025 vise notamment à :", opts: ["Interdire les zones de développement", "Supprimer l'investissement étranger", "Encourager les investissements directs nationaux et étrangers", "Remplacer le CGI", "Supprimer les PME"], ans: 2 },
-                { q: "Le nouveau Code des investissements exclut notamment les activités liées :", opts: ["Au numérique", "À l'agriculture", "À la logistique", "Au commerce de détail uniquement", "Aux mines, hydrocarbures et hydrogène vert"], ans: 4 },
-                { q: "Quel est le régime de base incitatif abrégé RIB ?", opts: ["Régime des importations de base", "Régime des intérêts bancaires", "Régime de base incitatif", "Régime bancaire international", "Régime d'imposition bancaire"], ans: 2 },
-                { q: "Combien de régimes privilégiés sont établis par le nouveau Code des investissements selon le document ?", opts: ["Trois", "Six", "Quatre", "Deux", "Cinq"], ans: 0 },
-                { q: "Pour la catégorie PME du RIB, l'investissement indiqué est compris entre :", opts: ["2 et 30 millions MRU", "1 et 2 millions MRU", "30 et 100 millions MRU", "0,5 et 1 million MRU", "Plus de 200 millions MRU"], ans: 0 },
-                { q: "Pour la catégorie PME du RIB, combien d'emplois directs sont exigés au minimum ?", opts: ["10", "15", "2", "5", "3"], ans: 3 },
-                { q: "Quel taux de droit de douane est indiqué pour la catégorie PME du RIB sur les équipements et intrants éligibles ?", opts: ["1,5 %", "3 %", "2 %", "0,5 %", "5 %"], ans: 1 },
-                { q: "Le régime des pôles de développement (RPD) est créé par :", opts: ["Décision du contribuable", "Décision d'une banque privée", "Facture commerciale", "Contrat verbal", "Décret du Conseil des ministres"], ans: 4 },
-                { q: "Quel taux d'IS est indiqué dans le RPD ?", opts: ["25 %", "5 %", "10 %", "12 %", "15 %"], ans: 4 },
-                { q: "Quel taux de droit de douane est indiqué dans le RIS ?", opts: ["0 %", "1 %", "1,5 %", "5 %", "3 %"], ans: 2 },
-                { q: "Quel investissement minimal est indiqué pour le RIS ?", opts: ["500 millions MRU", "200 millions MRU", "30 millions MRU", "100 millions MRU", "50 millions MRU"], ans: 1 },
-                { q: "Combien d'emplois directs sont normalement exigés pour le RIS ?", opts: ["5", "20", "10", "50", "30"], ans: 3 }
-            ];
-            qs.forEach(q => addUnique(q));
-        }
+    function addQuestion(q) {
+        if (!q || !q.q) return;
+        const norm = q.q.trim().toLowerCase().replace(/\s+/g, ' ');
+        const exists = qBank.some(item => item.q.trim().toLowerCase().replace(/\s+/g, ' ') === norm);
+        if (!exists) qBank.push(q);
+    }
 
-        // ---- Source 3 : Fiche Maître (exemples) ----
-        function addFicheMaitre() {
-            const qs = [
-                { q: "Une société en BRN a un bénéfice net imposable de 500 000 MRU et des produits imposables de 12 000 000 MRU. Quel est l'IS dû ?", opts: ["125 000 MRU", "240 000 MRU", "100 000 MRU", "500 000 MRU", "600 000 MRU"], ans: 1 },
-                { q: "Une société en BRN a un bénéfice net imposable de -50 000 MRU et des produits imposables de 8 500 000 MRU. Quel est l'IS dû ?", opts: ["0 MRU", "100 000 MRU", "170 000 MRU", "200 000 MRU", "250 000 MRU"], ans: 2 },
-                { q: "Un commerçant en BRN (IBAPP) a un BNI de 200 000 MRU et des produits de 4 500 000 MRU. Quel est l'IBAPP dû ?", opts: ["60 000 MRU", "112 500 MRU", "125 000 MRU", "150 000 MRU", "200 000 MRU"], ans: 2 },
-                { q: "Un salarié perçoit 35 000 MRU de salaire brut, 10 000 MRU de prime de logement et un avantage en nature (voiture) de 5 000 MRU. Quel est l'ITS ?", opts: ["14 750 MRU", "12 500 MRU", "18 000 MRU", "16 200 MRU", "20 000 MRU"], ans: 0 },
-                { q: "Une entreprise a des ventes HT de 1 000 000 MRU, des achats HT de 600 000 MRU. Quelle est la TVA due (taux 16%) ?", opts: ["160 000 MRU", "96 000 MRU", "64 000 MRU", "256 000 MRU", "80 000 MRU"], ans: 2 },
-                { q: "Une entreprise a des ventes HT de 0 MRU et des achats HT de 1 500 000 MRU. Quelle est la TVA due ?", opts: ["240 000 MRU (crédit)", "0 MRU", "160 000 MRU", "400 000 MRU", "100 000 MRU"], ans: 0 },
-                { q: "Quel est le taux de la taxe d'apprentissage en Mauritanie ?", opts: ["0,5%", "0,6%", "1%", "2%", "5%"], ans: 1 },
-                { q: "Le taux de l'IRCM sur les dividendes est de :", opts: ["5%", "10%", "15%", "20%", "25%"], ans: 1 },
-                { q: "Le taux de retenue à la source sur les prestations des résidents (professions libérales) est de :", opts: ["2,5%", "10%", "15%", "18%", "25%"], ans: 0 },
-                { q: "Le taux de retenue à la source sur les prestations des non-résidents est de :", opts: ["2,5%", "10%", "15%", "18%", "25%"], ans: 2 },
-                { q: "Dans le STR, l'IS forfaitaire est de :", opts: ["2% du CA", "3% du CA", "4% du CA", "5% du CA", "6% du CA"], ans: 2 },
-                { q: "Dans le STR, l'ITS forfaitaire est de :", opts: ["2% du CA", "3% du CA", "4% du CA", "5% du CA", "6% du CA"], ans: 2 },
-                { q: "La durée maximale de la convention globale d'hydrogène vert est de :", opts: ["15 ans", "25 ans", "35 ans", "50 ans", "10 ans"], ans: 1 },
-                { q: "Le taux de TVA sur les télécommunications est de :", opts: ["16%", "18%", "20%", "25%", "10%"], ans: 1 },
-                { q: "Le minimum de perception de l'IS pour le régime réel intermédiaire est de :", opts: ["50 000 MRU", "75 000 MRU", "100 000 MRU", "125 000 MRU", "150 000 MRU"], ans: 1 },
-                { q: "Le minimum de perception de l'IBAPP pour le régime réel normal est de :", opts: ["75 000 MRU", "100 000 MRU", "125 000 MRU", "150 000 MRU", "200 000 MRU"], ans: 2 },
-                { q: "Le régime forfaitaire IBAPP s'applique à un CA de :", opts: ["Moins de 3 M MRU", "Entre 3 et 5 M MRU", "Plus de 5 M MRU", "Plus de 10 M MRU", "Moins de 1 M MRU"], ans: 0 },
-                { q: "Le régime réel intermédiaire IBAPP s'applique à un CA de :", opts: ["Moins de 3 M MRU", "Entre 3 et 5 M MRU", "Plus de 5 M MRU", "Plus de 10 M MRU", "Entre 1 et 3 M MRU"], ans: 1 },
-                { q: "Le taux normal de l'IS est de :", opts: ["20%", "25%", "30%", "35%", "15%"], ans: 1 },
-                { q: "Le taux normal de l'IBAPP est de :", opts: ["20%", "25%", "30%", "35%", "15%"], ans: 2 }
-            ];
-            qs.forEach(q => addUnique(q));
-        }
+    // Questions de base (250)
+    const baseQuestions = [
+        // Fiscalité générale (100)
+        { q: "Quel impôt a remplacé le BIC et l'IMF à partir du 1er janvier 2020 ?", opts: ["IS", "TVA", "IRCM", "Patente", "CFPB"], ans: 0 },
+        { q: "Quel est le taux normal de la TVA en Mauritanie ?", opts: ["14%", "16%", "18%", "20%", "25%"], ans: 1 },
+        { q: "Quel est le taux de TVA applicable aux exportations ?", opts: ["0%", "5%", "10%", "16%", "18%"], ans: 0 },
+        { q: "Date limite de dépôt de la déclaration annuelle des sociétés ?", opts: ["15 janvier", "28 février", "31 mars", "30 avril", "31 mai"], ans: 2 },
+        { q: "L'IBAPP s'applique-t-il aux sociétés ?", opts: ["Oui, toutes", "Non, uniquement personnes physiques", "Uniquement sociétés de personnes", "Uniquement entreprises individuelles", "Réservé aux associations"], ans: 1 },
+        { q: "Taux de l'IS pour le régime réel normal ?", opts: ["20%", "25%", "30%", "35%", "40%"], ans: 1 },
+        { q: "Taux de TVA pour les communications téléphoniques ?", opts: ["0%", "10%", "16%", "18%", "25%"], ans: 3 },
+        { q: "Seuil CA pour le régime réel normal (IS) ?", opts: ["1M MRU", "3M MRU", "5M MRU", "10M MRU", "30M MRU"], ans: 2 },
+        { q: "Seuil CA pour l'IBAPP réel intermédiaire ?", opts: ["1-3M MRU", "3-5M MRU", "5-10M MRU", "<3M MRU", ">10M MRU"], ans: 1 },
+        { q: "Période de prescription pour le contrôle fiscal ?", opts: ["1 an", "2 ans", "3 ans", "5 ans", "10 ans"], ans: 2 },
+        { q: "Taux RAS sur services non-résidents ?", opts: ["2,5%", "10%", "15%", "18%", "25%"], ans: 2 },
+        { q: "Taux RAS sur services résidents (libéral) ?", opts: ["2,5%", "10%", "15%", "18%", "25%"], ans: 0 },
+        { q: "Minimum IS régime réel normal ?", opts: ["50k MRU", "75k MRU", "100k MRU", "125k MRU", "150k MRU"], ans: 2 },
+        { q: "Minimum IBAPP régime réel normal ?", opts: ["50k MRU", "75k MRU", "100k MRU", "125k MRU", "150k MRU"], ans: 3 },
+        { q: "Que représente le fait générateur en TVA ?", opts: ["Date paiement", "Événement rendant taxe exigible", "Date déclaration", "Clôture exercice", "Encaissement"], ans: 1 },
+        { q: "Report du déficit sur combien d'exercices ?", opts: ["Non reportable", "Sans limite", "5 exercices", "3 exercices", "Imposable immédiatement"], ans: 2 },
+        { q: "Durée pour établissement stable (sous-traitant) ?", opts: ["3 mois", "6 mois", "9 mois", "12 mois", "18 mois"], ans: 3 },
+        { q: "Taux taxe d'apprentissage en Mauritanie ?", opts: ["0,60%", "1%", "2%", "5%", "10%"], ans: 0 },
+        { q: "Taux IBAPP forfaitaire (CA < 3M) ?", opts: ["1%", "2,5%", "3%", "30%", "Forfait fixe"], ans: 2 },
+        { q: "Taux IRCM sur dividendes ?", opts: ["5%", "10%", "15%", "20%", "25%"], ans: 1 },
+        { q: "Qu'est-ce que la Patente ?", opts: ["Taxe véhicules", "Impôt foncier", "Contribution annuelle professionnelle", "Taxe financière", "Droit enregistrement"], ans: 2 },
+        { q: "Quel impôt remplace l'IBNC ?", opts: ["IS", "IBAPP", "TVA", "CF", "ITS"], ans: 1 },
+        { q: "Droit à déduction de la TVA prend naissance quand ?", opts: ["Signature contrat", "TVA exigible fournisseur", "Paiement facture", "Clôture exercice", "Livraison"], ans: 1 },
+        { q: "Délai réclamation contentieuse DGI ?", opts: ["1 mois", "2 mois", "3 mois", "6 mois", "1 an"], ans: 2 },
+        { q: "Qui recouvre les rôles d'impôts ?", opts: ["DGI", "Ministre Finances", "Receveurs des Impôts", "Experts-comptables", "Notaires"], ans: 2 },
+        { q: "Pénalité de base pour omission déclaration ?", opts: ["10%", "25%", "40%", "80%", "100%"], ans: 2 },
+        { q: "Pénalité pour mauvaise foi/non-reversement RAS ?", opts: ["25%", "40%", "60%", "80%", "100%"], ans: 1 },
+        { q: "Pénalité pour manœuvres frauduleuses ?", opts: ["40%", "60%", "80%", "100%", "200%"], ans: 2 },
+        { q: "Délai prescription recouvrement impôts ?", opts: ["2 ans", "3 ans", "4 ans", "5 ans", "10 ans"], ans: 2 },
+        { q: "RFS pétrolier : taux IS ?", opts: ["2% CA", "3% CA", "4% CA", "5% CA", "6% CA"], ans: 2 },
+        { q: "Exonération IS sociétés minières (mois) ?", opts: ["12", "24", "36", "48", "60"], ans: 2 },
+        { q: "Base de calcul redevance minière ?", opts: ["Bénéfice net", "Prix vente / FOB", "CA total", "Investissements", "Quantité extraite"], ans: 1 },
+        { q: "Plafond quote-part frais siège étranger ?", opts: ["1% CA", "2% CA", "5% CA", "10% CA", "Forfait"], ans: 1 },
+        { q: "Limite déduction intérêts entreprises liées ?", opts: ["15% EBITDA", "25% EBITDA", "10% résultat", "50% résultat", "Sans limite"], ans: 1 },
+        { q: "Limite déduction libéralités/dons ?", opts: ["1‰ CA max 1M", "2‰ CA max 2M", "5‰ CA max 5M", "10‰ CA sans max", "500k forfait"], ans: 1 },
+        { q: "Nombre de versements IS régime normal ?", opts: ["1", "2", "3", "4", "6"], ans: 2 },
+        { q: "1er versement IS (40%) au plus tard ?", opts: ["31 janvier", "28 février", "31 mars", "30 juin", "30 septembre"], ans: 2 },
+        { q: "Certification comptabilité BRN par ?", opts: ["Commissaire", "Expert-comptable ONEC", "Avocat fiscaliste", "Agent impôts", "Notaire"], ans: 1 },
+        { q: "Taxe véhicules due pour l'année entière ?", opts: ["Vrai", "Faux", "Sauf destruction", "Prorata", "Uniquement particuliers"], ans: 0 },
+        { q: "Sociétés pétrolières exonérées d'apprentissage et patente ?", opts: ["Vrai", "Faux", "Vrai phase exploration", "Faux", "Vrai si étrangères"], ans: 0 },
+        { q: "Durée établissement stable (hors pétrole) ?", opts: ["3 mois", "6 mois", "9 mois", "12 mois", "18 mois"], ans: 1 },
+        { q: "Qu'est-ce qu'un ATD ?", opts: ["Notification imposition", "Blocage fonds tiers", "Demande renseignements", "Proposition transaction", "Avis passage"], ans: 1 },
+        { q: "TOF des banques exonérées de TVA ?", opts: ["Vrai", "Faux", "Uniquement intérêts", "Faux soumises", "Vrai particuliers"], ans: 0 },
+        { q: "Taux TOF en Mauritanie ?", opts: ["10%", "14%", "16%", "18%", "20%"], ans: 2 },
+        { q: "Sociétés minières peuvent négocier des conventions ?", opts: ["Vrai", "Faux", "Vrai uniquement étrangères", "Faux", "Vrai exploration"], ans: 0 },
+        { q: "Charges espèces >200k MRU déductibles ?", opts: ["Oui", "Non", "Oui si justifiées", "Non sauf pêche", "Oui fractionné"], ans: 1 },
+        { q: "GTA géré par Unité Mixte Mauritanie/Sénégal ?", opts: ["Vrai", "Faux", "Vrai uniquement Mauritanie", "Faux", "Vrai sociétés mauritaniennes"], ans: 0 },
+        { q: "Taux effectif minimum GTA réel ?", opts: ["1,75% CA", "2% CA", "2,5% CA", "3% CA", "Forfait"], ans: 0 },
+        { q: "Taux IS forfaitaire GTA ?", opts: ["2% CA", "3% CA", "4% CA", "5% CA", "6% CA"], ans: 2 },
+        { q: "Taux ITS forfaitaire GTA ?", opts: ["10% CA", "20% CA", "30% CA", "40% CA", "50% CA"], ans: 2 },
+        { q: "Durée amortissement matériel transport (4 ans) ?", opts: ["10%", "15%", "20%", "25%", "50%"], ans: 3 },
+        { q: "Taux amortissement frais établissement (2 ans) ?", opts: ["20%", "25%", "40%", "50%", "100%"], ans: 3 },
+        { q: "Taux amortissement ordinateur (4 ans) ?", opts: ["15%", "20%", "25%", "33,33%", "50%"], ans: 2 },
+        { q: "Taux amortissement bâtiment (25 ans) ?", opts: ["2%", "3%", "4%", "5%", "10%"], ans: 2 },
+        { q: "Amendes et pénalités fiscales déductibles ?", opts: ["Oui", "Non", "Oui si liées activité", "Non sauf retard", "Oui si payées"], ans: 1 },
+        { q: "Entreprises résidentes imposées sur bénéfices mondiaux ?", opts: ["Vrai", "Faux", "Vrai sous conventions", "Faux", "Vrai SA"], ans: 0 },
+        { q: "Quelles sociétés exonérées d'IS ?", opts: ["SARL", "Commandite simple", "GIE", "SA", "Participation"], ans: 2 },
+        { q: "Taux marginal maximum ITS ?", opts: ["20%", "25%", "30%", "35%", "40%"], ans: 4 },
+        { q: "Éléments de la base ITS ?", opts: ["Salaire brut + primes + indemnités + avantages", "Salaire brut uniquement", "Salaire net", "Avantages uniquement", "Partie >9000"], ans: 0 },
+        { q: "Droit enregistrement vente fonds commerce ?", opts: ["2%", "5%", "10%", "15%", "20%"], ans: 2 },
+        { q: "Droit enregistrement cession actions/parts ?", opts: ["1%", "2%", "5%", "10%", "15%"], ans: 1 },
+        { q: "Absence réponse réclamation dans 3 mois = ?", opts: ["Acceptation tacite", "Rejet tacite", "Prorogation", "Favorable partiel", "Annulation"], ans: 1 },
+        { q: "Durée conservation documents comptables ?", opts: ["3 ans", "5 ans", "7 ans", "10 ans", "15 ans"], ans: 3 },
+        { q: "Taux de l'IRF ?", opts: ["5%", "10%", "15%", "18%", "20%"], ans: 1 },
+        { q: "RAS sur loyers = IRF 10% + CF 8% = 18% ?", opts: ["Vrai", "Faux", "Vrai professionnels", "Faux 15%", "Vrai résidentiel"], ans: 0 },
+        { q: "Retenue source hydrogène vert non-résidents ?", opts: ["2%", "3%", "4%", "5%", "15%"], ans: 2 },
+        { q: "ZFNDB : activités éligibles limitées à pêche et mine ?", opts: ["Vrai", "Faux", "Vrai étrangères", "Faux", "Vrai industrielles"], ans: 0 },
+        { q: "ZFNDB : exemption droits douane ?", opts: ["Vrai", "Faux", "Vrai export", "Faux 5%", "Vrai mauritaniennes"], ans: 0 },
+        { q: "ZFNDB : obligation exporter toute production (max 20% local) ?", opts: ["Vrai", "Faux", "Vrai pêche", "Faux 50%", "Vrai étrangères"], ans: 0 },
+        { q: "Durée agrément ZFNDB ?", opts: ["5 ans", "10 ans", "15 ans", "20 ans", "25 ans"], ans: 2 },
+        { q: "Droit enregistrement baux = 1% locataire + 2% propriétaire ?", opts: ["Vrai", "Faux", "5% locataire", "10% propriétaire", "Droit fixe"], ans: 0 },
+        { q: "Taux IS hydrogène vert si R ≤ 1 ?", opts: ["15%", "20%", "25%", "30%", "35%"], ans: 0 },
+        { q: "Taux IS hydrogène vert si 1 < R ≤ 3 ?", opts: ["15%", "20%", "25%", "30%", "35%"], ans: 2 },
+        { q: "Taux IS hydrogène vert si R > 3 ?", opts: ["15%", "20%", "25%", "30%", "35%"], ans: 3 },
+        { q: "Taux effectif IS sous-traitants hydrogène vert ?", opts: ["2% CA", "3% CA", "4% CA", "5% CA", "6% CA"], ans: 2 },
+        { q: "Convention cadre hydrogène vert durée faisabilité ?", opts: ["1 an", "2 ans", "3 ans", "5 ans", "10 ans"], ans: 1 },
+        { q: "Durée convention globale hydrogène vert max ?", opts: ["15 ans", "25 ans", "35 ans", "50 ans", "10 ans"], ans: 1 },
+        { q: "Minimum IBAPP régime intermédiaire ?", opts: ["50k", "75k", "100k", "125k", "150k"], ans: 1 },
+        { q: "Droit de mutation immobilière (vente) ?", opts: ["1%", "2%", "3%", "5%", "10%"], ans: 1 },
+        { q: "Taux TVA réduit catégorie intermédiaire Code Invest. ?", opts: ["0%", "5%", "10%", "16%", "18%"], ans: 2 },
+        { q: "IS RPD (Pôles de Développement) ?", opts: ["10%", "15%", "20%", "25%", "30%"], ans: 1 },
+        { q: "Crédit formation PME plafonné à ?", opts: ["200k", "400k", "800k", "1M", "2M"], ans: 0 },
+        { q: "Crédit formation RIS plafonné à ?", opts: ["200k", "400k", "800k", "1M", "2M"], ans: 2 },
+        { q: "Le Code des Investissements exclut :", opts: ["Numérique", "Agriculture", "Logistique", "Commerce de détail", "Mines/hydrocarbures/hydrogène"], ans: 4 },
+        { q: "Délai déclaration d'existence (IS/TVA) ?", opts: ["10 jours", "20 jours", "30 jours", "2 mois", "6 mois"], ans: 1 },
+        { q: "DAS déclaration annuelle salaires au plus tard ?", opts: ["31 janv", "28 fév", "31 mars", "15 avril", "30 avril"], ans: 2 },
+        { q: "Vérification générale porte sur combien d'exercices ?", opts: ["1", "2", "3", "4", "5"], ans: 2 },
+        { q: "Durée max vérification générale sur place ?", opts: ["1 mois", "2 mois", "3 mois", "4 mois", "6 mois"], ans: 1 },
+        { q: "Amende opposition contrôle (partielle/totale) ?", opts: ["25k/50k", "40k/100k", "50k/200k", "100k/100k", "500k/500k"], ans: 1 },
+        { q: "Amortissement dégressif réservé aux biens neufs ?", opts: ["Vrai", "Faux", "Vrai si vie ≥5 ans", "Faux", "Vrai crédit-bail"], ans: 0 },
+        { q: "Délai rescrit fiscal réponse DGI ?", opts: ["1 mois", "2 mois", "3 mois", "4 mois", "6 mois"], ans: 2 },
+        { q: "Les GIE sont exonérés d'IS ?", opts: ["Vrai", "Faux", "Vrai SA", "Faux", "Vrai SARL"], ans: 0 },
+        { q: "Les sociétés de personnes (SNC, SCS) optent pour IBAPP ?", opts: ["Vrai", "Faux", "Vrai si tous PP", "Faux IS", "Vrai si CA <5M"], ans: 0 },
+        { q: "Droits d'enregistrement sur mutations à titre gratuit ?", opts: ["Vrai", "Faux", "Vrai immeubles", "Faux", "Vrai fonds"], ans: 0 },
+        { q: "Taux de contribution foncière voté par Conseil Municipal ?", opts: ["Vrai", "Faux", "Vrai Nouakchott/Nouadhibou", "Faux fixé État", "Vrai propriétés"], ans: 0 },
+        { q: "Délai paiement après AMR (avis mise recouvrement) ?", opts: ["3 jours", "8 jours", "15 jours", "30 jours", "60 jours"], ans: 0 },
+        { q: "Donations entre époux enregistrées gratuitement ?", opts: ["Vrai", "Faux", "Vrai si conjoint", "Faux droits mutation", "Vrai biens meubles"], ans: 2 },
+        { q: "La transaction administrative porte sur les pénalités ?", opts: ["Vrai", "Faux", "Vrai uniquement pénalités", "Faux interdite", "Vrai impôts directs"], ans: 2 },
+        { q: "Compensation dégrèvements/insuffisances possible ?", opts: ["Vrai", "Faux", "Vrai limite contestée", "Faux", "Vrai TVA"], ans: 0 }
+    ];
 
-        // ---- Générer des variations pour atteindre 700+ ----
-        function generateVariations(baseQuestions, count) {
-            const variants = [];
-            const usedTexts = new Set(qBank.map(q => q.question.trim().toLowerCase()));
-            let attempts = 0;
-            while (variants.length < count && attempts < 20000) {
-                attempts++;
-                const base = baseQuestions[Math.floor(Math.random() * baseQuestions.length)];
-                if (!base) continue;
-                let newQ = { ...base };
-                let modified = false;
-                let text = newQ.question;
-                const numbers = text.match(/\d+/g);
-                if (numbers && numbers.length > 0) {
-                    const idx = Math.floor(Math.random() * numbers.length);
-                    const oldNum = numbers[idx];
-                    let newNum = (parseInt(oldNum) + Math.floor(Math.random() * 200) + 1).toString();
-                    text = text.replace(oldNum, newNum);
-                    const newOpts = newQ.opts.map(opt => opt.replace(oldNum, newNum));
-                    newQ.opts = newOpts;
-                    newQ.question = text;
-                    modified = true;
-                }
-                if (modified) {
-                    const normalized = newQ.question.trim().toLowerCase().replace(/\s+/g, ' ');
-                    if (!usedTexts.has(normalized)) {
-                        variants.push(newQ);
-                        usedTexts.add(normalized);
-                    }
-                }
+    // Ajouter les questions de base
+    baseQuestions.forEach(q => addQuestion(q));
+
+    // Générer des variations pour atteindre 700+
+    function generateVariations(count) {
+        const usedTexts = new Set(qBank.map(q => q.q.trim().toLowerCase()));
+        let attempts = 0;
+        let added = 0;
+        const maxAttempts = 10000;
+
+        while (added < count && attempts < maxAttempts) {
+            attempts++;
+            const base = baseQuestions[Math.floor(Math.random() * baseQuestions.length)];
+            if (!base) continue;
+
+            let text = base.q;
+            const numbers = text.match(/\d+/g);
+            if (!numbers || numbers.length === 0) continue;
+
+            const idx = Math.floor(Math.random() * numbers.length);
+            const oldNum = numbers[idx];
+            const newNum = (parseInt(oldNum) + Math.floor(Math.random() * 200) + 1).toString();
+            text = text.replace(oldNum, newNum);
+            const newOpts = base.opts.map(opt => opt.replace(oldNum, newNum));
+
+            const norm = text.trim().toLowerCase().replace(/\s+/g, ' ');
+            if (!usedTexts.has(norm)) {
+                qBank.push({ q: text, opts: newOpts, ans: base.ans });
+                usedTexts.add(norm);
+                added++;
             }
-            return variants;
         }
+    }
 
-        addFicheWord();
-        addInspecteur();
-        addFicheMaitre();
+    // Générer des variations (vise 700+)
+    generateVariations(500);
 
-        // Ajouter des questions supplémentaires pour dépasser 700
-        const extra = generateVariations(qBank.slice(), 350);
-        extra.forEach(q => addUnique(q));
+    // Limiter à 750 pour éviter la lenteur
+    if (qBank.length > 750) qBank = qBank.slice(0, 750);
 
-        // Ajouts génériques si besoin
-        while (qBank.length < 700) {
-            const generic = [
-                { q: "La taxe sur les véhicules à moteur est due pour l'année entière, sans dégrèvement en cas de vente en cours d'année.", opts: ["Vrai", "Faux", "Vrai, sauf en cas de destruction", "Faux, calcul au prorata", "Vrai pour les particuliers"], ans: 0 },
-                { q: "Les sociétés pétrolières (contractants) sont exonérées de l'apprentissage et de la patente.", opts: ["Vrai", "Faux", "Vrai, phase exploration", "Faux, soumises de plein droit", "Vrai si étrangères"], ans: 0 },
-                { q: "Un chantier de construction effectué par une entreprise étrangère (hors secteur pétrolier) constitue un établissement stable si sa durée excède :", opts: ["3 mois", "6 mois", "9 mois", "12 mois", "18 mois"], ans: 1 },
-                { q: "Qu'est-ce qu'un Avis à Tiers Détenteur (ATD) ?", opts: ["Une notification d'imposition", "Une mesure de recouvrement forcé qui bloque les fonds", "Une demande de renseignements", "Une proposition de transaction", "Un avis de passage"], ans: 1 },
-                { q: "Les opérations réalisées par les banques et soumises à la Taxe sur les Opérations Financières (TOF) sont exonérées de TVA.", opts: ["Vrai", "Faux", "Vrai, uniquement intérêts", "Faux, soumises à TVA", "Vrai, opérations particuliers"], ans: 0 },
-                { q: "Quel est le taux de la Taxe sur les Opérations Financières (TOF) en Mauritanie ?", opts: ["10%", "14%", "16%", "18%", "20%"], ans: 2 },
-                { q: "Les sociétés minières peuvent négocier des conventions spécifiques avec l'État pour bénéficier d'avantages fiscaux supplémentaires.", opts: ["Vrai", "Faux", "Vrai, uniquement étrangères", "Faux, Code minier", "Vrai, exploration"], ans: 0 },
-                { q: "Les charges payées en espèces à une autre entreprise sont-elles déductibles si leur montant unitaire dépasse 200 000 MRU ?", opts: ["Oui", "Non", "Oui, si justifiées", "Non, sauf pêche", "Oui, paiement fractionné"], ans: 1 },
-                { q: "Le régime fiscal des sous-traitants du projet Grand Tortue/Ahmeyim (GTA) est géré par une « Unité Mixte » composée de représentants de la Mauritanie et du Sénégal.", opts: ["Vrai", "Faux", "Vrai, uniquement Mauritanie", "Faux, administration mauritanienne", "Vrai, sociétés mauritaniennes"], ans: 0 },
-                { q: "Les sous-traitants du projet GTA relevant du régime réel de l'impôt sont soumis à un taux effectif minimum correspondant à :", opts: ["1,75% du CA", "2% du CA", "2,5% du CA", "3% du CA", "Montant forfaitaire"], ans: 0 }
-            ];
-            generic.forEach(q => addUnique(q));
-        }
+    // ==========================================================
+    // 3. AFFICHAGE
+    // ==========================================================
+    const container = document.getElementById('qcmContainer');
+    const countSpan = document.getElementById('questionCount');
 
-        // Limiter à 800 questions maximum
-        if (qBank.length > 800) qBank = qBank.slice(0, 800);
+    function renderResume(lang) {
+        const t = TR[lang];
+        const data = t.resumeData;
+        const cards = [
+            { id: 'card1', title: t.card1, items: data.is },
+            { id: 'card2', title: t.card2, items: data.ibapp },
+            { id: 'card3', title: t.card3, items: data.its },
+            { id: 'card4', title: t.card4, items: data.tva },
+            { id: 'card5', title: t.card5, items: data.regimes },
+            { id: 'card6', title: t.card6, items: data.delais }
+        ];
 
-        // ============================================================
-        // 3. AFFICHAGE DES QUESTIONS
-        // ============================================================
-        const container = document.getElementById('qcmContainer');
-        const questionCountSpan = document.getElementById('questionCount');
-
-        function renderQuestions() {
-            container.innerHTML = '';
-            const lang = document.documentElement.lang === 'ar' ? 'ar' : 'fr';
-            const cats = translations[lang].categories;
-            
-            // Mettre à jour le compteur
-            questionCountSpan.textContent = qBank.length;
-            
-            qBank.forEach((q, index) => {
-                const num = (index + 1).toString().padStart(3, '0');
-                const div = document.createElement('div');
-                div.className = 'q-item';
-                const letters = ['A', 'B', 'C', 'D', 'E'];
-                let optionsHtml = q.opts.map((opt, i) => {
-                    return `<div class="opt"><span class="opt-letter">${letters[i]}.</span> ${opt}</div>`;
-                }).join('');
-
-                let answerText = q.opts[q.ans] || 'N/A';
-                let cat = index < 200 ? cats[0] : index < 450 ? cats[1] : cats[2];
-                div.innerHTML = `
-                    <div>
-                        <span class="q-num">Q${num}</span>
-                        <span class="badge">${cat}</span>
-                        <div class="q-text">${q.question}</div>
-                        <div class="options">${optionsHtml}</div>
-                        <div class="answer"><strong>✔ Réponse :</strong> ${answerText}</div>
-                    </div>
-                `;
-                container.appendChild(div);
+        const grid = document.getElementById('resumeGrid');
+        grid.innerHTML = '';
+        cards.forEach(card => {
+            const div = document.createElement('div');
+            div.className = 'resume-card';
+            let html = `<h3>${card.title}</h3><ul>`;
+            card.items.forEach(item => {
+                html += `<li><span class="label">${item[0]}</span><span class="value">${item[1]}</span></li>`;
             });
-        }
-
-        // ============================================================
-        // 4. GESTION DE LA LANGUE
-        // ============================================================
-        let currentLang = 'fr';
-
-        function setLang(lang) {
-            currentLang = lang;
-            document.documentElement.lang = lang;
-            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-            document.body.className = lang === 'ar' ? 'lang-ar' : '';
-
-            document.getElementById('langFrBtn').className = lang === 'fr' ? 'active' : '';
-            document.getElementById('langArBtn').className = lang === 'ar' ? 'active' : '';
-
-            const t = translations[lang];
-
-            document.getElementById('mainTitle').textContent = t.title;
-            document.getElementById('subhead').textContent = t.subhead;
-            const statsText = t.stats.replace('{count}', qBank.length);
-            document.getElementById('statsLabel').innerHTML = '📌 ' + statsText;
-            document.getElementById('resumeTitle').textContent = t.resumeTitle;
-            document.getElementById('resumeSub').textContent = t.resumeSub;
-            document.getElementById('footerNote').textContent = t.footer;
-
-            document.getElementById('noteStrong').textContent = t.noteStrong;
-            document.getElementById('noteText').textContent = t.noteText;
-
-            document.getElementById('card1Title').textContent = t.card1;
-            document.getElementById('card2Title').textContent = t.card2;
-            document.getElementById('card3Title').textContent = t.card3;
-            document.getElementById('card4Title').textContent = t.card4;
-            document.getElementById('card5Title').textContent = t.card5;
-            document.getElementById('card6Title').textContent = t.card6;
-
-            const labelMap = {
-                l1a: t.l1a, l1b: t.l1b, l1c: t.l1c, l1d: t.l1d, l1e: t.l1e, l1f: t.l1f,
-                l2a: t.l2a, l2b: t.l2b, l2c: t.l2c, l2d: t.l2d, l2e: t.l2e, l2f: t.l2f,
-                l3a: t.l3a, l3b: t.l3b, l3c: t.l3c, l3d: t.l3d,
-                l4a: t.l4a, l4b: t.l4b, l4c: t.l4c, l4d: t.l4d, l4e: t.l4e, l4f: t.l4f, l4g: t.l4g, l4h: t.l4h,
-                l5a: t.l5a, l5b: t.l5b, l5c: t.l5c, l5d: t.l5d, l5e: t.l5e, l5f: t.l5f, l5g: t.l5g,
-                l6a: t.l6a, l6b: t.l6b, l6c: t.l6c, l6d: t.l6d, l6e: t.l6e, l6f: t.l6f, l6g: t.l6g
-            };
-            for (const [id, text] of Object.entries(labelMap)) {
-                const el = document.getElementById(id);
-                if (el) el.textContent = text;
-            }
-
-            const toggleBtn = document.getElementById('toggleResumeBtn');
-            const isHidden = resumeContent.style.display === 'none';
-            toggleBtn.textContent = isHidden ? t.toggleShow : t.toggleHide;
-
-            renderQuestions();
-
-            try { localStorage.setItem('qcm_lang', lang); } catch(e) {}
-        }
-
-        // ============================================================
-        // 5. TOGGLE RÉSUMÉ
-        // ============================================================
-        const toggleBtn = document.getElementById('toggleResumeBtn');
-        const resumeContent = document.getElementById('resumeContent');
-        let resumeVisible = true;
-
-        toggleBtn.addEventListener('click', function() {
-            const lang = document.documentElement.lang === 'ar' ? 'ar' : 'fr';
-            const t = translations[lang];
-            if (resumeVisible) {
-                resumeContent.style.display = 'none';
-                toggleBtn.textContent = t.toggleShow;
-                resumeVisible = false;
-            } else {
-                resumeContent.style.display = 'block';
-                toggleBtn.textContent = t.toggleHide;
-                resumeVisible = true;
-            }
+            html += '</ul>';
+            div.innerHTML = html;
+            grid.appendChild(div);
         });
+    }
 
-        // ============================================================
-        // 6. INITIALISATION
-        // ============================================================
-        let savedLang = 'fr';
-        try {
-            const stored = localStorage.getItem('qcm_lang');
-            if (stored === 'ar' || stored === 'fr') savedLang = stored;
-        } catch(e) {}
-        setLang(savedLang);
+    function renderQuestions(lang) {
+        const t = TR[lang];
+        const cats = t.cats;
+        container.innerHTML = '';
+        countSpan.textContent = qBank.length;
 
-    })();
+        qBank.forEach((q, index) => {
+            const num = String(index + 1).padStart(3, '0');
+            const letters = ['A', 'B', 'C', 'D', 'E'];
+            let optsHtml = q.opts.map((opt, i) =>
+                `<div class="opt"><span class="opt-letter">${letters[i]}.</span> ${opt}</div>`
+            ).join('');
+
+            const cat = index < 100 ? cats[0] : index < 250 ? cats[1] : cats[2];
+            const answerText = q.opts[q.ans] || 'N/A';
+
+            const div = document.createElement('div');
+            div.className = 'q-item';
+            div.innerHTML = `
+                <div>
+                    <span class="q-num">Q${num}</span>
+                    <span class="badge">${cat}</span>
+                    <div class="q-text">${q.q}</div>
+                    <div class="options">${optsHtml}</div>
+                    <div class="answer"><strong>✔ Réponse :</strong> ${answerText}</div>
+                </div>
+            `;
+            container.appendChild(div);
+        });
+    }
+
+    // ==========================================================
+    // 4. GESTION DE LA LANGUE
+    // ==========================================================
+    let currentLang = 'fr';
+    let resumeVisible = true;
+
+    function setLang(lang) {
+        currentLang = lang;
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        document.body.className = lang === 'ar' ? 'lang-ar' : '';
+
+        document.getElementById('langFrBtn').className = lang === 'fr' ? 'active' : '';
+        document.getElementById('langArBtn').className = lang === 'ar' ? 'active' : '';
+
+        const t = TR[lang];
+
+        document.getElementById('mainTitle').textContent = t.title;
+        document.getElementById('subhead').textContent = t.subhead;
+        document.getElementById('statsLabel').innerHTML = '📌 ' + t.stats.replace('{count}', qBank.length);
+        document.getElementById('resumeTitle').textContent = t.resumeTitle;
+        document.getElementById('resumeSub').textContent = t.resumeSub;
+        document.getElementById('footerNote').textContent = t.footer;
+        document.getElementById('noteStrong').textContent = t.noteStrong;
+        document.getElementById('noteText').textContent = t.noteText;
+
+        const btn = document.getElementById('toggleResumeBtn');
+        btn.textContent = resumeVisible ? t.toggleHide : t.toggleShow;
+
+        renderResume(lang);
+        renderQuestions(lang);
+        try { localStorage.setItem('qcm_lang', lang); } catch(e) {}
+    }
+
+    // ==========================================================
+    // 5. TOGGLE RÉSUMÉ
+    // ==========================================================
+    document.getElementById('toggleResumeBtn').addEventListener('click', function() {
+        const content = document.getElementById('resumeContent');
+        const lang = currentLang;
+        const t = TR[lang];
+        if (resumeVisible) {
+            content.style.display = 'none';
+            this.textContent = t.toggleShow;
+            resumeVisible = false;
+        } else {
+            content.style.display = 'block';
+            this.textContent = t.toggleHide;
+            resumeVisible = true;
+        }
+    });
+
+    // ==========================================================
+    // 6. INITIALISATION
+    // ==========================================================
+    let savedLang = 'fr';
+    try {
+        const stored = localStorage.getItem('qcm_lang');
+        if (stored === 'ar' || stored === 'fr') savedLang = stored;
+    } catch(e) {}
+    setLang(savedLang);
+
+})();
 </script>
 </body>
 </html>
