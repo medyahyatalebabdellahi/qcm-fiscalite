@@ -1,9 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QCM Fiscalité Mauritanie 2025 – 700 questions</title>
+    <title>QCM Fiscalité Mauritanie 2025 – 700+ questions</title>
     <style>
         * {
             box-sizing: border-box;
@@ -53,7 +54,6 @@
             text-align: right;
         }
 
-        /* Lang switch */
         .lang-switch {
             display: flex;
             gap: 0.5rem;
@@ -358,8 +358,6 @@
             .resume-grid { grid-template-columns: 1fr; }
             .resume-wrapper { padding: 1.2rem; }
         }
-
-        /* Pour les listes RTL */
         .lang-ar ul {
             padding-right: 0;
         }
@@ -378,8 +376,8 @@
     </div>
 
     <h1 id="mainTitle">📘 Fiscalité Mauritanie 2025</h1>
-    <div class="subhead" id="subhead">700 QCM – Code général des impôts, applications, cas pratiques &amp; culture générale</div>
-    <div class="stats" id="statsLabel">📌 700 questions · Mélange des 3 sources · réponses incluses</div>
+    <div class="subhead" id="subhead">700+ QCM – Code général des impôts, applications, cas pratiques &amp; culture générale</div>
+    <div class="stats" id="statsLabel">📌 700+ questions · Mélange des 3 sources · réponses incluses</div>
 
     <!-- ============================================ -->
     <!-- RÉSUMÉ FISCAL MAURITANIE (fiche maître)      -->
@@ -489,8 +487,8 @@
         const translations = {
             fr: {
                 title: "📘 Fiscalité Mauritanie 2025",
-                subhead: "700 QCM – Code général des impôts, applications, cas pratiques & culture générale",
-                stats: "📌 700 questions · Mélange des 3 sources · réponses incluses",
+                subhead: "700+ QCM – Code général des impôts, applications, cas pratiques & culture générale",
+                stats: "📌 700+ questions · Mélange des 3 sources · réponses incluses",
                 resumeTitle: "📋 Résumé fiscal – Mauritanie 2025",
                 resumeSub: "seuils, taux, formules",
                 toggleHide: "▼ masquer",
@@ -499,14 +497,12 @@
                 footer: "🔍 Révision intensive – Concours inspecteur des impôts · d'après CGI 2023 & Tax Booklet 2025",
                 noteStrong: "Règle d'or :",
                 noteText: "IS = MAX(25% bénéfice, 2% produits, minimum) · IBAPP = MAX(30% bénéfice, 2,5% produits, minimum)",
-                // Cartes
                 card1: "🏛️ Impôt sur les Sociétés (IS)",
                 card2: "🧑‍💼 IBAPP (personnes physiques)",
                 card3: "💼 ITS (traitements et salaires)",
                 card4: "🧾 TVA & autres taxes",
                 card5: "⚡ Régimes spéciaux 2025",
                 card6: "📆 Délais & sanctions",
-                // Labels
                 l1a: "Taux normal", l1b: "Base minimale", l1c: "Minimum BRN", l1d: "Minimum BRI", l1e: "Formule", l1f: "STR forfait",
                 l2a: "Taux normal", l2b: "Base minimale", l2c: "Forfait (CA < 3M)", l2d: "Réel intermédiaire", l2e: "Réel normal", l2f: "Formule",
                 l3a: "Tranche ≤ 9k", l3b: "Tranche 9k–21k", l3c: "Tranche > 21k", l3d: "Base imposable",
@@ -516,8 +512,8 @@
             },
             ar: {
                 title: "📘 الضرائب الموريتانية 2025",
-                subhead: "700 سؤال اختيار من متعدد – مدونة الضرائب العامة، تطبيقات، حالات عملية وثقافة عامة",
-                stats: "📌 700 سؤال · مزيج من 3 مصادر · الإجابات مشمولة",
+                subhead: "700+ سؤال اختيار من متعدد – مدونة الضرائب العامة، تطبيقات، حالات عملية وثقافة عامة",
+                stats: "📌 700+ سؤال · مزيج من 3 مصادر · الإجابات مشمولة",
                 resumeTitle: "📋 ملخص ضريبي – موريتانيا 2025",
                 resumeSub: "الحدود، النسب، الصيغ",
                 toggleHide: "▼ إخفاء",
@@ -542,7 +538,7 @@
         };
 
         // ============================================================
-        // 2. BASE DE QUESTIONS (700)
+        // 2. BASE DE QUESTIONS (700+)
         // ============================================================
         let qBank = [];
 
@@ -555,9 +551,9 @@
             }
         }
 
-        // Source 1 : Fiche Word
-        function addFicheWordQuestions() {
-            const q1 = [
+        // ---- Source 1 : Fiche Word (extraits) ----
+        function addFicheWord() {
+            const qs = [
                 { q: "Quel impôt a remplacé l'Impôt sur les Bénéfices Industriels et Commerciaux (BIC) et l'Impôt Minimum Forfaitaire (IMF) à partir du 1er janvier 2020 ?", opts: ["L'Impôt sur les Sociétés (IS)", "La Taxe sur la Valeur Ajoutée (TVA)", "L'Impôt sur le Revenu des Capitaux Mobiliers (IRCM)", "La Patente", "La Contribution Foncière sur les Propriétés Bâties"], ans: 0 },
                 { q: "Quel est le taux normal de la Taxe sur la Valeur Ajoutée (TVA) en Mauritanie ?", opts: ["14%", "16%", "18%", "20%", "25%"], ans: 1 },
                 { q: "Quel est le taux de TVA applicable aux exportations de biens et services ?", opts: ["0%", "5%", "10%", "16%", "18%"], ans: 0 },
@@ -582,11 +578,7 @@
                 { q: "Quel est l'impôt qui remplace l'Impôt sur les Bénéfices Non Commerciaux (IBNC) ?", opts: ["L'Impôt sur les Sociétés (IS)", "L'Impôt sur les Bénéfices d'Affaires des Personnes Physiques (IBAPP)", "La Taxe sur la Valeur Ajoutée (TVA)", "La Contribution Foncière", "L'Impôt sur les Traitements et Salaires (ITS)"], ans: 1 },
                 { q: "Le droit à déduction de la TVA prend naissance :", opts: ["À la date de signature du contrat.", "Lorsque la TVA est exigible chez le fournisseur.", "À la date de paiement de la facture par le client.", "À la clôture de l'exercice.", "À la date de livraison du bien, quel que soit le paiement."], ans: 1 },
                 { q: "Le délai de réclamation contentieuse devant le Directeur Général des Impôts (DGI) est de :", opts: ["1 mois", "2 mois", "3 mois", "6 mois", "1 an"], ans: 2 },
-                { q: "Qui est responsable du recouvrement des rôles d'impôts ?", opts: ["Le Directeur Général des Impôts", "Le Ministre des Finances", "Les Receveurs des Impôts (comptables publics)", "Les Experts-Comptables", "Les Notaires"], ans: 2 }
-            ];
-            q1.forEach(q => addUnique(q));
-
-            const appQ = [
+                { q: "Qui est responsable du recouvrement des rôles d'impôts ?", opts: ["Le Directeur Général des Impôts", "Le Ministre des Finances", "Les Receveurs des Impôts (comptables publics)", "Les Experts-Comptables", "Les Notaires"], ans: 2 },
                 { q: "Une société réalise un bénéfice imposable de 2 000 000 MRU. Selon le régime réel normal, quel est le montant de l'impôt sur les sociétés dû ?", opts: ["500 000 MRU", "400 000 MRU", "100 000 MRU", "200 000 MRU", "50 000 MRU"], ans: 0 },
                 { q: "Une société réalise un bénéfice imposable de 200 000 MRU. Quel est le montant de l'IS dû ?", opts: ["50 000 MRU", "40 000 MRU", "100 000 MRU", "200 000 MRU", "25 000 MRU"], ans: 2 },
                 { q: "Une société soumise à l'IS (régime réel normal) a un produit imposable de 10 000 000 MRU. Son bénéfice net est de 1 000 000 MRU. L'IS dû sera :", opts: ["250 000 MRU", "500 000 MRU", "2 500 000 MRU", "200 000 MRU", "100 000 MRU"], ans: 0 },
@@ -598,26 +590,12 @@
                 { q: "Une société réalise un bénéfice imposable de 0 MRU et un produit imposable de 5 000 000 MRU. Quel est le montant de l'IS dû ?", opts: ["0 MRU", "100 000 MRU", "125 000 MRU", "250 000 MRU", "50 000 MRU"], ans: 1 },
                 { q: "Un contribuable exerçant une profession libérale (IBAPP - régime réel normal) facture 1 000 000 MRU HT à une société. Cette société est tenue d'opérer une retenue à la source. Quel est le montant de cette retenue ?", opts: ["25 000 MRU", "15 000 MRU", "2 500 MRU", "10 000 MRU", "250 000 MRU"], ans: 0 }
             ];
-            appQ.forEach(q => addUnique(q));
-
-            const genQ = [
-                { q: "Le principe de légalité de l'impôt signifie principalement que :", opts: ["L'impôt est toujours volontaire", "Le contribuable choisit son taux", "L'inspecteur crée librement un impôt", "La banque fixe l'impôt", "L'impôt est fixé par la loi"], ans: 4 },
-                { q: "Le chiffre d'affaires correspond généralement :", opts: ["Aux dettes", "Aux capitaux propres", "Aux ventes réalisées avant certaines déductions", "Aux immobilisations", "Au bénéfice net uniquement"], ans: 2 },
-                { q: "Le bénéfice comptable résulte schématiquement de :", opts: ["Dettes moins caisse", "Produits moins charges", "Immobilisations moins capital", "Actifs moins ventes", "TVA moins salaires"], ans: 1 },
-                { q: "Une immobilisation est généralement :", opts: ["Une taxe", "Un actif destiné à servir durablement à l'activité", "Une amende", "Une dette à court terme", "Une recette fiscale"], ans: 1 },
-                { q: "L'inflation désigne principalement :", opts: ["Une hausse des exportations uniquement", "Une hausse générale et durable du niveau des prix", "Une baisse automatique des impôts", "Une baisse des salaires uniquement", "Une hausse d'un seul produit"], ans: 1 },
-                { q: "Le budget de l'État retrace principalement :", opts: ["Les comptes personnels des fonctionnaires", "Les dépenses d'une seule entreprise", "Les bénéfices des banques", "Les ventes des ménages", "Les recettes et dépenses publiques prévues"], ans: 4 },
-                { q: "La TVA est généralement qualifiée d'impôt :", opts: ["Patrimonial uniquement", "Volontaire", "Direct", "Indirect", "Local uniquement"], ans: 3 },
-                { q: "Une dette constitue pour une entreprise :", opts: ["Une obligation envers un tiers", "Une recette fiscale", "Un bénéfice", "Un produit", "Une immobilisation"], ans: 0 },
-                { q: "Le contrôle interne vise notamment à :", opts: ["Créer la monnaie", "Supprimer la comptabilité", "Réduire les risques d'erreurs et de fraudes", "Fixer les taux d'impôt", "Éviter toute déclaration"], ans: 2 },
-                { q: "La balance comptable sert notamment à :", opts: ["Remplacer le bilan", "Calculer uniquement la TVA", "Fixer le salaire minimum", "Vérifier l'équilibre des débits et crédits", "Créer un impôt"], ans: 3 }
-            ];
-            genQ.forEach(q => addUnique(q));
+            qs.forEach(q => addUnique(q));
         }
 
-        // Source 2 : QCM Inspecteur
-        function addInspecteurQuestions() {
-            const iq = [
+        // ---- Source 2 : QCM Inspecteur (extraits) ----
+        function addInspecteur() {
+            const qs = [
                 { q: "Le CGI mauritanien adopté par la loi n°2019-018 est applicable depuis quelle date ?", opts: ["31 mars 2020", "1er janvier 2021", "1er janvier 2019", "29 avril 2019", "1er janvier 2020"], ans: 4 },
                 { q: "Quel impôt a remplacé notamment le BIC pour les sociétés ?", opts: ["TVA", "IRCM", "ITS", "IBAPP", "IS"], ans: 4 },
                 { q: "Quel est le taux normal de l'IS indiqué dans le document fiscal de référence ?", opts: ["15 %", "18 %", "25 %", "20 %", "30 %"], ans: 2 },
@@ -650,12 +628,12 @@
                 { q: "Quel investissement minimal est indiqué pour le RIS ?", opts: ["500 millions MRU", "200 millions MRU", "30 millions MRU", "100 millions MRU", "50 millions MRU"], ans: 1 },
                 { q: "Combien d'emplois directs sont normalement exigés pour le RIS ?", opts: ["5", "20", "10", "50", "30"], ans: 3 }
             ];
-            iq.forEach(q => addUnique(q));
+            qs.forEach(q => addUnique(q));
         }
 
-        // Source 3 : Fiche Maître
-        function addFicheMaitreQuestions() {
-            const fm = [
+        // ---- Source 3 : Fiche Maître (exemples) ----
+        function addFicheMaitre() {
+            const qs = [
                 { q: "Une société en BRN a un bénéfice net imposable de 500 000 MRU et des produits imposables de 12 000 000 MRU. Quel est l'IS dû ?", opts: ["125 000 MRU", "240 000 MRU", "100 000 MRU", "500 000 MRU", "600 000 MRU"], ans: 1 },
                 { q: "Une société en BRN a un bénéfice net imposable de -50 000 MRU et des produits imposables de 8 500 000 MRU. Quel est l'IS dû ?", opts: ["0 MRU", "100 000 MRU", "170 000 MRU", "200 000 MRU", "250 000 MRU"], ans: 2 },
                 { q: "Un commerçant en BRN (IBAPP) a un BNI de 200 000 MRU et des produits de 4 500 000 MRU. Quel est l'IBAPP dû ?", opts: ["60 000 MRU", "112 500 MRU", "125 000 MRU", "150 000 MRU", "200 000 MRU"], ans: 2 },
@@ -677,14 +655,10 @@
                 { q: "Le taux normal de l'IS est de :", opts: ["20%", "25%", "30%", "35%", "15%"], ans: 1 },
                 { q: "Le taux normal de l'IBAPP est de :", opts: ["20%", "25%", "30%", "35%", "15%"], ans: 2 }
             ];
-            fm.forEach(q => addUnique(q));
+            qs.forEach(q => addUnique(q));
         }
 
-        addFicheWordQuestions();
-        addInspecteurQuestions();
-        addFicheMaitreQuestions();
-
-        // Générer des variations pour atteindre 700
+        // ---- Générer des variations pour atteindre 700+ ----
         function generateVariations(baseQuestions, count) {
             const variants = [];
             const usedTexts = new Set(qBank.map(q => q.question.trim().toLowerCase()));
@@ -718,10 +692,15 @@
             return variants;
         }
 
-        const baseForVariations = qBank.slice();
-        const extra = generateVariations(baseForVariations, 550);
+        addFicheWord();
+        addInspecteur();
+        addFicheMaitre();
+
+        // Ajouter des questions supplémentaires pour dépasser 700
+        const extra = generateVariations(qBank.slice(), 350);
         extra.forEach(q => addUnique(q));
 
+        // Ajouts génériques si besoin
         while (qBank.length < 700) {
             const generic = [
                 { q: "La taxe sur les véhicules à moteur est due pour l'année entière, sans dégrèvement en cas de vente en cours d'année.", opts: ["Vrai", "Faux", "Vrai, sauf en cas de destruction", "Faux, calcul au prorata", "Vrai pour les particuliers"], ans: 0 },
@@ -738,7 +717,7 @@
             generic.forEach(q => addUnique(q));
         }
 
-        if (qBank.length > 700) qBank = qBank.slice(0, 700);
+        if (qBank.length > 800) qBank = qBank.slice(0, 800);
 
         // ============================================================
         // 3. AFFICHAGE DES QUESTIONS
@@ -784,13 +763,11 @@
             document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
             document.body.className = lang === 'ar' ? 'lang-ar' : '';
 
-            // Boutons
             document.getElementById('langFrBtn').className = lang === 'fr' ? 'active' : '';
             document.getElementById('langArBtn').className = lang === 'ar' ? 'active' : '';
 
             const t = translations[lang];
 
-            // Titres
             document.getElementById('mainTitle').textContent = t.title;
             document.getElementById('subhead').textContent = t.subhead;
             document.getElementById('statsLabel').textContent = t.stats;
@@ -798,11 +775,9 @@
             document.getElementById('resumeSub').textContent = t.resumeSub;
             document.getElementById('footerNote').textContent = t.footer;
 
-            // Note résumé
             document.getElementById('noteStrong').textContent = t.noteStrong;
             document.getElementById('noteText').textContent = t.noteText;
 
-            // Cartes
             document.getElementById('card1Title').textContent = t.card1;
             document.getElementById('card2Title').textContent = t.card2;
             document.getElementById('card3Title').textContent = t.card3;
@@ -810,7 +785,6 @@
             document.getElementById('card5Title').textContent = t.card5;
             document.getElementById('card6Title').textContent = t.card6;
 
-            // Labels
             const labelMap = {
                 l1a: t.l1a, l1b: t.l1b, l1c: t.l1c, l1d: t.l1d, l1e: t.l1e, l1f: t.l1f,
                 l2a: t.l2a, l2b: t.l2b, l2c: t.l2c, l2d: t.l2d, l2e: t.l2e, l2f: t.l2f,
@@ -824,15 +798,12 @@
                 if (el) el.textContent = text;
             }
 
-            // Toggle button
             const toggleBtn = document.getElementById('toggleResumeBtn');
             const isHidden = resumeContent.style.display === 'none';
             toggleBtn.textContent = isHidden ? t.toggleShow : t.toggleHide;
 
-            // Re-rendre les questions (pour les badges)
             renderQuestions();
 
-            // Sauvegarder
             try { localStorage.setItem('qcm_lang', lang); } catch(e) {}
         }
 
@@ -860,7 +831,6 @@
         // ============================================================
         // 6. INITIALISATION
         // ============================================================
-        // Restaurer la langue
         let savedLang = 'fr';
         try {
             const stored = localStorage.getItem('qcm_lang');
@@ -872,3 +842,4 @@
 </script>
 </body>
 </html>
+```
