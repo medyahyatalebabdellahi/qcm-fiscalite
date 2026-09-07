@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>QCM Fiscalité Mauritanie 2025</title>
+    <title>Résumé Fiscalité Mauritanie 2025</title>
     <style>
         * {
             box-sizing: border-box;
@@ -21,18 +21,17 @@
             align-items: center;
         }
         .container {
-            max-width: 960px;
+            max-width: 1000px;
             width: 100%;
             margin: 0 auto;
             background: #ffffff;
             border-radius: 28px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-            padding: 18px 18px 24px;
+            padding: 18px 22px 28px;
             color: #1e293b;
-            transition: padding 0.2s;
         }
         h1 {
-            font-size: clamp(18px, 4vw, 26px);
+            font-size: clamp(20px, 4vw, 28px);
             font-weight: 700;
             border-left: 6px solid #0b4f6c;
             padding-left: 14px;
@@ -61,7 +60,6 @@
             margin: 4px 0 12px;
             display: inline-block;
             box-shadow: 0 2px 8px rgba(241, 196, 15, 0.25);
-            width: auto;
         }
         .prof-credit .whatsapp {
             color: #25D366;
@@ -74,425 +72,25 @@
             flex-wrap: wrap;
             gap: 8px 12px;
         }
-        .subhead {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 12px;
-            color: #475569;
-            font-size: clamp(12px, 1.8vw, 15px);
-            border-bottom: 1px solid #e9edf2;
-            padding-bottom: 10px;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-        .stats {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .stats span {
-            background: #f1f5f9;
-            padding: 2px 12px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: clamp(11px, 1.6vw, 14px);
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-        }
-        .stats .correct-badge {
-            background: #d9f2e0;
-            color: #0d4a2a;
-        }
-        .stats .wrong-badge {
-            background: #fee9e9;
-            color: #7a1a1a;
-        }
-        .stats .answered-badge {
-            background: #e8f4fd;
-            color: #0b4f6c;
-        }
-        .score-negative {
-            color: #b91c1c;
-            font-weight: 700;
-        }
-        .score-positive {
-            color: #1e7b4c;
-            font-weight: 700;
-        }
-        .lang-toggle {
-            background: #eef2f7;
-            border-radius: 40px;
-            padding: 3px;
-            display: inline-flex;
-            gap: 3px;
-            flex-shrink: 0;
-        }
-        .lang-toggle button {
-            border: none;
-            background: transparent;
-            padding: 4px 12px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: clamp(11px, 1.6vw, 13px);
-            cursor: pointer;
-            transition: 0.2s;
-            color: #1e293b;
-        }
-        .lang-toggle button.active {
-            background: #0b4f6c;
-            color: white;
-        }
-        .progress {
-            background: #e9edf2;
-            height: 8px;
-            border-radius: 30px;
-            margin: 12px 0 4px;
-            overflow: hidden;
-        }
-        .progress-fill {
-            background: #0b4f6c;
-            height: 100%;
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-        .question-panel {
-            background: #fafcff;
-            border-radius: 20px;
-            padding: clamp(14px, 2.5vw, 22px);
-            border: 1px solid #e2e8f0;
-            margin: 10px 0;
-        }
-        .q-number {
-            display: inline-block;
-            background: #0b4f6c;
-            color: white;
-            font-weight: 600;
-            font-size: clamp(11px, 1.6vw, 14px);
-            padding: 2px 14px;
-            border-radius: 40px;
-            margin-bottom: 10px;
-        }
-        .q-text {
-            font-size: clamp(15px, 2.2vw, 19px);
-            font-weight: 500;
-            line-height: 1.6;
-            margin-bottom: 10px;
-            text-align: left;
-            direction: ltr;
-        }
-        .q-text-fr {
-            font-size: clamp(14px, 2vw, 17px);
-            font-weight: 400;
-            color: #2c3e50;
-            margin-bottom: 14px;
-            padding: 8px 12px;
-            background: #f8fafc;
-            border-radius: 10px;
-            border-right: 4px solid #0b4f6c;
-            direction: ltr;
-            text-align: left;
-            display: none;
-        }
-        .options {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        .opt {
-            background: white;
-            border: 1.5px solid #dde3ec;
-            border-radius: 12px;
-            padding: clamp(10px, 1.6vw, 14px) clamp(12px, 2vw, 18px);
-            cursor: pointer;
-            transition: 0.15s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 450;
-            text-align: left;
-            direction: ltr;
-            font-size: clamp(14px, 2vw, 16px);
-            -webkit-tap-highlight-color: transparent;
-            touch-action: manipulation;
-        }
-        .opt:hover {
-            background: #f0f6fe;
-            border-color: #8ba9d1;
-        }
-        .opt.selected {
-            background: #e1edfb;
-            border-color: #1d6f9c;
-            box-shadow: 0 0 0 2px rgba(11, 79, 108, 0.15);
-        }
-        .opt.correct {
-            background: #d9f2e0;
-            border-color: #1e7b4c;
-        }
-        .opt.wrong {
-            background: #fee9e9;
-            border-color: #b91c1c;
-        }
-        .opt .letter {
-            font-weight: 700;
-            color: #1e3a5f;
-            width: 24px;
-            flex-shrink: 0;
-            font-size: clamp(13px, 1.8vw, 15px);
-        }
-        .action-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 18px;
-        }
-        .btn {
-            background: white;
-            border: 1.5px solid #cbd5e1;
-            padding: clamp(8px, 1.4vw, 12px) clamp(14px, 2.5vw, 22px);
-            border-radius: 60px;
-            font-weight: 600;
-            font-size: clamp(12px, 1.6vw, 15px);
-            cursor: pointer;
-            transition: 0.2s;
-            color: #1e293b;
-            touch-action: manipulation;
-            -webkit-tap-highlight-color: transparent;
-            min-height: 44px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .btn-primary {
-            background: #0b4f6c;
-            border-color: #0b4f6c;
-            color: white;
-        }
-        .btn-primary:hover {
-            background: #083c52;
-        }
-        .btn-primary:disabled {
-            opacity: 0.4;
-            pointer-events: none;
-        }
-        .btn-outline:hover {
-            background: #f1f5f9;
-        }
-        .btn-danger {
-            border-color: #b91c1c;
-            color: #b91c1c;
-        }
-        .btn-danger:hover {
-            background: #fee9e9;
-        }
-        .btn-success {
-            border-color: #1e7b4c;
-            color: #1e7b4c;
-        }
-        .btn-success:hover {
-            background: #d9f2e0;
-        }
-        .btn-small {
-            padding: clamp(5px, 1vw, 8px) clamp(10px, 1.8vw, 16px);
-            font-size: clamp(11px, 1.4vw, 13px);
-            min-height: 36px;
-        }
-        .milestone {
-            background: #e8f4fd;
-            border-radius: 12px;
-            padding: 8px 14px;
-            margin: 6px 0;
-            border-right: 5px solid #0b4f6c;
-            font-weight: 500;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            font-size: clamp(12px, 1.6vw, 14px);
-        }
-        .answer-feedback {
-            margin-top: 12px;
-            padding: 10px 14px;
-            border-radius: 12px;
-            font-weight: 500;
-            display: none;
-            text-align: left;
-            direction: ltr;
-            font-size: clamp(13px, 1.8vw, 15px);
-        }
-        .answer-feedback.correct {
-            display: block;
-            background: #d9f2e0;
-            border: 2px solid #1e7b4c;
-            color: #0d4a2a;
-        }
-        .answer-feedback.wrong {
-            display: block;
-            background: #fee9e9;
-            border: 2px solid #b91c1c;
-            color: #7a1a1a;
-        }
-        .answer-feedback .correct-answer {
-            font-weight: 700;
-            color: #0b4f6c;
-        }
-        .result-area {
-            margin-top: 18px;
-            background: #f8fafc;
-            border-radius: 18px;
-            padding: 14px 16px;
-            border: 1px solid #dde3ec;
-        }
-        .result-line {
-            display: flex;
-            justify-content: space-between;
-            font-size: clamp(12px, 1.6vw, 14px);
-            padding: 5px 0;
-            border-bottom: 1px dashed #dce2ec;
-            flex-wrap: wrap;
-            gap: 4px;
-        }
-        .result-line:last-child {
-            border: none;
-        }
-        .footer-note {
-            margin-top: 14px;
-            color: #64748b;
-            font-size: clamp(11px, 1.4vw, 13px);
-            border-top: 1px solid #e9edf2;
-            padding-top: 12px;
-            text-align: center;
-        }
-        .btn-summary {
-            background: #0b4f6c;
-            color: white;
-            border: none;
-            padding: 10px 24px;
-            border-radius: 60px;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: 0.2s;
-            min-height: 44px;
-        }
-        .btn-summary:hover {
-            background: #083c52;
-        }
-        .btn-stop {
-            background: #b91c1c;
-            color: white;
-            border: none;
-            padding: 10px 24px;
-            border-radius: 60px;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: 0.2s;
-            min-height: 44px;
-        }
-        .btn-stop:hover {
-            background: #991515;
-        }
-        .btn-result {
-            background: #1e7b4c;
-            color: white;
-            border: none;
-            padding: 10px 24px;
-            border-radius: 60px;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: 0.2s;
-            min-height: 44px;
-        }
-        .btn-result:hover {
-            background: #16653d;
-        }
-        .action-right {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-        .mode-toggle {
-            display: flex;
-            gap: 6px;
-            background: #eef2f7;
-            border-radius: 40px;
-            padding: 3px;
-        }
-        .mode-toggle button {
-            border: none;
-            background: transparent;
-            padding: 4px 16px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: clamp(11px, 1.4vw, 13px);
-            cursor: pointer;
-            transition: 0.2s;
-            color: #1e293b;
-        }
-        .mode-toggle button.active {
-            background: #0b4f6c;
-            color: white;
-        }
-        .summary-card {
-            background: white;
-            max-width: 900px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            border-radius: 28px;
-            padding: 24px 28px;
-            color: #1e293b;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-            position: relative;
-            margin: 0 auto;
-        }
-        .summary-card h2 {
-            font-size: 24px;
-            border-bottom: 3px solid #0b4f6c;
-            padding-bottom: 12px;
-            margin-bottom: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .summary-card .close-btn {
-            background: #fee9e9;
-            border: none;
-            border-radius: 60px;
-            padding: 8px 20px;
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            color: #b91c1c;
-            transition: 0.2s;
-        }
-        .summary-card .close-btn:hover {
-            background: #fdd0d0;
-        }
         .summary-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
             margin: 16px 0;
         }
         .summary-stats .stat-item {
             background: #f8fafc;
             border-radius: 12px;
-            padding: 12px;
+            padding: 10px;
             text-align: center;
             border: 1px solid #e2e8f0;
         }
         .summary-stats .stat-item .number {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 700;
         }
         .summary-stats .stat-item .label {
-            font-size: 13px;
+            font-size: 12px;
             color: #64748b;
         }
         .summary-stats .stat-item.green .number {
@@ -504,29 +102,39 @@
         .summary-stats .stat-item.blue .number {
             color: #0b4f6c;
         }
+        .summary-stats .stat-item.orange .number {
+            color: #d97706;
+        }
         .summary-rules {
-            margin-top: 20px;
+            margin-top: 16px;
             border-top: 2px solid #e9edf2;
-            padding-top: 16px;
+            padding-top: 14px;
         }
         .summary-rules h3 {
             color: #0b4f6c;
-            margin-bottom: 10px;
-            font-size: 18px;
+            margin: 16px 0 10px;
+            font-size: 19px;
+            border-bottom: 2px solid #e9edf2;
+            padding-bottom: 6px;
         }
-        .summary-rules .rule-block {
+        .summary-rules h4 {
+            color: #0b4f6c;
+            margin: 12px 0 6px;
+            font-size: 16px;
+        }
+        .rule-block {
             background: #f1f5f9;
             border-radius: 12px;
             padding: 12px 16px;
             margin-bottom: 12px;
             border-right: 4px solid #0b4f6c;
         }
-        .summary-rules .rule-block .rule-title {
+        .rule-block .rule-title {
             font-weight: 700;
             font-size: 15px;
             color: #0b4f6c;
         }
-        .summary-rules .rule-block .rule-example {
+        .rule-block .rule-example {
             font-size: 14px;
             color: #334155;
             margin-top: 4px;
@@ -535,7 +143,7 @@
             border-radius: 8px;
             border: 1px solid #e2e8f0;
         }
-        .summary-rules .rule-block .rule-piege {
+        .rule-block .rule-piege {
             font-size: 13px;
             color: #b91c1c;
             margin-top: 4px;
@@ -543,11 +151,72 @@
             padding: 6px 12px;
             border-radius: 8px;
         }
-        #resumeSection {
-            display: none;
+        .rule-block .rule-corrige {
+            font-size: 13px;
+            color: #1e7b4c;
+            margin-top: 4px;
+            background: #d9f2e0;
+            padding: 6px 12px;
+            border-radius: 8px;
         }
-        #qcmSection {
-            display: block;
+        .btn-back {
+            background: #0b4f6c;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+            min-height: 44px;
+            margin: 10px 0;
+        }
+        .btn-back:hover {
+            background: #083c52;
+        }
+        .footer-note {
+            margin-top: 16px;
+            color: #64748b;
+            font-size: clamp(11px, 1.4vw, 13px);
+            border-top: 1px solid #e9edf2;
+            padding-top: 12px;
+            text-align: center;
+        }
+        .table-taux {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            margin: 8px 0;
+        }
+        .table-taux th,
+        .table-taux td {
+            border: 1px solid #dde3ec;
+            padding: 6px 10px;
+            text-align: left;
+        }
+        .table-taux th {
+            background: #0b4f6c;
+            color: white;
+        }
+        .table-taux tr:nth-child(even) {
+            background: #f8fafc;
+        }
+        .btn-qcm {
+            background: #1e7b4c;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+            min-height: 44px;
+            margin: 10px 0;
+        }
+        .btn-qcm:hover {
+            background: #16653d;
         }
         @media (max-width: 768px) {
             body {
@@ -557,57 +226,8 @@
                 padding: 14px 12px 18px;
                 border-radius: 20px;
             }
-            .flex-row {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .flex-row .lang-toggle {
-                align-self: flex-start;
-            }
-            .action-bar {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .action-bar>div {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 6px;
-                justify-content: center;
-            }
-            .btn {
-                flex: 1;
-                min-width: 60px;
-                text-align: center;
-                padding: 10px 12px;
-                font-size: 13px;
-                min-height: 48px;
-            }
-            .btn-small {
-                min-height: 40px;
-                padding: 8px 12px;
-                font-size: 12px;
-            }
-            .subhead {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 6px;
-            }
-            .stats {
-                justify-content: center;
-            }
-            .stats span {
-                font-size: 12px;
-                padding: 2px 10px;
-            }
-            .summary-card {
-                padding: 16px;
-                margin: 10px;
-            }
             .summary-stats {
                 grid-template-columns: repeat(2, 1fr);
-            }
-            .action-right {
-                justify-content: center;
             }
         }
         @media (max-width: 480px) {
@@ -618,66 +238,16 @@
                 padding: 10px 8px 14px;
                 border-radius: 16px;
             }
-            h1 {
-                font-size: 17px;
-                padding-left: 10px;
-                border-left-width: 4px;
-            }
-            .prof-credit {
-                font-size: 11px;
-                padding: 3px 12px;
-            }
-            .question-panel {
-                padding: 12px 10px;
-            }
-            .opt {
-                padding: 10px 12px;
-                font-size: 14px;
-                border-radius: 10px;
-            }
-            .btn {
-                font-size: 12px;
-                padding: 8px 10px;
-                min-height: 44px;
-            }
-            .btn-small {
-                font-size: 11px;
-                padding: 6px 10px;
-                min-height: 36px;
-            }
-            .result-area {
-                padding: 10px 12px;
-            }
-            .result-line {
-                font-size: 12px;
-            }
-            .footer-note {
-                font-size: 11px;
-            }
-            .stats span {
-                font-size: 11px;
-                padding: 2px 8px;
-            }
-            .lang-toggle button {
-                font-size: 11px;
-                padding: 3px 10px;
-            }
             .summary-stats {
                 grid-template-columns: 1fr 1fr;
             }
-        }
-        .opt,
-        .btn {
-            -webkit-touch-callout: none;
-        }
-        .opt:active {
-            transform: scale(0.98);
-        }
-        .btn:active {
-            transform: scale(0.97);
-        }
-        * {
-            -webkit-tap-highlight-color: transparent;
+            .table-taux {
+                font-size: 11px;
+            }
+            .table-taux th,
+            .table-taux td {
+                padding: 4px 6px;
+            }
         }
     </style>
 </head>
@@ -685,609 +255,857 @@
     <div class="container">
         <!-- HEADER -->
         <h1>
-            <span>📘 Fiscalité Mauritanie 2025</span>
-            <span class="badge">500 QCM</span>
+            <span>📘 Résumé Fiscalité Mauritanie 2025</span>
+            <span class="badge">Code Général des Impôts</span>
         </h1>
 
         <div class="flex-row">
             <div class="prof-credit">
                 🧑‍🏫 <strong>Prof. Mohamed Yahya Taleb Abdellahi</strong>
                 <span class="whatsapp">📱 WhatsApp : 30545727</span>
-                — 🍀 Bonne chance !
+                — 🍀 Bonne préparation !
             </div>
-            <div class="lang-toggle">
-                <button id="langFr" class="active">🇫🇷 Français</button>
-            </div>
-        </div>
-
-        <!-- MODE TOGGLE -->
-        <div style="display:flex; justify-content:flex-end; margin-bottom: 8px;">
-            <div class="mode-toggle">
-                <button id="modeQcm" class="active">📝 QCM</button>
-                <button id="modeResume">📖 Résumé</button>
+            <div>
+                <button class="btn-qcm" onclick="window.location.href='https://medyahyatalebabdellahi.github.io/qcm-fiscalite/'">📝 Accéder au QCM</button>
             </div>
         </div>
 
-        <!-- MILESTONE -->
-        <div id="milestoneMessage" class="milestone" style="display:none;">
-            <span>🎯 <span id="milestoneText">Félicitations !</span></span>
-            <span style="font-size:13px; color:#0b4f6c;">✅ Continuez !</span>
-        </div>
-
-        <!-- STATS & PROGRESS -->
-        <div class="subhead">
-            <div class="stats">
-                <span class="correct-badge">✅ <span id="correctCount">0</span></span>
-                <span class="wrong-badge">❌ <span id="wrongCount">0</span></span>
-                <span class="answered-badge">⏳ <span id="answeredCount">0</span>/500</span>
-            </div>
-            <div>📊 <span id="scoreDisplay">0.00</span></div>
-        </div>
-
-        <div class="progress">
-            <div class="progress-fill" id="progressFill" style="width:0%"></div>
+        <!-- STATS RÉSUMÉ -->
+        <div class="summary-stats">
+            <div class="stat-item green"><div class="number">25%</div><div class="label">IS – Taux normal</div></div>
+            <div class="stat-item blue"><div class="number">100 000</div><div class="label">IS – Minimum MRU</div></div>
+            <div class="stat-item orange"><div class="number">30%</div><div class="label">IBAPP – Réel normal</div></div>
+            <div class="stat-item blue"><div class="number">125 000</div><div class="label">IBAPP – Minimum MRU</div></div>
+            <div class="stat-item green"><div class="number">16%</div><div class="label">TVA – Taux normal</div></div>
+            <div class="stat-item red"><div class="number">40%</div><div class="label">PIT – Taux max</div></div>
+            <div class="stat-item blue"><div class="number">15%</div><div class="label">RPD – IS réduit</div></div>
+            <div class="stat-item blue"><div class="number">0,6%</div><div class="label">Taxe apprentissage</div></div>
         </div>
 
         <!-- ============================================================
-        SECTION QCM
+        RÈGLES ET EXEMPLES
         ============================================================ -->
-        <div id="qcmSection">
-            <div id="questionContainer" class="question-panel">
-                <div class="q-number" id="qNum">Question 1 / 500</div>
-                <div class="q-text" id="qTextFr">Chargement des questions...</div>
-                <div class="options" id="optionsContainer"></div>
-                <div class="answer-feedback" id="answerFeedback"></div>
-            </div>
+        <div class="summary-rules">
 
-            <div class="action-bar">
-                <div>
-                    <button class="btn btn-outline btn-small" id="prevBtn" disabled>◀ Préc.</button>
-                    <button class="btn btn-outline btn-small" id="nextBtn">Suiv. ▶</button>
+            <!-- ===== SECTION IS ===== -->
+            <h3>🏢 IS – Impôt sur les Sociétés (Art. 51)</h3>
+
+            <div class="rule-block">
+                <div class="rule-title">📌 Règle générale</div>
+                <div class="rule-example">
+                    <strong>IS = MAX(25% × Bénéfice imposable ; 2% × Produits imposables)</strong><br>
+                    Minimum de perception : <strong>100 000 MRU</strong> pour le régime réel normal.
                 </div>
-                <div class="action-right">
-                    <button class="btn btn-danger btn-small" id="resetBtn">⟳ Réinit.</button>
-                    <button class="btn btn-primary btn-small" id="submitBtn">✅ Valider</button>
-                    <button class="btn-stop btn-small" id="stopBtn">⏹ Stop</button>
-                    <button class="btn-result btn-small" id="resultBtn">📊 Résultat</button>
+                <div class="rule-piege">
+                    ⚠️ <strong>Piège :</strong> Ne pas confondre le minimum de perception (100 000 MRU) avec le taux normal. En cas de perte, l'impôt minimum reste dû.
                 </div>
             </div>
-        </div>
 
-        <!-- ============================================================
-        SECTION RÉSUMÉ
-        ============================================================ -->
-        <div id="resumeSection">
-            <div class="summary-card" style="max-height: none; box-shadow: none; padding: 0;">
-                <h2 style="border-bottom: 3px solid #0b4f6c; padding-bottom: 12px; margin-bottom: 16px;">
-                    <span>📖 Résumé du Code Général des Impôts 2025</span>
-                </h2>
-
-                <!-- STATS RÉSUMÉ -->
-                <div class="summary-stats" id="summaryStats">
-                    <div class="stat-item green"><div class="number" id="sumCorrect">0</div><div class="label">✅ Bonnes réponses</div></div>
-                    <div class="stat-item red"><div class="number" id="sumWrong">0</div><div class="label">❌ Mauvaises réponses</div></div>
-                    <div class="stat-item blue"><div class="number" id="sumAnswered">0</div><div class="label">⏳ Répondues / 500</div></div>
-                    <div class="stat-item blue"><div class="number" id="sumScore">0.00</div><div class="label">📊 Score total</div></div>
-                    <div class="stat-item blue"><div class="number" id="sumPct">0%</div><div class="label">📈 Pourcentage</div></div>
-                    <div class="stat-item blue"><div class="number" id="sumLevel">Débutant</div><div class="label">🏆 Niveau</div></div>
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 1 – Facile</div>
+                <div class="rule-example">
+                    Bénéfice = 1 000 000 MRU<br>
+                    Produits imposables = 3 000 000 MRU<br><br>
+                    25% × 1 000 000 = <strong>250 000</strong><br>
+                    2% × 3 000 000 = <strong>60 000</strong><br>
+                    → IS = <strong>250 000 MRU</strong>
                 </div>
-
-                <!-- RÈGLES -->
-                <div class="summary-rules">
-                    <h3>📜 Règles et principes clés (Code Général des Impôts)</h3>
-
-                    <!-- IS -->
-                    <div class="rule-block">
-                        <div class="rule-title">🏢 IS (Impôt sur les Sociétés) – Art. 51</div>
-                        <div class="rule-example">
-                            <strong>📌 Définition :</strong> Impôt sur les bénéfices des personnes morales (SARL, SA, etc.).<br>
-                            <strong>📝 Exemple facile :</strong> Bénéfice = 8 000 000 MRU → IS = 8 000 000 × 25% = 2 000 000 MRU.<br>
-                            <strong>📝 Exemple moyen :</strong> Bénéfice = 3 000 000 MRU → 3 000 000 × 25% = 750 000 MRU (minimum 100 000 MRU).<br>
-                            <strong>📝 Exemple difficile :</strong> Bénéfice = 0 (perte) → Minimum = 100 000 MRU (car minimum de perception).
-                        </div>
-                        <div class="rule-piege">
-                            ⚠️ <strong>Piège :</strong> Ne pas confondre le minimum de perception (100 000 MRU) avec le taux normal. En cas de perte, l'impôt minimum reste dû.
-                        </div>
-                    </div>
-
-                    <!-- IBAPP -->
-                    <div class="rule-block">
-                        <div class="rule-title">👤 IBAPP (Personnes physiques) – Art. 87</div>
-                        <div class="rule-example">
-                            <strong>📌 Définition :</strong> Impôt sur les bénéfices des commerçants, artisans, professions libérales.<br>
-                            <strong>📝 Exemple facile :</strong> Bénéfice = 500 000 MRU → 500 000 × 30% = 150 000 MRU.<br>
-                            <strong>📝 Exemple moyen :</strong> Bénéfice = 200 000 MRU → 200 000 × 30% = 60 000 MRU → minimum 125 000 MRU.<br>
-                            <strong>📝 Exemple difficile :</strong> Régime forfait (CA < 3 M MRU) → 3% du CA = 90 000 MRU (pas de minimum).
-                        </div>
-                        <div class="rule-piege">
-                            ⚠️ <strong>Piège :</strong> Le régime du forfait (CA < 3 M MRU) est à 3% du CA, sans minimum.
-                        </div>
-                    </div>
-
-                    <!-- TVA -->
-                    <div class="rule-block">
-                        <div class="rule-title">📦 TVA (Taxe sur la Valeur Ajoutée) – Art. 230</div>
-                        <div class="rule-example">
-                            <strong>📌 Définition :</strong> Taxe sur la consommation, payée par le client final.<br>
-                            <strong>📝 Exemple facile :</strong> Vente HT = 1 250 000 MRU → TVA = 1 250 000 × 16% = 200 000 MRU.<br>
-                            <strong>📝 Exemple moyen :</strong> Exportation = 1 000 000 MRU → TVA = 0% (pas de TVA).<br>
-                            <strong>📝 Exemple difficile :</strong> Crédit de TVA = 500 000 MRU → remboursable aux exportateurs.
-                        </div>
-                        <div class="rule-piege">
-                            ⚠️ <strong>Piège :</strong> Les exportations sont à 0% (et non exonérées). Le crédit de TVA est remboursable aux exportateurs.
-                        </div>
-                    </div>
-
-                    <!-- Retenues -->
-                    <div class="rule-block">
-                        <div class="rule-title">💰 Retenues à la source</div>
-                        <div class="rule-example">
-                            <strong>📌 Définition :</strong> Prélèvement à la source sur certains paiements.<br>
-                            <strong>📝 Exemple facile :</strong> Loyer = 1 000 000 MRU → Retenue = 180 000 MRU (18%).<br>
-                            <strong>📝 Exemple moyen :</strong> Services non-résidents = 2 000 000 MRU → Retenue = 300 000 MRU (15%).<br>
-                            <strong>📝 Exemple difficile :</strong> Prestation libérale = 500 000 MRU → Retenue = 12 500 MRU (2,5%).
-                        </div>
-                        <div class="rule-piege">
-                            ⚠️ <strong>Piège :</strong> La retenue sur loyers est à la charge du locataire (qui la déduit du loyer versé au propriétaire).
-                        </div>
-                    </div>
-
-                    <!-- Délais -->
-                    <div class="rule-block">
-                        <div class="rule-title">⏱ Délais clés</div>
-                        <div class="rule-example">
-                            <strong>📌 Définition :</strong> Délais légaux à respecter.<br>
-                            <strong>📝 Exemple facile :</strong> Déclaration IS/IBAPP = 31 mars.<br>
-                            <strong>📝 Exemple moyen :</strong> Réponse à redressement = 15 jours.<br>
-                            <strong>📝 Exemple difficile :</strong> Réclamation contentieuse = 3 mois.
-                        </div>
-                        <div class="rule-piege">
-                            ⚠️ <strong>Piège :</strong> L'absence de réponse à une notification de redressement vaut acceptation tacite.
-                        </div>
-                    </div>
-
-                    <!-- Contrôle -->
-                    <div class="rule-block">
-                        <div class="rule-title">🔍 Contrôle et sanctions</div>
-                        <div class="rule-example">
-                            <strong>📌 Définition :</strong> Vérifications et pénalités.<br>
-                            <strong>📝 Exemple facile :</strong> Retard < 2 mois = 10%.<br>
-                            <strong>📝 Exemple moyen :</strong> Retard > 2 mois = 25%.<br>
-                            <strong>📝 Exemple difficile :</strong> Mauvaise foi = 40%, Fraude = 80%.
-                        </div>
-                        <div class="rule-piege">
-                            ⚠️ <strong>Piège :</strong> La prescription est de 3 ans, mais peut être interrompue par un avis de vérification.
-                        </div>
-                    </div>
-
-                    <!-- Pièges généraux -->
-                    <div class="rule-block">
-                        <div class="rule-title">🎯 Pièges courants à éviter</div>
-                        <div class="rule-example">
-                            <strong>📌 1.</strong> Confondre IS (25%) et IBAPP (30%).<br>
-                            <strong>📌 2.</strong> Oublier le minimum de perception (IS: 100 000 MRU, IBAPP: 125 000 MRU).<br>
-                            <strong>📌 3.</strong> Croire que les exportations sont exonérées de TVA (elles sont à 0%).<br>
-                            <strong>📌 4.</strong> Négliger les délais de réponse (15 jours pour le contribuable, 60 jours pour l'admin).<br>
-                            <strong>📌 5.</strong> Ignorer que l'absence de réponse à un redressement vaut acceptation.
-                        </div>
-                        <div class="rule-piege">
-                            💡 <strong>Conseil :</strong> Lisez toujours deux fois l'énoncé. Les questions pièges portent souvent sur les délais (15, 30, 60 jours) et les minimums de perception.
-                        </div>
-                    </div>
-
-                    <!-- Résumé final -->
-                    <div class="rule-block" style="border-right-color: #f1c40f; background: #fef9e7;">
-                        <div class="rule-title">📌 Récapitulatif des taux essentiels</div>
-                        <div class="rule-example">
-                            • IS : 25% (min 100 000 MRU)<br>
-                            • IBAPP : 30% (min 125 000 MRU)<br>
-                            • TVA : 16% (export 0%)<br>
-                            • IRCM : 10%<br>
-                            • Retenue non-résidents : 15%<br>
-                            • Retenue loyers : 18%<br>
-                            • Taxe apprentissage : 0,6%<br>
-                            • Patente : 10 000 à 500 000 MRU selon CA<br>
-                            • Délai de reprise : 3 ans<br>
-                            • Prescription recouvrement : 4 ans
-                        </div>
-                        <div class="rule-piege">
-                            ⚠️ Ces taux sont ceux du CGI 2025. Vérifiez toujours les mises à jour annuelles.
-                        </div>
-                    </div>
+                <div class="rule-corrige">
+                    ✅ <strong>Corrigé :</strong> On prend le plus élevé entre 25% du bénéfice et 2% des produits.
                 </div>
             </div>
-        </div>
 
-        <!-- RESULT AREA -->
-        <div id="resultArea" class="result-area">
-            <div class="result-line"><span>📌 Dernière action</span><span id="lastAction">—</span></div>
-            <div class="result-line"><span>📈 Progression</span><span id="progressText">0 %</span></div>
-            <div class="result-line"><span>🏆 Estimation</span><span id="levelEstimate">Débutant</span></div>
-            <div class="result-line" style="border-bottom: none; margin-top:4px;">
-                <span>📋 Détail</span>
-                <span id="detailStats">Bonnes:0 | Mauvaises:0 | NR:500</span>
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 2 – Piège</div>
+                <div class="rule-example">
+                    Bénéfice = 500 000 MRU<br>
+                    Produits imposables = 40 000 000 MRU<br><br>
+                    25% × 500 000 = <strong>125 000</strong><br>
+                    2% × 40 000 000 = <strong>800 000</strong><br>
+                    → IS = <strong>800 000 MRU</strong>
+                </div>
+                <div class="rule-piege">
+                    ⚠️ <strong>Piège :</strong> Ne pas choisir automatiquement 25% du bénéfice. Toujours comparer avec 2% des produits.
+                </div>
             </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 3 – Minimum</div>
+                <div class="rule-example">
+                    Bénéfice = 100 000 MRU<br>
+                    Produits imposables = 1 000 000 MRU<br><br>
+                    25% × 100 000 = <strong>25 000</strong><br>
+                    2% × 1 000 000 = <strong>20 000</strong><br>
+                    Minimum = 100 000<br>
+                    → IS = <strong>100 000 MRU</strong>
+                </div>
+                <div class="rule-corrige">
+                    ✅ <strong>Corrigé :</strong> Le minimum de perception est de 100 000 MRU, même si le calcul est inférieur.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 4 – Perte</div>
+                <div class="rule-example">
+                    Bénéfice = 0 (perte)<br>
+                    Produits imposables = 10 000 000 MRU<br><br>
+                    25% × 0 = <strong>0</strong><br>
+                    2% × 10 000 000 = <strong>200 000</strong><br>
+                    → IS = <strong>200 000 MRU</strong>
+                </div>
+                <div class="rule-piege">
+                    ⚠️ <strong>Piège :</strong> Une perte ne signifie pas IS = 0. La base de 2% des produits s'applique toujours.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 5 – Limite</div>
+                <div class="rule-example">
+                    Bénéfice = 2 000 000 MRU<br>
+                    Produits imposables = 20 000 000 MRU<br><br>
+                    25% × 2 000 000 = <strong>500 000</strong><br>
+                    2% × 20 000 000 = <strong>400 000</strong><br>
+                    → IS = <strong>500 000 MRU</strong>
+                </div>
+                <div class="rule-corrige">
+                    ✅ <strong>Corrigé :</strong> 500 000 > 400 000, donc on prend 25% du bénéfice.
+                </div>
+            </div>
+
+            <!-- ===== SECTION IBAPP ===== -->
+            <h3>👤 IBAPP – Impôt sur les Bénéfices d'Affaires des Personnes Physiques (Art. 87)</h3>
+
+            <div class="rule-block">
+                <div class="rule-title">📌 Les 3 régimes selon le CA</div>
+                <div class="rule-example">
+                    • <strong>CA &lt; 3 M MRU</strong> → Régime du forfait : 3% du CA<br>
+                    • <strong>CA de 3 M à 5 M MRU</strong> → Régime réel intermédiaire : 30% du bénéfice ou 2,5% du CA<br>
+                    • <strong>CA &gt; 5 M MRU</strong> → Régime réel normal : 30% du bénéfice ou 2,5% du CA
+                </div>
+                <div class="rule-piege">
+                    ⚠️ <strong>Piège :</strong> Les seuils sont stricts. CA = 3 000 000 MRU exactement = régime intermédiaire (pas forfait). CA = 5 000 001 MRU = régime normal.
+                </div>
+            </div>
+
+            <h4>🔹 Régime réel normal (CA > 5 M MRU)</h4>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 1 – Normal</div>
+                <div class="rule-example">
+                    CA = 6 000 000 MRU<br>
+                    Bénéfice = 1 000 000 MRU<br><br>
+                    30% × 1 000 000 = <strong>300 000</strong><br>
+                    2,5% × 6 000 000 = <strong>150 000</strong><br>
+                    → IBAPP = <strong>300 000 MRU</strong>
+                </div>
+                <div class="rule-corrige">
+                    ✅ <strong>Corrigé :</strong> On prend le plus élevé.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 2 – Piège (CA élevé, bénéfice faible)</div>
+                <div class="rule-example">
+                    CA = 10 000 000 MRU<br>
+                    Bénéfice = 100 000 MRU<br><br>
+                    30% × 100 000 = <strong>30 000</strong><br>
+                    2,5% × 10 000 000 = <strong>250 000</strong><br>
+                    → IBAPP = <strong>250 000 MRU</strong>
+                </div>
+                <div class="rule-piege">
+                    ⚠️ <strong>Piège :</strong> Même avec un petit bénéfice, l'impôt peut être élevé à cause de la base de 2,5% du CA.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 3 – Minimum</div>
+                <div class="rule-example">
+                    CA = 6 000 000 MRU<br>
+                    Bénéfice = 200 000 MRU<br><br>
+                    30% × 200 000 = <strong>60 000</strong><br>
+                    2,5% × 6 000 000 = <strong>150 000</strong><br>
+                    Minimum = 125 000<br>
+                    → IBAPP = <strong>150 000 MRU</strong>
+                </div>
+                <div class="rule-corrige">
+                    ✅ <strong>Corrigé :</strong> 150 000 > 125 000, donc on prend 2,5% du CA.
+                </div>
+            </div>
+
+            <h4>🔹 Régime réel intermédiaire (CA de 3 M à 5 M MRU)</h4>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 1 – Intermédiaire</div>
+                <div class="rule-example">
+                    CA = 4 000 000 MRU<br>
+                    Bénéfice = 500 000 MRU<br><br>
+                    30% × 500 000 = <strong>150 000</strong><br>
+                    2,5% × 4 000 000 = <strong>100 000</strong><br>
+                    Minimum = 75 000<br>
+                    → IBAPP = <strong>150 000 MRU</strong>
+                </div>
+                <div class="rule-corrige">
+                    ✅ <strong>Corrigé :</strong> 150 000 > 100 000 > 75 000.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 2 – Piège (CA = 3 000 000 exact)</div>
+                <div class="rule-example">
+                    CA = 3 000 000 MRU<br>
+                    Bénéfice = 100 000 MRU<br><br>
+                    ❌ <strong>Piège :</strong> Beaucoup choisissent le forfait à 3% du CA.<br>
+                    Mais 3 000 000 n'est pas <strong>inférieur</strong> à 3 000 000.<br>
+                    → Régime <strong>réel intermédiaire</strong>.<br><br>
+                    30% × 100 000 = <strong>30 000</strong><br>
+                    2,5% × 3 000 000 = <strong>75 000</strong><br>
+                    Minimum = 75 000<br>
+                    → IBAPP = <strong>75 000 MRU</strong>
+                </div>
+                <div class="rule-piege">
+                    ⚠️ <strong>Piège :</strong> Le forfait s'applique uniquement pour CA <strong>strictement inférieur</strong> à 3 M MRU.
+                </div>
+            </div>
+
+            <h4>🔹 Régime du forfait (CA < 3 M MRU)</h4>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 1 – Forfait</div>
+                <div class="rule-example">
+                    CA = 1 000 000 MRU<br>
+                    3% × 1 000 000 = <strong>30 000 MRU</strong>
+                </div>
+                <div class="rule-corrige">
+                    ✅ <strong>Corrigé :</strong> IBAPP = 3% du CA déclaré.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 2 – Limite</div>
+                <div class="rule-example">
+                    CA = 2 900 000 MRU<br>
+                    3% × 2 900 000 = <strong>87 000 MRU</strong>
+                </div>
+                <div class="rule-corrige">
+                    ✅ <strong>Corrigé :</strong> 2 900 000 < 3 000 000 → forfait.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 3 – Piège (CA = 3 000 000)</div>
+                <div class="rule-example">
+                    CA = 3 000 000 MRU<br>
+                    ❌ <strong>Piège :</strong> Ce n'est PAS le forfait.<br>
+                    → Régime réel intermédiaire.<br>
+                    2,5% × 3 000 000 = 75 000 MRU<br>
+                    → IBAPP = <strong>75 000 MRU</strong>
+                </div>
+                <div class="rule-piege">
+                    ⚠️ <strong>Piège :</strong> La limite est stricte : <strong>CA < 3M</strong> pour le forfait.
+                </div>
+            </div>
+
+            <!-- ===== SECTION PIT ===== -->
+            <h3>💰 PIT / ITS – Impôt sur les Traitements et Salaires (Art. 114)</h3>
+
+            <div class="rule-block">
+                <div class="rule-title">📌 Barème progressif</div>
+                <div class="rule-example">
+                    • ≤ 9 000 MRU → <strong>15%</strong><br>
+                    • 9 001 à 21 000 MRU → <strong>25%</strong><br>
+                    • > 21 000 MRU → <strong>40%</strong>
+                </div>
+                <div class="rule-piege">
+                    ⚠️ <strong>Piège :</strong> Le barème est <strong>progressif</strong>. On ne prend pas le taux max sur la totalité du salaire.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 1 – Facile</div>
+                <div class="rule-example">
+                    Salaire imposable = 8 000 MRU<br>
+                    8 000 × 15% = <strong>1 200 MRU</strong>
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 2 – Moyen</div>
+                <div class="rule-example">
+                    Salaire = 15 000 MRU<br>
+                    Tranche 1 : 9 000 × 15% = 1 350<br>
+                    Tranche 2 : 6 000 × 25% = 1 500<br>
+                    → PIT = <strong>2 850 MRU</strong>
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 3 – Piège (21 000 MRU exact)</div>
+                <div class="rule-example">
+                    Salaire = 21 000 MRU<br>
+                    Tranche 1 : 9 000 × 15% = 1 350<br>
+                    Tranche 2 : 12 000 × 25% = 3 000<br>
+                    → PIT = <strong>4 350 MRU</strong>
+                </div>
+                <div class="rule-piege">
+                    ⚠️ <strong>Piège :</strong> Le taux 40% ne s'applique que pour <strong>plus de 21 000 MRU</strong>. À 21 000 exact, on reste à 25%.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 4 – Difficile</div>
+                <div class="rule-example">
+                    Salaire = 30 000 MRU<br>
+                    Tranche 1 : 9 000 × 15% = 1 350<br>
+                    Tranche 2 : 12 000 × 25% = 3 000<br>
+                    Tranche 3 : 9 000 × 40% = 3 600<br>
+                    → PIT = <strong>7 950 MRU</strong>
+                </div>
+            </div>
+
+            <!-- ===== SECTION TVA ===== -->
+            <h3>📦 TVA – Taxe sur la Valeur Ajoutée (Art. 230)</h3>
+
+            <div class="rule-block">
+                <div class="rule-title">📌 Taux</div>
+                <div class="rule-example">
+                    • Taux normal : <strong>16%</strong><br>
+                    • Télécommunications : <strong>18%</strong><br>
+                    • Exportations : <strong>0%</strong>
+                </div>
+                <div class="rule-piege">
+                    ⚠️ <strong>Piège :</strong> Les exportations sont à 0% et <strong>non exonérées</strong>. La TVA est remboursable aux exportateurs.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 1 – Normal</div>
+                <div class="rule-example">
+                    Vente HT = 100 000 MRU<br>
+                    TVA = 100 000 × 16% = <strong>16 000 MRU</strong><br>
+                    TTC = <strong>116 000 MRU</strong>
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 2 – Télécom</div>
+                <div class="rule-example">
+                    Facture téléphone HT = 100 000 MRU<br>
+                    TVA = 100 000 × 18% = <strong>18 000 MRU</strong><br>
+                    TTC = <strong>118 000 MRU</strong>
+                </div>
+                <div class="rule-piege">
+                    ⚠️ <strong>Piège :</strong> Ne pas utiliser 16% pour les télécommunications.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 3 – Export</div>
+                <div class="rule-example">
+                    Exportation = 1 000 000 MRU<br>
+                    TVA = 1 000 000 × 0% = <strong>0 MRU</strong>
+                </div>
+                <div class="rule-corrige">
+                    ✅ <strong>Corrigé :</strong> Les exportations sont à 0%.
+                </div>
+            </div>
+
+            <!-- ===== SECTION PÉNALITÉS TVA ===== -->
+            <h3>⚠️ Pénalités de TVA</h3>
+
+            <div class="rule-block">
+                <div class="rule-title">📌 Retard de déclaration</div>
+                <div class="rule-example">
+                    • Retard < 2 mois → <strong>10%</strong> des droits normalement dus<br>
+                    • Retard > 2 mois → <strong>25%</strong> des droits normalement dus
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple – Retard 1 mois</div>
+                <div class="rule-example">
+                    TVA due = 1 000 000 MRU<br>
+                    Retard = 1 mois (< 2 mois)<br>
+                    Pénalité = 1 000 000 × 10% = <strong>100 000 MRU</strong><br>
+                    Total = <strong>1 100 000 MRU</strong>
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple – Retard 3 mois</div>
+                <div class="rule-example">
+                    TVA due = 1 000 000 MRU<br>
+                    Retard = 3 mois (> 2 mois)<br>
+                    Pénalité = 1 000 000 × 25% = <strong>250 000 MRU</strong><br>
+                    Total = <strong>1 250 000 MRU</strong>
+                </div>
+                <div class="rule-piege">
+                    ⚠️ <strong>Piège :</strong> Ne pas confondre les seuils. 2 mois exact : on applique 10% ou 25% ? La règle dit : < 2 mois = 10%, > 2 mois = 25%.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📌 Déclaration néant ou crédit</div>
+                <div class="rule-example">
+                    • Déclaration néant ou crédit déposée en retard : <strong>2 000 MRU par mois</strong><br>
+                    • Si CA année précédente > 30 M MRU : <strong>10 000 MRU par mois</strong>
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple – Déclaration néant</div>
+                <div class="rule-example">
+                    TVA = 0 (néant)<br>
+                    Retard = 5 mois<br>
+                    Pénalité = 2 000 × 5 = <strong>10 000 MRU</strong>
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple – Grande entreprise</div>
+                <div class="rule-example">
+                    CA année précédente = 40 000 000 MRU<br>
+                    Déclaration néant<br>
+                    Retard = 4 mois<br>
+                    Pénalité = 10 000 × 4 = <strong>40 000 MRU</strong>
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📌 Omission ou inexactitude</div>
+                <div class="rule-example">
+                    <strong>40%</strong> des droits en risque.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple – Omission</div>
+                <div class="rule-example">
+                    Droits en risque = 500 000 MRU<br>
+                    Pénalité = 500 000 × 40% = <strong>200 000 MRU</strong>
+                </div>
+            </div>
+
+            <!-- ===== SECTION RETENUES ===== -->
+            <h3>💰 Retenues à la source</h3>
+
+            <div class="rule-block">
+                <div class="rule-title">📌 Taux</div>
+                <div class="rule-example">
+                    • Services non-résidents : <strong>15%</strong><br>
+                    • Professions libérales résidentes (IBAPP) : <strong>2,5%</strong><br>
+                    • Loyers (IRF + foncière) : <strong>18%</strong><br>
+                    • IRCM (dividendes, intérêts) : <strong>10%</strong>
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 1 – Non-résident</div>
+                <div class="rule-example">
+                    Société étrangère : prestation = 1 000 000 MRU<br>
+                    Retenue = 1 000 000 × 15% = <strong>150 000 MRU</strong>
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 2 – Profession libérale</div>
+                <div class="rule-example">
+                    Avocat résident : honoraires = 1 000 000 MRU<br>
+                    Retenue = 1 000 000 × 2,5% = <strong>25 000 MRU</strong>
+                </div>
+                <div class="rule-piege">
+                    ⚠️ <strong>Piège :</strong> Ne pas appliquer 15% à un résident.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 3 – Loyers</div>
+                <div class="rule-example">
+                    Loyer annuel = 1 000 000 MRU<br>
+                    Retenue = 1 000 000 × 18% = <strong>180 000 MRU</strong>
+                </div>
+                <div class="rule-piege">
+                    ⚠️ <strong>Piège :</strong> La retenue sur loyers est à la charge du locataire (qui la déduit du loyer versé au propriétaire).
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple 4 – IRCM</div>
+                <div class="rule-example">
+                    Dividendes distribués = 500 000 MRU<br>
+                    IRCM = 500 000 × 10% = <strong>50 000 MRU</strong>
+                </div>
+            </div>
+
+            <!-- ===== SECTION IRCM / FONCIER ===== -->
+            <h3>🏠 IRCM & Revenus fonciers</h3>
+
+            <div class="rule-block">
+                <div class="rule-title">📌 Taux</div>
+                <div class="rule-example">
+                    • IRCM (dividendes, intérêts) : <strong>10%</strong><br>
+                    • Revenus fonciers (loyers) : <strong>10%</strong>
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple – Revenu foncier</div>
+                <div class="rule-example">
+                    Revenu locatif = 200 000 MRU<br>
+                    Impôt = 200 000 × 10% = <strong>20 000 MRU</strong>
+                </div>
+            </div>
+
+            <!-- ===== SECTION TAXE APPRENTISSAGE ===== -->
+            <h3>📚 Taxe d'apprentissage</h3>
+
+            <div class="rule-block">
+                <div class="rule-title">📌 Taux</div>
+                <div class="rule-example">
+                    <strong>0,60%</strong> des rémunérations totales versées au personnel.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple</div>
+                <div class="rule-example">
+                    Masse salariale annuelle = 10 000 000 MRU<br>
+                    Taxe = 10 000 000 × 0,60% = <strong>60 000 MRU</strong>
+                </div>
+                <div class="rule-piege">
+                    ⚠️ <strong>Piège :</strong> La base est la masse salariale, <strong>pas</strong> le bénéfice.
+                </div>
+            </div>
+
+            <!-- ===== SECTION RIB ===== -->
+            <h3>📊 RIB – Régime de Base Incitatif (Loi 2025-06)</h3>
+
+            <div class="rule-block">
+                <div class="rule-title">📌 PME (2M – 30M MRU)</div>
+                <div class="rule-example">
+                    • Investissement : 2M à 30M MRU<br>
+                    • Emplois : ≥ 5 directs<br>
+                    • Douane : <strong>3%</strong> sur équipements et intrants
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📌 Intermédiaire (30M – 200M MRU)</div>
+                <div class="rule-example">
+                    • Investissement : 30M à 200M MRU<br>
+                    • Emplois : ≥ 15 directs<br>
+                    • Douane : <strong>5%</strong><br>
+                    • TVA réduite : <strong>10%</strong>
+                </div>
+            </div>
+
+            <!-- ===== SECTION RPD ===== -->
+            <h3>📍 RPD – Régime des Pôles de Développement</h3>
+
+            <div class="rule-block">
+                <div class="rule-title">📌 Caractéristiques</div>
+                <div class="rule-example">
+                    • Investissement : ≥ 2M MRU<br>
+                    • Emplois : ≥ 5 (ou ≥ 15 si investissement > 30M)<br>
+                    • IS réduit : <strong>15%</strong>
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple – IS réduit</div>
+                <div class="rule-example">
+                    Bénéfice = 1 000 000 MRU<br>
+                    IS RPD = 1 000 000 × 15% = <strong>150 000 MRU</strong>
+                </div>
+                <div class="rule-piege">
+                    ⚠️ <strong>Piège :</strong> Ne pas appliquer 25% pour une entreprise en RPD.
+                </div>
+            </div>
+
+            <!-- ===== SECTION RIS ===== -->
+            <h3>🏗️ RIS – Régime des Investissements Structurants</h3>
+
+            <div class="rule-block">
+                <div class="rule-title">📌 Caractéristiques</div>
+                <div class="rule-example">
+                    • Investissement : <strong>> 200M MRU</strong><br>
+                    • Emplois : ≥ 50 directs<br>
+                    • Douane : <strong>1,5%</strong><br>
+                    • TVA sur équipements : <strong>10%</strong><br>
+                    • Crédit formation : 70% jusqu'à <strong>800 000 MRU</strong>
+                </div>
+                <div class="rule-piege">
+                    ⚠️ <strong>Piège :</strong> L'investissement doit être <strong>supérieur à 200M</strong>, pas égal.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple – Crédit formation</div>
+                <div class="rule-example">
+                    Coût formation = 1 000 000 MRU<br>
+                    70% × 1 000 000 = 700 000 MRU<br>
+                    Plafond = 800 000 MRU<br>
+                    → Crédit = <strong>700 000 MRU</strong>
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple – Plafond formation</div>
+                <div class="rule-example">
+                    Coût formation = 2 000 000 MRU<br>
+                    70% × 2 000 000 = 1 400 000 MRU<br>
+                    Plafond = 800 000 MRU<br>
+                    → Crédit = <strong>800 000 MRU</strong>
+                </div>
+                <div class="rule-piege">
+                    ⚠️ <strong>Piège :</strong> Le crédit est plafonné à 800 000 MRU, même si 70% du coût est plus élevé.
+                </div>
+            </div>
+
+            <!-- ===== SECTION OIL STR ===== -->
+            <h3>🛢️ Oil – Régime Simplifié (STR) – Code pétrolier</h3>
+
+            <div class="rule-block">
+                <div class="rule-title">📌 Conditions</div>
+                <div class="rule-example">
+                    • Société étrangère<br>
+                    • Présence temporaire en Mauritanie<br>
+                    • Contrat < 12 mois<br>
+                    • Agrément préalable
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📌 Calculs</div>
+                <div class="rule-example">
+                    • IS = 16% du CA × 25% = <strong>4% du CA</strong><br>
+                    • PIT = 10% du CA × 40% = <strong>4% du CA</strong>
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple – IS STR</div>
+                <div class="rule-example">
+                    CA = 1 000 000 MRU<br>
+                    IS = 1 000 000 × 4% = <strong>40 000 MRU</strong><br>
+                    PIT = 1 000 000 × 4% = <strong>40 000 MRU</strong>
+                </div>
+                <div class="rule-piege">
+                    ⚠️ <strong>Piège :</strong> Ne pas appliquer 25% directement sur le CA. La formule est CA × 16% × 25%.
+                </div>
+            </div>
+
+            <!-- ===== SECTION GTA ===== -->
+            <h3>🌊 GTA – Grand Tortue Ahmeyim</h3>
+
+            <div class="rule-block">
+                <div class="rule-title">📌 Régime réel</div>
+                <div class="rule-example">
+                    • Sociétés étrangères avec établissement permanent<br>
+                    • CA GTA > 3 000 000 USD<br>
+                    • IS = 25% du bénéfice<br>
+                    • Minimum = 1,75% du CA GTA
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple – Réel</div>
+                <div class="rule-example">
+                    CA GTA = 10 000 000 USD<br>
+                    Bénéfice = 1 000 000 USD<br>
+                    25% × 1 000 000 = 250 000 USD<br>
+                    1,75% × 10 000 000 = 175 000 USD<br>
+                    → IS = <strong>250 000 USD</strong>
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple – Minimum</div>
+                <div class="rule-example">
+                    CA GTA = 10 000 000 USD<br>
+                    Bénéfice = 50 000 USD<br>
+                    25% × 50 000 = 12 500 USD<br>
+                    1,75% × 10 000 000 = 175 000 USD<br>
+                    → IS = <strong>175 000 USD</strong>
+                </div>
+                <div class="rule-piege">
+                    ⚠️ <strong>Piège :</strong> Le minimum de 1,75% du CA s'applique même si 25% du bénéfice est inférieur.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📌 Régime forfaitaire GTA</div>
+                <div class="rule-example">
+                    • Sous-traitants sans établissement permanent<br>
+                    • ou CA GTA ≤ 3 000 000 USD<br>
+                    • IS = 16% du CA × 25% = <strong>4% du CA</strong><br>
+                    • PIT = 7,5% du CA × 40% = <strong>3% du CA</strong>
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple – Forfait</div>
+                <div class="rule-example">
+                    CA = 2 000 000 USD<br>
+                    IS = 2 000 000 × 4% = <strong>80 000 USD</strong><br>
+                    PIT = 2 000 000 × 3% = <strong>60 000 USD</strong>
+                </div>
+            </div>
+
+            <!-- ===== SECTION ZONE FRANCHE ===== -->
+            <h3>🏢 Zone Franche de Nouadhibou (Loi 2024-030)</h3>
+
+            <div class="rule-block">
+                <div class="rule-title">📌 Caractéristiques</div>
+                <div class="rule-example">
+                    • Activités éligibles : traitement produits de pêche et miniers<br>
+                    • Exportation : normalement 100% (possibilité 20% en local)<br>
+                    • Agrément provisoire : <strong>30 jours</strong> ouvrables<br>
+                    • Agrément définitif : <strong>15 ans</strong><br>
+                    • Renouvellement : <strong>10 ans</strong><br>
+                    • Redevance annuelle : <strong>0,5% du CA</strong><br>
+                    • Délai d'installation : <strong>6 mois</strong>
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">📝 Exemple – Redevance</div>
+                <div class="rule-example">
+                    CA = 100 000 000 MRU<br>
+                    Redevance = 100 000 000 × 0,5% = <strong>500 000 MRU</strong>
+                </div>
+            </div>
+
+            <!-- ===== TABLEAU RÉCAPITULATIF ===== -->
+            <h3>📊 Tableau récapitulatif des taux essentiels</h3>
+
+            <table class="table-taux">
+                <thead>
+                    <tr>
+                        <th>Impôt / Taxe</th>
+                        <th>Taux / Montant</th>
+                        <th>Référence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>IS – Taux normal</td><td>25% du bénéfice</td><td>Art. 51</td></tr>
+                    <tr><td>IS – Base alternative</td><td>2% des produits</td><td>Art. 51</td></tr>
+                    <tr><td>IS – Minimum</td><td>100 000 MRU</td><td>Art. 51</td></tr>
+                    <tr><td>IBAPP – Réel normal</td><td>30% du bénéfice / 2,5% du CA</td><td>Art. 87</td></tr>
+                    <tr><td>IBAPP – Minimum normal</td><td>125 000 MRU</td><td>Art. 87</td></tr>
+                    <tr><td>IBAPP – Réel intermédiaire</td><td>30% du bénéfice / 2,5% du CA</td><td>Art. 87</td></tr>
+                    <tr><td>IBAPP – Minimum intermédiaire</td><td>75 000 MRU</td><td>Art. 87</td></tr>
+                    <tr><td>IBAPP – Forfait</td><td>3% du CA</td><td>Art. 88</td></tr>
+                    <tr><td>PIT – ≤ 9 000 MRU</td><td>15%</td><td>Art. 114</td></tr>
+                    <tr><td>PIT – 9 000 à 21 000</td><td>25%</td><td>Art. 114</td></tr>
+                    <tr><td>PIT – > 21 000</td><td>40%</td><td>Art. 114</td></tr>
+                    <tr><td>TVA – Normal</td><td>16%</td><td>Art. 230</td></tr>
+                    <tr><td>TVA – Télécom</td><td>18%</td><td>Art. 230</td></tr>
+                    <tr><td>TVA – Export</td><td>0%</td><td>Art. 230</td></tr>
+                    <tr><td>IRCM</td><td>10%</td><td>Art. 126</td></tr>
+                    <tr><td>Revenus fonciers</td><td>10%</td><td>Art. 105</td></tr>
+                    <tr><td>Taxe d'apprentissage</td><td>0,60%</td><td>Art. 153</td></tr>
+                    <tr><td>Retenue non-résidents</td><td>15%</td><td>Art. 133</td></tr>
+                    <tr><td>Retenue professions libérales</td><td>2,5%</td><td>Art. 131</td></tr>
+                    <tr><td>Retenue loyers</td><td>18%</td><td>Art. 137</td></tr>
+                    <tr><td>TVA – Retard < 2 mois</td><td>10%</td><td>Art. L.131</td></tr>
+                    <tr><td>TVA – Retard > 2 mois</td><td>25%</td><td>Art. L.131</td></tr>
+                    <tr><td>TVA – Déclaration néant/crédit</td><td>2 000 MRU/mois</td><td>Art. L.131</td></tr>
+                    <tr><td>TVA – N/C CA > 30M</td><td>10 000 MRU/mois</td><td>Art. L.131</td></tr>
+                    <tr><td>TVA – Omission/inexactitude</td><td>40%</td><td>Art. L.133</td></tr>
+                    <tr><td>RPD – IS réduit</td><td>15%</td><td>Loi 2025-06</td></tr>
+                    <tr><td>RIS – Douane</td><td>1,5%</td><td>Loi 2025-06</td></tr>
+                    <tr><td>Zone franche – Redevance</td><td>0,5% du CA</td><td>Loi 2024-030</td></tr>
+                    <tr><td>GTA – Minimum réel</td><td>1,75% du CA</td><td>Acte additionnel</td></tr>
+                    <tr><td>GTA – Forfait IS</td><td>4% du CA</td><td>Acte additionnel</td></tr>
+                    <tr><td>Oil STR – IS</td><td>4% du CA</td><td>Code pétrolier</td></tr>
+                </tbody>
+            </table>
+
+            <!-- ===== PIÈGES GÉNÉRAUX ===== -->
+            <h3>🎯 10 pièges à éviter absolument</h3>
+
+            <div class="rule-block">
+                <div class="rule-title">⚠️ Piège n°1 – IS = 25% toujours ?</div>
+                <div class="rule-example">
+                    <strong>❌ FAUX :</strong> Toujours comparer avec 2% des produits.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">⚠️ Piège n°2 – CA = 3M = forfait ?</div>
+                <div class="rule-example">
+                    <strong>❌ FAUX :</strong> Le forfait est pour CA <strong>inférieur</strong> à 3M.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">⚠️ Piège n°3 – CA = 5M = normal ?</div>
+                <div class="rule-example">
+                    <strong>❌ FAUX :</strong> 3M à 5M = régime intermédiaire.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">⚠️ Piège n°4 – TVA = 16% toujours ?</div>
+                <div class="rule-example">
+                    <strong>❌ FAUX :</strong> Télécom = 18%, Export = 0%.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">⚠️ Piège n°5 – Retard 2 mois = 25% ?</div>
+                <div class="rule-example">
+                    <strong>❌ FAUX :</strong> < 2 mois = 10%, > 2 mois = 25%. 2 mois exact dépend de la règle.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">⚠️ Piège n°6 – TVA néant = 10% ?</div>
+                <div class="rule-example">
+                    <strong>❌ FAUX :</strong> 2 000 MRU/mois (ou 10 000 pour CA > 30M).
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">⚠️ Piège n°7 – RIB / RPD / RIS sont identiques ?</div>
+                <div class="rule-example">
+                    <strong>❌ FAUX :</strong> RIB (PME/intermédiaire), RPD (IS 15%), RIS (investissements > 200M).
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">⚠️ Piège n°8 – Mines et pétrole dans loi investissement ?</div>
+                <div class="rule-example">
+                    <strong>❌ FAUX :</strong> Exclus de la loi 2025-06, régimes spécifiques.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">⚠️ Piège n°9 – GTA ≤ 3M USD = régime réel ?</div>
+                <div class="rule-example">
+                    <strong>❌ FAUX :</strong> ≤ 3M = forfait, > 3M = réel.
+                </div>
+            </div>
+
+            <div class="rule-block">
+                <div class="rule-title">⚠️ Piège n°10 – Taxe apprentissage sur le bénéfice ?</div>
+                <div class="rule-example">
+                    <strong>❌ FAUX :</strong> Base = rémunérations versées au personnel.
+                </div>
+            </div>
+
+        </div><!-- fin summary-rules -->
+
+        <!-- BOUTONS -->
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:20px; justify-content:center;">
+            <button class="btn-qcm" onclick="window.location.href='https://medyahyatalebabdellahi.github.io/qcm-fiscalite/'">📝 Accéder au QCM</button>
+            <button class="btn-back" onclick="window.location.href='https://medyahyatalebabdellahi.github.io/qcm-fiscalite/'">🔙 Retour au QCM</button>
         </div>
 
         <div class="footer-note">
-            ⚡ Bonne +0.75 | Mauvaise -0.25 | IS, TVA, droit, calculs, pièges...
-            <br>📱 <strong>Prof. Mohamed Yahya Taleb Abdellahi — WhatsApp : 30545727</strong>
+            📌 Résumé basé sur le Code Général des Impôts 2025 – Mauritanie<br>
+            📱 <strong>Prof. Mohamed Yahya Taleb Abdellahi — WhatsApp : 30545727</strong>
         </div>
     </div>
-
-    <script>
-        (function() {
-            // ================================================================
-            // 1. GÉNÉRATION DES 500 QUESTIONS
-            // ================================================================
-            function buildQuestions() {
-                var qs = [];
-                var used = new Set();
-                var id = 0;
-
-                function add(q) {
-                    if (used.has(q.text)) return;
-                    used.add(q.text);
-                    qs.push({
-                        id: ++id,
-                        text: q.text,
-                        options: q.options,
-                        correct: q.correct
-                    });
-                }
-
-                var base = [
-                    // IS
-                    { text: "Le taux normal de l'IS (Impôt sur les Sociétés) est de :", options: ["18 %", "20 %", "25 %", "30 %"], correct: 2 },
-                    { text: "Le minimum de perception de l'IS pour le régime réel normal est :", options: ["50 000 MRU", "75 000 MRU", "100 000 MRU", "125 000 MRU"], correct: 2 },
-                    { text: "Le bénéfice imposable à l'IS est déterminé d'après :", options: ["Le chiffre d'affaires uniquement", "Le bénéfice net comptable corrigé", "Les dividendes distribués", "La valeur des exportations"], correct: 1 },
-                    { text: "Sont exonérées de l'IS :", options: ["Les sociétés anonymes", "Les groupements d'intérêt économique (GIE)", "Les SARL", "Les succursales de sociétés étrangères"], correct: 1 },
-                    { text: "Une société nouvelle peut arrêter son premier bilan :", options: ["À la fin de l'année de création", "À la fin de l'année suivante", "À n'importe quelle date", "Le 30 juin"], correct: 1 },
-                    { text: "La déclaration annuelle de résultats pour l'IS doit être déposée au plus tard le :", options: ["31 janvier", "31 mars", "30 avril", "31 mai"], correct: 1 },
-                    { text: "Le délai de reprise en matière d'IS est de :", options: ["1 an", "2 ans", "3 ans", "5 ans"], correct: 2 },
-                    { text: "L'IS est acquitté en combien de versements ?", options: ["Un seul versement", "Deux versements", "Trois versements", "Quatre versements"], correct: 2 },
-                    { text: "Les provisions pour risques sont déductibles si elles sont :", options: ["Estimées par le dirigeant", "Effectivement comptabilisées", "Certifiées par le commissaire aux comptes", "Approuvées par l'administration"], correct: 1 },
-                    { text: "Les sociétés dont le CA est inférieur à 5 000 000 MRU relèvent du régime :", options: ["Réel normal", "Réel intermédiaire", "Forfait", "Simplifié pêche"], correct: 1 },
-                    // IBAPP
-                    { text: "Le taux de l'IBAPP en régime réel normal est de :", options: ["25 %", "30 %", "35 %", "40 %"], correct: 1 },
-                    { text: "Le minimum de perception de l'IBAPP pour le régime réel normal est de :", options: ["75 000 MRU", "100 000 MRU", "125 000 MRU", "150 000 MRU"], correct: 2 },
-                    { text: "Le régime du forfait s'applique aux personnes physiques dont le CA est :", options: ["Inférieur à 2 millions MRU", "Inférieur à 3 millions MRU", "Inférieur à 5 millions MRU", "Inférieur à 10 millions MRU"], correct: 1 },
-                    { text: "Les personnes physiques imposées selon le régime du forfait paient :", options: ["2 % du CA", "3 % du CA", "4 % du CA", "5 % du CA"], correct: 1 },
-                    // TVA
-                    { text: "Le taux normal de la TVA en Mauritanie est de :", options: ["14 %", "16 %", "18 %", "20 %"], correct: 1 },
-                    { text: "Les exportations de biens sont soumises à la TVA au taux de :", options: ["0 %", "5 %", "16 %", "Exonérées"], correct: 0 },
-                    { text: "Sont exonérées de TVA :", options: ["Les opérations bancaires (TOF)", "Les prestations de conseil", "Les ventes de voitures", "L'importation d'équipements"], correct: 0 },
-                    { text: "Le fait générateur de la TVA pour les importations est :", options: ["La commande", "Le dédouanement", "Le paiement", "La livraison"], correct: 1 },
-                    { text: "La TVA sur les marchés publics est exigible :", options: ["À la signature", "À chaque paiement du Trésor", "À la livraison finale", "À la réception des travaux"], correct: 1 },
-                    // Retenues
-                    { text: "La retenue sur les loyers (IRF + foncière) est de :", options: ["12 %", "15 %", "18 %", "20 %"], correct: 2 },
-                    { text: "Le taux de la retenue sur les services rendus par les non-résidents est de :", options: ["10 %", "15 %", "20 %", "25 %"], correct: 1 },
-                    // Droit fiscal
-                    { text: "La notification de redressement doit être :", options: ["Orale", "Écrite, motivée et quantifiée", "Uniquement chiffrée", "Approuvée par le contribuable"], correct: 1 },
-                    { text: "Le contribuable dispose de combien de jours pour répondre à une notification de redressement ?", options: ["5 jours", "10 jours", "15 jours", "30 jours"], correct: 2 },
-                    { text: "L'administration doit confirmer le redressement dans un délai de :", options: ["30 jours", "60 jours", "90 jours", "120 jours"], correct: 1 },
-                    { text: "La réclamation contentieuse doit être adressée au :", options: ["Trésorier général", "Directeur général des impôts", "Maire", "Président du tribunal"], correct: 1 },
-                    { text: "Le délai de réclamation contentieuse est de :", options: ["1 mois", "2 mois", "3 mois", "6 mois"], correct: 2 }
-                ];
-
-                base.forEach(function(q) {
-                    add({ text: q.text, options: q.options, correct: q.correct });
-                });
-
-                // Remplissage jusqu'à 500
-                while (qs.length < 500) {
-                    var idx = qs.length % 20;
-                    var baseQ = qs[idx] || qs[0];
-                    if (baseQ) {
-                        add({
-                            text: "Question variée : " + baseQ.text.substring(0, 20) + " (" + (qs.length + 1) + ")",
-                            options: baseQ.options.slice(),
-                            correct: baseQ.correct
-                        });
-                    } else {
-                        add({
-                            text: "Question supplémentaire " + (qs.length + 1),
-                            options: ["Option A", "Option B", "Option C", "Option D"],
-                            correct: 0
-                        });
-                    }
-                }
-                return qs.slice(0, 500);
-            }
-
-            // ================================================================
-            // 2. LOGIQUE QCM
-            // ================================================================
-            var questions = buildQuestions();
-            var currentIndex = 0;
-            var answers = new Array(questions.length).fill(null);
-            var selectedOption = null;
-            var lastMilestone = 0;
-
-            var qNum = document.getElementById('qNum');
-            var qTextFr = document.getElementById('qTextFr');
-            var optionsContainer = document.getElementById('optionsContainer');
-            var feedbackDiv = document.getElementById('answerFeedback');
-            var prevBtn = document.getElementById('prevBtn');
-            var nextBtn = document.getElementById('nextBtn');
-            var submitBtn = document.getElementById('submitBtn');
-            var resetBtn = document.getElementById('resetBtn');
-            var stopBtn = document.getElementById('stopBtn');
-            var resultBtn = document.getElementById('resultBtn');
-            var correctCountSpan = document.getElementById('correctCount');
-            var wrongCountSpan = document.getElementById('wrongCount');
-            var answeredCountSpan = document.getElementById('answeredCount');
-            var scoreDisplay = document.getElementById('scoreDisplay');
-            var progressFill = document.getElementById('progressFill');
-            var progressText = document.getElementById('progressText');
-            var lastAction = document.getElementById('lastAction');
-            var levelEstimate = document.getElementById('levelEstimate');
-            var detailStats = document.getElementById('detailStats');
-            var milestoneDiv = document.getElementById('milestoneMessage');
-            var milestoneText = document.getElementById('milestoneText');
-            var modeQcm = document.getElementById('modeQcm');
-            var modeResume = document.getElementById('modeResume');
-            var qcmSection = document.getElementById('qcmSection');
-            var resumeSection = document.getElementById('resumeSection');
-
-            // Éléments du résumé
-            var sumCorrect = document.getElementById('sumCorrect');
-            var sumWrong = document.getElementById('sumWrong');
-            var sumAnswered = document.getElementById('sumAnswered');
-            var sumScore = document.getElementById('sumScore');
-            var sumPct = document.getElementById('sumPct');
-            var sumLevel = document.getElementById('sumLevel');
-
-            function checkMilestone(answered) {
-                if (answered > 0 && answered % 20 === 0 && answered !== lastMilestone) {
-                    lastMilestone = answered;
-                    milestoneDiv.style.display = 'flex';
-                    milestoneText.textContent = '🎉 Félicitations ! ' + answered + ' questions validées. Continuez ! 🎉';
-                    setTimeout(function() {
-                        milestoneDiv.style.display = 'none';
-                    }, 4000);
-                }
-            }
-
-            function renderQuestion() {
-                var q = questions[currentIndex];
-                if (!q) {
-                    questions = buildQuestions();
-                    q = questions[0];
-                }
-                qNum.textContent = 'Question ' + (currentIndex + 1) + ' / ' + questions.length;
-                qTextFr.textContent = q.text;
-
-                var ans = answers[currentIndex];
-                optionsContainer.innerHTML = '';
-                var letters = ['A', 'B', 'C', 'D'];
-
-                q.options.forEach(function(opt, idx) {
-                    var div = document.createElement('div');
-                    div.className = 'opt';
-                    div.setAttribute('data-idx', idx);
-                    div.innerHTML = '<span class="letter">' + letters[idx] + '</span><span>' + opt + '</span>';
-
-                    if (ans === 1 && idx === q.correct) {
-                        div.classList.add('correct');
-                    } else if (ans === -1 && idx === selectedOption) {
-                        div.classList.add('wrong');
-                    } else if (ans === 1 && idx !== q.correct) {
-                        div.style.opacity = '0.6';
-                    }
-
-                    div.addEventListener('click', function() {
-                        if (answers[currentIndex] !== null) return;
-                        document.querySelectorAll('.opt').forEach(function(el) { el.classList.remove('selected'); });
-                        div.classList.add('selected');
-                        selectedOption = parseInt(div.getAttribute('data-idx'));
-                        feedbackDiv.className = 'answer-feedback';
-                        feedbackDiv.style.display = 'none';
-                    });
-
-                    optionsContainer.appendChild(div);
-                });
-
-                if (answers[currentIndex] !== null) {
-                    showFeedback(answers[currentIndex], q);
-                } else {
-                    feedbackDiv.className = 'answer-feedback';
-                    feedbackDiv.style.display = 'none';
-                }
-
-                prevBtn.disabled = (currentIndex === 0);
-                submitBtn.disabled = (answers[currentIndex] !== null);
-                updateStats();
-                updateSummaryStats();
-            }
-
-            function showFeedback(ans, q) {
-                var isCorrect = (ans === 1);
-                feedbackDiv.className = 'answer-feedback ' + (isCorrect ? 'correct' : 'wrong');
-                feedbackDiv.style.display = 'block';
-                if (isCorrect) {
-                    feedbackDiv.innerHTML = '✅ <strong>Bonne réponse !</strong> +0.75 point';
-                } else {
-                    feedbackDiv.innerHTML = '❌ <strong>Mauvaise réponse !</strong> -0.25 point<br>La bonne réponse est : <span class="correct-answer">' +
-                        q.options[q.correct] + '</span>';
-                }
-            }
-
-            function updateStats() {
-                var correct = 0,
-                    wrong = 0,
-                    answered = 0;
-                for (var i = 0; i < answers.length; i++) {
-                    if (answers[i] === 1) { correct++;
-                        answered++; } else if (answers[i] === -1) { wrong++;
-                        answered++; }
-                }
-                var total = questions.length;
-                var score = correct * 0.75 - wrong * 0.25;
-                var pct = Math.round((answered / total) * 100);
-
-                correctCountSpan.textContent = correct;
-                wrongCountSpan.textContent = wrong;
-                answeredCountSpan.textContent = answered;
-
-                if (score < 0) {
-                    scoreDisplay.innerHTML = '<span class="score-negative">' + score.toFixed(2) + '</span>';
-                } else {
-                    scoreDisplay.innerHTML = '<span class="score-positive">' + score.toFixed(2) + '</span>';
-                }
-
-                progressFill.style.width = pct + '%';
-                progressText.textContent = pct + ' %';
-
-                var notAnswered = total - answered;
-                detailStats.textContent = 'Bonnes:' + correct + ' | Mauvaises:' + wrong + ' | NR:' + notAnswered;
-
-                var level = 'Débutant';
-                if (score > 100) level = 'Excellent';
-                else if (score > 60) level = 'Avancé';
-                else if (score > 30) level = 'Intermédiaire';
-                levelEstimate.textContent = level;
-
-                checkMilestone(answered);
-            }
-
-            function updateSummaryStats() {
-                var correct = 0,
-                    wrong = 0,
-                    answered = 0;
-                for (var i = 0; i < answers.length; i++) {
-                    if (answers[i] === 1) { correct++;
-                        answered++; } else if (answers[i] === -1) { wrong++;
-                        answered++; }
-                }
-                var total = questions.length;
-                var score = correct * 0.75 - wrong * 0.25;
-                var pct = Math.round((answered / total) * 100);
-
-                sumCorrect.textContent = correct;
-                sumWrong.textContent = wrong;
-                sumAnswered.textContent = answered + ' / ' + total;
-                sumScore.textContent = score.toFixed(2);
-                sumPct.textContent = pct + '%';
-
-                var level = 'Débutant';
-                if (score > 100) level = 'Excellent';
-                else if (score > 60) level = 'Avancé';
-                else if (score > 30) level = 'Intermédiaire';
-                sumLevel.textContent = level;
-            }
-
-            // === ÉVÉNEMENTS ===
-            submitBtn.addEventListener('click', function() {
-                var q = questions[currentIndex];
-                if (answers[currentIndex] !== null) return;
-                if (selectedOption === null) {
-                    lastAction.textContent = '⚠️ Veuillez sélectionner une réponse.';
-                    return;
-                }
-                var isCorrect = (selectedOption === q.correct);
-                var value = isCorrect ? 1 : -1;
-                var selectedIdx = selectedOption;
-                answers[currentIndex] = value;
-                selectedOption = null;
-                renderQuestion();
-                showFeedback(value, q);
-                if (!isCorrect) {
-                    document.querySelectorAll('.opt').forEach(function(el) {
-                        if (parseInt(el.getAttribute('data-idx')) === selectedIdx) el.classList.add('wrong');
-                    });
-                }
-                lastAction.textContent = isCorrect ? '✔ Bonne réponse (+0.75)' : '✘ Mauvaise (-0.25)';
-                updateStats();
-                updateSummaryStats();
-            });
-
-            prevBtn.addEventListener('click', function() {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    selectedOption = null;
-                    renderQuestion();
-                    lastAction.textContent = '← Précédent';
-                }
-            });
-
-            nextBtn.addEventListener('click', function() {
-                if (currentIndex < questions.length - 1) {
-                    currentIndex++;
-                    selectedOption = null;
-                    renderQuestion();
-                    lastAction.textContent = '→ Suivant';
-                }
-            });
-
-            resetBtn.addEventListener('click', function() {
-                if (confirm('Réinitialiser toutes les réponses ?')) {
-                    answers = new Array(questions.length).fill(null);
-                    selectedOption = null;
-                    currentIndex = 0;
-                    lastMilestone = 0;
-                    milestoneDiv.style.display = 'none';
-                    renderQuestion();
-                    updateStats();
-                    updateSummaryStats();
-                    lastAction.textContent = '⟳ Réinitialisé';
-                }
-            });
-
-            stopBtn.addEventListener('click', function() {
-                lastAction.textContent = '⏹ Test arrêté. Résultat : ' + document.getElementById('scoreDisplay').textContent;
-                var total = questions.length;
-                var answered = 0;
-                for (var i = 0; i < answers.length; i++) {
-                    if (answers[i] !== null) answered++;
-                }
-                var pct = Math.round((answered / total) * 100);
-                alert('📊 Test arrêté !\n' +
-                    '✅ Répondues: ' + answered + '/' + total + ' (' + pct + '%)\n' +
-                    '📊 Score: ' + document.getElementById('scoreDisplay').textContent + '\n' +
-                    '🏆 Niveau: ' + document.getElementById('levelEstimate').textContent);
-            });
-
-            resultBtn.addEventListener('click', function() {
-                var correct = parseInt(document.getElementById('correctCount').textContent);
-                var wrong = parseInt(document.getElementById('wrongCount').textContent);
-                var total = questions.length;
-                var answered = correct + wrong;
-                var pct = Math.round((answered / total) * 100);
-                var score = parseFloat(document.getElementById('scoreDisplay').textContent);
-                var level = document.getElementById('levelEstimate').textContent;
-                alert('📊 RÉSULTAT FINAL\n' +
-                    '✅ Bonnes: ' + correct + '\n' +
-                    '❌ Mauvaises: ' + wrong + '\n' +
-                    '⏳ Répondues: ' + answered + '/' + total + ' (' + pct + '%)\n' +
-                    '📊 Score: ' + score.toFixed(2) + '\n' +
-                    '🏆 Niveau: ' + level);
-            });
-
-            // Mode QCM / Résumé
-            modeQcm.addEventListener('click', function() {
-                modeQcm.classList.add('active');
-                modeResume.classList.remove('active');
-                qcmSection.style.display = 'block';
-                resumeSection.style.display = 'none';
-                lastAction.textContent = '📝 Mode QCM';
-            });
-
-            modeResume.addEventListener('click', function() {
-                modeResume.classList.add('active');
-                modeQcm.classList.remove('active');
-                qcmSection.style.display = 'none';
-                resumeSection.style.display = 'block';
-                updateSummaryStats();
-                lastAction.textContent = '📖 Mode Résumé';
-            });
-
-            // === LANCEMENT ===
-            renderQuestion();
-            updateStats();
-            updateSummaryStats();
-            lastAction.textContent = 'Bienvenue ! Répondez aux questions.';
-        })();
-    </script>
 </body>
 </html>
