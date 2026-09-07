@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -377,7 +376,7 @@
 
     <h1 id="mainTitle">📘 Fiscalité Mauritanie 2025</h1>
     <div class="subhead" id="subhead">700+ QCM – Code général des impôts, applications, cas pratiques &amp; culture générale</div>
-    <div class="stats" id="statsLabel">📌 700+ questions · Mélange des 3 sources · réponses incluses</div>
+    <div class="stats" id="statsLabel">📌 <span id="questionCount">0</span> questions · Mélange des 3 sources · réponses incluses</div>
 
     <!-- ============================================ -->
     <!-- RÉSUMÉ FISCAL MAURITANIE (fiche maître)      -->
@@ -488,7 +487,7 @@
             fr: {
                 title: "📘 Fiscalité Mauritanie 2025",
                 subhead: "700+ QCM – Code général des impôts, applications, cas pratiques & culture générale",
-                stats: "📌 700+ questions · Mélange des 3 sources · réponses incluses",
+                stats: "📌 {count} questions · Mélange des 3 sources · réponses incluses",
                 resumeTitle: "📋 Résumé fiscal – Mauritanie 2025",
                 resumeSub: "seuils, taux, formules",
                 toggleHide: "▼ masquer",
@@ -513,7 +512,7 @@
             ar: {
                 title: "📘 الضرائب الموريتانية 2025",
                 subhead: "700+ سؤال اختيار من متعدد – مدونة الضرائب العامة، تطبيقات، حالات عملية وثقافة عامة",
-                stats: "📌 700+ سؤال · مزيج من 3 مصادر · الإجابات مشمولة",
+                stats: "📌 {count} سؤال · مزيج من 3 مصادر · الإجابات مشمولة",
                 resumeTitle: "📋 ملخص ضريبي – موريتانيا 2025",
                 resumeSub: "الحدود، النسب، الصيغ",
                 toggleHide: "▼ إخفاء",
@@ -663,7 +662,7 @@
             const variants = [];
             const usedTexts = new Set(qBank.map(q => q.question.trim().toLowerCase()));
             let attempts = 0;
-            while (variants.length < count && attempts < 10000) {
+            while (variants.length < count && attempts < 20000) {
                 attempts++;
                 const base = baseQuestions[Math.floor(Math.random() * baseQuestions.length)];
                 if (!base) continue;
@@ -717,17 +716,23 @@
             generic.forEach(q => addUnique(q));
         }
 
+        // Limiter à 800 questions maximum
         if (qBank.length > 800) qBank = qBank.slice(0, 800);
 
         // ============================================================
         // 3. AFFICHAGE DES QUESTIONS
         // ============================================================
         const container = document.getElementById('qcmContainer');
+        const questionCountSpan = document.getElementById('questionCount');
 
         function renderQuestions() {
             container.innerHTML = '';
             const lang = document.documentElement.lang === 'ar' ? 'ar' : 'fr';
             const cats = translations[lang].categories;
+            
+            // Mettre à jour le compteur
+            questionCountSpan.textContent = qBank.length;
+            
             qBank.forEach((q, index) => {
                 const num = (index + 1).toString().padStart(3, '0');
                 const div = document.createElement('div');
@@ -770,7 +775,9 @@
 
             document.getElementById('mainTitle').textContent = t.title;
             document.getElementById('subhead').textContent = t.subhead;
-            document.getElementById('statsLabel').textContent = t.stats;
+            // Mettre à jour les stats avec le compteur
+            const statsText = t.stats.replace('{count}', qBank.length);
+            document.getElementById('statsLabel').innerHTML = '📌 ' + statsText;
             document.getElementById('resumeTitle').textContent = t.resumeTitle;
             document.getElementById('resumeSub').textContent = t.resumeSub;
             document.getElementById('footerNote').textContent = t.footer;
@@ -842,4 +849,3 @@
 </script>
 </body>
 </html>
-```
