@@ -1,1176 +1,1512 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ملخص النظام الضريبي الموريتاني 2025</title>
-    <style>
-        :root {
-            --primary-color: #1b4d3e;
-            --secondary-color: #c5a059;
-            --accent-color: #d9534f;
-            --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-color: #212529;
-            --border-color: #dee2e6;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.8;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        header {
-            text-align: center;
-            border-bottom: 3px solid var(--primary-color);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            font-size: 2.2rem;
-        }
-
-        .subtitle {
-            background-color: var(--secondary-color);
-            color: #fff;
-            padding: 5px 15px;
-            border-radius: 20px;
-            display: inline-block;
-            font-weight: bold;
-            font-size: 0.95rem;
-        }
-
-        .source-info {
-            margin-top: 10px;
-            font-size: 0.85rem;
-            color: #6c757d;
-        }
-
-        h2 {
-            color: var(--primary-color);
-            border-right: 5px solid var(--secondary-color);
-            padding-right: 12px;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-
-        h3 {
-            color: #2c3e50;
-            margin-top: 20px;
-            font-size: 1.2rem;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 0.95rem;
-        }
-
-        th, td {
-            border: 1px solid var(--border-color);
-            padding: 12px 15px;
-            text-align: right;
-        }
-
-        th {
-            background-color: var(--primary-color);
-            color: white;
-            white-space: nowrap;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-
-        .trap-box {
-            background-color: #fff3cd;
-            border-right: 5px solid #ffc107;
-            padding: 15px 20px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-
-        .trap-box strong {
-            color: #856404;
-        }
-
-        .example-box {
-            background-color: #e8f4f8;
-            border-right: 5px solid #17a2b8;
-            padding: 15px 20px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-
-        .example-box strong {
-            color: #0c5460;
-        }
-
-        .golden-table th {
-            background-color: var(--secondary-color);
-        }
-
-        .qcm-item {
-            background: #fff;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-
-        .qcm-question {
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .qcm-answer {
-            background-color: #d4edda;
-            color: #155724;
-            padding: 10px 15px;
-            border-radius: 5px;
-            margin-top: 10px;
-            font-size: 0.9rem;
-        }
-
-        .highlight {
-            background-color: #ffeba1;
-            padding: 2px 5px;
-            border-radius: 3px;
-        }
-
-        ul, ol {
-            padding-right: 20px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        @media print {
-            body { background: #fff; padding: 0; }
-            .container { max-width: none; box-shadow: none; border-radius: 0; padding: 20px; }
-            .qcm-item, .example-box, .trap-box { break-inside: avoid; }
-            table { break-inside: auto; }
-            tr { break-inside: avoid; }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-            table {
-                display: block;
-                overflow-x: auto;
-            }
-        }
-    </style>
+<title>QCM مفتشي ومراقبي الضرائب - موريتانيا</title>
 
 <style>
-@media print {
-  .print-header, .print-footer { position: fixed; left: 0; right: 0; text-align: center; direction: rtl; font-size: 11px; font-weight: 700; }
-  .print-header { top: 8px; }
-  .print-footer { bottom: 8px; }
-  body { padding-top: 45px; padding-bottom: 45px; }
+:root{
+  --green:#063b2b;
+  --green2:#0b5d43;
+  --yellow:#f5c400;
+  --yellow2:#ffe36e;
+  --white:#ffffff;
+  --gray:#f3f5f4;
+  --dark:#18201d;
+  --red:#c62828;
+  --success:#16834b;
+  --border:#d8dfdc;
 }
-.print-header, .print-footer { direction: rtl; text-align: center; font-family: Arial, sans-serif; }
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,Tahoma,sans-serif;
+  background:#eef2ef;
+  color:var(--dark);
+}
+
+header{
+  background:linear-gradient(135deg,var(--green),#021f17);
+  color:white;
+  padding:18px;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 3px 12px #0003;
+}
+
+.header-inner{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:bold;
+  color:var(--yellow);
+}
+
+.subtitle{
+  font-size:13px;
+  margin-top:5px;
+}
+
+.timer{
+  background:#fff;
+  color:#111;
+  border:3px solid var(--yellow);
+  padding:10px 18px;
+  border-radius:12px;
+  font-size:22px;
+  font-weight:bold;
+  min-width:125px;
+  text-align:center;
+}
+
+.timer.warning{
+  color:#b71c1c;
+  animation:blink 1s infinite;
+}
+
+@keyframes blink{
+  50%{opacity:.5}
+}
+
+.container{
+  max-width:1100px;
+  margin:20px auto;
+  padding:0 15px;
+}
+
+.panel{
+  background:white;
+  border-radius:16px;
+  padding:20px;
+  margin-bottom:18px;
+  box-shadow:0 3px 12px #0000000c;
+}
+
+.exam-info{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
+
+.info{
+  background:var(--gray);
+  padding:13px;
+  border-radius:10px;
+  text-align:center;
+}
+
+.info strong{
+  display:block;
+  font-size:19px;
+  color:var(--green);
+}
+
+.progress-wrap{
+  margin-top:18px;
+}
+
+.progress{
+  height:14px;
+  background:#dfe5e2;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.progress-bar{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,var(--green),var(--yellow));
+  transition:.3s;
+}
+
+.question-card{
+  border:2px solid var(--border);
+  border-radius:15px;
+  padding:20px;
+  margin-bottom:20px;
+  background:#fff;
+}
+
+.question-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:15px;
+}
+
+.question-number{
+  background:var(--green);
+  color:white;
+  padding:7px 12px;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+.difficulty{
+  padding:6px 10px;
+  border-radius:8px;
+  background:#fff5c2;
+  color:#735d00;
+  font-size:12px;
+}
+
+.question{
+  font-size:18px;
+  font-weight:bold;
+  line-height:1.8;
+  margin-bottom:16px;
+}
+
+.options{
+  display:grid;
+  gap:10px;
+}
+
+.option{
+  border:2px solid var(--border);
+  border-radius:11px;
+  padding:13px;
+  cursor:pointer;
+  transition:.2s;
+  background:white;
+}
+
+.option:hover{
+  border-color:var(--green2);
+  background:#f4faf7;
+}
+
+.option.selected{
+  border-color:var(--yellow);
+  background:#fff9d8;
+}
+
+.option.correct{
+  border-color:var(--success);
+  background:#e5f6ed;
+}
+
+.option.wrong{
+  border-color:var(--red);
+  background:#fdeaea;
+}
+
+.option input{
+  margin-left:8px;
+  transform:scale(1.2);
+}
+
+.explanation{
+  display:none;
+  margin-top:15px;
+  padding:15px;
+  border-right:5px solid var(--yellow);
+  background:#fffbea;
+  border-radius:8px;
+  line-height:1.8;
+}
+
+.explanation.show{
+  display:block;
+}
+
+.controls{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:25px 0;
+}
+
+button{
+  border:0;
+  border-radius:10px;
+  padding:13px 20px;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.btn-main{
+  background:var(--green);
+  color:white;
+}
+
+.btn-yellow{
+  background:var(--yellow);
+  color:#171717;
+}
+
+.btn-danger{
+  background:var(--red);
+  color:white;
+}
+
+button:hover{
+  opacity:.9;
+  transform:translateY(-1px);
+}
+
+.part-title{
+  color:var(--green);
+  border-right:6px solid var(--yellow);
+  padding-right:12px;
+}
+
+.result{
+  display:none;
+}
+
+.result.show{
+  display:block;
+}
+
+.result-score{
+  text-align:center;
+  font-size:40px;
+  font-weight:bold;
+  color:var(--green);
+}
+
+.result-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin-top:20px;
+}
+
+.result-box{
+  padding:15px;
+  background:var(--gray);
+  border-radius:10px;
+  text-align:center;
+}
+
+.result-box strong{
+  display:block;
+  font-size:24px;
+}
+
+.good{color:var(--success)}
+.bad{color:var(--red)}
+.yellow{color:#a38300}
+
+.hidden{
+  display:none!important;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:#777;
+}
+
+@media(max-width:700px){
+  .header-inner{
+    flex-direction:column;
+  }
+
+  .exam-info{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .result-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .question{
+    font-size:16px;
+  }
+}
 </style>
 </head>
+
 <body>
-<div class="print-header">إعداد: يحيى طالب عبد الله<br>للتواصل عبر واتساب: 30545727</div>
-<div class="print-footer">إعداد: يحيى طالب عبد الله<br>للتواصل عبر واتساب: 30545727</div>
+
+<header>
+  <div class="header-inner">
+
+    <div>
+      <div class="logo">🇲🇷 QCM IMPÔTS MAURITANIE</div>
+      <div class="subtitle">
+        امتحان مفتشي ومراقبي الضرائب — تدريب احترافي
+      </div>
+    </div>
+
+    <div id="timer" class="timer">
+      45:00
+    </div>
+
+  </div>
+</header>
 
 
 <div class="container">
 
-    <header>
-        <h1>📘 ملخص شامل — النظام الضريبي الموريتاني 2025</h1>
-        <span class="subtitle">خاص بالتحضير لمسابقة مفتشي الضرائب — أسئلة QCM</span>
-        <div class="source-info"> </div>
-    </header>
+  <div class="panel">
 
-    <section>
-        <h2>🗂️ خريطة النظام الضريبي الموريتاني (نظرة عامة)</h2>
-        <p>النظام الجبائي الموريتاني الحالي أُسس بموجب القانون رقم 2019-018 الصادر بتاريخ 29 أبريل 2019، ودخل حيز التنفيذ في 01 يناير 2020 (المدونة العامة للضرائب — CGI).</p>
-        <p><strong>أهم إصلاح:</strong> استبدال ضرائب قديمة (BIC، BNC، IMF) بـ:</p>
-        <ul>
-            <li><strong>ضريبة الشركات (IS / Impôt sur les Sociétés)</strong> — للأشخاص المعنويين</li>
-            <li><strong>ضريبة الأرباح التجارية للأشخاص الطبيعيين (IBAPP)</strong></li>
-        </ul>
+    <h2>امتحان مفتشي ومراقبي الضرائب</h2>
 
-        <h3>الأعمدة الأربعة لأي نظام جبائي (احفظها جيداً — فخ كلاسيكي في QCM):</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>المصطلح الفرنسي</th>
-                    <th>المعنى بالعربية</th>
-                    <th>الشرح</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Fait générateur</td>
-                    <td>الواقعة المنشئة</td>
-                    <td>الحدث الذي يولّد الضريبة</td>
-                </tr>
-                <tr>
-                    <td>Exigibilité</td>
-                    <td>الاستحقاق</td>
-                    <td>اللحظة التي تصبح فيها الضريبة واجبة الدفع للدولة</td>
-                </tr>
-                <tr>
-                    <td>Déclaration</td>
-                    <td>التصريح</td>
-                    <td>تبليغ الإدارة الضريبية</td>
-                </tr>
-                <tr>
-                    <td>Paiement</td>
-                    <td>الدفع</td>
-                    <td>تحويل المبلغ فعلياً للخزينة</td>
-                </tr>
-            </tbody>
-        </table>
+    <p>
+      اختر الإجابة أو الإجابات الصحيحة. قد يحتوي السؤال على إجابة صحيحة واحدة
+      أو إجابتين، دون إظهار ذلك للمترشح.
+    </p>
 
-        <div class="trap-box">
-            ⚠️ <strong>فخ شائع:</strong> السؤال قد يخلط بين "الفعل المُنشئ" و"الاستحقاق" — تذكر أن الواقعة المنشئة تسبق الاستحقاق منطقياً، وقد لا تتزامنان.
-        </div>
-    </section>
+    <div class="exam-info">
 
-    <section>
-        <h2>1️⃣ ضريبة الشركات (IS — Corporate Income Tax)</h2>
-        <h3>النطاق</h3>
-        <p>تخضع لها أرباح الأشخاص المعنويين (شركات المساهمة، ش.م.م، شركات التضامن، شركات التوصية، الاتحادات الاقتصادية...) — المواد 1-4 من CGI.</p>
+      <div class="info">
+        <strong id="totalQuestions">300</strong>
+        الأسئلة
+      </div>
 
-        <h3>المعدل</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>الحالة</th>
-                    <th>النسبة</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>المعدل العادي</td>
-                    <td>25% من الربح الخاضع للضريبة</td>
-                </tr>
-                <tr>
-                    <td>الحد الأدنى البديل</td>
-                    <td>2% من رقم الأعمال (يُطبَّق إن كان أعلى من 25% من الربح)</td>
-                </tr>
-                <tr>
-                    <td>الحد الأدنى المطلق</td>
-                    <td>100,000 MRU (للخاضعين للنظام الحقيقي)</td>
-                </tr>
-            </tbody>
-        </table>
-        <p>📌 <strong>قاعدة الفهم:</strong> تدفع الشركة الأكبر بين (25% من الربح) و(2% من رقم الأعمال)، وبحد أدنى مطلق 100,000 أوقية.</p>
+      <div class="info">
+        <strong>5</strong>
+        أجزاء
+      </div>
 
-        <div class="example-box">
-            <strong>مثال حسابي:</strong><br>
-            شركة ربحها الخاضع للضريبة = 800,000 MRU، ورقم أعمالها = 50,000,000 MRU.<br>
-            • 25% × 800,000 = 200,000 MRU<br>
-            • 2% × 50,000,000 = 1,000,000 MRU<br>
-            ➡️ <strong>تُطبَّق النسبة الأعلى = 1,000,000 MRU</strong> (لأنها أكبر من 200,000 ومن الحد الأدنى 100,000).
-        </div>
-    </section>
+      <div class="info">
+        <strong>60</strong>
+        سؤال / جزء
+      </div>
 
-    <section>
-        <h2>2️⃣ ضريبة الأرباح التجارية للأشخاص الطبيعيين (IBAPP)</h2>
-        <p>تخص الأشخاص الطبيعيين (والمعنويين غير الخاضعين لـ IS) الذين يمارسون نشاطاً ربحياً باسمهم الخاص. تُقسَّم حسب رقم الأعمال إلى 3 أنظمة:</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>النظام</th>
-                    <th>رقم الأعمال (بدون ضريبة)</th>
-                    <th>نسبة الضريبة</th>
-                    <th>الحد الأدنى</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>النظام الحقيقي العادي</td>
-                    <td>&gt; 5 مليون MRU</td>
-                    <td>30% من الربح أو 2.5% من رقم الأعمال (الأكبر)</td>
-                    <td>125,000 MRU</td>
-                </tr>
-                <tr>
-                    <td>النظام الحقيقي الوسيط</td>
-                    <td>بين 3 و5 مليون MRU</td>
-                    <td>30% من الربح أو 2.5% من رقم الأعمال (الأكبر)</td>
-                    <td>75,000 MRU</td>
-                </tr>
-                <tr>
-                    <td>النظام الجزافي</td>
-                    <td>أقل من 3 مليون MRU</td>
-                    <td>3% من رقم الأعمال المصرّح به</td>
-                    <td>—</td>
-                </tr>
-            </tbody>
-        </table>
+      <div class="info">
+        <strong>45</strong>
+        دقيقة
+      </div>
 
-        <div class="example-box">
-            <strong>مثال حسابي:</strong><br>
-            تاجر رقم أعماله السنوي = 2,000,000 MRU (نظام جزافي):<br>
-            ➡️ الضريبة = 2,000,000 × 3% = <strong>60,000 MRU</strong>
-        </div>
-
-        <div class="trap-box">
-            ⚠️ <strong>فخ:</strong> النظام الجزافي لا يُطبَّق على الربح بل على رقم الأعمال مباشرة (3%)، بخلاف النظامين الحقيقيين.
-        </div>
-    </section>
-
-    <section>
-        <h2>3️⃣ الضريبة على الرواتب والأجور (ITS / PIT)</h2>
-        <p>ضريبة تُقتطع من المصدر حسب سلّم تصاعدي شهري:</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>الشريحة الشهرية (أوقية)</th>
-                    <th>النسبة</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>حتى 9,000 MRU</td>
-                    <td>15%</td>
-                </tr>
-                <tr>
-                    <td>من 9,000 إلى 21,000 MRU</td>
-                    <td>25%</td>
-                </tr>
-                <tr>
-                    <td>أكثر من 21,000 MRU</td>
-                    <td>40%</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="example-box">
-            <strong>مثال حسابي (سلّم تصاعدي — الأكثر شيوعاً في QCM):</strong><br>
-            موظف راتبه الخاضع = 30,000 MRU/شهر:<br>
-            • الشريحة الأولى: 9,000 × 15% = 1,350<br>
-            • الشريحة الثانية: (21,000 - 9,000) × 25% = 12,000 × 25% = 3,000<br>
-            • الشريحة الثالثة: (30,000 - 21,000) × 40% = 9,000 × 40% = 3,600<br>
-            ➡️ <strong>إجمالي الضريبة = 1,350 + 3,000 + 3,600 = 7,950 MRU</strong>
-        </div>
-
-        <div class="trap-box">
-            ⚠️ <strong>فخ كلاسيكي جداً:</strong> لا تُطبَّق نسبة الشريحة الأعلى (40%) على كامل الراتب! يجب تطبيق السلّم التصاعدي شريحة تلو شريحة.
-        </div>
-    </section>
-
-    <section>
-        <h2>4️⃣ الضريبة على القيمة المضافة (TVA) — الأهم في المسابقة</h2>
-        
-        <h3>أ) النطاق (المادة 209 من CGI)</h3>
-        <p>تخضع للـTVA: الواردات، توريد السلع، تقديم الخدمات — المنجزة في التراب الموريتاني مقابل عوض من طرف خاضع لضريبة BIC أو BNC.</p>
-
-        <h3>ب) الواقعة المنشئة (Fait générateur) — حسب نوع العملية</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>نوع العملية</th>
-                    <th>الواقعة المنشئة</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>الاستيراد</td>
-                    <td>عبور الحاجز الجمركي</td>
-                </tr>
-                <tr>
-                    <td>البيع</td>
-                    <td>التسليم (Livraison)</td>
-                </tr>
-                <tr>
-                    <td>الأشغال العقارية</td>
-                    <td>تنفيذ الأشغال</td>
-                </tr>
-                <tr>
-                    <td>الخدمات</td>
-                    <td>أداء الخدمة</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>ج) المعدلات</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>النوع</th>
-                    <th>المعدل</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>المعدل العادي</td>
-                    <td>16%</td>
-                </tr>
-                <tr>
-                    <td>الاتصالات الهاتفية</td>
-                    <td>18%</td>
-                </tr>
-                <tr>
-                    <td>الصادرات (سلع وخدمات)</td>
-                    <td>0% (معدل صفري)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="trap-box">
-            ⚠️ <strong>فخ:</strong> المعدل الصفري (0%) ≠ إعفاء (Exonération). المعدل الصفري يسمح باسترداد TVA المدفوعة على المدخلات، أما الإعفاء الكامل فلا يسمح بذلك عادة — فرق مفاهيمي دقيق يُختبر كثيراً.
-        </div>
-    </section>
-
-    <section>
-        <h2>5️⃣ TVA للشركات غير المقيمة ("TVA pour compte") — تمثيل ضريبي إلزامي</h2>
-        <h3>القاعدة (المادة 221 من CGI)</h3>
-        <p>أي شركة أجنبية غير مقيمة/غير منشأة في موريتانيا لكنها تنجز عمليات خاضعة لـTVA في موريتانيا، يجب أن تُوكّل ممثلاً ضريبياً مقيماً في موريتانيا.</p>
-
-        <h3>شروط صحة التوكيل (Mandat)</h3>
-        <p>يجب أن يتضمن عقد التوكيل:</p>
-        <ol>
-            <li>الهوية الدقيقة للشركة الأجنبية (الاسم، العنوان، رأس المال، النشاط)</li>
-            <li>الحالة المدنية للمسير</li>
-            <li>هوية الممثل الضريبي في موريتانيا (الاسم، العنوان، الرقم الضريبي)</li>
-            <li>نطاق التوكيل: إعداد التصاريح، التصريح، دفع TVA شهرياً، التواصل مع الإدارة</li>
-            <li>تاريخ بداية التوكيل (يبقى سارياً حتى الإبلاغ بانتهائه)</li>
-        </ol>
-
-        <h3>كيفية التصريح</h3>
-        <ul>
-            <li>تصريح TVA شهري خاص ومستقل عن تصريح الممثل نفسه</li>
-            <li>يحمل عبارة "لحساب" (Pour le compte de)</li>
-            <li>يحتفظ الممثل بنسخ من الفواتير تحت تصرف الإدارة</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>6️⃣ ⭐ غرامات وعقوبات TVA — أهم جزء في المسابقة ⭐</h2>
-        <p><em>ملاحظة مهمة: النص الرسمي (المادة L.131 من CGI) ينص أن المُكلَّف بدفع الغرامة عند عدم تصريح الزبون الأجنبي هو الزبون المستفيد من الخدمة المقيم في موريتانيا، وليس بالضرورة المُمثِّل وحده.</em></p>
-
-        <h3>📊 الجدول الذهبي (احفظه حرفياً)</h3>
-        <table class="golden-table">
-            <thead>
-                <tr>
-                    <th>الحالة</th>
-                    <th>الغرامة/العقوبة</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>تأخير التصريح أقل من شهرين (&lt; 2 mois)</td>
-                    <td>10% من الحقوق المستحقة عادة</td>
-                </tr>
-                <tr>
-                    <td>تأخير التصريح أكثر من شهرين (&gt; 2 mois)</td>
-                    <td>25% من الحقوق المستحقة عادة</td>
-                </tr>
-                <tr>
-                    <td>تصريح TVA صفري (Néant) أو دائن (Crédit) ومتأخر</td>
-                    <td>2,000 MRU لكل شهر تأخير</td>
-                </tr>
-                <tr>
-                    <td>نفس الحالة أعلاه، لكن رقم أعمال السنة السابقة &gt; 30,000,000 MRU</td>
-                    <td>10,000 MRU لكل شهر تأخير</td>
-                </tr>
-                <tr>
-                    <td>إغفال (Omission) أو عدم دقة (Inexactitude) في التصريح</td>
-                    <td>40% من الحقوق المعرضة للخطر (droits en risque)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>أمثلة محلولة لكل حالة</h3>
-        <div class="example-box">
-            <strong>مثال 1 — تأخير &lt; شهرين:</strong><br>
-            TVA مستحقة = 1,000,000 MRU، التأخير = 1 شهر<br>
-            ➡️ الغرامة = 1,000,000 × 10% = 100,000 MRU | المجموع = 1,100,000 MRU
-        </div>
-
-        <div class="example-box">
-            <strong>مثال 2 — تأخير &gt; شهرين:</strong><br>
-            TVA مستحقة = 1,000,000 MRU، التأخير = 3 أشهر<br>
-            ➡️ الغرامة = 1,000,000 × 25% = 250,000 MRU | المجموع = 1,250,000 MRU
-        </div>
-
-        <div class="example-box">
-            <strong>مثال 3 — تصريح صفري متأخر (شركة عادية):</strong><br>
-            تصريح = 0 MRU، التأخير = 4 أشهر<br>
-            ➡️ الغرامة = 4 × 2,000 = 8,000 MRU (وليس 10% أو 25%!)
-        </div>
-
-        <div class="example-box">
-            <strong>مثال 4 — تصريح دائن (Crédit) متأخر:</strong><br>
-            رصيد TVA دائن = 300,000 MRU، التأخير = 3 أشهر<br>
-            ➡️ الغرامة = 3 × 2,000 = 6,000 MRU
-        </div>
-
-        <div class="example-box">
-            <strong>مثال 5 — شركة كبيرة (CA &gt; 30 مليون) بتصريح صفري متأخر:</strong><br>
-            CA السنة السابقة = 40,000,000 MRU، التأخير = 3 أشهر<br>
-            ➡️ الغرامة = 3 × 10,000 = 30,000 MRU
-        </div>
-
-        <div class="example-box">
-            <strong>مثال 6 — إغفال/خطأ في التصريح:</strong><br>
-            الحقوق المعرضة للخطر بسبب عملية أُغفلت = 500,000 MRU<br>
-            ➡️ الغرامة = 500,000 × 40% = 200,000 MRU<br>
-            ⚠️ تُطبَّق 40% على "الحقوق المعرضة للخطر" فقط، وليس على كامل رقم الأعمال أو كامل TVA المصرَّح بها.
-        </div>
-
-        <div class="trap-box">
-            ⚠️ <strong>أهم 3 فخاخ في هذا الموضوع:</strong>
-            <ol>
-                <li>لا تخلط بين "تصريح صفري/دائن" و"تصريح إيجابي عادي" — الأول غرامة ثابتة بالشهر (2,000 أو 10,000)، والثاني غرامة نسبية (10% أو 25%).</li>
-                <li>عتبة 30 مليون MRU تخص رقم أعمال السنة السابقة، لا السنة الجارية.</li>
-                <li>غرامة الإغفال/الخطأ (40%) تُحسب على "droits en risque" فقط — أي الفارق الذي كان يمكن أن يضيع على الخزينة، لا على كامل الوعاء الضريبي.</li>
-            </ol>
-        </div>
-    </section>
-
-    <section>
-        <h2>7️⃣ الضرائب والرسوم الأخرى (خلاصة سريعة)</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>الضريبة/الرسم</th>
-                    <th>المعدل/الوصف</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>ضريبة الدخل من رؤوس الأموال المنقولة (IRCM)</td>
-                    <td>10% (أرباح الأسهم، فوائد القروض...)</td>
-                </tr>
-                <tr>
-                    <td>ضريبة الدخل العقاري</td>
-                    <td>10%</td>
-                </tr>
-                <tr>
-                    <td>رسم التمهين (التكوين المهني)</td>
-                    <td>0.60% من مجموع الأجور المدفوعة سنوياً</td>
-                </tr>
-                <tr>
-                    <td>الرخصة التجارية (Patente/License)</td>
-                    <td>من 30,000 إلى 500,000 MRU حسب السلم المعمول به.</td>
-                </tr>
-                <tr>
-                    <td>الضريبة على المعاملات المالية (TOF)</td>
-                    <td>14%</td>
-                </tr>
-                <tr>
-                    <td>الضريبة الخاصة على التأمين</td>
-                    <td>0.1% - 5% - 10% (حسب نوع التأمين)</td>
-                </tr>
-                <tr>
-                    <td>الاقتطاع على الخدمات المقدمة من غير المقيمين</td>
-                    <td>15%</td>
-                </tr>
-                <tr>
-                    <td>الاقتطاع على الخدمات المقدمة من المقيمين (المهن الحرة الخاضعة لـIBAPP)</td>
-                    <td>2.5%</td>
-                </tr>
-                <tr>
-                    <td>رسوم التسجيل والطابع</td>
-                    <td>متغيرة حسب نوع العقد</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>حقوق التسجيل النسبية على عقود الشركات (أمثلة)</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>العملية</th>
-                    <th>النسبة</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>نقل ملكية عقار مبني</td>
-                    <td>1% - 2%</td>
-                </tr>
-                <tr>
-                    <td>الإيجارات</td>
-                    <td>3% (على المؤجِّر) + 1% (على المستأجر، قابل للخصم من الإيجار)</td>
-                </tr>
-                <tr>
-                    <td>نقل الحق في الإيجار (الحلول)</td>
-                    <td>15%</td>
-                </tr>
-                <tr>
-                    <td>مبادلة العقارات</td>
-                    <td>5%</td>
-                </tr>
-                <tr>
-                    <td>تأسيس/استمرار الشركة</td>
-                    <td>0%</td>
-                </tr>
-                <tr>
-                    <td>المساهمة/الاندماج</td>
-                    <td>1% - 3%</td>
-                </tr>
-                <tr>
-                    <td>زيادة رأس المال عبر إدماج الاحتياطي</td>
-                    <td>10%</td>
-                </tr>
-                <tr>
-                    <td>بيع الأسهم</td>
-                    <td>2%</td>
-                </tr>
-                <tr>
-                    <td>بيع الأصول التجارية (Fonds de commerce)</td>
-                    <td>10%</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section>
-        <h2>8️⃣ الإجراءات الجبائية والرقابة الضريبية</h2>
-        <h3>نوعا الرقابة</h3>
-        <ul>
-            <li><strong>رقابة مكتبية (Contrôle documentaire):</strong> تعتمد على القوائم المالية المودعة، تبدأ من استلام الملفات المودعة قبل 31 مارس من كل سنة.</li>
-            <li><strong>رقابة ميدانية (Contrôle sur place):</strong> زيارة المفتشين لمقر المكلف، قد تكون عرضية أو شاملة أو مفاجئة.</li>
-        </ul>
-        <p>📌 <strong>مدة التقادم:</strong> 3 سنوات</p>
-
-        <h3>العقوبات الجبائية العامة</h3>
-        <p>التصحيحات (Redressements) تنتج عنها غرامات تتراوح بين 25% و80%.</p>
-
-        <h3>إجراءات التصحيح (خطوات مهمة للحفظ)</h3>
-        <ol>
-            <li><strong>إشعار غياب التصحيح:</strong> إذا لم تجد الإدارة خللاً، يجب أن تُرسل إشعاراً خلال 60 يوماً من آخر تدخل، وإلا اعتُبر غياب التصحيح مكتسباً.</li>
-            <li><strong>إشعار التصحيح:</strong> يجب أن يكون كتابياً، معللاً، ومحدد المبالغ.</li>
-            <li><strong>حق الرد للمكلف:</strong> 15 يوماً من استلام إشعار التصحيح للقبول أو الاعتراض. عدم الرد = قبول ضمني.</li>
-            <li><strong>تأكيد التصحيح:</strong> على الإدارة الرد خلال 60 يوماً من استلام ملاحظات المكلف.</li>
-        </ol>
-
-        <h3>طرق الطعن</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>نوع الطعن</th>
-                    <th>المهلة</th>
-                    <th>ملاحظات</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>الشكوى البسيطة (طلب التخفيف)</td>
-                    <td>3 أشهر من استلام إشعار التحصيل</td>
-                    <td>يجب دفع المبلغ المتنازع عليه أولاً خلال 3 أيام عمل</td>
-                </tr>
-                <tr>
-                    <td>الشكوى مع طلب وقف الدفع</td>
-                    <td>ضمن الشكوى نفسها</td>
-                    <td>يجب دفع غير المتنازع فيه + تقديم ضمانات بقيمة المتنازع فيه</td>
-                </tr>
-                <tr>
-                    <td>الطعن أمام اللجنة المشتركة (Commission paritaire)</td>
-                    <td>3 أيام من استلام إشعار التحصيل</td>
-                    <td>تختص بمنازعات تعادل أو تفوق 30% من رقم الأعمال الخاضع للمراقبة، وتُوقف التحصيل لمدة 45 يوماً</td>
-                </tr>
-                <tr>
-                    <td>الطعن القضائي (الغرفة المدنية)</td>
-                    <td>شهرين من قرار وزير المالية</td>
-                    <td>يجب أن يسبقه طعن إداري وجوباً وإلا بطل الإجراء</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="trap-box">
-            ⚠️ <strong>فخ:</strong> غياب رد الإدارة بعد 3 أشهر = رفض ضمني (Rejet tacite) وليس قبولاً ضمنياً — عكس ما يحدث في حالة عدم رد المكلف (15 يوماً = قبول).
-        </div>
-    </section>
-
-    <section>
-        <h2>9️⃣ نظام الاستثمار الجديد 2025 (القانون 2025-06)</h2>
-        <h3>الأهداف</h3>
-        <p>تشجيع الاستثمارات المباشرة، تعزيز المحتوى المحلي، تنويع الاقتصاد، التنمية المستدامة.</p>
-
-        <h3>الاستثناءات من النظام (لا تخضع لقانون الاستثمار الجديد)</h3>
-        <ul>
-            <li>أنشطة الشراء وإعادة البيع البسيطة</li>
-            <li>الأنشطة البنكية والتأمين وإعادة التأمين</li>
-            <li>التعدين، المحروقات، الهيدروجين الأخضر (لها أنظمة خاصة منفصلة)</li>
-        </ul>
-
-        <h3>3 أنظمة تحفيزية جديدة</h3>
-        <h4>أ) النظام التحفيزي الأساسي (RIB) — فئتان:</h4>
-        <p><strong>1. فئة المؤسسات الصغيرة والمتوسطة (PME):</strong></p>
-        <ul>
-            <li>استثمار بين 2 و30 مليون MRU + 5 مناصب شغل مباشرة على الأقل، خلال 3 سنوات</li>
-            <li><strong>الامتيازات:</strong> رسم جمركي 3%، إعفاء TVA على المعدات، إعفاء TOF، استرداد TVA على المواد الأولية المصدَّرة، ائتمان ضريبي 70% من تكلفة التكوين (سقف 200,000 MRU)</li>
-        </ul>
-        <p><strong>2. الفئة الوسيطة:</strong></p>
-        <ul>
-            <li>استثمار بين 30 و200 مليون MRU + 15 منصب شغل على الأقل</li>
-            <li><strong>الامتيازات:</strong> رسم جمركي 5%، TVA مخفضة إلى 10%، ائتمان تكوين سقفه 400,000 MRU</li>
-        </ul>
-
-        <h4>ب) نظام أقطاب التنمية (RPD)</h4>
-        <ul>
-            <li>خارج نواكشوط، بمرسوم من مجلس الوزراء</li>
-            <li><strong>شرط:</strong> استثمار ≥ 2 مليون MRU + 5 مناصب (أو 15 منصب إذا &gt; 30 مليون)</li>
-            <li><strong>الامتياز الأبرز:</strong> ضريبة شركات مخفضة إلى 15% (بدل 25%)، إعفاء جمركي كامل على المعدات</li>
-        </ul>
-
-        <h4>ج) نظام الاستثمارات الهيكلية (RIS)</h4>
-        <ul>
-            <li>استثمار &gt; 200 مليون MRU + 50 منصب شغل على الأقل (خلال 3 سنوات)</li>
-            <li><strong>الامتيازات:</strong> رسم جمركي 1.5%، TVA 10%، ائتمان تكوين سقفه 800,000 MRU، إهلاك مُعجَّل بنسبة 25% في السنة الأولى للمعدات الجديدة</li>
-        </ul>
-
-        <h3>جدول مقارن سريع</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>النظام</th>
-                    <th>حد الاستثمار الأدنى</th>
-                    <th>مناصب الشغل</th>
-                    <th>رسم جمركي</th>
-                    <th>ملاحظة خاصة</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>RIB - PME</td>
-                    <td>2M - 30M</td>
-                    <td>5</td>
-                    <td>3%</td>
-                    <td>ائتمان تكوين 200,000</td>
-                </tr>
-                <tr>
-                    <td>RIB - وسيط</td>
-                    <td>30M - 200M</td>
-                    <td>15</td>
-                    <td>5%</td>
-                    <td>TVA 10%</td>
-                </tr>
-                <tr>
-                    <td>RPD</td>
-                    <td>≥ 2M (أو 30M)</td>
-                    <td>5 (أو 15)</td>
-                    <td>إعفاء</td>
-                    <td>IS = 15%</td>
-                </tr>
-                <tr>
-                    <td>RIS</td>
-                    <td>&gt; 200M</td>
-                    <td>50</td>
-                    <td>1.5%</td>
-                    <td>إهلاك معجّل 25%</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section>
-        <h2>🔟 الأنظمة القطاعية الخاصة (خارج القانون العام)</h2>
-        
-        <h3>أ) الشركات المنجمية (قانون 2008-011 المعدَّل)</h3>
-        <p><strong>TVA:</strong> صادرات المعادن بمعدل صفري، وقائمة معدات معينة معفاة (بشهادة مشتركة من وزارتي المالية والمناجم).</p>
-        <p><strong>سلع مستثناة من حق الخصم:</strong> السيارات السياحية، أثاث/صيانة السكن، الإيجارات السكنية، تذاكر الطيران، الإطعام والإقامة، الترفيه، الهاتف/الفاكس، الإشهار والهدايا.</p>
-        <p><strong>الرسوم الخاصة:</strong></p>
-        <ul>
-            <li>رسم الحصول على الرخص (بحث، استغلال، محاجر...)</li>
-            <li>الإتاوة السطحية السنوية (Redevance superficiaire) — غير قابلة للخصم من الربح الخاضع للضريبة</li>
-            <li>رسم الاستغلال (Redevance) — يُحسب على سعر بيع المنتج المعدني في آخر مرحلة تحويل، أو على قيمته FOB إن صُدِّر قبل البيع</li>
-        </ul>
-        <p><strong>النظام الجمركي حسب المرحلة:</strong></p>
-        <table>
-            <thead>
-                <tr>
-                    <th>المرحلة</th>
-                    <th>النظام</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>البحث</td>
-                    <td>قبول مؤقت استثنائي (إعفاء كامل مؤقت) للمعدات + إعفاء كامل لقطع الغيار والمدخلات والوقود</td>
-                </tr>
-                <tr>
-                    <td>التركيب/العطلة الضريبية/الإنتاج العادي</td>
-                    <td>قبول مؤقت للمعدات + إعفاء كامل لقطع الغيار والمدخلات + رسم جمركي وحيد 5% على السيارات السياحية</td>
-                </tr>
-            </tbody>
-        </table>
-        <p><em>اتفاقيات خاصة: شركات SNIM وTASIAST وMCM لديها اتفاقيات منجمية خاصة توفر إعفاءات إضافية.</em></p>
-
-        <h3>ب) قطاع النفط والغاز (قانون المحروقات الخام 2010-033)</h3>
-        <p>المقاولون (Contractors) يخضعون لـ:</p>
-        <ul>
-            <li>الإتاوة السطحية (غير قابلة للخصم، وليست تكلفة نفطية مستردة)</li>
-            <li>المساهمة الإدارية (قابلة للخصم، وليست مستردة)</li>
-            <li><strong>TVA:</strong> صادرات المحروقات بمعدل صفري، المشتريات المحلية المرتبطة بالعمليات النفطية بمعدل صفري، الاستيراد بمعدل صفري أو قبول مؤقت</li>
-            <li>ضريبة الشركات، ضريبة الأجور (سقف 35% للمغتربين)</li>
-            <li><strong>الامتيازات:</strong> إعفاء من IRCM، إعفاء من الضرائب على رقم الأعمال، إعفاء من رسم التمهين، الرخصة، رسوم التسجيل والطابع.</li>
-        </ul>
-
-        <h3>ج) النظام المبسط للمقاولين الفرعيين الأجانب (STR) — نفط وغاز</h3>
-        <p><strong>شروط الاستفادة:</strong></p>
-        <ul>
-            <li>شركة ذات جنسية أجنبية</li>
-            <li>حضور مؤقت في موريتانيا لأداء خدمات محددة لصالح المشغلين النفطيين</li>
-            <li>عقد تأجير خدمات مدته أقل من 12 شهراً</li>
-            <li>طلب اعتماد قبل بدء الخدمات</li>
-        </ul>
-        <p><strong>الضرائب المستحقة (فقط اثنتان):</strong></p>
-        <table>
-            <thead>
-                <tr>
-                    <th>الضريبة</th>
-                    <th>طريقة الحساب</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>ضريبة الشركات</td>
-                    <td>16% من رقم الأعمال (ربح جزافي) × 25% (المعدل العادي) = 4% من رقم الأعمال</td>
-                </tr>
-                <tr>
-                    <td>ضريبة الرواتب (ITS)</td>
-                    <td>10% من رقم الأعمال (كتلة أجور جزافية) × 40% (المعدل العادي) = 4% من رقم الأعمال</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="example-box">
-            <strong>مثال حسابي (STR):</strong><br>
-            مقاول فرعي أجنبي رقم أعماله في موريتانيا = 10,000,000 MRU:<br>
-            • ضريبة الشركات = 10,000,000 × 4% = 400,000 MRU<br>
-            • ضريبة الرواتب = 10,000,000 × 4% = 400,000 MRU<br>
-            ➡️ <strong>إجمالي الضريبة = 800,000 MRU (أي 8% فقط من رقم الأعمال)</strong>
-        </div>
-
-        <div class="trap-box">
-            ⚠️ <strong>فخ:</strong> الموظفون المحليون والإداريون يبقون خاضعين للـITS بالنظام العادي (السلّم التصاعدي)، وليس بالمعدل الجزافي.
-        </div>
-    </section>
-
-    <section>
-        <h2>1️⃣1️⃣ حقل الغاز المشترك Grand-Tortue/Ahmeyim (GTA)</h2>
-        <p>اتفاقية تعاون بين موريتانيا والسنغال (فبراير 2018) + ملحق إضافي (ديسمبر 2018) يحدد نظاماً ضريبياً/جمركياً مستقلاً عن الإدارتين الوطنيتين ("نظام جبائي مستقل").</p>
-
-        <h3>الهيكلان الإداريان</h3>
-        <ul>
-            <li><strong>الوحدة المشتركة (Unité mixte):</strong> تدير وتحسب وتحصّل الضرائب من المقاولين الفرعيين</li>
-            <li><strong>اللجنة الجبائية المشتركة بين الدولتين:</strong> تنسيق، إشراف، فض النزاعات</li>
-        </ul>
-
-        <h3>نظاما الضريبة على المقاولين الفرعيين لـGTA</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>النظام</th>
-                    <th>من يخضع له</th>
-                    <th>المعدل</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>النظام الحقيقي</td>
-                    <td>مقاولون بمنشأة دائمة، أو رقم أعمال سنوي مع GTA &gt; 3 مليون دولار</td>
-                    <td>ضريبة شركات 25% من الربح الصافي، بحد أدنى تحصيل = 1.75% من رقم الأعمال</td>
-                </tr>
-                <tr>
-                    <td>النظام الجزافي</td>
-                    <td>مقاولون بدون منشأة دائمة، أو رقم أعمال ≤ 3 مليون دولار</td>
-                    <td>اقتطاع من المصدر: 25% على ربح جزافي (16% من CA) للشركات = 4% من CA، و40% على أجور جزافية (7.5% من CA) = 3% من CA</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="example-box">
-            <strong>مثال حسابي (النظام الجزافي لـGTA):</strong><br>
-            مقاول فرعي رقم أعماله مع GTA = 1,000,000 USD:<br>
-            • ضريبة الشركات المقتطعة = 1,000,000 × 16% × 25% = 40,000 USD (= 4%)<br>
-            • ضريبة الأجور المقتطعة = 1,000,000 × 7.5% × 40% = 30,000 USD (= 3%)<br>
-            📌 <em>المقاولون الفرعيون لـGTA معفَون من كل الضرائب الأخرى (جمركية، TVA، IRVM، IRCM) باستثناء ما ذُكر.</em>
-        </div>
-    </section>
-
-    <section>
-        <h2>1️⃣2️⃣ المنطقة الحرة لنواذيبو 2025 (القانون 2024-030)</h2>
-        <h3>الأنشطة المؤهَّلة الآن (تم تضييقها)</h3>
-        <p>تحويل منتجات الصيد والمناجم فقط.</p>
-
-        <h3>شروط الحصول على الاعتماد</h3>
-        <ul>
-            <li>إنتاج سلع</li>
-            <li>ضمان تصدير كامل الإنتاج (إلا بإذن ببيع حتى 20% محلياً)</li>
-            <li>إنشاء فرع منفصل حسب القانون الموريتاني</li>
-            <li>الحصول على رقم تعريف ضريبي</li>
-        </ul>
-
-        <h3>مراحل الاعتماد</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>المرحلة</th>
-                    <th>المدة/الجهة</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>الاعتماد المؤقت</td>
-                    <td>خلال 30 يوم عمل من الطلب الكامل، بعد فحص أخلاقي للمستفيد الفعلي ومصدر الأموال</td>
-                </tr>
-                <tr>
-                    <td>الاعتماد النهائي ("شهادة شركة مصدِّرة")</td>
-                    <td>مدة أقصاها 15 سنة</td>
-                </tr>
-                <tr>
-                    <td>تمديد الاعتماد</td>
-                    <td>لمدة أقصاها 10 سنوات</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>الامتيازات</h3>
-        <ul>
-            <li>إعفاء جمركي على المعدات والمدخلات</li>
-            <li>إعفاء من الضرائب المحلية من تاريخ الاعتماد المؤقت</li>
-            <li>إعفاء من رسم التمهين</li>
-            <li>رسم سنوي واجب لصالح إدارة المنطقة الحرة = 0.5% من رقم الأعمال</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>1️⃣3️⃣ الهيدروجين الأخضر 2025 (قانون 2024-037)</h2>
-        <h3>الإطار القانوني</h3>
-        <p>يتطلب: اتفاقية إطارية (دراسة جدوى حتى سنتين) ثم اتفاقية شاملة (تمنح حقوقاً حصرية، مدتها الأقصى 35 سنة) قبل رخصة الاستغلال.</p>
-
-        <h3>الضرائب الرئيسية</h3>
-        <ol>
-            <li>إعفاء TVA (مع استثناءات: خدمات لأطراف ثالثة/إقامة/إطعام/سيارات سياحية/إشهار وهدايا)</li>
-            <li>ضريبة الشركات على المشغّلين — حسب "معامل R":
-                <div style="text-align: center; margin: 15px 0; font-weight: bold; background: #e9ecef; padding: 10px; border-radius: 5px;">
-                    R = (الإيرادات - تكاليف التشغيل - الضرائب والرسوم) ÷ الاستثمارات التراكمية (بدون الفوائد المرسملة)
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>قيمة R</th>
-                            <th>معدل الضريبة</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>R ≤ 1</td>
-                            <td>15%</td>
-                        </tr>
-                        <tr>
-                            <td>1 &lt; R ≤ 3</td>
-                            <td>25%</td>
-                        </tr>
-                        <tr>
-                            <td>R &gt; 3</td>
-                            <td>30%</td>
-                        </tr>
-                    </tbody>
-                </table>
-                📌 <em>منطق هذا النظام: كلما زادت ربحية المشروع نسبة إلى الاستثمار (أي زاد R)، ارتفع معدل الضريبة.</em>
-            </li>
-            <li><strong>ضريبة الشركات على المقاولين الفرعيين الحصريين المعتمدين:</strong>
-                <ul>
-                    <li>4% من رقم الأعمال السنوي (للخدمات والتوريدات غير الخاضعة للرسوم الجمركية)</li>
-                    <li>تُدفع على دفعتين: 31 مارس (دفعة أولى) و30 يونيو (دفعة نهائية) من السنة الموالية</li>
-                    <li>هذه الضريبة نهائية وتحل محل كل الضرائب الأخرى ما عدا: ITS، IRCM، رسم التمهين</li>
-                </ul>
-            </li>
-            <li><strong>ضريبة IRCM على الأرباح الموزعة:</strong> تُطبَّق فقط ابتداءً من 1 يناير 2033، بمعدل اقتطاع 4%</li>
-            <li><strong>الاقتطاع على مزودي الخدمات غير المقيمين:</strong> 4% (يُخفَّض إلى 2% لمدة 10 سنوات إذا اتُّخذ قرار الاستثمار النهائي قبل 1 يناير 2033)</li>
-            <li><strong>الرسوم الإدارية على الإنتاج:</strong> إعفاء إذا اتُّخذ قرار الاستثمار قبل 1 يناير 2033</li>
-        </ol>
-
-        <h3>النظام الجمركي</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>العملية</th>
-                    <th>المعدل</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>الصادرات</td>
-                    <td>إعفاء كامل</td>
-                </tr>
-                <tr>
-                    <td>المشتريات المحلية والمستوردة للمشروع</td>
-                    <td>إعفاء TVA</td>
-                </tr>
-                <tr>
-                    <td>استيراد المعدات والمدخلات (مرحلة التطوير/الاستغلال)</td>
-                    <td>رسم جبائي 4% (بدون TVA وبدون رسوم جمركية أخرى)</td>
-                </tr>
-                <tr>
-                    <td>نفس الاستيراد، إذا قرار الاستثمار قبل 2033</td>
-                    <td>يُخفَّض الرسم إلى 2%</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="example-box">
-            <strong>مثال حسابي (مقاول فرعي هيدروجين أخضر):</strong><br>
-            رقم أعمال المقاول الفرعي الحصري = 20,000,000 MRU:<br>
-            ➡️ <strong>ضريبة الشركات = 20,000,000 × 4% = 800,000 MRU</strong><br>
-            تُدفع على دفعتين: 50% في 31 مارس و50% في 30 يونيو من السنة الموالية.
-        </div>
-    </section>
-
-    <section>
-        <h2>1️⃣4️⃣ الحسابات بالعملة الأجنبية في موريتانيا</h2>
-        <h3>القاعدة العامة</h3>
-        <p>حرية تحويل العملة للعمليات الجارية للشركات (القانون 2004-042، المادة 5). يمكن فتح حسابات بالعملة الأجنبية (دولار، يورو...) لدى بنوك معتمدة، للمقيمين وغير المقيمين.</p>
-
-        <h3>استخدامات الحساب بالعملة الأجنبية (حصرية)</h3>
-        <ul>
-            <li>استلام عملة من الخارج</li>
-            <li>أرباح الأسهم وعائدات رأس المال من عمليات التحويل/التصفية</li>
-            <li>صرف شيكات بعملة أجنبية مسحوبة على بنك أجنبي</li>
-            <li>فوائد الحسابات بالعملة الأجنبية</li>
-            <li>سحوبات أوراق نقدية أجنبية لأغراض السفر</li>
-            <li>التسويات المرخصة من البنك المركزي (BCM)</li>
-            <li>بيع العملات، عمولات البنك</li>
-        </ul>
-
-        <div class="trap-box">
-            ⚠️ <strong>العمليات بالعملة الأجنبية بين المقيمين تخضع لترخيص مسبق من BCM</strong> (المادة 13 من القانون 2004-042).
-        </div>
-
-        <h3>قيود 2024 (التعليمة رقم 7/GR/2024)</h3>
-        <ul>
-            <li><strong>70% من عائدات الصادرات بالعملة الأجنبية يجب تحويلها إلى أوقية خلال يومي عمل</strong> من تاريخ القيد في حساب المراسل الأجنبي</li>
-            <li>الودائع بالعملة الأجنبية المرتبطة بائتمانات يجب تحويلها فوراً للبنك عند حلول الآجال</li>
-            <li>عمليات الاعتمادات المستندية تُخصم أولاً من ودائع العملة الأجنبية المتاحة، ثم العملات الأخرى، وأخيراً الأوقية</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>📋 جدول تلخيصي شامل — كل الأرقام المهمة (جدول المراجعة النهائية)</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>الموضوع</th>
-                    <th>الرقم/النسبة</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>ضريبة الشركات (IS)</td><td>25% من الربح أو 2% من رقم الأعمال (الأكبر)، حد أدنى 100,000 MRU</td></tr>
-                <tr><td>IBAPP - نظام حقيقي عادي</td><td>30% أو 2.5%، حد أدنى 125,000 MRU</td></tr>
-                <tr><td>IBAPP - نظام حقيقي وسيط</td><td>30% أو 2.5%، حد أدنى 75,000 MRU</td></tr>
-                <tr><td>IBAPP - نظام جزافي</td><td>3% من رقم الأعمال</td></tr>
-                <tr><td>ITS - شريحة 1</td><td>حتى 9,000: 15%</td></tr>
-                <tr><td>ITS - شريحة 2</td><td>9,000-21,000: 25%</td></tr>
-                <tr><td>ITS - شريحة 3</td><td>فوق 21,000: 40%</td></tr>
-                <tr><td>TVA - المعدل العادي</td><td>16%</td></tr>
-                <tr><td>TVA - الاتصالات</td><td>18%</td></tr>
-                <tr><td>TVA - الصادرات</td><td>0%</td></tr>
-                <tr><td>TVA - تأخير &lt; شهرين</td><td>غرامة 10%</td></tr>
-                <tr><td>TVA - تأخير &gt; شهرين</td><td>غرامة 25%</td></tr>
-                <tr><td>TVA - تصريح صفري/دائن متأخر</td><td>2,000 MRU/شهر</td></tr>
-                <tr><td>TVA - نفسه + CA &gt; 30 مليون</td><td>10,000 MRU/شهر</td></tr>
-                <tr><td>TVA - إغفال/خطأ</td><td>40% من الحقوق المعرضة للخطر</td></tr>
-                <tr><td>IRCM</td><td>10%</td></tr>
-                <tr><td>الضريبة العقارية</td><td>10%</td></tr>
-                <tr><td>رسم التمهين</td><td>0.60% من الأجور</td></tr>
-                <tr><td>TOF</td><td>14%</td></tr>
-                <tr><td>اقتطاع خدمات غير مقيمين</td><td>15%</td></tr>
-                <tr><td>اقتطاع خدمات مقيمين (مهن حرة)</td><td>2.5%</td></tr>
-                <tr><td>تصحيحات جبائية عامة</td><td>25% إلى 80%</td></tr>
-                <tr><td>مدة التقادم</td><td>3 سنوات</td></tr>
-                <tr><td>النظام المبسط STR (نفط/غاز)</td><td>4% + 4% = 8% من رقم الأعمال</td></tr>
-                <tr><td>GTA - نظام حقيقي</td><td>25% من الربح، حد أدنى 1.75% من رقم الأعمال</td></tr>
-                <tr><td>GTA - نظام جزافي</td><td>4% (شركات) + 3% (أجور) = 7% من رقم الأعمال</td></tr>
-                <tr><td>المنطقة الحرة نواذيبو - رسم سنوي</td><td>0.5% من رقم الأعمال</td></tr>
-                <tr><td>الهيدروجين الأخضر - مقاولون فرعيون</td><td>4% من رقم الأعمال (نهائية)</td></tr>
-                <tr><td>الهيدروجين الأخضر - مشغّلون</td><td>15% / 25% / 30% حسب معامل R</td></tr>
-                <tr><td>الهيدروجين الأخضر - IRCM</td><td>4% (ابتداءً من 1 يناير 2033)</td></tr>
-                <tr><td>الهيدروجين الأخضر - اقتطاع غير مقيمين</td><td>4% (أو 2% لمدة 10 سنوات إذا اتُخذ قرار الاستثمار النهائي قبل 1 يناير 2033)</td></tr>
-                <tr><td>تحويل عائدات التصدير الإجباري</td><td>70% خلال يومي عمل</td></tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section>
-        <h2>🎯 اختبار سريع — أسئلة QCM محلولة للتدرب</h2>
-
-        <div class="qcm-item">
-            <div class="qcm-question">السؤال 1: شركة TVA مستحقة عليها = 2,000,000 MRU، أخّرت التصريح 3 أشهر. ما الغرامة؟</div>
-            <div>أ) 200,000 &nbsp;&nbsp; ب) 300,000 &nbsp;&nbsp; <strong>ج) 500,000 ✅</strong> &nbsp;&nbsp; د) 800,000</div>
-            <div class="qcm-answer">الحل: 3 أشهر &gt; شهرين ➡️ 25% × 2,000,000 = 500,000</div>
-        </div>
-
-        <div class="qcm-item">
-            <div class="qcm-question">السؤال 2: شركة رقم أعمالها السابق 25 مليون MRU، صرّحت بـTVA صفرية متأخرة 5 أشهر. ما الغرامة؟</div>
-            <div>أ) 5,000 &nbsp;&nbsp; <strong>ب) 10,000 ✅ (5×2,000)</strong> &nbsp;&nbsp; ج) 50,000 &nbsp;&nbsp; د) 25,000</div>
-            <div class="qcm-answer">الحل: رقم الأعمال (25 مليون) لا يتجاوز 30 مليون ➡️ يُطبَّق 2,000/شهر وليس 10,000/شهر: 5×2,000=10,000</div>
-        </div>
-
-        <div class="qcm-item">
-            <div class="qcm-question">السؤال 3: موظف راتبه 15,000 MRU شهرياً. ما ضريبة ITS المستحقة؟</div>
-            <div>أ) 6,000 (15,000×40%) &nbsp;&nbsp; <strong>ب) 2,850 ✅</strong> &nbsp;&nbsp; ج) 3,750 &nbsp;&nbsp; د) 2,250</div>
-            <div class="qcm-answer">الحل: (9,000×15%) + (6,000×25%) = 1,350 + 1,500 = 2,850</div>
-        </div>
-
-        <div class="qcm-item">
-            <div class="qcm-question">السؤال 4: مقاول فرعي أجنبي معتمد STR رقم أعماله 5,000,000 MRU. ما إجمالي الضريبة (شركات + أجور)؟</div>
-            <div>أ) 200,000 &nbsp;&nbsp; <strong>ب) 400,000 ✅</strong> &nbsp;&nbsp; ج) 1,250,000 &nbsp;&nbsp; د) 2,000,000</div>
-            <div class="qcm-answer">الحل: 5,000,000 × 8% (4%+4%) = 400,000</div>
-        </div>
-
-        <div class="qcm-item">
-            <div class="qcm-question">السؤال 5: ما الفرق بين "معدل TVA صفري" و"إعفاء من TVA"؟</div>
-            <div class="qcm-answer"><strong>الجواب النموذجي:</strong> المعدل الصفري (0%) يبقي العملية داخل نطاق TVA رسمياً، مما يسمح باسترداد TVA المدفوعة على المدخلات (مثل حالة الصادرات). أما "الإعفاء" فيخرج العملية من نطاق TVA، وعادة لا يمنح حق استرداد TVA على المدخلات.</div>
-        </div>
-    </section>
-
-    <section>
-        <h2>💡 نصائح استراتيجية عامة لمسابقة مفتش الضرائب</h2>
-        <ul>
-            <li><strong>احفظ الأرقام بشكل ثنائي:</strong> كل رقم يجب أن يكون مرتبطاً بشرطه (المدة، السقف، النسبة) — لا تحفظ الرقم منفرداً.</li>
-            <li><strong>انتبه لكلمة "الأكبر بين X وY":</strong> تتكرر في IS وIBAPP (الأكبر بين نسبة من الربح ونسبة من رقم الأعمال).</li>
-            <li><strong>ميّز بين الغرامة النسبية والغرامة الثابتة بالشهر</strong> — هذا أكثر فخ متكرر في TVA.</li>
-            <li><strong>افهم منطق كل نظام قبل حفظه:</strong> مثلاً نظام R في الهيدروجين الأخضر ليس رقماً عشوائياً، بل يعكس مبدأ "كلما زادت ربحية المشروع نسبة للاستثمار، زادت الضريبة".</li>
-            <li><strong>الأنظمة القطاعية</strong> (مناجم، نفط، GTA، هيدروجين أخضر) لها كل واحدة استثناءات عن القانون العام — لا تُسقط قاعدة TVA العادية (16%) على هذه القطاعات دون التحقق من النظام الخاص.</li>
-            <li><strong>مهل الطعون تتكرر كثيراً:</strong> 15 يوم (رد المكلف) / 60 يوم (رد الإدارة) / 3 أشهر (شكوى) / شهرين (طعن قضائي) / 3 أيام (اللجنة المشتركة، ودفع غير المتنازع فيه).</li>
-        </ul>
-    </section>
-
-    <footer style="margin-top: 50px; text-align: center; border-top: 1px solid var(--border-color); padding-top: 20px; font-size: 0.85rem; color: #6c757d;">
-        <div class="author-box" style="margin-top: 20px; text-align: center; padding: 15px; border-top: 1px solid var(--border-color);">
-        <strong>إعداد: يحيى طالب عبد الله</strong><br>
-        <span>للتواصل عبر واتساب: 30545727</span>
     </div>
-</footer>
+
+    <div class="progress-wrap">
+
+      <div style="display:flex;justify-content:space-between">
+        <span>التقدم</span>
+        <span id="progressText">0 / 300</span>
+      </div>
+
+      <div class="progress">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div id="examArea"></div>
+
+
+  <div class="controls">
+
+    <button
+      class="btn-yellow"
+      onclick="gradeCurrentPart()">
+      ✅ تصحيح الجزء الحالي
+    </button>
+
+    <button
+      class="btn-main"
+      onclick="finishExam()">
+      📊 النتيجة النهائية
+    </button>
+
+  </div>
+
+
+  <div id="result" class="panel result">
+
+    <h2 class="part-title">
+      النتيجة النهائية
+    </h2>
+
+    <div id="score" class="result-score">
+      0
+    </div>
+
+    <div class="result-grid">
+
+      <div class="result-box">
+        <strong id="correctCount" class="good">0</strong>
+        صحيحة
+      </div>
+
+      <div class="result-box">
+        <strong id="wrongCount" class="bad">0</strong>
+        خاطئة
+      </div>
+
+      <div class="result-box">
+        <strong id="emptyCount" class="yellow">0</strong>
+        بدون إجابة
+      </div>
+
+      <div class="result-box">
+        <strong id="deducted">0</strong>
+        النقاط المستقطعة
+      </div>
+
+    </div>
+
+    <div id="partResults"></div>
+
+  </div>
 
 </div>
 
+
+<footer>
+  QCM Concours Impôts Mauritanie<br>
+  منصة تدريبية — مفتش / مراقب الضرائب
+</footer>
+
+
+<script>
+
+/* ============================================================
+   CONFIGURATION
+============================================================ */
+
+const TOTAL_QUESTIONS = 300;
+
+const QUESTIONS_PER_PART = 60;
+
+const PARTS = 5;
+
+const EXAM_TIME = 45 * 60;
+
+const CORRECT_POINT = 0.125;
+
+const WRONG_POINT = -0.25;
+
+
+/* ============================================================
+   THEMES
+============================================================ */
+
+const themes = [
+
+"وظيفة مفتش الضرائب ومهامه وصلاحياته",
+
+"الدستور والسلطة الجبائية وحقوق المكلف",
+
+"مصادر التشريع الضريبي والتدرج الهرمي",
+
+"الضريبة على الشركات IS",
+
+"الضريبة على القيمة المضافة TVA",
+
+"ضريبة المرتبات والأجور والاقتطاع من المنبع",
+
+"التهرب والتحايل الضريبي",
+
+"المالية العامة والميزانية في موريتانيا",
+
+"العبء الضريبي على القطاعات الإنتاجية",
+
+"الضرائب على الاستهلاك",
+
+"الازدواج الضريبي الدولي",
+
+"حقوق والتزامات المكلف بالضريبة",
+
+"أخلاقيات التفتيش ومكافحة الفساد",
+
+"الامتثال الضريبي الطوعي",
+
+"التوازن بين حق الدولة وحقوق المكلف",
+
+"التخطيط والهندسة الضريبية",
+
+"الضرائب غير المباشرة",
+
+"المنازعات الضريبية",
+
+"التعاون الدولي وBEPS",
+
+"تبادل المعلومات FATCA وCRS",
+
+"الاقتصاد الرقمي والضرائب",
+
+"الشفافية المالية الدولية",
+
+"الجريمة المنظمة والتهرب الضريبي",
+
+"إدارة فرق التفتيش والجودة",
+
+"القانون الإداري والوظيفة العمومية",
+
+"المحاسبة المتقدمة والتدقيق",
+
+"الإجراءات الجزائية والعقوبات الضريبية",
+
+"الضرائب النوعية والقطاعات الخاصة",
+
+"الاقتصاد غير الرسمي والرقمنة",
+
+"الرقابة والتدقيق الجبائي"
+
+
+];
+
+
+/* ============================================================
+   SAMPLE QUESTION BANK
+   استبدل/وسّع هذه المجموعة ببنك الأسئلة الرسمي
+============================================================ */
+
+const questionBank = [
+
+{
+ topic:"الضريبة على الشركات IS",
+ difficulty:"سهل",
+
+ q:"وفق المدونة العامة للضرائب الموريتانية، ماذا حل محل IBIC؟",
+
+ options:[
+   "Impôt sur les sociétés (IS)",
+   "TVA",
+   "IRF",
+   "IRCM",
+   "TOF"
+ ],
+
+ correct:[0],
+
+ explanation:
+ "المدونة العامة للضرائب جعلت الضريبة على الشركات IS ضريبة على أرباح الأشخاص المعنويين، وحلّت محل IBIC وفق النص."
+},
+
+{
+ topic:"الضريبة على الشركات IS",
+ difficulty:"متوسط",
+
+ q:"أي من العناصر التالية يرتبط مباشرة بضريبة الشركات IS؟",
+
+ options:[
+   "الأرباح أو المداخيل الخاضعة للضريبة",
+   "الوعاء الخاص بالمرتبات فقط",
+   "العمليات المعفاة من جميع الضرائب",
+   "عدد الموظفين فقط",
+   "العمر الشخصي للمسير"
+ ],
+
+ correct:[0],
+
+ explanation:
+ "الضريبة على الشركات ترتبط أساسًا بالأرباح أو المداخيل الخاضعة للضريبة وفق نطاقها القانوني."
+},
+
+{
+ topic:"TVA",
+ difficulty:"سهل",
+
+ q:"ما المقصود بـ TVA؟",
+
+ options:[
+   "Taxe sur la Valeur Ajoutée",
+   "Taxe sur les Véhicules Administratifs",
+   "Taxe sur la Vente Annuelle",
+   "Taxe de Vérification Administrative",
+   "Taxe sur les Valeurs Actives"
+ ],
+
+ correct:[0],
+
+ explanation:
+ "TVA هي اختصار Taxe sur la Valeur Ajoutée، أي الضريبة على القيمة المضافة."
+},
+
+{
+ topic:"TVA",
+ difficulty:"فخ",
+
+ q:"أي عبارة أدق بشأن الضريبة على القيمة المضافة؟",
+
+ options:[
+   "هي ضريبة غير مباشرة على الاستهلاك",
+   "هي دائمًا ضريبة مباشرة على الدخل الشخصي",
+   "لا علاقة لها بالمعاملات الاقتصادية",
+   "تطبق فقط على الموظفين",
+   "هي ضريبة على الأرباح فقط"
+ ],
+
+ correct:[0],
+
+ explanation:
+ "TVA من الضرائب غير المباشرة وترتبط بالمعاملات والاستهلاك وفق شروط الخضوع القانونية."
+},
+
+{
+ topic:"حقوق المكلف",
+ difficulty:"متوسط",
+
+ q:"ما المبدأ الذي يقتضي أن تكون الإجراءات الجبائية مؤطرة بالقانون؟",
+
+ options:[
+   "مبدأ الشرعية",
+   "مبدأ السرية المطلقة",
+   "مبدأ العشوائية",
+   "مبدأ الإعفاء العام",
+   "مبدأ عدم الرقابة"
+ ],
+
+ correct:[0],
+
+ explanation:
+ "الشرعية تعني أن فرض الضريبة والإجراءات والجزاءات الجبائية تستند إلى أساس قانوني."
+},
+
+{
+ topic:"أخلاقيات التفتيش",
+ difficulty:"سهل",
+
+ q:"من أهم واجبات الموظف المكلف بالرقابة الجبائية؟",
+
+ options:[
+   "النزاهة والحياد",
+   "إخفاء المعلومات لمصلحته",
+   "تمييز المكلفين",
+   "قبول الهدايا",
+   "تغيير الوثائق"
+ ],
+
+ correct:[0],
+
+ explanation:
+ "النزاهة والحياد من المبادئ الأساسية للعمل الإداري والرقابي، ويجب على المفتش تجنب تضارب المصالح والامتيازات غير المشروعة."
+},
+
+{
+ topic:"التهرب الضريبي",
+ difficulty:"متوسط",
+
+ q:"ما الفرق العام بين التخطيط الضريبي المشروع والتهرب الضريبي؟",
+
+ options:[
+   "التهرب يقوم على مخالفة أو إخفاء يخالف القانون",
+   "هما مصطلحان متطابقان دائمًا",
+   "التخطيط المشروع يعني تزوير الوثائق",
+   "التهرب يعني احترام جميع الالتزامات",
+   "لا يوجد أي فرق"
+ ],
+
+ correct:[0],
+
+ explanation:
+ "التخطيط المشروع يستعمل الخيارات التي يسمح بها القانون، بينما التهرب الضريبي يرتبط بسلوك مخالف أو احتيالي بقصد تفادي الضريبة."
+},
+
+{
+ topic:"الامتثال الضريبي",
+difficulty:"متوسط",
+
+q:"أي عامل يمكن أن يساعد على الامتثال الضريبي الطوعي؟",
+
+options:[
+ "وضوح القواعد والثقة في الإدارة",
+ "تعقيد الإجراءات دون سبب",
+ "غياب المعلومات",
+ "عدم وجود خدمات للمكلف",
+ "تمييز المكلفين"
+],
+
+correct:[0],
+
+explanation:
+"وضوح القواعد، جودة الخدمة، الثقة والعدالة في المعاملة يمكن أن تدعم الامتثال الضريبي الطوعي."
+},
+
+{
+ topic:"المحاسبة والتدقيق",
+ difficulty:"صعب",
+
+ q:"ما الهدف الأساسي من المطابقة بين الوثائق المحاسبية والوثائق الداعمة أثناء الرقابة؟",
+
+ options:[
+   "التحقق من صحة وموثوقية المعاملات",
+   "إلغاء المحاسبة",
+   "زيادة رقم الأعمال تلقائيًا",
+   "إعفاء الشركة تلقائيًا",
+   "منع كل نشاط تجاري"
+ ],
+
+ correct:[0],
+
+ explanation:
+ "المطابقة بين السجلات والوثائق الداعمة تساعد المفتش على تقييم صحة المعاملات والمعلومات المحاسبية."
+},
+
+{
+ topic:"المالية العامة",
+ difficulty:"متوسط",
+
+ q:"ما الوظيفة الأساسية للميزانية العامة للدولة؟",
+
+ options:[
+   "تقدير وترخيص الإيرادات والنفقات العامة",
+   "تحديد أسعار كل السلع الخاصة",
+   "إلغاء الضرائب",
+   "إدارة الشركات الخاصة فقط",
+   "منع الاستثمار"
+ ],
+
+ correct:[0],
+
+ explanation:
+ "الميزانية أداة أساسية لتقدير وترخيص موارد الدولة ونفقاتها وتنفيذ السياسة المالية."
+},
+
+{
+ topic:"BEPS",
+ difficulty:"صعب",
+
+ q:"يرتبط مشروع BEPS أساسًا بماذا؟",
+
+ options:[
+   "مكافحة تآكل الوعاء الضريبي وتحويل الأرباح",
+   "إلغاء الضرائب المحلية",
+   "تحديد رواتب الموظفين",
+   "تنظيم المرور",
+   "إدارة الانتخابات"
+ ],
+
+ correct:[0],
+
+ explanation:
+ "BEPS هو إطار دولي لمواجهة Base Erosion and Profit Shifting، أي تآكل الوعاء الضريبي وتحويل الأرباح."
+},
+
+{
+ topic:"تبادل المعلومات",
+ difficulty:"صعب",
+
+ q:"ما الهدف العام من تبادل المعلومات الضريبية بين الإدارات؟",
+
+ options:[
+   "مكافحة التهرب وتحسين الامتثال",
+   "إلغاء السرية المهنية بالكامل",
+   "منع التجارة الدولية",
+   "إلغاء الضرائب",
+   "تحديد أسعار العملات"
+ ],
+
+ correct:[0],
+
+ explanation:
+ "التعاون وتبادل المعلومات وفق الأطر القانونية يساعدان الإدارات على كشف المخاطر والتهرب الضريبي الدولي."
+},
+
+{
+ topic:"الاقتصاد الرقمي",
+ difficulty:"فخ",
+
+ q:"لماذا يمثل الاقتصاد الرقمي تحديًا للإدارة الضريبية؟",
+
+ options:[
+   "لأن النشاط قد يكون عابرًا للحدود وصعب تحديد مكانه ووعائه الضريبي",
+   "لأنه لا يحقق أي إيرادات",
+   "لأنه لا يستخدم التكنولوجيا",
+   "لأن الشركات الرقمية لا يمكنها تحقيق أرباح",
+   "لأنه يلغي جميع الضرائب"
+ ],
+
+ correct:[0],
+
+ explanation:
+ "الاقتصاد الرقمي يطرح مسائل مرتبطة بمكان النشاط والقيمة والبيانات والعمليات العابرة للحدود، مما يزيد تعقيد بعض المسائل الضريبية."
+}
+
+];
+
+
+/* ============================================================
+   QUESTION GENERATOR
+   يقوم بتوسيع بنك الأسئلة حتى 300 سؤال
+============================================================ */
+
+function buildQuestions(){
+
+ let result=[];
+
+ for(let i=0;i<TOTAL_QUESTIONS;i++){
+
+   const base =
+     questionBank[i % questionBank.length];
+
+   result.push({
+
+     id:i+1,
+
+     topic:base.topic,
+
+     difficulty:base.difficulty,
+
+     q:base.q,
+
+     options:[...base.options],
+
+     correct:[...base.correct],
+
+     explanation:base.explanation
+
+   });
+
+ }
+
+ return result;
+
+}
+
+
+let questions=buildQuestions();
+
+
+/* ============================================================
+   SHUFFLE
+============================================================ */
+
+function shuffle(array){
+
+ let a=[...array];
+
+ for(let i=a.length-1;i>0;i--){
+
+   let j=Math.floor(Math.random()*(i+1));
+
+   [a[i],a[j]]=[a[j],a[i]];
+
+ }
+
+ return a;
+}
+
+
+/* ============================================================
+   RANDOMIZE OPTIONS
+============================================================ */
+
+function randomizeQuestion(q){
+
+ const indexed=q.options.map((text,index)=>({
+
+   text,
+   original:index
+
+ }));
+
+ const shuffled=shuffle(indexed);
+
+ return {
+
+   ...q,
+
+   options:shuffled.map(x=>x.text),
+
+   correct:q.correct.map(c=>
+      shuffled.findIndex(x=>x.original===c)
+   )
+
+ };
+
+}
+
+
+questions=questions.map(randomizeQuestion);
+
+questions=shuffle(questions);
+
+
+/* ============================================================
+   RENDER
+============================================================ */
+
+const examArea=document.getElementById("examArea");
+
+function renderExam(){
+
+ examArea.innerHTML="";
+
+ for(let part=0;part<PARTS;part++){
+
+   const start=part*QUESTIONS_PER_PART;
+
+   const end=start+QUESTIONS_PER_PART;
+
+   const partBox=document.createElement("div");
+
+   partBox.className="panel";
+
+   partBox.id=`part-${part}`;
+
+   partBox.innerHTML=`
+
+     <h2 class="part-title">
+       الجزء ${part+1} — الأسئلة ${start+1} إلى ${end}
+     </h2>
+
+     <div id="questions-${part}"></div>
+
+   `;
+
+   examArea.appendChild(partBox);
+
+   const qContainer=
+     partBox.querySelector(`#questions-${part}`);
+
+   for(let i=start;i<end;i++){
+
+     renderQuestion(qContainer,questions[i],i);
+
+   }
+
+ }
+
+}
+
+
+function renderQuestion(container,q,index){
+
+ const card=document.createElement("div");
+
+ card.className="question-card";
+
+ card.dataset.index=index;
+
+ let html=`
+
+ <div class="question-top">
+
+   <span class="question-number">
+      سؤال ${index+1}
+   </span>
+
+   <span class="difficulty">
+      ${q.difficulty}
+   </span>
+
+ </div>
+
+ <div class="question">
+    ${q.q}
+ </div>
+
+ <div class="options">
+
+ `;
+
+ q.options.forEach((option,optIndex)=>{
+
+   html+=`
+
+   <label class="option">
+
+      <input
+        type="checkbox"
+        name="q${index}"
+        value="${optIndex}"
+        onchange="optionChanged(this,${index})">
+
+      <span>
+        <b>${String.fromCharCode(65+optIndex)}.</b>
+        ${option}
+      </span>
+
+   </label>
+
+   `;
+
+ });
+
+ html+=`
+
+ </div>
+
+ <div class="explanation"
+      id="explanation-${index}">
+
+      <b>💡 الشرح:</b><br>
+      ${q.explanation}
+
+ </div>
+
+ `;
+
+ card.innerHTML=html;
+
+ container.appendChild(card);
+
+}
+
+
+/* ============================================================
+   OPTION CHANGE
+============================================================ */
+
+function optionChanged(input,index){
+
+ const card=document.querySelector(
+   `.question-card[data-index="${index}"]`
+ );
+
+ const options=card.querySelectorAll(".option");
+
+ options.forEach(o=>{
+
+   const checkbox=o.querySelector("input");
+
+   if(checkbox.checked)
+      o.classList.add("selected");
+   else
+      o.classList.remove("selected");
+
+ });
+
+ updateProgress();
+
+}
+
+
+/* ============================================================
+   PROGRESS
+============================================================ */
+
+function updateProgress(){
+
+ let answered=0;
+
+ for(let i=0;i<TOTAL_QUESTIONS;i++){
+
+   const checked=
+      document.querySelectorAll(
+        `input[name="q${i}"]:checked`
+      );
+
+   if(checked.length>0)
+      answered++;
+
+ }
+
+ const percent=
+   (answered/TOTAL_QUESTIONS)*100;
+
+ document.getElementById("progressBar")
+   .style.width=percent+"%";
+
+ document.getElementById("progressText")
+   .textContent=
+   `${answered} / ${TOTAL_QUESTIONS}`;
+
+}
+
+
+/* ============================================================
+   GET ANSWERS
+============================================================ */
+
+function getSelected(index){
+
+ const inputs=
+   document.querySelectorAll(
+      `input[name="q${index}"]:checked`
+   );
+
+ return [...inputs].map(x=>Number(x.value));
+
+}
+
+
+/* ============================================================
+   GRADE QUESTION
+============================================================ */
+
+function gradeQuestion(index){
+
+ const q=questions[index];
+
+ const selected=getSelected(index);
+
+ const card=document.querySelector(
+   `.question-card[data-index="${index}"]`
+ );
+
+ const optionElements=
+   card.querySelectorAll(".option");
+
+ optionElements.forEach((element,optIndex)=>{
+
+   element.classList.remove("correct","wrong");
+
+   const isCorrect=
+      q.correct.includes(optIndex);
+
+   const isSelected=
+      selected.includes(optIndex);
+
+   if(isCorrect)
+      element.classList.add("correct");
+
+   if(isSelected && !isCorrect)
+      element.classList.add("wrong");
+
+ });
+
+ document
+   .getElementById(`explanation-${index}`)
+   .classList.add("show");
+
+}
+
+
+/* ============================================================
+   GRADE PART
+============================================================ */
+
+function gradeCurrentPart(){
+
+ const currentPart=
+   Math.min(
+     PARTS-1,
+     Math.floor(
+       getAnsweredCount()/QUESTIONS_PER_PART
+     )
+   );
+
+ const start=currentPart*QUESTIONS_PER_PART;
+
+ const end=start+QUESTIONS_PER_PART;
+
+ for(let i=start;i<end;i++){
+
+   gradeQuestion(i);
+
+ }
+
+ alert(
+   `تم تصحيح الجزء ${currentPart+1}.\n\n`+
+   `راجع الإجابات والشرح باللون الأخضر والأحمر.`
+ );
+
+}
+
+
+/* ============================================================
+   SCORE
+============================================================ */
+
+function calculateScore(){
+
+ let correct=0;
+
+ let wrong=0;
+
+ let empty=0;
+
+ let score=0;
+
+ let deducted=0;
+
+ for(let i=0;i<TOTAL_QUESTIONS;i++){
+
+   const selected=getSelected(i);
+
+   if(selected.length===0){
+
+     empty++;
+
+     continue;
+
+   }
+
+   let q=questions[i];
+
+   selected.forEach(answer=>{
+
+     if(q.correct.includes(answer)){
+
+       correct++;
+
+       score+=CORRECT_POINT;
+
+     }else{
+
+       wrong++;
+
+       score+=WRONG_POINT;
+
+       deducted+=0.25;
+
+     }
+
+   });
+
+ }
+
+ return {
+   correct,
+   wrong,
+   empty,
+   score,
+   deducted
+ };
+
+}
+
+
+/* ============================================================
+   FINISH
+============================================================ */
+
+function finishExam(){
+
+ clearInterval(timerInterval);
+
+ for(let i=0;i<TOTAL_QUESTIONS;i++){
+
+   gradeQuestion(i);
+
+ }
+
+ const result=calculateScore();
+
+ document.getElementById("result")
+   .classList.add("show");
+
+ document.getElementById("score")
+   .textContent=result.score.toFixed(3);
+
+ document.getElementById("correctCount")
+   .textContent=result.correct;
+
+ document.getElementById("wrongCount")
+   .textContent=result.wrong;
+
+ document.getElementById("emptyCount")
+   .textContent=result.empty;
+
+ document.getElementById("deducted")
+   .textContent=
+      result.deducted.toFixed(3);
+
+ buildPartResults();
+
+ window.scrollTo({
+   top:document.body.scrollHeight,
+   behavior:"smooth"
+ });
+
+}
+
+
+/* ============================================================
+   PART RESULTS
+============================================================ */
+
+function buildPartResults(){
+
+ const box=
+   document.getElementById("partResults");
+
+ box.innerHTML="";
+
+ for(let part=0;part<PARTS;part++){
+
+   const start=part*QUESTIONS_PER_PART;
+
+   const end=start+QUESTIONS_PER_PART;
+
+   let score=0;
+
+   let correct=0;
+
+   let wrong=0;
+
+   let empty=0;
+
+   for(let i=start;i<end;i++){
+
+     const selected=getSelected(i);
+
+     if(selected.length===0){
+
+       empty++;
+
+       continue;
+
+     }
+
+     selected.forEach(answer=>{
+
+       if(questions[i].correct.includes(answer)){
+
+         correct++;
+
+         score+=CORRECT_POINT;
+
+       }else{
+
+         wrong++;
+
+         score+=WRONG_POINT;
+
+       }
+
+     });
+
+   }
+
+   box.innerHTML+=`
+
+     <div class="panel">
+
+       <h3>
+         الجزء ${part+1}
+       </h3>
+
+       <p>
+         الصحيحة:
+         <b class="good">${correct}</b>
+       </p>
+
+       <p>
+         الخاطئة:
+         <b class="bad">${wrong}</b>
+       </p>
+
+       <p>
+         بدون إجابة:
+         <b class="yellow">${empty}</b>
+       </p>
+
+       <p>
+         النقاط:
+         <b>${score.toFixed(3)}</b>
+       </p>
+
+     </div>
+
+   `;
+
+ }
+
+}
+
+
+/* ============================================================
+   ANSWERED COUNT
+============================================================ */
+
+function getAnsweredCount(){
+
+ let count=0;
+
+ for(let i=0;i<TOTAL_QUESTIONS;i++){
+
+   if(getSelected(i).length>0)
+      count++;
+
+ }
+
+ return count;
+
+}
+
+
+/* ============================================================
+   TIMER
+============================================================ */
+
+let remaining=EXAM_TIME;
+
+let timerInterval;
+
+function updateTimer(){
+
+ let minutes=
+   Math.floor(remaining/60);
+
+ let seconds=
+   remaining%60;
+
+ document.getElementById("timer")
+   .textContent=
+   `${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`;
+
+ if(remaining<=600){
+
+   document
+     .getElementById("timer")
+     .classList.add("warning");
+
+ }
+
+ if(remaining===600){
+
+   alert("⚠️ تبقى 10 دقائق فقط!");
+
+ }
+
+ if(remaining===300){
+
+   alert("⚠️ تبقى 5 دقائق فقط!");
+
+ }
+
+ if(remaining===60){
+
+   alert("🚨 تبقى دقيقة واحدة!");
+
+ }
+
+ if(remaining<=0){
+
+   clearInterval(timerInterval);
+
+   alert("⏰ انتهى الوقت!");
+
+   finishExam();
+
+ }
+
+ remaining--;
+
+}
+
+
+function startTimer(){
+
+ updateTimer();
+
+ timerInterval=
+   setInterval(updateTimer,1000);
+
+}
+
+
+/* ============================================================
+   START
+============================================================ */
+
+renderExam();
+
+startTimer();
+
+</script>
+
 </body>
 </html>
+```
